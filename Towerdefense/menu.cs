@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Towerdefense
 {
-    public partial class Login : Form
+    public partial class menu : Form
     {
-        public Login()
+        public menu()
         {
             InitializeComponent();
-        }
-
-        private void brn_exit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
