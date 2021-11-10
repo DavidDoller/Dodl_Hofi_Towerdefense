@@ -14,7 +14,7 @@ class sqlcon : login
     #region var
     public static SqlConnection con = new SqlConnection();
     public static SqlCommand cmd = new SqlCommand();
-    public static string Connection = @"Server=(localdb)\MSSQLLocalDB; Database=Flappybird; Integrated Security = true";
+    public static string Connection = @"Server=(localdb)\MSSQLLocalDB; Database=Towerdefense; Integrated Security = true";
     public static string Username = login.username1;
     #endregion
 
@@ -77,6 +77,10 @@ class sqlcon : login
         return username;
     }
 
+    public static void selecttowerplace(int number) 
+    {
+        towerselect.temp = number;     
+    }
 }
 }
 
