@@ -16,5 +16,12 @@ namespace Towerdefense
         {
             InitializeComponent();
         }
+
+        private void btn_start_Click(object sender, EventArgs e)
+        {
+            game form = new game();
+            form.Show();
+            this.Hide();
+        }
     }
 }

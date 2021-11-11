@@ -40,7 +40,7 @@ namespace Towerdefense
 
             if (!((int)cmdtemp.ExecuteScalar() == 1)) //if there is no database, database get created
             {
-                SqlCommand cmd = new SqlCommand("Create Database Flappybird", temp);//create database
+                SqlCommand cmd = new SqlCommand("Create Database Towerdefense", temp);//create database
                 cmd.ExecuteNonQuery();
                 temp.Close();
                 sqlcon.OpenConnection();
