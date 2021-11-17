@@ -54,7 +54,7 @@ namespace Towerdefense
             this.btn_exit.Location = new System.Drawing.Point(96, 294);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(88, 23);
-            this.btn_exit.TabIndex = 23;
+            this.btn_exit.TabIndex = 5;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
@@ -65,7 +65,7 @@ namespace Towerdefense
             this.btn_login.Name = "btn_login";
             this.btn_login.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_login.Size = new System.Drawing.Size(260, 23);
-            this.btn_login.TabIndex = 22;
+            this.btn_login.TabIndex = 3;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
@@ -95,14 +95,14 @@ namespace Towerdefense
             this.txt_username.Location = new System.Drawing.Point(118, 165);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(154, 20);
-            this.txt_username.TabIndex = 17;
+            this.txt_username.TabIndex = 1;
             // 
             // txt_password
             // 
             this.txt_password.Location = new System.Drawing.Point(118, 191);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(154, 20);
-            this.txt_password.TabIndex = 16;
+            this.txt_password.TabIndex = 2;
             // 
             // btn_register
             // 
@@ -110,7 +110,7 @@ namespace Towerdefense
             this.btn_register.Name = "btn_register";
             this.btn_register.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_register.Size = new System.Drawing.Size(260, 23);
-            this.btn_register.TabIndex = 25;
+            this.btn_register.TabIndex = 4;
             this.btn_register.Text = "Register";
             this.btn_register.UseVisualStyleBackColor = true;
             this.btn_register.Click += new System.EventHandler(this.btn_register_Click);

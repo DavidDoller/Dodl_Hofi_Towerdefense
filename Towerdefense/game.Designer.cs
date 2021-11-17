@@ -56,6 +56,9 @@ namespace Towerdefense
             this.pb_tower5 = new System.Windows.Forms.PictureBox();
             this.pb_tower4 = new System.Windows.Forms.PictureBox();
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
+            this.towerselectint = new System.Windows.Forms.Label();
+            this.changetowerint = new System.Windows.Forms.Label();
+            this.lbl_currentnumber = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower9)).BeginInit();
@@ -223,6 +226,7 @@ namespace Towerdefense
             // 
             // pb_tower9
             // 
+            this.pb_tower9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_tower9.Location = new System.Drawing.Point(704, 66);
             this.pb_tower9.Name = "pb_tower9";
             this.pb_tower9.Size = new System.Drawing.Size(57, 53);
@@ -232,6 +236,7 @@ namespace Towerdefense
             // 
             // pb_tower10
             // 
+            this.pb_tower10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_tower10.Location = new System.Drawing.Point(704, 209);
             this.pb_tower10.Name = "pb_tower10";
             this.pb_tower10.Size = new System.Drawing.Size(57, 53);
@@ -241,6 +246,7 @@ namespace Towerdefense
             // 
             // pb_tower8
             // 
+            this.pb_tower8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_tower8.Location = new System.Drawing.Point(571, 284);
             this.pb_tower8.Name = "pb_tower8";
             this.pb_tower8.Size = new System.Drawing.Size(57, 53);
@@ -250,6 +256,7 @@ namespace Towerdefense
             // 
             // pb_tower7
             // 
+            this.pb_tower7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_tower7.Location = new System.Drawing.Point(571, 128);
             this.pb_tower7.Name = "pb_tower7";
             this.pb_tower7.Size = new System.Drawing.Size(57, 53);
@@ -259,6 +266,7 @@ namespace Towerdefense
             // 
             // pb_tower2
             // 
+            this.pb_tower2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_tower2.Location = new System.Drawing.Point(83, 317);
             this.pb_tower2.Name = "pb_tower2";
             this.pb_tower2.Size = new System.Drawing.Size(57, 53);
@@ -268,6 +276,7 @@ namespace Towerdefense
             // 
             // pb_tower3
             // 
+            this.pb_tower3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_tower3.Location = new System.Drawing.Point(359, 317);
             this.pb_tower3.Name = "pb_tower3";
             this.pb_tower3.Size = new System.Drawing.Size(57, 53);
@@ -277,6 +286,7 @@ namespace Towerdefense
             // 
             // pb_tower6
             // 
+            this.pb_tower6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_tower6.Location = new System.Drawing.Point(424, 128);
             this.pb_tower6.Name = "pb_tower6";
             this.pb_tower6.Size = new System.Drawing.Size(57, 53);
@@ -306,6 +316,7 @@ namespace Towerdefense
             // 
             // pb_tower1
             // 
+            this.pb_tower1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pb_tower1.Location = new System.Drawing.Point(25, 193);
             this.pb_tower1.Name = "pb_tower1";
             this.pb_tower1.Size = new System.Drawing.Size(57, 53);
@@ -313,11 +324,41 @@ namespace Towerdefense
             this.pb_tower1.TabStop = false;
             this.pb_tower1.Click += new System.EventHandler(this.pb_tower1_Click);
             // 
+            // towerselectint
+            // 
+            this.towerselectint.AutoSize = true;
+            this.towerselectint.Location = new System.Drawing.Point(25, 13);
+            this.towerselectint.Name = "towerselectint";
+            this.towerselectint.Size = new System.Drawing.Size(35, 13);
+            this.towerselectint.TabIndex = 25;
+            this.towerselectint.Text = "label1";
+            this.towerselectint.Click += new System.EventHandler(this.towerselectint_Click);
+            // 
+            // changetowerint
+            // 
+            this.changetowerint.AutoSize = true;
+            this.changetowerint.Location = new System.Drawing.Point(110, 13);
+            this.changetowerint.Name = "changetowerint";
+            this.changetowerint.Size = new System.Drawing.Size(35, 13);
+            this.changetowerint.TabIndex = 26;
+            this.changetowerint.Text = "label1";
+            // 
+            // lbl_currentnumber
+            // 
+            this.lbl_currentnumber.AutoSize = true;
+            this.lbl_currentnumber.Location = new System.Drawing.Point(508, 13);
+            this.lbl_currentnumber.Name = "lbl_currentnumber";
+            this.lbl_currentnumber.Size = new System.Drawing.Size(0, 13);
+            this.lbl_currentnumber.TabIndex = 27;
+            // 
             // game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_currentnumber);
+            this.Controls.Add(this.changetowerint);
+            this.Controls.Add(this.towerselectint);
             this.Controls.Add(this.pb_tower9);
             this.Controls.Add(this.pb_tower10);
             this.Controls.Add(this.pb_tower8);
@@ -344,6 +385,7 @@ namespace Towerdefense
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "game";
+            this.Tag = "G";
             this.Text = "game";
             this.Load += new System.EventHandler(this.game_Load);
             this.panel2.ResumeLayout(false);
@@ -359,6 +401,7 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -391,5 +434,8 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_tower8;
         private System.Windows.Forms.PictureBox pb_tower10;
         private System.Windows.Forms.PictureBox pb_tower9;
+        private System.Windows.Forms.Label towerselectint;
+        private System.Windows.Forms.Label changetowerint;
+        private System.Windows.Forms.Label lbl_currentnumber;
     }
 }
