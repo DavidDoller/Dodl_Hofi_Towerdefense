@@ -11,9 +11,10 @@ using System.Data.SqlClient;
 
 namespace Towerdefense
 {
-    public partial class Form2 : Form
+    public partial class login : Form
     {
-        public Form2()
+        public static string username1;
+        public login()
         {
             InitializeComponent();
         }
@@ -23,17 +24,13 @@ namespace Towerdefense
             Application.Exit();
         }
 
-        private void btn_register_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
-            #region var
+            string Pw = txt_password.Text;
             string username = txt_username.Text;
-            string Pw = txt_pw.Text;
-            string confirmpw = txt_confirmpw.Text;
-            int highscore = 0;
+            username1 = txt_username.Text;
             string connectionstring = @"Server='(localdb)\MSSQLLocalDB';Integrated Security = true;"; //server of where database shut get create
-            #endregion
 
-            #region create database
             SqlConnection temp = new SqlConnection(connectionstring);//sqlcon for the database
             SqlCommand cmdtemp = new SqlCommand("select Count(*) from master.dbo.sysdatabases where name = 'Towerdefense'", temp);//count if there is a database with the name Flappybrid  
             temp.Open();
@@ -48,43 +45,43 @@ namespace Towerdefense
                 sqlcon.CloseConnection();
 
             }
+
             temp.Close();
-            #endregion
-            //create the account to login with it
-            #region create account
-            //SqlCommand cd = new SqlCommand("Create database if not exist Login;");
+            //control of the username and the password
+            #region control account 
             sqlcon.OpenConnection();
 
-
-            if (Pw == confirmpw) //check if pw is correct
+            if (username != string.Empty && Pw != string.Empty)//check if there is no textbox empty
             {
 
-                if (username != string.Empty && Pw != string.Empty)
+                SqlCommand cmd = new SqlCommand("select * from register where username='" + username + "' and password='" + Pw + "'", sqlcon.con); //select the username and the Password from the database register
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)//if datareader has rows and account exists open the flabbybird form
                 {
-                    //SqlCommand cmdd = new SqlCommand("create table if not exists Login (username varchar(50), password varchar(50))", con);
-                    SqlCommand cmd = new SqlCommand("insert into register values(@Username,@Password,@Highscore)", sqlcon.con);//Insert the values into the database
-                    cmd.Parameters.AddWithValue("username", username);//insert into username
-                    cmd.Parameters.AddWithValue("Password", Pw);//insert into password
-                    cmd.Parameters.AddWithValue("Highscore", highscore);//insert into highscore
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Account erstellt!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    sqlcon.CloseConnection();
-
-                    //open Login forms
-                    login form = new login();
+                    menu form = new menu();
                     form.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Sie müssen alles ausfühlen!", "Fehler!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Diesen Benutzer gibt es nicht!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+
             }
             else
             {
-                MessageBox.Show("Das Passwort stimmbt nicht übereinander!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Füllen Sie alle Felder ausfüllen!", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            sqlcon.CloseConnection();
             #endregion
+        }
+
+        private void btn_register_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Show();
+            this.Hide();
         }
     }
 }
