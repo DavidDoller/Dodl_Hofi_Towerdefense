@@ -29,16 +29,16 @@ namespace Towerdefense
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pbtower_1 = new System.Windows.Forms.PictureBox();
+            this.pbtower2 = new System.Windows.Forms.PictureBox();
+            this.pbtower_6 = new System.Windows.Forms.PictureBox();
+            this.pbtower_5 = new System.Windows.Forms.PictureBox();
+            this.pbtower_10 = new System.Windows.Forms.PictureBox();
+            this.pbtower_9 = new System.Windows.Forms.PictureBox();
+            this.pbtower_8 = new System.Windows.Forms.PictureBox();
+            this.pbtower_7 = new System.Windows.Forms.PictureBox();
+            this.pbtower4 = new System.Windows.Forms.PictureBox();
+            this.pbtower_3 = new System.Windows.Forms.PictureBox();
             this.lbl_1 = new System.Windows.Forms.Label();
             this.lbl_2 = new System.Windows.Forms.Label();
             this.lbl_3 = new System.Windows.Forms.Label();
@@ -50,97 +50,117 @@ namespace Towerdefense
             this.lbl_10 = new System.Windows.Forms.Label();
             this.lbl_9 = new System.Windows.Forms.Label();
             this.lbl_test = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_3)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbtower_1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbtower_1.BackColor = System.Drawing.Color.Green;
+            this.pbtower_1.Location = new System.Drawing.Point(12, 50);
+            this.pbtower_1.Name = "pbtower_1";
+            this.pbtower_1.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_1.TabIndex = 0;
+            this.pbtower_1.TabStop = false;
+            this.pbtower_1.Click += new System.EventHandler(this.pbtower_1_Click);
             // 
-            // pictureBox2
+            // pbtower2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(89, 50);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.pbtower2.BackColor = System.Drawing.Color.Blue;
+            this.pbtower2.Location = new System.Drawing.Point(89, 50);
+            this.pbtower2.Name = "pbtower2";
+            this.pbtower2.Size = new System.Drawing.Size(57, 55);
+            this.pbtower2.TabIndex = 1;
+            this.pbtower2.TabStop = false;
+            this.pbtower2.Click += new System.EventHandler(this.pbtower2_Click);
             // 
-            // pictureBox3
+            // pbtower_6
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(89, 140);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.pbtower_6.BackColor = System.Drawing.Color.Purple;
+            this.pbtower_6.Location = new System.Drawing.Point(89, 140);
+            this.pbtower_6.Name = "pbtower_6";
+            this.pbtower_6.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_6.TabIndex = 3;
+            this.pbtower_6.TabStop = false;
+            this.pbtower_6.Click += new System.EventHandler(this.pbtower_6_Click);
             // 
-            // pictureBox4
+            // pbtower_5
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(12, 140);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
+            this.pbtower_5.BackColor = System.Drawing.Color.Orange;
+            this.pbtower_5.Location = new System.Drawing.Point(12, 140);
+            this.pbtower_5.Name = "pbtower_5";
+            this.pbtower_5.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_5.TabIndex = 2;
+            this.pbtower_5.TabStop = false;
+            this.pbtower_5.Click += new System.EventHandler(this.pbtower_5_Click);
             // 
-            // pictureBox5
+            // pbtower_10
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(89, 229);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
+            this.pbtower_10.BackColor = System.Drawing.Color.Gold;
+            this.pbtower_10.Location = new System.Drawing.Point(89, 229);
+            this.pbtower_10.Name = "pbtower_10";
+            this.pbtower_10.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_10.TabIndex = 5;
+            this.pbtower_10.TabStop = false;
+            this.pbtower_10.Click += new System.EventHandler(this.pbtower_10_Click);
             // 
-            // pictureBox6
+            // pbtower_9
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(12, 229);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.pbtower_9.BackColor = System.Drawing.Color.Magenta;
+            this.pbtower_9.Location = new System.Drawing.Point(12, 229);
+            this.pbtower_9.Name = "pbtower_9";
+            this.pbtower_9.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_9.TabIndex = 4;
+            this.pbtower_9.TabStop = false;
+            this.pbtower_9.Click += new System.EventHandler(this.pbtower_9_Click);
             // 
-            // pictureBox9
+            // pbtower_8
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(249, 140);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox9.TabIndex = 9;
-            this.pictureBox9.TabStop = false;
+            this.pbtower_8.BackColor = System.Drawing.Color.LightGray;
+            this.pbtower_8.Location = new System.Drawing.Point(249, 140);
+            this.pbtower_8.Name = "pbtower_8";
+            this.pbtower_8.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_8.TabIndex = 9;
+            this.pbtower_8.TabStop = false;
+            this.pbtower_8.Click += new System.EventHandler(this.pbtower_8_Click);
             // 
-            // pictureBox10
+            // pbtower_7
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(172, 140);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox10.TabIndex = 8;
-            this.pictureBox10.TabStop = false;
+            this.pbtower_7.BackColor = System.Drawing.Color.Pink;
+            this.pbtower_7.Location = new System.Drawing.Point(172, 140);
+            this.pbtower_7.Name = "pbtower_7";
+            this.pbtower_7.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_7.TabIndex = 8;
+            this.pbtower_7.TabStop = false;
+            this.pbtower_7.Click += new System.EventHandler(this.pbtower_7_Click);
             // 
-            // pictureBox11
+            // pbtower4
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(249, 50);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox11.TabIndex = 7;
-            this.pictureBox11.TabStop = false;
+            this.pbtower4.BackColor = System.Drawing.Color.Yellow;
+            this.pbtower4.Location = new System.Drawing.Point(249, 50);
+            this.pbtower4.Name = "pbtower4";
+            this.pbtower4.Size = new System.Drawing.Size(57, 55);
+            this.pbtower4.TabIndex = 7;
+            this.pbtower4.TabStop = false;
+            this.pbtower4.Click += new System.EventHandler(this.pbtower4_Click);
             // 
-            // pictureBox12
+            // pbtower_3
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(172, 50);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(57, 55);
-            this.pictureBox12.TabIndex = 6;
-            this.pictureBox12.TabStop = false;
+            this.pbtower_3.BackColor = System.Drawing.Color.Red;
+            this.pbtower_3.Location = new System.Drawing.Point(172, 50);
+            this.pbtower_3.Name = "pbtower_3";
+            this.pbtower_3.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_3.TabIndex = 6;
+            this.pbtower_3.TabStop = false;
+            this.pbtower_3.Click += new System.EventHandler(this.pbtower_3_Click);
             // 
             // lbl_1
             // 
@@ -245,7 +265,7 @@ namespace Towerdefense
             // lbl_test
             // 
             this.lbl_test.AutoSize = true;
-            this.lbl_test.Location = new System.Drawing.Point(753, 9);
+            this.lbl_test.Location = new System.Drawing.Point(213, 245);
             this.lbl_test.Name = "lbl_test";
             this.lbl_test.Size = new System.Drawing.Size(30, 13);
             this.lbl_test.TabIndex = 21;
@@ -256,7 +276,7 @@ namespace Towerdefense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(328, 356);
             this.Controls.Add(this.lbl_test);
             this.Controls.Add(this.lbl_10);
             this.Controls.Add(this.lbl_9);
@@ -268,29 +288,30 @@ namespace Towerdefense
             this.Controls.Add(this.lbl_3);
             this.Controls.Add(this.lbl_2);
             this.Controls.Add(this.lbl_1);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbtower_8);
+            this.Controls.Add(this.pbtower_7);
+            this.Controls.Add(this.pbtower4);
+            this.Controls.Add(this.pbtower_3);
+            this.Controls.Add(this.pbtower_10);
+            this.Controls.Add(this.pbtower_9);
+            this.Controls.Add(this.pbtower_6);
+            this.Controls.Add(this.pbtower_5);
+            this.Controls.Add(this.pbtower2);
+            this.Controls.Add(this.pbtower_1);
             this.Name = "towerselect";
             this.Text = "towerselect";
             this.Load += new System.EventHandler(this.towerselect_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.Click += new System.EventHandler(this.towerselect_Click);
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,16 +319,15 @@ namespace Towerdefense
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pbtower_1;
+        private System.Windows.Forms.PictureBox pbtower2;
+        private System.Windows.Forms.PictureBox pbtower_5;
+        private System.Windows.Forms.PictureBox pbtower_10;
+        private System.Windows.Forms.PictureBox pbtower_9;
+        private System.Windows.Forms.PictureBox pbtower_8;
+        private System.Windows.Forms.PictureBox pbtower_7;
+        private System.Windows.Forms.PictureBox pbtower4;
+        private System.Windows.Forms.PictureBox pbtower_3;
         private System.Windows.Forms.Label lbl_1;
         private System.Windows.Forms.Label lbl_2;
         private System.Windows.Forms.Label lbl_3;
@@ -319,5 +339,6 @@ namespace Towerdefense
         private System.Windows.Forms.Label lbl_10;
         private System.Windows.Forms.Label lbl_9;
         private System.Windows.Forms.Label lbl_test;
+        private System.Windows.Forms.PictureBox pbtower_6;
     }
 }

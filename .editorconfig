@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0252: Möglicher unbeabsichtigter Referenzvergleich; linke Seite muss umgewandelt werden.
+dotnet_diagnostic.CS0252.severity = silent
