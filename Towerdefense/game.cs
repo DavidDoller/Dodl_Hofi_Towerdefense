@@ -83,35 +83,187 @@ namespace Towerdefense
                 }
                 if (towerselect.changetowernumber == 3)
                 {
-                    pb_tower1.BackColor = Color.Red;
-                }
+                    if (currentnumber == 1)
+                    {
+                        pb_tower1.BackColor = Color.Red;
+                    }
+                    else if (currentnumber == 2)
+                    {
+                        pb_tower2.BackColor = Color.Red;
+                    }
+                    else if (currentnumber == 3)
+                    {
+                        pb_tower3.BackColor = Color.Red;
+                    }
+                    else if (currentnumber == 4)
+                    {
+                        pb_tower4.BackColor = Color.Red;
+                    }
+                    else if (currentnumber == 5)
+                    {
+                        pb_tower5.BackColor = Color.Red;
+                    }
+                }             
                 if (towerselect.changetowernumber == 4)
                 {
-                    pb_tower1.BackColor = Color.Yellow;
+                    if (currentnumber == 1)
+                    {
+                        pb_tower1.BackColor = Color.Yellow;
+                    }
+                    else if (currentnumber == 2)
+                    {
+                        pb_tower2.BackColor = Color.Yellow;
+                    }
+                    else if (currentnumber == 3)
+                    {
+                        pb_tower3.BackColor = Color.Yellow;
+                    }
+                    else if (currentnumber == 4)
+                    {
+                        pb_tower4.BackColor = Color.Yellow;
+                    }
+                    else if (currentnumber == 5)
+                    {
+                        pb_tower5.BackColor = Color.Yellow;
+                    }
                 }
                 if (towerselect.changetowernumber == 5)
                 {
-                    pb_tower1.BackColor = Color.Orange;
+                    if (currentnumber == 1)
+                    {
+                        pb_tower1.BackColor = Color.Orange;
+                    }
+                    else if (currentnumber == 2)
+                    {
+                        pb_tower2.BackColor = Color.Orange;
+                    }
+                    else if (currentnumber == 3)
+                    {
+                        pb_tower3.BackColor = Color.Orange;
+                    }
+                    else if (currentnumber == 4)
+                    {
+                        pb_tower4.BackColor = Color.Orange;
+                    }
+                    else if (currentnumber == 5)
+                    {
+                        pb_tower5.BackColor = Color.Orange;
+                    }
                 }
                 if (towerselect.changetowernumber == 6)
                 {
-                    pb_tower1.BackColor = Color.Purple;
+                    if (currentnumber == 1)
+                    {
+                        pb_tower1.BackColor = Color.Purple;
+                    }
+                    else if (currentnumber == 2)
+                    {
+                        pb_tower2.BackColor = Color.Purple;
+                    }
+                    else if (currentnumber == 3)
+                    {
+                        pb_tower3.BackColor = Color.Purple;
+                    }
+                    else if (currentnumber == 4)
+                    {
+                        pb_tower4.BackColor = Color.Purple;
+                    }
+                    else if (currentnumber == 5)
+                    {
+                        pb_tower5.BackColor = Color.Purple;
+                    }
                 }
                 if (towerselect.changetowernumber == 7)
                 {
-                    pb_tower1.BackColor = Color.Pink;
+                    if (currentnumber == 1)
+                    {
+                        pb_tower1.BackColor = Color.Pink;
+                    }
+                    else if (currentnumber == 2)
+                    {
+                        pb_tower2.BackColor = Color.Pink;
+                    }
+                    else if (currentnumber == 3)
+                    {
+                        pb_tower3.BackColor = Color.Pink;
+                    }
+                    else if (currentnumber == 4)
+                    {
+                        pb_tower4.BackColor = Color.Pink;
+                    }
+                    else if (currentnumber == 5)
+                    {
+                        pb_tower5.BackColor = Color.Pink;
+                    }
                 }
                 if (towerselect.changetowernumber == 8)
                 {
-                    pb_tower1.BackColor = Color.LightGray;
+                    if (currentnumber == 1)
+                    {
+                        pb_tower1.BackColor = Color.LightGray;
+                    }
+                    else if (currentnumber == 2)
+                    {
+                        pb_tower2.BackColor = Color.LightGray;
+                    }
+                    else if (currentnumber == 3)
+                    {
+                        pb_tower3.BackColor = Color.LightGray;
+                    }
+                    else if (currentnumber == 4)
+                    {
+                        pb_tower4.BackColor = Color.LightGray;
+                    }
+                    else if (currentnumber == 5)
+                    {
+                        pb_tower5.BackColor = Color.LightGray;
+                    }
                 }
                 if (towerselect.changetowernumber == 9)
                 {
-                    pb_tower1.BackColor = Color.Magenta;
+                    if (currentnumber == 1)
+                    {
+                        pb_tower1.BackColor = Color.Magenta ;
+                    }
+                    else if (currentnumber == 2)
+                    {
+                        pb_tower2.BackColor = Color.Magenta;
+                    }
+                    else if (currentnumber == 3)
+                    {
+                        pb_tower3.BackColor = Color.Magenta;
+                    }
+                    else if (currentnumber == 4)
+                    {
+                        pb_tower4.BackColor = Color.Magenta;
+                    }
+                    else if (currentnumber == 5)
+                    {
+                        pb_tower5.BackColor = Color.Magenta;
+                    }
                 }
                 if (towerselect.changetowernumber == 10)
                 {
-                    pb_tower1.BackColor = Color.Gold;
+                    if (currentnumber == 1)
+                    {
+                        pb_tower1.BackColor = Color.Gold;
+                    }
+                    else if (currentnumber == 2)
+                    {
+                        pb_tower2.BackColor = Color.Gold;
+                    }
+                    else if (currentnumber == 3)
+                    {
+                        pb_tower3.BackColor = Color.Gold;
+                    }
+                    else if (currentnumber == 4)
+                    {
+                        pb_tower4.BackColor = Color.Gold;
+                    }
+                    else if (currentnumber == 5)
+                    {
+                        pb_tower5.BackColor = Color.Gold;
+                    }
                 }
             }
             #region iftest
