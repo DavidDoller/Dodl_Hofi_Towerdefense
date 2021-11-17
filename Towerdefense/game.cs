@@ -30,8 +30,8 @@ namespace Towerdefense
             changetowerint.Text = Convert.ToString(towerselect.changetowernumber);
             lbl_currentnumber.Text = Convert.ToString(towerselect.currentnumber);
 
-       
-       
+
+            #region iftest
 
             if (towerselect.temp == currentnumber)
             {
@@ -114,52 +114,8 @@ namespace Towerdefense
                     pb_tower1.BackColor = Color.Gold;
                 }
             }
-            #region iftest
-            /*
-            else if (towerselect.temp == 2) 
-            {
-                if (towerselect.changetowernumber == 1)
-                {
-                    pb_tower2.BackColor = Color.Green;
-                }
-                if (towerselect.changetowernumber == 2)
-                {
-                    pb_tower2.BackColor = Color.Blue;
-                }
-                if (towerselect.changetowernumber == 3)
-                {
-                    pb_tower2.BackColor = Color.Red;
-                }
-                if (towerselect.changetowernumber == 4)
-                {
-                    pb_tower2.BackColor = Color.Yellow;
-                }
-                if (towerselect.changetowernumber == 5)
-                {
-                    pb_tower2.BackColor = Color.Orange;
-                }
-                if (towerselect.changetowernumber == 6)
-                {
-                    pb_tower2.BackColor = Color.Purple;
-                }
-                if (towerselect.changetowernumber == 7)
-                {
-                    pb_tower2.BackColor = Color.Pink;
-                }
-                if (towerselect.changetowernumber == 8)
-                {
-                    pb_tower2.BackColor = Color.LightGray;
-                }
-                if (towerselect.changetowernumber == 9)
-                {
-                    pb_tower2.BackColor = Color.Magenta;
-                }
-                if (towerselect.changetowernumber == 10)
-                {
-                    pb_tower2.BackColor = Color.Gold;
-                }
-            }
-            */
+            
+           
             #endregion
 
 
