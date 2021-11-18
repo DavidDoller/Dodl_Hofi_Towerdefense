@@ -30,7 +30,7 @@ namespace Towerdefense
             changetowerint.Text = Convert.ToString(towerselect.changetowernumber);
             lbl_currentnumber.Text = Convert.ToString(towerselect.currentnumber);
 
-
+            //testpush
             #region iftest
 
             if (towerselect.temp == currentnumber)
