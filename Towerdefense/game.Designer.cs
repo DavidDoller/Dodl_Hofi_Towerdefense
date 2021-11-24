@@ -29,6 +29,7 @@ namespace Towerdefense
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -59,6 +60,8 @@ namespace Towerdefense
             this.towerselectint = new System.Windows.Forms.Label();
             this.changetowerint = new System.Windows.Forms.Label();
             this.lbl_currentnumber = new System.Windows.Forms.Label();
+            this.playtimer = new System.Windows.Forms.Timer(this.components);
+            this.enemy_test = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower9)).BeginInit();
@@ -71,6 +74,7 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy_test)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -351,11 +355,27 @@ namespace Towerdefense
             this.lbl_currentnumber.Size = new System.Drawing.Size(0, 13);
             this.lbl_currentnumber.TabIndex = 27;
             // 
+            // playtimer
+            // 
+            this.playtimer.Enabled = true;
+            this.playtimer.Tick += new System.EventHandler(this.playtimer_Tick);
+            // 
+            // enemy_test
+            // 
+            this.enemy_test.BackColor = System.Drawing.Color.Red;
+            this.enemy_test.Location = new System.Drawing.Point(29, 394);
+            this.enemy_test.Name = "enemy_test";
+            this.enemy_test.Size = new System.Drawing.Size(32, 32);
+            this.enemy_test.TabIndex = 28;
+            this.enemy_test.TabStop = false;
+            this.enemy_test.Click += new System.EventHandler(this.enemy_test_Click);
+            // 
             // game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.enemy_test);
             this.Controls.Add(this.lbl_currentnumber);
             this.Controls.Add(this.changetowerint);
             this.Controls.Add(this.towerselectint);
@@ -400,6 +420,7 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.enemy_test)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,5 +458,7 @@ namespace Towerdefense
         private System.Windows.Forms.Label towerselectint;
         private System.Windows.Forms.Label changetowerint;
         private System.Windows.Forms.Label lbl_currentnumber;
+        private System.Windows.Forms.Timer playtimer;
+        private System.Windows.Forms.PictureBox enemy_test;
     }
 }
