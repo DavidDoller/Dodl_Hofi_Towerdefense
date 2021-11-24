@@ -15,8 +15,10 @@ namespace Towerdefense
 
         public static int currentnumber;
         public static int templocation;
-        public static Point temp = new Point(29, 268);
-        
+
+        public static bool boolmovementright = false;
+        public static bool boolmovmentstraight = false;
+        public static bool boolmovementdown = false;
         public game()
         {
             InitializeComponent();
@@ -29,6 +31,10 @@ namespace Towerdefense
 
         private void game_Load(object sender, EventArgs e)
         {
+            DoubleBuffered = true;
+            enemy_test.BringToFront();
+            
+            
             towerselectint.Text = Convert.ToString(towerselect.temp);
             changetowerint.Text = Convert.ToString(towerselect.changetowernumber);
             lbl_currentnumber.Text = Convert.ToString(towerselect.currentnumber);
@@ -36,8 +42,7 @@ namespace Towerdefense
             //testpush
             #region iftest
 
-            if (towerselect.temp == currentnumber)
-            {
+            
                 if (towerselect.changetowernumber == 1)
                 {
                     if (currentnumber == 1)
@@ -116,7 +121,7 @@ namespace Towerdefense
                 {
                     pb_tower1.BackColor = Color.Gold;
                 }
-            }
+            
             
            
             #endregion
@@ -227,22 +232,79 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
+            enemy_test.BringToFront();
 
 
-            if (enemy_test.Location.Equals(temp)) 
+            if (boolmovmentstraight == true) 
             {
-                enemy_test.Top += +5;
+                movmentstraight(enemy_test);
             }
-            else if(!enemy_test.Location.Equals(temp))
+            else if (boolmovementright == true) 
             {
-                enemy_test.Left += +5;
+                movmentright(enemy_test);
             }
-            
-            
+            else if (boolmovementdown == true)
+            {
+                movementdown(enemy_test);
+            }
 
+
+
+            if (enemy_test.Bounds.IntersectsWith(pl_spawn.Bounds)|| enemy_test.Bounds.IntersectsWith(pb_corner2.Bounds)) 
+            {
+                boolmovementdown = false;
+                boolmovementright = false;
+                boolmovmentstraight = true;
+            }
+            else if (enemy_test.Bounds.IntersectsWith(pb_corner1.Bounds)|| enemy_test.Bounds.IntersectsWith(pb_corner3.Bounds) || enemy_test.Bounds.IntersectsWith(pb_corner5.Bounds)) 
+            {
+                boolmovementdown = false;
+                boolmovmentstraight = false;
+                boolmovementright = true; 
+            }
+            else if (enemy_test.Bounds.IntersectsWith(pb_corner4.Bounds)) 
+            {
+                boolmovementdown = true;
+                boolmovmentstraight = false;
+                boolmovementright = false;
+            }
+
+            if (enemy_test.Bounds.IntersectsWith(pl_core.Bounds)) 
+            {
+                playtimer.Stop();
+                menu form = new menu();
+                form.Show();
+                this.Hide();
+                MessageBox.Show("Dead!");
+                
+            }
         }
 
         private void enemy_test_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public static void movmentright(PictureBox temp)
+        {
+            temp.Left += 5;
+        }
+        public static void movmentstraight(PictureBox temp) 
+        {
+            temp.Top += -5;
+        }
+
+        public static void movementdown(PictureBox temp)
+        {
+            temp.Top += 5;
+        }
+
+        private void pb_corner1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
         {
 
         }

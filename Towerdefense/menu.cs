@@ -23,5 +23,10 @@ namespace Towerdefense
             form.Show();
             this.Hide();
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
