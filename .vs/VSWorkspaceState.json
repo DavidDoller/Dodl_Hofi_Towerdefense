@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Towerdefense"
   ],
-  "SelectedNode": "\\Dodl_Hofi_Towerdefens.sln",
+  "SelectedNode": "\\Towerdefense\\game.cs",
   "PreviewInSolutionExplorer": false
 }

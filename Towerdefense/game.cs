@@ -14,6 +14,9 @@ namespace Towerdefense
     {
 
         public static int currentnumber;
+        public static int templocation;
+        public static Point temp = new Point(29, 268);
+        
         public game()
         {
             InitializeComponent();
@@ -220,6 +223,28 @@ namespace Towerdefense
         private void towerselectint_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void playtimer_Tick(object sender, EventArgs e)
+        {
+
+
+            if (enemy_test.Location.Equals(temp)) 
+            {
+                enemy_test.Top += +5;
+            }
+            else if(!enemy_test.Location.Equals(temp))
+            {
+                enemy_test.Left += +5;
+            }
+            
+            
+
+        }
+
+        private void enemy_test_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
