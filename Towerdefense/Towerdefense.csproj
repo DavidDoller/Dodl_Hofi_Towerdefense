@@ -75,6 +75,7 @@
     <Compile Include="sqlcon.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="tower.cs" />
     <Compile Include="towerselect.cs">
       <SubType>Form</SubType>
     </Compile>

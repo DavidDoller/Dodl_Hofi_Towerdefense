@@ -92,7 +92,7 @@ class sqlcon : login
     
     public static void changetower(int number) 
     {
-        towerselect.changetowernumber = number;
+        towerselect.changeTowerNumber = number;
         
     }
 
