@@ -14,7 +14,7 @@ namespace Towerdefense
     {
         public static int temp;
         public static int currentnumber = temp;
-        public static int changetowernumber;
+        public static int changeTowerNumber;
         public towerselect()
         {
             InitializeComponent();
@@ -37,92 +37,63 @@ namespace Towerdefense
 
         private void pbtower_1_Click(object sender, EventArgs e)
         {
-            changetowernumber = 1;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 1;
             this.Hide();
 
         }
 
         private void pbtower2_Click(object sender, EventArgs e)
         {
-            changetowernumber = 2;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 2;
             this.Hide();
         }
 
         private void pbtower_3_Click(object sender, EventArgs e)
         {
-            changetowernumber = 3;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 3;
             this.Hide();
         }
 
         private void pbtower4_Click(object sender, EventArgs e)
         {
-            changetowernumber = 4;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 4;
             this.Hide();
         }
 
         private void pbtower_5_Click(object sender, EventArgs e)
         {
-            changetowernumber = 5;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 5;
             this.Hide();
         }
 
         private void pbtower_6_Click(object sender, EventArgs e)
         {
-            changetowernumber = 6;
+            changeTowerNumber = 6;
 
-            game form = new game();
-            form.Show();
             this.Hide();
         }
 
         private void pbtower_7_Click(object sender, EventArgs e)
         {
-            changetowernumber = 7;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 7; 
             this.Hide();
         }
 
         private void pbtower_8_Click(object sender, EventArgs e)
         {
-            changetowernumber = 8;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 8; 
             this.Hide();
         }
 
         private void pbtower_9_Click(object sender, EventArgs e)
         {
-            changetowernumber = 9;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 9;
             this.Hide();
         }
 
         private void pbtower_10_Click(object sender, EventArgs e)
         {
-            changetowernumber = 10;
-
-            game form = new game();
-            form.Show();
+            changeTowerNumber = 10;
             this.Hide();
         }
     }

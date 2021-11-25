@@ -59,7 +59,6 @@ namespace Towerdefense
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
             this.towerselectint = new System.Windows.Forms.Label();
             this.changetowerint = new System.Windows.Forms.Label();
-            this.lbl_currentnumber = new System.Windows.Forms.Label();
             this.playtimer = new System.Windows.Forms.Timer(this.components);
             this.enemy_test = new System.Windows.Forms.PictureBox();
             this.pb_corner1 = new System.Windows.Forms.PictureBox();
@@ -67,6 +66,7 @@ namespace Towerdefense
             this.pb_corner3 = new System.Windows.Forms.PictureBox();
             this.pb_corner4 = new System.Windows.Forms.PictureBox();
             this.pb_corner5 = new System.Windows.Forms.PictureBox();
+            this.lbl_currentnumber = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower9)).BeginInit();
@@ -358,14 +358,6 @@ namespace Towerdefense
             this.changetowerint.TabIndex = 26;
             this.changetowerint.Text = "label1";
             // 
-            // lbl_currentnumber
-            // 
-            this.lbl_currentnumber.AutoSize = true;
-            this.lbl_currentnumber.Location = new System.Drawing.Point(508, 13);
-            this.lbl_currentnumber.Name = "lbl_currentnumber";
-            this.lbl_currentnumber.Size = new System.Drawing.Size(0, 13);
-            this.lbl_currentnumber.TabIndex = 27;
-            // 
             // playtimer
             // 
             this.playtimer.Enabled = true;
@@ -429,6 +421,14 @@ namespace Towerdefense
             this.pb_corner5.TabIndex = 33;
             this.pb_corner5.TabStop = false;
             this.pb_corner5.Tag = "right";
+            // 
+            // lbl_currentnumber
+            // 
+            this.lbl_currentnumber.AutoSize = true;
+            this.lbl_currentnumber.Location = new System.Drawing.Point(508, 13);
+            this.lbl_currentnumber.Name = "lbl_currentnumber";
+            this.lbl_currentnumber.Size = new System.Drawing.Size(0, 13);
+            this.lbl_currentnumber.TabIndex = 27;
             // 
             // game
             // 
@@ -528,7 +528,6 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_tower9;
         private System.Windows.Forms.Label towerselectint;
         private System.Windows.Forms.Label changetowerint;
-        private System.Windows.Forms.Label lbl_currentnumber;
         private System.Windows.Forms.Timer playtimer;
         private System.Windows.Forms.PictureBox enemy_test;
         private System.Windows.Forms.PictureBox pb_corner1;
@@ -536,5 +535,6 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_corner3;
         private System.Windows.Forms.PictureBox pb_corner4;
         private System.Windows.Forms.PictureBox pb_corner5;
+        private System.Windows.Forms.Label lbl_currentnumber;
     }
 }

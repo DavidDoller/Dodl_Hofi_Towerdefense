@@ -14,11 +14,11 @@ namespace Towerdefense
     {
 
         public static int currentnumber;
-        public static int templocation;
 
         public static bool boolmovementright = false;
         public static bool boolmovmentstraight = false;
         public static bool boolmovementdown = false;
+
         public game()
         {
             InitializeComponent();
@@ -31,104 +31,26 @@ namespace Towerdefense
 
         private void game_Load(object sender, EventArgs e)
         {
+            boolmovementright = false;
+            boolmovmentstraight = false;
+            boolmovementdown = false;
+            
+
+
             DoubleBuffered = true;
             enemy_test.BringToFront();
             
             
-            towerselectint.Text = Convert.ToString(towerselect.temp);
-            changetowerint.Text = Convert.ToString(towerselect.changetowernumber);
+            changetowerint.Text = Convert.ToString(towerselect.changeTowerNumber);
             lbl_currentnumber.Text = Convert.ToString(towerselect.currentnumber);
 
             //testpush
-            #region iftest
-
-            
-                if (towerselect.changetowernumber == 1)
-                {
-                    if (currentnumber == 1)
-                    {
-                        pb_tower1.BackColor = Color.Green;
-                    }
-                    else if (currentnumber == 2)
-                    {
-                        pb_tower2.BackColor = Color.Green;
-                    }
-                    else if (currentnumber == 3)
-                    {
-                        pb_tower1.BackColor = Color.Green;
-                    }
-                    else if (currentnumber == 4)
-                    {
-                        pb_tower2.BackColor = Color.Green;
-                    }
-                    else if (currentnumber == 5)
-                    {
-                        pb_tower2.BackColor = Color.Green;
-                    }
-                }
-                if (towerselect.changetowernumber == 2)
-                {
-                        if (currentnumber == 1)
-                        {
-                            pb_tower1.BackColor = Color.Blue;
-                        }
-                        else if (currentnumber == 2)
-                        {
-                            pb_tower2.BackColor = Color.Blue;
-                        }
-                        else if (currentnumber == 3)
-                        {
-                            pb_tower3.BackColor = Color.Blue;
-                        }
-                        else if (currentnumber == 4)
-                        {
-                            pb_tower4.BackColor = Color.Blue;
-                        }
-                        else if (currentnumber == 5)
-                        {
-                            pb_tower5.BackColor = Color.Blue;
-                        }
-                }
-                if (towerselect.changetowernumber == 3)
-                {
-                    pb_tower1.BackColor = Color.Red;
-                }
-                if (towerselect.changetowernumber == 4)
-                {
-                    pb_tower1.BackColor = Color.Yellow;
-                }
-                if (towerselect.changetowernumber == 5)
-                {
-                    pb_tower1.BackColor = Color.Orange;
-                }
-                if (towerselect.changetowernumber == 6)
-                {
-                    pb_tower1.BackColor = Color.Purple;
-                }
-                if (towerselect.changetowernumber == 7)
-                {
-                    pb_tower1.BackColor = Color.Pink;
-                }
-                if (towerselect.changetowernumber == 8)
-                {
-                    pb_tower1.BackColor = Color.LightGray;
-                }
-                if (towerselect.changetowernumber == 9)
-                {
-                    pb_tower1.BackColor = Color.Magenta;
-                }
-                if (towerselect.changetowernumber == 10)
-                {
-                    pb_tower1.BackColor = Color.Gold;
-                }
-            
-            
            
-            #endregion
 
 
 
         }
+
 
         private void pb_tower1_Click(object sender, EventArgs e)
         {
@@ -137,10 +59,7 @@ namespace Towerdefense
 
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
-
             
-
         }
 
         private void pb_tower2_Click(object sender, EventArgs e)
@@ -150,79 +69,70 @@ namespace Towerdefense
 
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void pb_tower3_Click(object sender, EventArgs e)
         {
             sqlcon.selecttowerplace(3);
-
+            currentnumber = 3;
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void pb_tower4_Click(object sender, EventArgs e)
         {
             sqlcon.selecttowerplace(4);
-
+            currentnumber = 4;
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void pb_tower5_Click(object sender, EventArgs e)
         {
             sqlcon.selecttowerplace(5);
-
+            currentnumber = 5;
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void pb_tower6_Click(object sender, EventArgs e)
         {
             sqlcon.selecttowerplace(6);
-
+            currentnumber = 6;
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void pb_tower7_Click(object sender, EventArgs e)
         {
             sqlcon.selecttowerplace(7);
-
+            currentnumber = 7;
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void pb_tower8_Click(object sender, EventArgs e)
         {
             sqlcon.selecttowerplace(8);
-
+            currentnumber = 8;
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void pb_tower9_Click(object sender, EventArgs e)
         {
             sqlcon.selecttowerplace(9);
-
+            currentnumber = 9;
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void pb_tower10_Click(object sender, EventArgs e)
         {
             sqlcon.selecttowerplace(10);
-
+            currentnumber = 10;
             towerselect form = new towerselect();
             form.Show();
-            this.Hide();
         }
 
         private void towerselectint_Click(object sender, EventArgs e)
@@ -278,6 +188,88 @@ namespace Towerdefense
                 MessageBox.Show("Dead!");
                 
             }
+
+            #region iftest
+            if (towerselect.changeTowerNumber == 1)
+            {
+                if (currentnumber == 1)
+                {
+                    pb_tower1.BackColor = Color.Green;
+                }
+                else if (currentnumber == 2)
+                {
+                    pb_tower2.BackColor = Color.Green;
+                }
+                else if (currentnumber == 3)
+                {
+                    pb_tower3.BackColor = Color.Green;
+                }
+                else if (currentnumber == 4)
+                {
+                    pb_tower4.BackColor = Color.Green;
+                }
+                else if (currentnumber == 5)
+                {
+                    pb_tower5.BackColor = Color.Green;
+                }
+            }
+            if (towerselect.changeTowerNumber == 2)
+            {
+                if (currentnumber == 1)
+                {
+                    pb_tower1.BackColor = Color.Blue;
+                }
+                else if (currentnumber == 2)
+                {
+                    pb_tower2.BackColor = Color.Blue;
+                }
+                else if (currentnumber == 3)
+                {
+                    pb_tower3.BackColor = Color.Blue;
+                }
+                else if (currentnumber == 4)
+                {
+                    pb_tower4.BackColor = Color.Blue;
+                }
+                else if (currentnumber == 5)
+                {
+                    pb_tower5.BackColor = Color.Blue;
+                }
+            }
+            if (towerselect.changeTowerNumber == 3)
+            {
+
+            }
+            if (towerselect.changeTowerNumber == 4)
+            {
+
+            }
+            if (towerselect.changeTowerNumber == 5)
+            {
+
+            }
+            if (towerselect.changeTowerNumber == 6)
+            {
+
+            }
+            if (towerselect.changeTowerNumber == 7)
+            {
+
+            }
+            if (towerselect.changeTowerNumber == 8)
+            {
+
+            }
+            if (towerselect.changeTowerNumber == 9)
+            {
+
+            }
+            if (towerselect.changeTowerNumber == 10)
+            {
+
+            }
+            #endregion
+
         }
 
         private void enemy_test_Click(object sender, EventArgs e)
