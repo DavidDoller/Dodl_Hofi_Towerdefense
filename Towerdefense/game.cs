@@ -22,6 +22,10 @@ namespace Towerdefense
         public static bool boolmovementdown = false;
         public static string check;
 
+        
+
+        List<PictureBox> pics = new List<PictureBox>();
+ 
         public game()
         {
             InitializeComponent();
@@ -131,10 +135,10 @@ namespace Towerdefense
 
         }
 
+
+
         private void playtimer_Tick(object sender, EventArgs e)
         {
-            lbl_direction.Text = "directeion: " + check;
-
             foreach(Control x in this.Controls)
             {
                 if(x is PictureBox && (string)x.Tag == "enemy") 
@@ -166,8 +170,6 @@ namespace Towerdefense
                             boolmovementdown = false;
                             boolmovmentstraight = false;
                             boolmovementright = true;
-                            check = "right";
-
                         }
                     }
                     else if (x is PictureBox && (string)x.Tag == "straight" && y is PictureBox && (string)y.Tag == "enemy")
@@ -177,7 +179,7 @@ namespace Towerdefense
                             boolmovementdown = false;
                             boolmovementright = false;
                             boolmovmentstraight = true;
-                            check = "straight";
+                            
                         }
                     }
                    else if (x is PictureBox && (string)x.Tag == "down" && y is PictureBox && (string)y.Tag == "enemy")
@@ -187,7 +189,7 @@ namespace Towerdefense
                             boolmovementdown = true;
                             boolmovmentstraight = false;
                             boolmovementright = false;
-                            check = "down";
+                       
                         }
                     }
                     else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag == "enemy")
@@ -475,7 +477,7 @@ namespace Towerdefense
 
         private void enemyspawning_Tick(object sender, EventArgs e)
         {
-            PictureBox temp = enemy.Createenemy();          
+            enemy.Createenemy();
         }
     }
 }

@@ -37,16 +37,16 @@ namespace Towerdefense
 
         public static PictureBox Createenemy()
         {
-            
-            PictureBox pb = new PictureBox();
-            pb.Tag = "enemy";
+            PictureBox pb = new PictureBox();         
             pb.Size = new Size(32, 32);
             pb.Location = new Point(30, 419);
             pb.BackColor = Color.Red;
+            pb.Tag = "enemy";
             game.ActiveForm.Controls.Add(pb);
             return pb;
         }
-
-
     }
+
+
 }
+
