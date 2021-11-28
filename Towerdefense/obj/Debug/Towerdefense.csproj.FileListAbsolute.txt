@@ -26,3 +26,17 @@ C:\Users\david.mader\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefens
 C:\Users\david.mader\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.CoreCompileInputs.cache
 C:\Users\david.mader\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.exe
 C:\Users\david.mader\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.pdb
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.exe.config
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.exe
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.pdb
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.AssemblyReference.cache
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.Form2.resources
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.game.resources
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.login.resources
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.menu.resources
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.Properties.Resources.resources
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.towerselect.resources
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.GenerateResource.cache
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.CoreCompileInputs.cache
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.exe
+C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.pdb
