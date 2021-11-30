@@ -252,7 +252,7 @@ namespace Towerdefense
             // pb_corner5
             // 
             this.pb_corner5.BackColor = System.Drawing.Color.White;
-            this.pb_corner5.Location = new System.Drawing.Point(650, 317);
+            this.pb_corner5.Location = new System.Drawing.Point(650, 318);
             this.pb_corner5.Name = "pb_corner5";
             this.pb_corner5.Size = new System.Drawing.Size(31, 5);
             this.pb_corner5.TabIndex = 33;
@@ -272,7 +272,7 @@ namespace Towerdefense
             // pb_corner3
             // 
             this.pb_corner3.BackColor = System.Drawing.Color.White;
-            this.pb_corner3.Location = new System.Drawing.Point(368, 72);
+            this.pb_corner3.Location = new System.Drawing.Point(368, 74);
             this.pb_corner3.Name = "pb_corner3";
             this.pb_corner3.Size = new System.Drawing.Size(31, 5);
             this.pb_corner3.TabIndex = 31;

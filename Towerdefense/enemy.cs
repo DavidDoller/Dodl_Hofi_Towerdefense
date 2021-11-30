@@ -42,6 +42,7 @@ namespace Towerdefense
             pb.Location = new Point(30, 419);
             pb.BackColor = Color.Red;
             pb.Tag = "enemy";
+            pb.BringToFront();
             game.ActiveForm.Controls.Add(pb);
             return pb;
         }

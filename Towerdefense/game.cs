@@ -17,15 +17,12 @@ namespace Towerdefense
         
         public static int currentnumber;
 
-        public static bool boolmovementright = false;
-        public static bool boolmovmentstraight = false;
-        public static bool boolmovementdown = false;
         public static string check;
 
-        
+        List<PictureBox> moveright = new List<PictureBox>();
+        List<PictureBox> movestraight = new List<PictureBox>();
+        List<PictureBox> movedown = new List<PictureBox>();
 
-        List<PictureBox> pics = new List<PictureBox>();
- 
         public game()
         {
             InitializeComponent();
@@ -38,11 +35,11 @@ namespace Towerdefense
         
         private void game_Load(object sender, EventArgs e)
         {
-            
-            boolmovementright = false;
-            boolmovmentstraight = false;
-            boolmovementdown = false;
-
+            pb_corner1.Visible = false;
+            pb_corner2.Visible = false;
+            pb_corner3.Visible = false;
+            pb_corner4.Visible = false;
+            pb_corner5.Visible = false;
             DoubleBuffered = true;
         }
 
@@ -143,15 +140,15 @@ namespace Towerdefense
             {
                 if(x is PictureBox && (string)x.Tag == "enemy") 
                 {
-                    if (boolmovmentstraight == true)
+                    if (movestraight.Contains(x))
                     {
                         movmentstraight((PictureBox)x);
                     }
-                    else if (boolmovementright == true)
+                    if (moveright.Contains(x))
                     {
                         movmentright((PictureBox)x);
                     }
-                    else if (boolmovementdown == true)
+                    if (movedown.Contains(x))
                     {
                         movementdown((PictureBox)x);
                     }
@@ -167,29 +164,36 @@ namespace Towerdefense
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
-                            boolmovementdown = false;
-                            boolmovmentstraight = false;
-                            boolmovementright = true;
+                            movestraight.Remove((PictureBox)y);
+                            movedown.Remove((PictureBox)y);
+                            if (!moveright.Contains((PictureBox)y))
+                            {
+                                moveright.Add((PictureBox)y);
+                            }
                         }
                     }
                     else if (x is PictureBox && (string)x.Tag == "straight" && y is PictureBox && (string)y.Tag == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
-                            boolmovementdown = false;
-                            boolmovementright = false;
-                            boolmovmentstraight = true;
-                            
-                        }
+                            moveright.Remove((PictureBox)y);
+                            movedown.Remove((PictureBox)y);
+                            if (!movestraight.Contains((PictureBox)y))
+                            {
+                                movestraight.Add((PictureBox)y);
+                            }                        }
                     }
                    else if (x is PictureBox && (string)x.Tag == "down" && y is PictureBox && (string)y.Tag == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
-                            boolmovementdown = true;
-                            boolmovmentstraight = false;
-                            boolmovementright = false;
-                       
+                            
+                            moveright.Remove((PictureBox)y);   
+                            movestraight.Remove((PictureBox)y);
+                            if (!movedown.Contains((PictureBox)y))
+                            {
+                                movedown.Add((PictureBox)y);
+                            }
                         }
                     }
                     else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag == "enemy")
@@ -197,6 +201,7 @@ namespace Towerdefense
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
                             playtimer.Stop();
+                            enemyspawning.Stop();
                             menu form = new menu();
                             form.Show();
                             this.Hide();
@@ -449,7 +454,6 @@ namespace Towerdefense
         {
             temp.Top += 5;
         }
-
         private void pb_corner1_Click(object sender, EventArgs e)
         {
 
@@ -478,6 +482,7 @@ namespace Towerdefense
         private void enemyspawning_Tick(object sender, EventArgs e)
         {
             enemy.Createenemy();
+
         }
     }
 }
