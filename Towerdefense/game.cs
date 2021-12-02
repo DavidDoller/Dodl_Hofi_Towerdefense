@@ -19,9 +19,9 @@ namespace Towerdefense
 
         public static string check;
 
-        List<PictureBox> moveright = new List<PictureBox>();
-        List<PictureBox> movestraight = new List<PictureBox>();
-        List<PictureBox> movedown = new List<PictureBox>();
+        //List<PictureBox> moveright = new List<PictureBox>();
+        //List<PictureBox> movestraight = new List<PictureBox>();
+        //List<PictureBox> movedown = new List<PictureBox>();
 
         public game()
         {
@@ -136,80 +136,10 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
-            foreach(Control x in this.Controls)
-            {
-                if(x is PictureBox && (string)x.Tag == "enemy") 
-                {
-                    if (movestraight.Contains(x))
-                    {
-                        movmentstraight((PictureBox)x);
-                    }
-                    if (moveright.Contains(x))
-                    {
-                        movmentright((PictureBox)x);
-                    }
-                    if (movedown.Contains(x))
-                    {
-                        movementdown((PictureBox)x);
-                    }
-                }
-            }
-            
 
-            foreach (Control x in this.Controls)
-            {
-                foreach (Control y in this.Controls)
-                {
-                    if (x is PictureBox && (string)x.Tag == "right" && y is PictureBox && (string)y.Tag == "enemy")
-                    {
-                        if (y.Bounds.IntersectsWith(x.Bounds))
-                        {
-                            movestraight.Remove((PictureBox)y);
-                            movedown.Remove((PictureBox)y);
-                            if (!moveright.Contains((PictureBox)y))
-                            {
-                                moveright.Add((PictureBox)y);
-                            }
-                        }
-                    }
-                    else if (x is PictureBox && (string)x.Tag == "straight" && y is PictureBox && (string)y.Tag == "enemy")
-                    {
-                        if (y.Bounds.IntersectsWith(x.Bounds))
-                        {
-                            moveright.Remove((PictureBox)y);
-                            movedown.Remove((PictureBox)y);
-                            if (!movestraight.Contains((PictureBox)y))
-                            {
-                                movestraight.Add((PictureBox)y);
-                            }                        }
-                    }
-                   else if (x is PictureBox && (string)x.Tag == "down" && y is PictureBox && (string)y.Tag == "enemy")
-                    {
-                        if (y.Bounds.IntersectsWith(x.Bounds))
-                        {
-                            
-                            moveright.Remove((PictureBox)y);   
-                            movestraight.Remove((PictureBox)y);
-                            if (!movedown.Contains((PictureBox)y))
-                            {
-                                movedown.Add((PictureBox)y);
-                            }
-                        }
-                    }
-                    else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag == "enemy")
-                    {
-                        if (y.Bounds.IntersectsWith(x.Bounds))
-                        {
-                            playtimer.Stop();
-                            enemyspawning.Stop();
-                            menu form = new menu();
-                            form.Show();
-                            this.Hide();
-                            MessageBox.Show("Dead!");
-                        }
-                    }
-                }
-            }
+            movement.moveenemys();
+            movement.checkdirection(playtimer, enemyspawning);
+           
 
             #region iftest
             if (towerselect.changeTowerNumber == 1)
