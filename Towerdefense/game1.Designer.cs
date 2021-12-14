@@ -1,7 +1,7 @@
 ﻿
 namespace Towerdefense
 {
-    partial class game
+    partial class game1
     {
         /// <summary>
         /// Required designer variable.
@@ -67,6 +67,7 @@ namespace Towerdefense
             this.pb_spawn = new System.Windows.Forms.PictureBox();
             this.pb_core = new System.Windows.Forms.PictureBox();
             this.enemyspawning = new System.Windows.Forms.Timer(this.components);
+            this.lbl_test = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner5)).BeginInit();
@@ -436,12 +437,22 @@ namespace Towerdefense
             this.enemyspawning.Interval = 2000;
             this.enemyspawning.Tick += new System.EventHandler(this.enemyspawning_Tick);
             // 
-            // game
+            // lbl_test
+            // 
+            this.lbl_test.AutoSize = true;
+            this.lbl_test.Location = new System.Drawing.Point(106, 128);
+            this.lbl_test.Name = "lbl_test";
+            this.lbl_test.Size = new System.Drawing.Size(0, 13);
+            this.lbl_test.TabIndex = 39;
+            this.lbl_test.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_test_Paint);
+            // 
+            // game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_test);
             this.Controls.Add(this.pb_core);
             this.Controls.Add(this.pb_spawn);
             this.Controls.Add(this.lbl_direction);
@@ -475,7 +486,7 @@ namespace Towerdefense
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "game";
+            this.Name = "game1";
             this.Tag = "";
             this.Text = "game";
             this.Load += new System.EventHandler(this.game_Load);
@@ -542,5 +553,6 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_spawn;
         private System.Windows.Forms.PictureBox pb_core;
         private System.Windows.Forms.Timer enemyspawning;
+        private System.Windows.Forms.Label lbl_test;
     }
 }

@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace Towerdefense
 {
-    public partial class game : Form
+    public partial class game1 : Form
     {
 
         
@@ -23,7 +23,7 @@ namespace Towerdefense
         //List<PictureBox> movestraight = new List<PictureBox>();
         //List<PictureBox> movedown = new List<PictureBox>();
 
-        public game()
+        public game1()
         {
             InitializeComponent();
         }
@@ -41,6 +41,10 @@ namespace Towerdefense
             pb_corner4.Visible = false;
             pb_corner5.Visible = false;
             DoubleBuffered = true;
+
+            
+
+
         }
 
 
@@ -136,6 +140,7 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
+            
 
             movement.moveenemys();
             movement.checkdirection(playtimer, enemyspawning);
@@ -411,8 +416,13 @@ namespace Towerdefense
 
         private void enemyspawning_Tick(object sender, EventArgs e)
         {
-            enemy.Createenemy();
+            enemy.Createenemy(30,419);
 
+        }
+
+        private void lbl_test_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }

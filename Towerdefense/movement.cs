@@ -30,9 +30,9 @@ namespace Towerdefense
         public static void checkdirection(Timer playtimer, Timer enemyspawning)
         {
 
-            foreach (Control x in game.ActiveForm.Controls)
+            foreach (Control x in game1.ActiveForm.Controls)
             {
-                foreach (Control y in game.ActiveForm.Controls)
+                foreach (Control y in game1.ActiveForm.Controls)
                 {
                     if (x is PictureBox && (string)x.Tag == "right" && y is PictureBox && (string)y.Tag == "enemy")
                     {
@@ -79,7 +79,7 @@ namespace Towerdefense
                             enemyspawning.Stop();
                             menu form = new menu();
                             form.Show();
-                            game.ActiveForm.Hide();
+                            game1.ActiveForm.Hide();
                             MessageBox.Show("Dead!");
                         }
                     }
@@ -91,7 +91,7 @@ namespace Towerdefense
 
         public static void moveenemys() 
         {
-            foreach (Control x in game.ActiveForm.Controls)
+            foreach (Control x in game1.ActiveForm.Controls)
             {
                 if (x is PictureBox && (string)x.Tag == "enemy")
                 {
