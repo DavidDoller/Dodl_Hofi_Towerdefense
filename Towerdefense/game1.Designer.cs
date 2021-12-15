@@ -63,11 +63,12 @@ namespace Towerdefense
             this.pb_tower5 = new System.Windows.Forms.PictureBox();
             this.pb_tower4 = new System.Windows.Forms.PictureBox();
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
-            this.lbl_direction = new System.Windows.Forms.Label();
+            this.lbl_temp = new System.Windows.Forms.Label();
             this.pb_spawn = new System.Windows.Forms.PictureBox();
             this.pb_core = new System.Windows.Forms.PictureBox();
             this.enemyspawning = new System.Windows.Forms.Timer(this.components);
             this.lbl_test = new System.Windows.Forms.Label();
+            this.bullet_speed = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner5)).BeginInit();
@@ -401,15 +402,14 @@ namespace Towerdefense
             this.pb_tower1.TabStop = false;
             this.pb_tower1.Click += new System.EventHandler(this.pb_tower1_Click);
             // 
-            // lbl_direction
+            // lbl_temp
             // 
-            this.lbl_direction.AutoSize = true;
-            this.lbl_direction.Location = new System.Drawing.Point(12, 13);
-            this.lbl_direction.Name = "lbl_direction";
-            this.lbl_direction.Size = new System.Drawing.Size(35, 13);
-            this.lbl_direction.TabIndex = 36;
-            this.lbl_direction.Text = "label1";
-            this.lbl_direction.Click += new System.EventHandler(this.lbl_direction_Click);
+            this.lbl_temp.AutoSize = true;
+            this.lbl_temp.Location = new System.Drawing.Point(12, 13);
+            this.lbl_temp.Name = "lbl_temp";
+            this.lbl_temp.Size = new System.Drawing.Size(35, 13);
+            this.lbl_temp.TabIndex = 36;
+            this.lbl_temp.Text = "label1";
             // 
             // pb_spawn
             // 
@@ -434,7 +434,7 @@ namespace Towerdefense
             // enemyspawning
             // 
             this.enemyspawning.Enabled = true;
-            this.enemyspawning.Interval = 2000;
+            this.enemyspawning.Interval = 1000;
             this.enemyspawning.Tick += new System.EventHandler(this.enemyspawning_Tick);
             // 
             // lbl_test
@@ -446,6 +446,12 @@ namespace Towerdefense
             this.lbl_test.TabIndex = 39;
             this.lbl_test.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_test_Paint);
             // 
+            // bullet_speed
+            // 
+            this.bullet_speed.Enabled = true;
+            this.bullet_speed.Interval = 20;
+            this.bullet_speed.Tick += new System.EventHandler(this.bullet_speed_Tick);
+            // 
             // game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,7 +461,7 @@ namespace Towerdefense
             this.Controls.Add(this.lbl_test);
             this.Controls.Add(this.pb_core);
             this.Controls.Add(this.pb_spawn);
-            this.Controls.Add(this.lbl_direction);
+            this.Controls.Add(this.lbl_temp);
             this.Controls.Add(this.btn_pause);
             this.Controls.Add(this.btn_start);
             this.Controls.Add(this.pb_corner5);
@@ -490,6 +496,8 @@ namespace Towerdefense
             this.Tag = "";
             this.Text = "game";
             this.Load += new System.EventHandler(this.game_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.game1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.game1_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner5)).EndInit();
@@ -549,10 +557,11 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_corner5;
         private System.Windows.Forms.Button btn_start;
         private System.Windows.Forms.Button btn_pause;
-        private System.Windows.Forms.Label lbl_direction;
+        private System.Windows.Forms.Label lbl_temp;
         private System.Windows.Forms.PictureBox pb_spawn;
         private System.Windows.Forms.PictureBox pb_core;
         private System.Windows.Forms.Timer enemyspawning;
         private System.Windows.Forms.Label lbl_test;
+        private System.Windows.Forms.Timer bullet_speed;
     }
 }
