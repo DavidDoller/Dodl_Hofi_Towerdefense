@@ -71,6 +71,16 @@ namespace Towerdefense
                             }
                         }
                     }
+                    else if (x is Panel && (string)x.Tag == "bullet" && y is PictureBox &&(string)y.Tag == "enemy") 
+                    {
+                        if (y.Bounds.IntersectsWith(x.Bounds)) 
+                        {
+                            tower.panellist.Remove((Panel)x);
+                            x.Dispose();
+                            y.Dispose();
+                        }
+                        
+                    }
                     else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))

@@ -19,9 +19,6 @@ namespace Towerdefense
 
         public static string check;
 
-        //List<PictureBox> moveright = new List<PictureBox>();
-        //List<PictureBox> movestraight = new List<PictureBox>();
-        //List<PictureBox> movedown = new List<PictureBox>();
 
         public game1()
         {
@@ -140,7 +137,7 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
-            
+            lbl_temp.Text = "Count panel in list:" + tower.panellist.Count();
 
             movement.moveenemys();
             movement.checkdirection(playtimer, enemyspawning);
@@ -409,11 +406,6 @@ namespace Towerdefense
             playtimer.Stop();
         }
 
-        private void lbl_direction_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void enemyspawning_Tick(object sender, EventArgs e)
         {
             enemy.Createenemy(30,419);
@@ -423,6 +415,24 @@ namespace Towerdefense
         private void lbl_test_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void game1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void bullet_speed_Tick(object sender, EventArgs e)
+        {
+            tower.drawshooting();
+        }
+
+        private void game1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape) 
+            {
+                Application.Exit();
+            }
         }
     }
 }
