@@ -35,15 +35,15 @@ namespace Towerdefense
             return speed1;
         }
 
-        public static PictureBox Createenemy()
+        public static PictureBox Createenemy(int location1, int location2)
         {
             PictureBox pb = new PictureBox();         
             pb.Size = new Size(32, 32);
-            pb.Location = new Point(30, 419);
+            pb.Location = new Point(location1, location2);
             pb.BackColor = Color.Red;
             pb.Tag = "enemy";
             pb.BringToFront();
-            game.ActiveForm.Controls.Add(pb);
+            game1.ActiveForm.Controls.Add(pb);
             return pb;
         }
     }
