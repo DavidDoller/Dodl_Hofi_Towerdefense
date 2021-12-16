@@ -11,29 +11,57 @@ using System.Windows.Forms;
 namespace Towerdefense
 {
     class tower
-    {
-        public static Panel temp;
-        public static List<Panel> panellist = new List<Panel>();
+    { 
+        public static List<Panel> panelmagetowershot = new List<Panel>();
+        public static List<Panel> panelarchertowershot = new List<Panel>();
 
-
-        public static void drawshooting() 
+        public static void magetower(int locationX,int locationY) 
         {
-            
+            Panel temp = new Panel();
 
-            if (!panellist.Contains(temp)) 
+            if (!panelmagetowershot.Contains(temp)) 
             {
-                temp = new Panel();
-                temp.Location = new Point(90, 325);
+                
+                temp.Location = new Point(locationX, locationY);
                 temp.BackColor = Color.Red;
-                temp.Height = 20;
+                temp.Height = 3;
                 temp.Width = 30;
-                panellist.Add(temp);
+                temp.Tag = "bulletmage";
+                panelmagetowershot.Add(temp);
                 game1.ActiveForm.Controls.Add(temp);
-            }         
-            temp.Tag = "bullet";
-            
+               
+            }
+            if (temp.Left < 0) 
+            {
+                panelmagetowershot.Remove(temp);
+                temp.Dispose();
 
+            }
+            temp.Left -= 75;
+        }
+
+        public static void archertower(int locationX, int locationY) 
+        {
+            Panel temp = new Panel();
+
+            if (!panelarchertowershot.Contains(temp))
+            {
+                temp.Location = new Point(locationX, locationY);
+                temp.BackColor = Color.Blue;
+                temp.Height = 3;
+                temp.Width = 30;
+                temp.Tag = "bulletarcher";
+                panelarchertowershot.Add(temp);
+                game1.ActiveForm.Controls.Add(temp);
+            }
+            if (temp.Left < 0)
+            {
+                panelarchertowershot.Remove(temp);
+                temp.Dispose();
+
+            }
             temp.Left -= 1;
+
         }
 
 

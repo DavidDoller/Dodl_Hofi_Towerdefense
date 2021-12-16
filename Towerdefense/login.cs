@@ -79,7 +79,7 @@ namespace Towerdefense
 
         private void btn_register_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            register form = new register();
             form.Show();
             this.Hide();
         }

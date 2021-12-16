@@ -12,6 +12,7 @@ namespace Towerdefense
         public static List<PictureBox> moveright = new List<PictureBox>();
         public static List<PictureBox> movestraight = new List<PictureBox>();
         public static List<PictureBox> movedown = new List<PictureBox>();
+        public static int health = 10;
 
         public static void movmentright(PictureBox temp)
         {
@@ -71,13 +72,20 @@ namespace Towerdefense
                             }
                         }
                     }
-                    else if (x is Panel && (string)x.Tag == "bullet" && y is PictureBox &&(string)y.Tag == "enemy") 
+                    else if (x is Panel && (string)x.Tag == "bulletmage" && y is PictureBox &&(string)y.Tag == "enemy" && y is PictureBox &&(string)y.Name == "Redloon") 
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds)) 
                         {
-                            tower.panellist.Remove((Panel)x);
+                            enemy.redloonhealth--;
+                            tower.panelmagetowershot.Remove((Panel)x);
                             x.Dispose();
-                            y.Dispose();
+                            if (enemy.redloonhealth == 0) 
+                            {
+                                tower.panelmagetowershot.Remove((Panel)x);
+                                x.Dispose();
+                                y.Dispose();
+                            }
+                            
                         }
                         
                     }
@@ -85,12 +93,18 @@ namespace Towerdefense
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
-                            playtimer.Stop();
-                            enemyspawning.Stop();
-                            menu form = new menu();
-                            form.Show();
-                            game1.ActiveForm.Hide();
-                            MessageBox.Show("Dead!");
+                            health--;
+                            y.Dispose();
+                            if (health == 0) 
+                            {
+                                playtimer.Stop();
+                                enemyspawning.Stop();
+                                menu form = new menu();
+                                form.Show();
+                                game1.ActiveForm.Hide();
+                                MessageBox.Show("Dead!");
+                            }
+                            
                         }
                     }
                 }

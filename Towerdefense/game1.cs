@@ -38,10 +38,6 @@ namespace Towerdefense
             pb_corner4.Visible = false;
             pb_corner5.Visible = false;
             DoubleBuffered = true;
-
-            
-
-
         }
 
 
@@ -137,7 +133,7 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
-            lbl_temp.Text = "Count panel in list:" + tower.panellist.Count();
+            lbl_temp.Text = "Health:" + movement.health;
 
             movement.moveenemys();
             movement.checkdirection(playtimer, enemyspawning);
@@ -148,7 +144,8 @@ namespace Towerdefense
             {
                 if (currentnumber == 1)
                 {
-                    pb_tower1.BackColor = Color.Green;
+                    pb_tower1.BackgroundImage = Properties.Resources.mageTower;
+                    pb_tower1.Tag = "magetower";
                 }
                 else if (currentnumber == 2)
                 {
@@ -191,7 +188,8 @@ namespace Towerdefense
             {
                 if (currentnumber == 1)
                 {
-                    pb_tower1.BackColor = Color.Blue;
+                    pb_tower1.BackgroundImage = Properties.Resources.mageTower;
+                    pb_tower1.Tag = "magetower";
                 }
                 else if (currentnumber == 2)
                 {
@@ -408,8 +406,7 @@ namespace Towerdefense
 
         private void enemyspawning_Tick(object sender, EventArgs e)
         {
-            enemy.Createenemy(30,419);
-
+            enemy.Createredloon(30,419);
         }
 
         private void lbl_test_Paint(object sender, PaintEventArgs e)
@@ -424,7 +421,8 @@ namespace Towerdefense
 
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
-            tower.drawshooting();
+            tower.magetower(90,325);
+            //tower.archertower(424, 128);
         }
 
         private void game1_KeyDown(object sender, KeyEventArgs e)

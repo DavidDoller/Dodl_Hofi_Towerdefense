@@ -46,6 +46,12 @@ namespace Towerdefense
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.playtimer = new System.Windows.Forms.Timer(this.components);
+            this.lbl_temp = new System.Windows.Forms.Label();
+            this.enemyspawning = new System.Windows.Forms.Timer(this.components);
+            this.lbl_test = new System.Windows.Forms.Label();
+            this.bullet_speed = new System.Windows.Forms.Timer(this.components);
+            this.pb_core = new System.Windows.Forms.PictureBox();
+            this.pb_spawn = new System.Windows.Forms.PictureBox();
             this.btn_pause = new System.Windows.Forms.Button();
             this.btn_start = new System.Windows.Forms.Button();
             this.pb_corner5 = new System.Windows.Forms.PictureBox();
@@ -63,14 +69,10 @@ namespace Towerdefense
             this.pb_tower5 = new System.Windows.Forms.PictureBox();
             this.pb_tower4 = new System.Windows.Forms.PictureBox();
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
-            this.lbl_temp = new System.Windows.Forms.Label();
-            this.pb_spawn = new System.Windows.Forms.PictureBox();
-            this.pb_core = new System.Windows.Forms.PictureBox();
-            this.enemyspawning = new System.Windows.Forms.Timer(this.components);
-            this.lbl_test = new System.Windows.Forms.Label();
-            this.bullet_speed = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_core)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner3)).BeginInit();
@@ -86,8 +88,6 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_core)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -231,6 +231,56 @@ namespace Towerdefense
             this.playtimer.Enabled = true;
             this.playtimer.Tick += new System.EventHandler(this.playtimer_Tick);
             // 
+            // lbl_temp
+            // 
+            this.lbl_temp.AutoSize = true;
+            this.lbl_temp.Location = new System.Drawing.Point(12, 13);
+            this.lbl_temp.Name = "lbl_temp";
+            this.lbl_temp.Size = new System.Drawing.Size(35, 13);
+            this.lbl_temp.TabIndex = 36;
+            this.lbl_temp.Text = "label1";
+            // 
+            // enemyspawning
+            // 
+            this.enemyspawning.Enabled = true;
+            this.enemyspawning.Interval = 1000;
+            this.enemyspawning.Tick += new System.EventHandler(this.enemyspawning_Tick);
+            // 
+            // lbl_test
+            // 
+            this.lbl_test.AutoSize = true;
+            this.lbl_test.Location = new System.Drawing.Point(106, 128);
+            this.lbl_test.Name = "lbl_test";
+            this.lbl_test.Size = new System.Drawing.Size(0, 13);
+            this.lbl_test.TabIndex = 39;
+            this.lbl_test.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_test_Paint);
+            // 
+            // bullet_speed
+            // 
+            this.bullet_speed.Enabled = true;
+            this.bullet_speed.Interval = 50;
+            this.bullet_speed.Tick += new System.EventHandler(this.bullet_speed_Tick);
+            // 
+            // pb_core
+            // 
+            this.pb_core.BackColor = System.Drawing.Color.Red;
+            this.pb_core.Location = new System.Drawing.Point(779, 280);
+            this.pb_core.Name = "pb_core";
+            this.pb_core.Size = new System.Drawing.Size(26, 44);
+            this.pb_core.TabIndex = 38;
+            this.pb_core.TabStop = false;
+            this.pb_core.Tag = "core";
+            // 
+            // pb_spawn
+            // 
+            this.pb_spawn.BackColor = System.Drawing.Color.Lime;
+            this.pb_spawn.Location = new System.Drawing.Point(25, 435);
+            this.pb_spawn.Name = "pb_spawn";
+            this.pb_spawn.Size = new System.Drawing.Size(36, 15);
+            this.pb_spawn.TabIndex = 37;
+            this.pb_spawn.TabStop = false;
+            this.pb_spawn.Tag = "straight";
+            // 
             // btn_pause
             // 
             this.btn_pause.Image = global::Towerdefense.Properties.Resources.pause;
@@ -345,7 +395,7 @@ namespace Towerdefense
             // pb_tower2
             // 
             this.pb_tower2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pb_tower2.Location = new System.Drawing.Point(83, 317);
+            this.pb_tower2.Location = new System.Drawing.Point(125, 373);
             this.pb_tower2.Name = "pb_tower2";
             this.pb_tower2.Size = new System.Drawing.Size(57, 53);
             this.pb_tower2.TabIndex = 20;
@@ -365,7 +415,7 @@ namespace Towerdefense
             // pb_tower6
             // 
             this.pb_tower6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pb_tower6.Location = new System.Drawing.Point(424, 128);
+            this.pb_tower6.Location = new System.Drawing.Point(464, 193);
             this.pb_tower6.Name = "pb_tower6";
             this.pb_tower6.Size = new System.Drawing.Size(57, 53);
             this.pb_tower6.TabIndex = 18;
@@ -401,56 +451,6 @@ namespace Towerdefense
             this.pb_tower1.TabIndex = 15;
             this.pb_tower1.TabStop = false;
             this.pb_tower1.Click += new System.EventHandler(this.pb_tower1_Click);
-            // 
-            // lbl_temp
-            // 
-            this.lbl_temp.AutoSize = true;
-            this.lbl_temp.Location = new System.Drawing.Point(12, 13);
-            this.lbl_temp.Name = "lbl_temp";
-            this.lbl_temp.Size = new System.Drawing.Size(35, 13);
-            this.lbl_temp.TabIndex = 36;
-            this.lbl_temp.Text = "label1";
-            // 
-            // pb_spawn
-            // 
-            this.pb_spawn.BackColor = System.Drawing.Color.Lime;
-            this.pb_spawn.Location = new System.Drawing.Point(25, 435);
-            this.pb_spawn.Name = "pb_spawn";
-            this.pb_spawn.Size = new System.Drawing.Size(36, 15);
-            this.pb_spawn.TabIndex = 37;
-            this.pb_spawn.TabStop = false;
-            this.pb_spawn.Tag = "straight";
-            // 
-            // pb_core
-            // 
-            this.pb_core.BackColor = System.Drawing.Color.Red;
-            this.pb_core.Location = new System.Drawing.Point(779, 280);
-            this.pb_core.Name = "pb_core";
-            this.pb_core.Size = new System.Drawing.Size(26, 44);
-            this.pb_core.TabIndex = 38;
-            this.pb_core.TabStop = false;
-            this.pb_core.Tag = "core";
-            // 
-            // enemyspawning
-            // 
-            this.enemyspawning.Enabled = true;
-            this.enemyspawning.Interval = 1000;
-            this.enemyspawning.Tick += new System.EventHandler(this.enemyspawning_Tick);
-            // 
-            // lbl_test
-            // 
-            this.lbl_test.AutoSize = true;
-            this.lbl_test.Location = new System.Drawing.Point(106, 128);
-            this.lbl_test.Name = "lbl_test";
-            this.lbl_test.Size = new System.Drawing.Size(0, 13);
-            this.lbl_test.TabIndex = 39;
-            this.lbl_test.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_test_Paint);
-            // 
-            // bullet_speed
-            // 
-            this.bullet_speed.Enabled = true;
-            this.bullet_speed.Interval = 20;
-            this.bullet_speed.Tick += new System.EventHandler(this.bullet_speed_Tick);
             // 
             // game1
             // 
@@ -500,6 +500,8 @@ namespace Towerdefense
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.game1_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_core)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner3)).EndInit();
@@ -515,8 +517,6 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_core)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
