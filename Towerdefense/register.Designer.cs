@@ -1,7 +1,7 @@
 ﻿
 namespace Towerdefense
 {
-    partial class Form2
+    partial class register
     {
         /// <summary>
         /// Required designer variable.
@@ -122,7 +122,7 @@ namespace Towerdefense
             this.pB_register.TabIndex = 15;
             this.pB_register.TabStop = false;
             // 
-            // Form2
+            // register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,8 +136,8 @@ namespace Towerdefense
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_username);
             this.Controls.Add(this.txt_pw);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "register";
+            this.Text = "register";
             ((System.ComponentModel.ISupportInitialize)(this.pB_register)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

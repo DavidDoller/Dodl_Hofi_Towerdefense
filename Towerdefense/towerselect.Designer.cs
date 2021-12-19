@@ -49,7 +49,8 @@ namespace Towerdefense
             // 
             // pbtower_1
             // 
-            this.pbtower_1.BackColor = System.Drawing.Color.Green;
+            this.pbtower_1.BackColor = System.Drawing.Color.Transparent;
+            this.pbtower_1.BackgroundImage = global::Towerdefense.Properties.Resources.mageTower;
             this.pbtower_1.Location = new System.Drawing.Point(12, 50);
             this.pbtower_1.Name = "pbtower_1";
             this.pbtower_1.Size = new System.Drawing.Size(57, 55);
