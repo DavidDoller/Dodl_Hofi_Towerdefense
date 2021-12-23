@@ -29,74 +29,23 @@ namespace Towerdefense
         /// </summary>
         private void InitializeComponent()
         {
-            this.pbtower_1 = new System.Windows.Forms.PictureBox();
-            this.pbtower2 = new System.Windows.Forms.PictureBox();
-            this.pbtower_5 = new System.Windows.Forms.PictureBox();
-            this.pbtower4 = new System.Windows.Forms.PictureBox();
-            this.pbtower_3 = new System.Windows.Forms.PictureBox();
             this.lbl_1 = new System.Windows.Forms.Label();
             this.lbl_2 = new System.Windows.Forms.Label();
             this.lbl_3 = new System.Windows.Forms.Label();
             this.lbl_4 = new System.Windows.Forms.Label();
             this.lbl_5 = new System.Windows.Forms.Label();
             this.lbl_test = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pbtower_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbtower2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbtower_5)).BeginInit();
+            this.pbtower4 = new System.Windows.Forms.PictureBox();
+            this.pbtower_3 = new System.Windows.Forms.PictureBox();
+            this.pbtower_5 = new System.Windows.Forms.PictureBox();
+            this.pbtower2 = new System.Windows.Forms.PictureBox();
+            this.pbtower_1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbtower4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbtower_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pbtower_1
-            // 
-            this.pbtower_1.BackColor = System.Drawing.Color.Transparent;
-            this.pbtower_1.BackgroundImage = global::Towerdefense.Properties.Resources.mageTower;
-            this.pbtower_1.Location = new System.Drawing.Point(12, 50);
-            this.pbtower_1.Name = "pbtower_1";
-            this.pbtower_1.Size = new System.Drawing.Size(57, 55);
-            this.pbtower_1.TabIndex = 0;
-            this.pbtower_1.TabStop = false;
-            this.pbtower_1.Click += new System.EventHandler(this.pbtower_1_Click);
-            // 
-            // pbtower2
-            // 
-            this.pbtower2.BackColor = System.Drawing.Color.Blue;
-            this.pbtower2.Location = new System.Drawing.Point(89, 50);
-            this.pbtower2.Name = "pbtower2";
-            this.pbtower2.Size = new System.Drawing.Size(57, 55);
-            this.pbtower2.TabIndex = 1;
-            this.pbtower2.TabStop = false;
-            this.pbtower2.Click += new System.EventHandler(this.pbtower2_Click);
-            // 
-            // pbtower_5
-            // 
-            this.pbtower_5.BackColor = System.Drawing.Color.Orange;
-            this.pbtower_5.Location = new System.Drawing.Point(12, 140);
-            this.pbtower_5.Name = "pbtower_5";
-            this.pbtower_5.Size = new System.Drawing.Size(57, 55);
-            this.pbtower_5.TabIndex = 2;
-            this.pbtower_5.TabStop = false;
-            this.pbtower_5.Click += new System.EventHandler(this.pbtower_5_Click);
-            // 
-            // pbtower4
-            // 
-            this.pbtower4.BackColor = System.Drawing.Color.Yellow;
-            this.pbtower4.Location = new System.Drawing.Point(249, 50);
-            this.pbtower4.Name = "pbtower4";
-            this.pbtower4.Size = new System.Drawing.Size(57, 55);
-            this.pbtower4.TabIndex = 7;
-            this.pbtower4.TabStop = false;
-            this.pbtower4.Click += new System.EventHandler(this.pbtower4_Click);
-            // 
-            // pbtower_3
-            // 
-            this.pbtower_3.BackColor = System.Drawing.Color.Red;
-            this.pbtower_3.Location = new System.Drawing.Point(172, 50);
-            this.pbtower_3.Name = "pbtower_3";
-            this.pbtower_3.Size = new System.Drawing.Size(57, 55);
-            this.pbtower_3.TabIndex = 6;
-            this.pbtower_3.TabStop = false;
-            this.pbtower_3.Click += new System.EventHandler(this.pbtower_3_Click);
             // 
             // lbl_1
             // 
@@ -158,6 +107,58 @@ namespace Towerdefense
             this.lbl_test.Text = "temp";
             this.lbl_test.Click += new System.EventHandler(this.lbl_test_Click);
             // 
+            // pbtower4
+            // 
+            this.pbtower4.BackColor = System.Drawing.Color.Yellow;
+            this.pbtower4.Location = new System.Drawing.Point(249, 50);
+            this.pbtower4.Name = "pbtower4";
+            this.pbtower4.Size = new System.Drawing.Size(57, 55);
+            this.pbtower4.TabIndex = 7;
+            this.pbtower4.TabStop = false;
+            this.pbtower4.Click += new System.EventHandler(this.pbtower4_Click);
+            // 
+            // pbtower_3
+            // 
+            this.pbtower_3.BackColor = System.Drawing.Color.Red;
+            this.pbtower_3.Location = new System.Drawing.Point(172, 50);
+            this.pbtower_3.Name = "pbtower_3";
+            this.pbtower_3.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_3.TabIndex = 6;
+            this.pbtower_3.TabStop = false;
+            this.pbtower_3.Click += new System.EventHandler(this.pbtower_3_Click);
+            // 
+            // pbtower_5
+            // 
+            this.pbtower_5.BackColor = System.Drawing.Color.Orange;
+            this.pbtower_5.Location = new System.Drawing.Point(12, 140);
+            this.pbtower_5.Name = "pbtower_5";
+            this.pbtower_5.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_5.TabIndex = 2;
+            this.pbtower_5.TabStop = false;
+            this.pbtower_5.Click += new System.EventHandler(this.pbtower_5_Click);
+            // 
+            // pbtower2
+            // 
+            this.pbtower2.BackColor = System.Drawing.Color.Transparent;
+            this.pbtower2.BackgroundImage = global::Towerdefense.Properties.Resources.archerTower;
+            this.pbtower2.Location = new System.Drawing.Point(89, 50);
+            this.pbtower2.Name = "pbtower2";
+            this.pbtower2.Size = new System.Drawing.Size(57, 55);
+            this.pbtower2.TabIndex = 1;
+            this.pbtower2.TabStop = false;
+            this.pbtower2.Click += new System.EventHandler(this.pbtower2_Click);
+            // 
+            // pbtower_1
+            // 
+            this.pbtower_1.BackColor = System.Drawing.Color.Transparent;
+            this.pbtower_1.BackgroundImage = global::Towerdefense.Properties.Resources.mageTower1;
+            this.pbtower_1.Location = new System.Drawing.Point(12, 50);
+            this.pbtower_1.Name = "pbtower_1";
+            this.pbtower_1.Size = new System.Drawing.Size(57, 55);
+            this.pbtower_1.TabIndex = 0;
+            this.pbtower_1.TabStop = false;
+            this.pbtower_1.Click += new System.EventHandler(this.pbtower_1_Click);
+            // 
             // towerselect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,11 +179,11 @@ namespace Towerdefense
             this.Text = "towerselect";
             this.Load += new System.EventHandler(this.towerselect_Load);
             this.Click += new System.EventHandler(this.towerselect_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pbtower_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbtower2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbtower_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbtower4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbtower_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbtower_1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

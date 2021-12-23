@@ -134,6 +134,11 @@
   <ItemGroup>
     <None Include="Resources\bloonRed.png" />
     <None Include="Resources\mageTower.png" />
+    <None Include="Resources\archerTower.png" />
+    <None Include="Resources\bloonBlue.png" />
+    <None Include="Resources\bloonPink.png" />
+    <None Include="Resources\bloonRed1.png" />
+    <None Include="Resources\mageTower1.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\pause1.png" />
     <Content Include="Resources\play.png" />

@@ -258,7 +258,6 @@ namespace Towerdefense
             // bullet_speed
             // 
             this.bullet_speed.Enabled = true;
-            this.bullet_speed.Interval = 50;
             this.bullet_speed.Tick += new System.EventHandler(this.bullet_speed_Tick);
             // 
             // pb_core
