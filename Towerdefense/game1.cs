@@ -407,6 +407,7 @@ namespace Towerdefense
         private void enemyspawning_Tick(object sender, EventArgs e)
         {
             enemy.Createredloon(30,419);
+            
         }
 
         private void lbl_test_Paint(object sender, PaintEventArgs e)
@@ -421,8 +422,8 @@ namespace Towerdefense
 
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
-            tower.magetower(90,325);
-            //tower.archertower(424, 128);
+            tower.magetower(90, 325, 1);
+            tower.archertower(424, 128,5);
         }
 
         private void game1_KeyDown(object sender, KeyEventArgs e)

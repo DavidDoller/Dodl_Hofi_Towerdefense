@@ -14,53 +14,52 @@ namespace Towerdefense
     { 
         public static List<Panel> panelmagetowershot = new List<Panel>();
         public static List<Panel> panelarchertowershot = new List<Panel>();
+        public static Panel tempmage = new Panel();
+        public static Panel temparcher = new Panel();
 
-        public static void magetower(int locationX,int locationY) 
+        public static void magetower(int locationX,int locationY, int bulletspeed) 
         {
-            Panel temp = new Panel();
+            
 
-            if (!panelmagetowershot.Contains(temp)) 
+            if (!panelmagetowershot.Contains(tempmage)) 
             {
-                
-                temp.Location = new Point(locationX, locationY);
-                temp.BackColor = Color.Red;
-                temp.Height = 3;
-                temp.Width = 30;
-                temp.Tag = "bulletmage";
-                panelmagetowershot.Add(temp);
-                game1.ActiveForm.Controls.Add(temp);
-               
+                tempmage.Location = new Point(locationX, locationY);
+                tempmage.BackColor = Color.Red;
+                tempmage.Height = 3;
+                tempmage.Width = 30;
+                tempmage.Tag = "bulletmage";
+                panelmagetowershot.Add(tempmage);
+                game1.ActiveForm.Controls.Add(tempmage);
             }
-            if (temp.Left < 0) 
+            if (tempmage.Left < 0) 
             {
-                panelmagetowershot.Remove(temp);
-                temp.Dispose();
+                panelmagetowershot.Remove(tempmage);
+                tempmage.Location = new Point(locationX, locationY);
 
             }
-            temp.Left -= 75;
+            tempmage.Left -= bulletspeed;
         }
 
-        public static void archertower(int locationX, int locationY) 
+        public static void archertower(int locationX, int locationY,int bulletspeed) 
         {
-            Panel temp = new Panel();
 
-            if (!panelarchertowershot.Contains(temp))
+            if (!panelarchertowershot.Contains(temparcher))
             {
-                temp.Location = new Point(locationX, locationY);
-                temp.BackColor = Color.Blue;
-                temp.Height = 3;
-                temp.Width = 30;
-                temp.Tag = "bulletarcher";
-                panelarchertowershot.Add(temp);
-                game1.ActiveForm.Controls.Add(temp);
+                temparcher.Location = new Point(locationX, locationY);
+                temparcher.BackColor = Color.Blue;
+                temparcher.Height = 3;
+                temparcher.Width = 30;
+                temparcher.Tag = "bulletarcher";
+                panelarchertowershot.Add(temparcher);
+                game1.ActiveForm.Controls.Add(temparcher);
             }
-            if (temp.Left < 0)
+            if (temparcher.Left < 0)
             {
-                panelarchertowershot.Remove(temp);
-                temp.Dispose();
+                panelarchertowershot.Remove(temparcher);
+                temparcher.Location = new Point(locationX, locationY);
 
             }
-            temp.Left -= 1;
+            temparcher.Left -= bulletspeed;
 
         }
 

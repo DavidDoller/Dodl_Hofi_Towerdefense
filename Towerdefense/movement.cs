@@ -76,15 +76,16 @@ namespace Towerdefense
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds)) 
                         {
-                            enemy.redloonhealth--;
+                            //enemy.redloonhealth--;
                             tower.panelmagetowershot.Remove((Panel)x);
-                            x.Dispose();
-                            if (enemy.redloonhealth == 0) 
-                            {
-                                tower.panelmagetowershot.Remove((Panel)x);
-                                x.Dispose();
-                                y.Dispose();
-                            }
+                            x.Location = new System.Drawing.Point(90,325);
+                            y.Dispose();
+                            //if (enemy.redloonhealth == 0) 
+                            //{
+                            //    tower.panelmagetowershot.Remove((Panel)x);
+                            //    x.Dispose();
+                            //    y.Dispose();
+                            //}
                             
                         }
                         
