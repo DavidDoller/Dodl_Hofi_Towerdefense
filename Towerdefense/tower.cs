@@ -17,10 +17,22 @@ namespace Towerdefense
         public static Panel tempmage = new Panel();
         public static Panel temparcher = new Panel();
 
+        public static int bulletSpeedX = enemy.pb.Location.X;
+        public static int bulletSpeedY = enemy.pb.Location.Y;
+
+        public static bool activemageTower = false;
+        public static bool activeArcherTower = false;
+
+
+
+
+
+
+
+
+
         public static void magetower(int locationX,int locationY, int bulletspeed) 
         {
-            
-
             if (!panelmagetowershot.Contains(tempmage)) 
             {
                 tempmage.Location = new Point(locationX, locationY);
@@ -53,17 +65,65 @@ namespace Towerdefense
                 panelarchertowershot.Add(temparcher);
                 game1.ActiveForm.Controls.Add(temparcher);
             }
-            if (temparcher.Left < 0)
+            if (temparcher.Left < 350)
             {
                 panelarchertowershot.Remove(temparcher);
                 temparcher.Location = new Point(locationX, locationY);
 
             }
             temparcher.Left -= bulletspeed;
+            temparcher.Top -= bulletspeed;
 
         }
 
+        public static void ButtonDeactivateTowers(PictureBox pbTower ) 
+        {
+            foreach (Control x in game1.ActiveForm.Controls)
+            {
+                if (x is Button)
+                {
+                    x.Visible = false;
+                }
+            }
 
+                if(game1.TowerType == "mage")
+                {
+                    pbTower.BackgroundImage = Properties.Resources.mageTower1;
+                    pbTower.Tag = "mageTower";
+                }
+                else if(game1.TowerType == "archer")
+                {
+                    pbTower.BackgroundImage = Properties.Resources.archerTower;
+                    pbTower.Tag = "archerTower";
+                }
+                else if (game1.TowerType == "bomb")
+                {
+                    pbTower.BackgroundImage = Properties.Resources.BombTower;
+                    pbTower.Tag = "bombTower";
+                }
+                else if (game1.TowerType == "ninja")
+                {
+                    pbTower.BackgroundImage = Properties.Resources.NinjaTower;
+                    pbTower.Tag = "ninjaTower";
+                }
+                else if (game1.TowerType == "machinegun")
+                {
+                    pbTower.BackgroundImage = Properties.Resources.maschiengun;
+                    pbTower.Tag = "maschiengun";
+                }
+
+        }
+
+        public static void ButtonActivateTowers()
+        {
+            foreach (Control x in game1.ActiveForm.Controls)
+            {
+                if (x is Button)
+                {
+                    x.Visible = true;
+                }
+            }
+        }
 
     }
 

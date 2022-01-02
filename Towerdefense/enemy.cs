@@ -13,25 +13,34 @@ namespace Towerdefense
     {
         public static int redloonhealth = 2;
         public static int redloonspeed = 5;
-        
+        public static int looncounter = 1;
+        public static int smallestEnemy = 0;
+        public static PictureBox pb = new PictureBox();
+        public static List<PictureBox> enemyList = new List<PictureBox>();
+
+
+
+
 
         public static PictureBox Createredloon(int location1, int location2)
         {
-            
-            PictureBox pb = new PictureBox();         
+            pb = new PictureBox();
+                    
             pb.Size = new Size(32, 32);
             pb.Location = new Point(location1, location2);
             pb.BackgroundImage = Properties.Resources.bloonRed;
             pb.BackgroundImageLayout = ImageLayout.Stretch;
             pb.Tag = "enemy";
-            pb.Name = "Redloon";
+            pb.Name = "Redloon"+ looncounter;
+            looncounter++;
             redloonhealth = 2;
             pb.BringToFront();
+            enemyList.Add(pb);
             game1.ActiveForm.Controls.Add(pb);
             return pb;
-        }
 
 
+        }       
     }
 
 
