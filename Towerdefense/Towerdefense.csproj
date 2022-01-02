@@ -78,12 +78,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="tower.cs" />
-    <Compile Include="towerselect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="towerselect.Designer.cs">
-      <DependentUpon>towerselect.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,9 +100,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="towerselect.resx">
-      <DependentUpon>towerselect.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -139,6 +130,9 @@
     <None Include="Resources\bloonPink.png" />
     <None Include="Resources\bloonRed1.png" />
     <None Include="Resources\mageTower1.png" />
+    <None Include="Resources\BombTower.png" />
+    <None Include="Resources\maschiengun.png" />
+    <None Include="Resources\NinjaTower.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\pause1.png" />
     <Content Include="Resources\play.png" />

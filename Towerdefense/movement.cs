@@ -72,13 +72,14 @@ namespace Towerdefense
                             }
                         }
                     }
-                    else if (x is Panel && (string)x.Tag == "bulletmage" && y is PictureBox &&(string)y.Tag == "enemy" && y is PictureBox &&(string)y.Name == "Redloon") 
+                    else if (x is Panel && (string)x.Tag == "bulletmage" && y is PictureBox &&(string)y.Tag == "enemy") 
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds)) 
                         {
                             //enemy.redloonhealth--;
                             tower.panelmagetowershot.Remove((Panel)x);
-                            x.Location = new System.Drawing.Point(90,325);
+                            enemy.enemyList.Remove((PictureBox)y);
+                            x.Location = new System.Drawing.Point(90,325); 
                             y.Dispose();
                             //if (enemy.redloonhealth == 0) 
                             //{
