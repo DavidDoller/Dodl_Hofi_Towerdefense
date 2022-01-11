@@ -118,26 +118,38 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NinjaTower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NinjaTower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="archerTower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\archerTower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bloonRed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bloonRed1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bloonPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bloonPink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bloonRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bloonRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mageTower1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mageTower1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mageTower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mageTower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maschiengun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maschiengun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bloonPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bloonPink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bloonBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bloonBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bloonRed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bloonRed1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BombTower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BombTower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pause" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pause1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,19 +157,7 @@
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mageTower" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mageTower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bloonBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bloonBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BombTower" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BombTower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="maschiengun" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\maschiengun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NinjaTower" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NinjaTower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="coinsBackGround" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coinsBackGround.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

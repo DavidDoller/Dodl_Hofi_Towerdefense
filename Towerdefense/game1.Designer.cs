@@ -46,7 +46,6 @@ namespace Towerdefense
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.playtimer = new System.Windows.Forms.Timer(this.components);
-            this.lbl_temp = new System.Windows.Forms.Label();
             this.enemyspawning = new System.Windows.Forms.Timer(this.components);
             this.lbl_test = new System.Windows.Forms.Label();
             this.bullet_speed = new System.Windows.Forms.Timer(this.components);
@@ -55,12 +54,24 @@ namespace Towerdefense
             this.btn_PlaceTower2 = new System.Windows.Forms.Button();
             this.btn_PlaceTower3 = new System.Windows.Forms.Button();
             this.btn_PlaceTower4 = new System.Windows.Forms.Button();
-            this.btn_PlaceTower5 = new System.Windows.Forms.Button();
             this.btn_PlaceTower6 = new System.Windows.Forms.Button();
             this.btn_PlaceTower7 = new System.Windows.Forms.Button();
             this.btn_PlaceTower8 = new System.Windows.Forms.Button();
             this.btn_PlaceTower10 = new System.Windows.Forms.Button();
             this.btn_PlaceTower9 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_mageTowerPrice = new System.Windows.Forms.Label();
+            this.lbl_archerTowerPrice = new System.Windows.Forms.Label();
+            this.lbl_bombTowerPrice = new System.Windows.Forms.Label();
+            this.lbl_ninjaTowerPrice = new System.Windows.Forms.Label();
+            this.lbl_maschineGunPrice = new System.Windows.Forms.Label();
+            this.btn_PlaceTower5 = new System.Windows.Forms.Button();
+            this.lbl_health = new System.Windows.Forms.Label();
+            this.lbl_coins = new System.Windows.Forms.Label();
+            this.pb_backgroundCoins = new System.Windows.Forms.PictureBox();
+            this.pb_spawn = new System.Windows.Forms.PictureBox();
+            this.pnl_pause = new System.Windows.Forms.Panel();
+            this.pnl_start = new System.Windows.Forms.Panel();
             this.pb_ninjaTower = new System.Windows.Forms.PictureBox();
             this.pb_maschingunTower = new System.Windows.Forms.PictureBox();
             this.pb_BombTower = new System.Windows.Forms.PictureBox();
@@ -68,9 +79,6 @@ namespace Towerdefense
             this.pb_mageTower = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pb_core = new System.Windows.Forms.PictureBox();
-            this.pb_spawn = new System.Windows.Forms.PictureBox();
-            this.btn_pause = new System.Windows.Forms.Button();
-            this.btn_start = new System.Windows.Forms.Button();
             this.pb_corner5 = new System.Windows.Forms.PictureBox();
             this.pb_corner4 = new System.Windows.Forms.PictureBox();
             this.pb_corner3 = new System.Windows.Forms.PictureBox();
@@ -88,6 +96,8 @@ namespace Towerdefense
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ninjaTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_maschingunTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_BombTower)).BeginInit();
@@ -95,7 +105,6 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_mageTower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_core)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner3)).BeginInit();
@@ -116,7 +125,7 @@ namespace Towerdefense
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(12, 252);
+            this.panel1.Location = new System.Drawing.Point(12, 269);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 202);
             this.panel1.TabIndex = 0;
@@ -125,7 +134,7 @@ namespace Towerdefense
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Location = new System.Drawing.Point(12, 252);
+            this.panel2.Location = new System.Drawing.Point(12, 269);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(348, 10);
             this.panel2.TabIndex = 1;
@@ -142,7 +151,7 @@ namespace Towerdefense
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel3.Location = new System.Drawing.Point(9, 252);
+            this.panel3.Location = new System.Drawing.Point(9, 269);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(10, 202);
             this.panel3.TabIndex = 1;
@@ -151,7 +160,7 @@ namespace Towerdefense
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(67, 301);
+            this.panel4.Location = new System.Drawing.Point(67, 318);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 150);
             this.panel4.TabIndex = 2;
@@ -160,7 +169,7 @@ namespace Towerdefense
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel7.Location = new System.Drawing.Point(352, 60);
+            this.panel7.Location = new System.Drawing.Point(352, 77);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(10, 202);
             this.panel7.TabIndex = 4;
@@ -169,7 +178,7 @@ namespace Towerdefense
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel8.Location = new System.Drawing.Point(408, 112);
+            this.panel8.Location = new System.Drawing.Point(408, 129);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(10, 198);
             this.panel8.TabIndex = 5;
@@ -178,7 +187,7 @@ namespace Towerdefense
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel9.Location = new System.Drawing.Point(352, 60);
+            this.panel9.Location = new System.Drawing.Point(352, 77);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(346, 10);
             this.panel9.TabIndex = 6;
@@ -187,7 +196,7 @@ namespace Towerdefense
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel11.Location = new System.Drawing.Point(411, 112);
+            this.panel11.Location = new System.Drawing.Point(411, 129);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(233, 10);
             this.panel11.TabIndex = 7;
@@ -197,7 +206,7 @@ namespace Towerdefense
             // 
             this.panel12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel12.Controls.Add(this.panel13);
-            this.panel12.Location = new System.Drawing.Point(688, 66);
+            this.panel12.Location = new System.Drawing.Point(688, 83);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(10, 212);
             this.panel12.TabIndex = 8;
@@ -214,7 +223,7 @@ namespace Towerdefense
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel14.Location = new System.Drawing.Point(634, 121);
+            this.panel14.Location = new System.Drawing.Point(634, 138);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(10, 219);
             this.panel14.TabIndex = 9;
@@ -223,7 +232,7 @@ namespace Towerdefense
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel15.Location = new System.Drawing.Point(634, 330);
+            this.panel15.Location = new System.Drawing.Point(634, 347);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(181, 10);
             this.panel15.TabIndex = 10;
@@ -232,7 +241,7 @@ namespace Towerdefense
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel16.Location = new System.Drawing.Point(688, 268);
+            this.panel16.Location = new System.Drawing.Point(688, 285);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(117, 10);
             this.panel16.TabIndex = 11;
@@ -241,7 +250,7 @@ namespace Towerdefense
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel6.Location = new System.Drawing.Point(70, 301);
+            this.panel6.Location = new System.Drawing.Point(70, 318);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(346, 10);
             this.panel6.TabIndex = 14;
@@ -252,15 +261,6 @@ namespace Towerdefense
             this.playtimer.Enabled = true;
             this.playtimer.Tick += new System.EventHandler(this.playtimer_Tick);
             // 
-            // lbl_temp
-            // 
-            this.lbl_temp.AutoSize = true;
-            this.lbl_temp.Location = new System.Drawing.Point(12, 13);
-            this.lbl_temp.Name = "lbl_temp";
-            this.lbl_temp.Size = new System.Drawing.Size(35, 13);
-            this.lbl_temp.TabIndex = 36;
-            this.lbl_temp.Text = "label1";
-            // 
             // enemyspawning
             // 
             this.enemyspawning.Enabled = true;
@@ -270,7 +270,7 @@ namespace Towerdefense
             // lbl_test
             // 
             this.lbl_test.AutoSize = true;
-            this.lbl_test.Location = new System.Drawing.Point(106, 128);
+            this.lbl_test.Location = new System.Drawing.Point(106, 145);
             this.lbl_test.Name = "lbl_test";
             this.lbl_test.Size = new System.Drawing.Size(0, 13);
             this.lbl_test.TabIndex = 39;
@@ -283,7 +283,7 @@ namespace Towerdefense
             // lbl_smallestenemy
             // 
             this.lbl_smallestenemy.AutoSize = true;
-            this.lbl_smallestenemy.Location = new System.Drawing.Point(9, 106);
+            this.lbl_smallestenemy.Location = new System.Drawing.Point(22, 107);
             this.lbl_smallestenemy.Name = "lbl_smallestenemy";
             this.lbl_smallestenemy.Size = new System.Drawing.Size(35, 13);
             this.lbl_smallestenemy.TabIndex = 40;
@@ -293,7 +293,7 @@ namespace Towerdefense
             // 
             this.btn_PlaceTower1.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower1.Location = new System.Drawing.Point(12, 168);
+            this.btn_PlaceTower1.Location = new System.Drawing.Point(17, 185);
             this.btn_PlaceTower1.Name = "btn_PlaceTower1";
             this.btn_PlaceTower1.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower1.TabIndex = 47;
@@ -305,7 +305,7 @@ namespace Towerdefense
             // 
             this.btn_PlaceTower2.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower2.Location = new System.Drawing.Point(70, 363);
+            this.btn_PlaceTower2.Location = new System.Drawing.Point(70, 380);
             this.btn_PlaceTower2.Name = "btn_PlaceTower2";
             this.btn_PlaceTower2.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower2.TabIndex = 48;
@@ -317,7 +317,7 @@ namespace Towerdefense
             // 
             this.btn_PlaceTower3.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower3.Location = new System.Drawing.Point(352, 363);
+            this.btn_PlaceTower3.Location = new System.Drawing.Point(352, 380);
             this.btn_PlaceTower3.Name = "btn_PlaceTower3";
             this.btn_PlaceTower3.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower3.TabIndex = 49;
@@ -329,7 +329,7 @@ namespace Towerdefense
             // 
             this.btn_PlaceTower4.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower4.Location = new System.Drawing.Point(279, 168);
+            this.btn_PlaceTower4.Location = new System.Drawing.Point(279, 185);
             this.btn_PlaceTower4.Name = "btn_PlaceTower4";
             this.btn_PlaceTower4.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower4.TabIndex = 50;
@@ -337,23 +337,11 @@ namespace Towerdefense
             this.btn_PlaceTower4.UseVisualStyleBackColor = false;
             this.btn_PlaceTower4.Click += new System.EventHandler(this.btn_PlaceTower4_Click);
             // 
-            // btn_PlaceTower5
-            // 
-            this.btn_PlaceTower5.BackColor = System.Drawing.Color.Transparent;
-            this.btn_PlaceTower5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower5.Location = new System.Drawing.Point(279, 40);
-            this.btn_PlaceTower5.Name = "btn_PlaceTower5";
-            this.btn_PlaceTower5.Size = new System.Drawing.Size(79, 30);
-            this.btn_PlaceTower5.TabIndex = 51;
-            this.btn_PlaceTower5.Text = "Place Here";
-            this.btn_PlaceTower5.UseVisualStyleBackColor = false;
-            this.btn_PlaceTower5.Click += new System.EventHandler(this.btn_PlaceTower5_Click);
-            // 
             // btn_PlaceTower6
             // 
             this.btn_PlaceTower6.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower6.Location = new System.Drawing.Point(411, 168);
+            this.btn_PlaceTower6.Location = new System.Drawing.Point(411, 185);
             this.btn_PlaceTower6.Name = "btn_PlaceTower6";
             this.btn_PlaceTower6.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower6.TabIndex = 52;
@@ -365,7 +353,7 @@ namespace Towerdefense
             // 
             this.btn_PlaceTower7.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower7.Location = new System.Drawing.Point(562, 168);
+            this.btn_PlaceTower7.Location = new System.Drawing.Point(562, 185);
             this.btn_PlaceTower7.Name = "btn_PlaceTower7";
             this.btn_PlaceTower7.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower7.TabIndex = 53;
@@ -377,7 +365,7 @@ namespace Towerdefense
             // 
             this.btn_PlaceTower8.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower8.Location = new System.Drawing.Point(562, 333);
+            this.btn_PlaceTower8.Location = new System.Drawing.Point(562, 350);
             this.btn_PlaceTower8.Name = "btn_PlaceTower8";
             this.btn_PlaceTower8.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower8.TabIndex = 54;
@@ -389,7 +377,7 @@ namespace Towerdefense
             // 
             this.btn_PlaceTower10.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower10.Location = new System.Drawing.Point(691, 184);
+            this.btn_PlaceTower10.Location = new System.Drawing.Point(691, 201);
             this.btn_PlaceTower10.Name = "btn_PlaceTower10";
             this.btn_PlaceTower10.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower10.TabIndex = 55;
@@ -401,7 +389,7 @@ namespace Towerdefense
             // 
             this.btn_PlaceTower9.BackColor = System.Drawing.Color.Transparent;
             this.btn_PlaceTower9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PlaceTower9.Location = new System.Drawing.Point(691, 106);
+            this.btn_PlaceTower9.Location = new System.Drawing.Point(691, 123);
             this.btn_PlaceTower9.Name = "btn_PlaceTower9";
             this.btn_PlaceTower9.Size = new System.Drawing.Size(79, 30);
             this.btn_PlaceTower9.TabIndex = 56;
@@ -409,10 +397,142 @@ namespace Towerdefense
             this.btn_PlaceTower9.UseVisualStyleBackColor = false;
             this.btn_PlaceTower9.Click += new System.EventHandler(this.btn_PlaceTower9_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(80, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 57;
+            this.label1.Text = "label1";
+            // 
+            // lbl_mageTowerPrice
+            // 
+            this.lbl_mageTowerPrice.AutoSize = true;
+            this.lbl_mageTowerPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbl_mageTowerPrice.Location = new System.Drawing.Point(15, 599);
+            this.lbl_mageTowerPrice.Name = "lbl_mageTowerPrice";
+            this.lbl_mageTowerPrice.Size = new System.Drawing.Size(25, 13);
+            this.lbl_mageTowerPrice.TabIndex = 58;
+            this.lbl_mageTowerPrice.Text = "200";
+            // 
+            // lbl_archerTowerPrice
+            // 
+            this.lbl_archerTowerPrice.AutoSize = true;
+            this.lbl_archerTowerPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbl_archerTowerPrice.Location = new System.Drawing.Point(185, 599);
+            this.lbl_archerTowerPrice.Name = "lbl_archerTowerPrice";
+            this.lbl_archerTowerPrice.Size = new System.Drawing.Size(25, 13);
+            this.lbl_archerTowerPrice.TabIndex = 59;
+            this.lbl_archerTowerPrice.Text = "250";
+            // 
+            // lbl_bombTowerPrice
+            // 
+            this.lbl_bombTowerPrice.AutoSize = true;
+            this.lbl_bombTowerPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbl_bombTowerPrice.Location = new System.Drawing.Point(376, 599);
+            this.lbl_bombTowerPrice.Name = "lbl_bombTowerPrice";
+            this.lbl_bombTowerPrice.Size = new System.Drawing.Size(25, 13);
+            this.lbl_bombTowerPrice.TabIndex = 60;
+            this.lbl_bombTowerPrice.Text = "300";
+            // 
+            // lbl_ninjaTowerPrice
+            // 
+            this.lbl_ninjaTowerPrice.AutoSize = true;
+            this.lbl_ninjaTowerPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbl_ninjaTowerPrice.Location = new System.Drawing.Point(564, 599);
+            this.lbl_ninjaTowerPrice.Name = "lbl_ninjaTowerPrice";
+            this.lbl_ninjaTowerPrice.Size = new System.Drawing.Size(25, 13);
+            this.lbl_ninjaTowerPrice.TabIndex = 61;
+            this.lbl_ninjaTowerPrice.Text = "350";
+            // 
+            // lbl_maschineGunPrice
+            // 
+            this.lbl_maschineGunPrice.AutoSize = true;
+            this.lbl_maschineGunPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lbl_maschineGunPrice.Location = new System.Drawing.Point(741, 599);
+            this.lbl_maschineGunPrice.Name = "lbl_maschineGunPrice";
+            this.lbl_maschineGunPrice.Size = new System.Drawing.Size(25, 13);
+            this.lbl_maschineGunPrice.TabIndex = 62;
+            this.lbl_maschineGunPrice.Text = "400";
+            // 
+            // btn_PlaceTower5
+            // 
+            this.btn_PlaceTower5.BackColor = System.Drawing.Color.Transparent;
+            this.btn_PlaceTower5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PlaceTower5.Location = new System.Drawing.Point(279, 54);
+            this.btn_PlaceTower5.Name = "btn_PlaceTower5";
+            this.btn_PlaceTower5.Size = new System.Drawing.Size(79, 30);
+            this.btn_PlaceTower5.TabIndex = 68;
+            this.btn_PlaceTower5.Text = "Place Here";
+            this.btn_PlaceTower5.UseVisualStyleBackColor = false;
+            this.btn_PlaceTower5.Click += new System.EventHandler(this.btn_PlaceTower5_Click_1);
+            // 
+            // lbl_health
+            // 
+            this.lbl_health.AutoSize = true;
+            this.lbl_health.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lbl_health.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lbl_health.Location = new System.Drawing.Point(3, 9);
+            this.lbl_health.Name = "lbl_health";
+            this.lbl_health.Size = new System.Drawing.Size(116, 31);
+            this.lbl_health.TabIndex = 72;
+            this.lbl_health.Text = "Health: ";
+            // 
+            // lbl_coins
+            // 
+            this.lbl_coins.AutoSize = true;
+            this.lbl_coins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lbl_coins.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_coins.ForeColor = System.Drawing.Color.Black;
+            this.lbl_coins.Location = new System.Drawing.Point(592, 9);
+            this.lbl_coins.Name = "lbl_coins";
+            this.lbl_coins.Size = new System.Drawing.Size(106, 31);
+            this.lbl_coins.TabIndex = 71;
+            this.lbl_coins.Text = "Coins: ";
+            this.lbl_coins.Click += new System.EventHandler(this.lbl_coins_Click_1);
+            // 
+            // pb_backgroundCoins
+            // 
+            this.pb_backgroundCoins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.pb_backgroundCoins.Location = new System.Drawing.Point(0, -3);
+            this.pb_backgroundCoins.Name = "pb_backgroundCoins";
+            this.pb_backgroundCoins.Size = new System.Drawing.Size(805, 51);
+            this.pb_backgroundCoins.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_backgroundCoins.TabIndex = 70;
+            this.pb_backgroundCoins.TabStop = false;
+            // 
+            // pb_spawn
+            // 
+            this.pb_spawn.BackColor = System.Drawing.Color.Lime;
+            this.pb_spawn.Location = new System.Drawing.Point(17, 430);
+            this.pb_spawn.Name = "pb_spawn";
+            this.pb_spawn.Size = new System.Drawing.Size(54, 38);
+            this.pb_spawn.TabIndex = 38;
+            this.pb_spawn.TabStop = false;
+            this.pb_spawn.Tag = "straight";
+            // 
+            // pnl_pause
+            // 
+            this.pnl_pause.Location = new System.Drawing.Point(688, 479);
+            this.pnl_pause.Name = "pnl_pause";
+            this.pnl_pause.Size = new System.Drawing.Size(50, 50);
+            this.pnl_pause.TabIndex = 64;
+            this.pnl_pause.Click += new System.EventHandler(this.pnl_pause_Click);
+            // 
+            // pnl_start
+            // 
+            this.pnl_start.Location = new System.Drawing.Point(743, 479);
+            this.pnl_start.Name = "pnl_start";
+            this.pnl_start.Size = new System.Drawing.Size(50, 50);
+            this.pnl_start.TabIndex = 63;
+            this.pnl_start.Click += new System.EventHandler(this.pnl_start_Click);
+            // 
             // pb_ninjaTower
             // 
-            this.pb_ninjaTower.Image = global::Towerdefense.Properties.Resources.NinjaTower;
-            this.pb_ninjaTower.Location = new System.Drawing.Point(554, 456);
+            this.pb_ninjaTower.BackColor = System.Drawing.Color.Transparent;
+            this.pb_ninjaTower.BackgroundImage = global::Towerdefense.Properties.Resources.NinjaTower;
+            this.pb_ninjaTower.Location = new System.Drawing.Point(550, 543);
             this.pb_ninjaTower.Name = "pb_ninjaTower";
             this.pb_ninjaTower.Size = new System.Drawing.Size(57, 53);
             this.pb_ninjaTower.TabIndex = 46;
@@ -421,18 +541,20 @@ namespace Towerdefense
             // 
             // pb_maschingunTower
             // 
-            this.pb_maschingunTower.Image = global::Towerdefense.Properties.Resources.maschiengun;
-            this.pb_maschingunTower.Location = new System.Drawing.Point(731, 456);
+            this.pb_maschingunTower.BackColor = System.Drawing.Color.Transparent;
+            this.pb_maschingunTower.BackgroundImage = global::Towerdefense.Properties.Resources.maschiengun;
+            this.pb_maschingunTower.Location = new System.Drawing.Point(723, 543);
             this.pb_maschingunTower.Name = "pb_maschingunTower";
-            this.pb_maschingunTower.Size = new System.Drawing.Size(57, 53);
+            this.pb_maschingunTower.Size = new System.Drawing.Size(59, 53);
             this.pb_maschingunTower.TabIndex = 45;
             this.pb_maschingunTower.TabStop = false;
             this.pb_maschingunTower.Click += new System.EventHandler(this.pb_maschingunTower_Click);
             // 
             // pb_BombTower
             // 
-            this.pb_BombTower.Image = global::Towerdefense.Properties.Resources.BombTower;
-            this.pb_BombTower.Location = new System.Drawing.Point(368, 456);
+            this.pb_BombTower.BackColor = System.Drawing.Color.Transparent;
+            this.pb_BombTower.BackgroundImage = global::Towerdefense.Properties.Resources.BombTower;
+            this.pb_BombTower.Location = new System.Drawing.Point(364, 543);
             this.pb_BombTower.Name = "pb_BombTower";
             this.pb_BombTower.Size = new System.Drawing.Size(57, 53);
             this.pb_BombTower.TabIndex = 44;
@@ -441,8 +563,9 @@ namespace Towerdefense
             // 
             // pb_archerTower
             // 
-            this.pb_archerTower.Image = global::Towerdefense.Properties.Resources.archerTower;
-            this.pb_archerTower.Location = new System.Drawing.Point(175, 456);
+            this.pb_archerTower.BackColor = System.Drawing.Color.Transparent;
+            this.pb_archerTower.BackgroundImage = global::Towerdefense.Properties.Resources.archerTower;
+            this.pb_archerTower.Location = new System.Drawing.Point(171, 543);
             this.pb_archerTower.Name = "pb_archerTower";
             this.pb_archerTower.Size = new System.Drawing.Size(57, 53);
             this.pb_archerTower.TabIndex = 43;
@@ -451,67 +574,38 @@ namespace Towerdefense
             // 
             // pb_mageTower
             // 
-            this.pb_mageTower.Image = global::Towerdefense.Properties.Resources.mageTower1;
-            this.pb_mageTower.Location = new System.Drawing.Point(4, 456);
+            this.pb_mageTower.BackColor = System.Drawing.Color.Transparent;
+            this.pb_mageTower.BackgroundImage = global::Towerdefense.Properties.Resources.mageTower;
+            this.pb_mageTower.Location = new System.Drawing.Point(0, 543);
             this.pb_mageTower.Name = "pb_mageTower";
-            this.pb_mageTower.Size = new System.Drawing.Size(57, 53);
+            this.pb_mageTower.Size = new System.Drawing.Size(56, 53);
             this.pb_mageTower.TabIndex = 42;
             this.pb_mageTower.TabStop = false;
             this.pb_mageTower.Click += new System.EventHandler(this.pb_mageTower_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pictureBox1.Location = new System.Drawing.Point(-6, 450);
+            this.pictureBox1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pictureBox1.Location = new System.Drawing.Point(-11, 535);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(816, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(816, 84);
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
             // 
             // pb_core
             // 
             this.pb_core.BackColor = System.Drawing.Color.Red;
-            this.pb_core.Location = new System.Drawing.Point(779, 280);
+            this.pb_core.Location = new System.Drawing.Point(779, 297);
             this.pb_core.Name = "pb_core";
             this.pb_core.Size = new System.Drawing.Size(26, 44);
             this.pb_core.TabIndex = 38;
             this.pb_core.TabStop = false;
             this.pb_core.Tag = "core";
             // 
-            // pb_spawn
-            // 
-            this.pb_spawn.BackColor = System.Drawing.Color.Lime;
-            this.pb_spawn.Location = new System.Drawing.Point(25, 435);
-            this.pb_spawn.Name = "pb_spawn";
-            this.pb_spawn.Size = new System.Drawing.Size(36, 15);
-            this.pb_spawn.TabIndex = 37;
-            this.pb_spawn.TabStop = false;
-            this.pb_spawn.Tag = "straight";
-            // 
-            // btn_pause
-            // 
-            this.btn_pause.Image = global::Towerdefense.Properties.Resources.pause;
-            this.btn_pause.Location = new System.Drawing.Point(739, 395);
-            this.btn_pause.Name = "btn_pause";
-            this.btn_pause.Size = new System.Drawing.Size(49, 49);
-            this.btn_pause.TabIndex = 35;
-            this.btn_pause.UseVisualStyleBackColor = true;
-            this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
-            // 
-            // btn_start
-            // 
-            this.btn_start.Image = global::Towerdefense.Properties.Resources.play;
-            this.btn_start.Location = new System.Drawing.Point(678, 395);
-            this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(49, 49);
-            this.btn_start.TabIndex = 34;
-            this.btn_start.UseVisualStyleBackColor = true;
-            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
-            // 
             // pb_corner5
             // 
             this.pb_corner5.BackColor = System.Drawing.Color.White;
-            this.pb_corner5.Location = new System.Drawing.Point(650, 318);
+            this.pb_corner5.Location = new System.Drawing.Point(650, 335);
             this.pb_corner5.Name = "pb_corner5";
             this.pb_corner5.Size = new System.Drawing.Size(31, 5);
             this.pb_corner5.TabIndex = 33;
@@ -521,7 +615,7 @@ namespace Towerdefense
             // pb_corner4
             // 
             this.pb_corner4.BackColor = System.Drawing.Color.White;
-            this.pb_corner4.Location = new System.Drawing.Point(678, 76);
+            this.pb_corner4.Location = new System.Drawing.Point(678, 93);
             this.pb_corner4.Name = "pb_corner4";
             this.pb_corner4.Size = new System.Drawing.Size(5, 27);
             this.pb_corner4.TabIndex = 32;
@@ -531,7 +625,7 @@ namespace Towerdefense
             // pb_corner3
             // 
             this.pb_corner3.BackColor = System.Drawing.Color.White;
-            this.pb_corner3.Location = new System.Drawing.Point(368, 74);
+            this.pb_corner3.Location = new System.Drawing.Point(368, 91);
             this.pb_corner3.Name = "pb_corner3";
             this.pb_corner3.Size = new System.Drawing.Size(31, 5);
             this.pb_corner3.TabIndex = 31;
@@ -541,7 +635,7 @@ namespace Towerdefense
             // pb_corner2
             // 
             this.pb_corner2.BackColor = System.Drawing.Color.White;
-            this.pb_corner2.Location = new System.Drawing.Point(400, 268);
+            this.pb_corner2.Location = new System.Drawing.Point(400, 285);
             this.pb_corner2.Name = "pb_corner2";
             this.pb_corner2.Size = new System.Drawing.Size(5, 27);
             this.pb_corner2.TabIndex = 30;
@@ -551,7 +645,7 @@ namespace Towerdefense
             // pb_corner1
             // 
             this.pb_corner1.BackColor = System.Drawing.Color.Transparent;
-            this.pb_corner1.Location = new System.Drawing.Point(28, 264);
+            this.pb_corner1.Location = new System.Drawing.Point(28, 281);
             this.pb_corner1.Name = "pb_corner1";
             this.pb_corner1.Size = new System.Drawing.Size(28, 5);
             this.pb_corner1.TabIndex = 29;
@@ -560,8 +654,8 @@ namespace Towerdefense
             // 
             // pb_tower9
             // 
-            this.pb_tower9.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower9.Location = new System.Drawing.Point(704, 66);
+            this.pb_tower9.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower9.Location = new System.Drawing.Point(704, 83);
             this.pb_tower9.Name = "pb_tower9";
             this.pb_tower9.Size = new System.Drawing.Size(57, 53);
             this.pb_tower9.TabIndex = 24;
@@ -569,8 +663,8 @@ namespace Towerdefense
             // 
             // pb_tower10
             // 
-            this.pb_tower10.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower10.Location = new System.Drawing.Point(704, 209);
+            this.pb_tower10.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower10.Location = new System.Drawing.Point(704, 226);
             this.pb_tower10.Name = "pb_tower10";
             this.pb_tower10.Size = new System.Drawing.Size(57, 53);
             this.pb_tower10.TabIndex = 23;
@@ -578,8 +672,8 @@ namespace Towerdefense
             // 
             // pb_tower8
             // 
-            this.pb_tower8.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower8.Location = new System.Drawing.Point(571, 284);
+            this.pb_tower8.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower8.Location = new System.Drawing.Point(571, 301);
             this.pb_tower8.Name = "pb_tower8";
             this.pb_tower8.Size = new System.Drawing.Size(57, 53);
             this.pb_tower8.TabIndex = 22;
@@ -587,8 +681,8 @@ namespace Towerdefense
             // 
             // pb_tower7
             // 
-            this.pb_tower7.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower7.Location = new System.Drawing.Point(571, 128);
+            this.pb_tower7.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower7.Location = new System.Drawing.Point(571, 145);
             this.pb_tower7.Name = "pb_tower7";
             this.pb_tower7.Size = new System.Drawing.Size(57, 53);
             this.pb_tower7.TabIndex = 21;
@@ -596,8 +690,8 @@ namespace Towerdefense
             // 
             // pb_tower2
             // 
-            this.pb_tower2.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower2.Location = new System.Drawing.Point(83, 318);
+            this.pb_tower2.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower2.Location = new System.Drawing.Point(83, 335);
             this.pb_tower2.Name = "pb_tower2";
             this.pb_tower2.Size = new System.Drawing.Size(57, 53);
             this.pb_tower2.TabIndex = 20;
@@ -605,8 +699,8 @@ namespace Towerdefense
             // 
             // pb_tower3
             // 
-            this.pb_tower3.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower3.Location = new System.Drawing.Point(359, 317);
+            this.pb_tower3.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower3.Location = new System.Drawing.Point(359, 334);
             this.pb_tower3.Name = "pb_tower3";
             this.pb_tower3.Size = new System.Drawing.Size(57, 53);
             this.pb_tower3.TabIndex = 19;
@@ -614,8 +708,8 @@ namespace Towerdefense
             // 
             // pb_tower6
             // 
-            this.pb_tower6.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower6.Location = new System.Drawing.Point(424, 128);
+            this.pb_tower6.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower6.Location = new System.Drawing.Point(424, 145);
             this.pb_tower6.Name = "pb_tower6";
             this.pb_tower6.Size = new System.Drawing.Size(57, 53);
             this.pb_tower6.TabIndex = 18;
@@ -623,17 +717,18 @@ namespace Towerdefense
             // 
             // pb_tower5
             // 
-            this.pb_tower5.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower5.Location = new System.Drawing.Point(289, 69);
+            this.pb_tower5.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower5.Location = new System.Drawing.Point(289, 86);
             this.pb_tower5.Name = "pb_tower5";
             this.pb_tower5.Size = new System.Drawing.Size(57, 53);
             this.pb_tower5.TabIndex = 17;
             this.pb_tower5.TabStop = false;
+            this.pb_tower5.Click += new System.EventHandler(this.pb_tower5_Click);
             // 
             // pb_tower4
             // 
-            this.pb_tower4.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower4.Location = new System.Drawing.Point(289, 193);
+            this.pb_tower4.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower4.Location = new System.Drawing.Point(289, 210);
             this.pb_tower4.Name = "pb_tower4";
             this.pb_tower4.Size = new System.Drawing.Size(57, 53);
             this.pb_tower4.TabIndex = 16;
@@ -641,8 +736,8 @@ namespace Towerdefense
             // 
             // pb_tower1
             // 
-            this.pb_tower1.BackColor = System.Drawing.Color.LightGray;
-            this.pb_tower1.Location = new System.Drawing.Point(25, 193);
+            this.pb_tower1.BackColor = System.Drawing.Color.Transparent;
+            this.pb_tower1.Location = new System.Drawing.Point(25, 210);
             this.pb_tower1.Name = "pb_tower1";
             this.pb_tower1.Size = new System.Drawing.Size(57, 53);
             this.pb_tower1.TabIndex = 15;
@@ -652,14 +747,26 @@ namespace Towerdefense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 525);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(805, 618);
+            this.Controls.Add(this.lbl_health);
+            this.Controls.Add(this.lbl_coins);
+            this.Controls.Add(this.pb_backgroundCoins);
+            this.Controls.Add(this.pb_spawn);
+            this.Controls.Add(this.btn_PlaceTower5);
+            this.Controls.Add(this.pnl_pause);
+            this.Controls.Add(this.pnl_start);
+            this.Controls.Add(this.lbl_maschineGunPrice);
+            this.Controls.Add(this.lbl_ninjaTowerPrice);
+            this.Controls.Add(this.lbl_bombTowerPrice);
+            this.Controls.Add(this.lbl_archerTowerPrice);
+            this.Controls.Add(this.lbl_mageTowerPrice);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_PlaceTower9);
             this.Controls.Add(this.btn_PlaceTower10);
             this.Controls.Add(this.btn_PlaceTower8);
             this.Controls.Add(this.btn_PlaceTower7);
             this.Controls.Add(this.btn_PlaceTower6);
-            this.Controls.Add(this.btn_PlaceTower5);
             this.Controls.Add(this.btn_PlaceTower4);
             this.Controls.Add(this.btn_PlaceTower3);
             this.Controls.Add(this.btn_PlaceTower2);
@@ -673,10 +780,6 @@ namespace Towerdefense
             this.Controls.Add(this.lbl_smallestenemy);
             this.Controls.Add(this.lbl_test);
             this.Controls.Add(this.pb_core);
-            this.Controls.Add(this.pb_spawn);
-            this.Controls.Add(this.lbl_temp);
-            this.Controls.Add(this.btn_pause);
-            this.Controls.Add(this.btn_start);
             this.Controls.Add(this.pb_corner5);
             this.Controls.Add(this.pb_corner4);
             this.Controls.Add(this.pb_corner3);
@@ -705,13 +808,17 @@ namespace Towerdefense
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "game1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "";
             this.Text = "game";
             this.Load += new System.EventHandler(this.game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.game1_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ninjaTower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_maschingunTower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_BombTower)).EndInit();
@@ -719,7 +826,6 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_mageTower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_core)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_corner3)).EndInit();
@@ -773,10 +879,6 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_corner3;
         private System.Windows.Forms.PictureBox pb_corner4;
         private System.Windows.Forms.PictureBox pb_corner5;
-        private System.Windows.Forms.Button btn_start;
-        private System.Windows.Forms.Button btn_pause;
-        private System.Windows.Forms.Label lbl_temp;
-        private System.Windows.Forms.PictureBox pb_spawn;
         private System.Windows.Forms.PictureBox pb_core;
         private System.Windows.Forms.Timer enemyspawning;
         private System.Windows.Forms.Label lbl_test;
@@ -792,11 +894,23 @@ namespace Towerdefense
         private System.Windows.Forms.Button btn_PlaceTower2;
         private System.Windows.Forms.Button btn_PlaceTower3;
         private System.Windows.Forms.Button btn_PlaceTower4;
-        private System.Windows.Forms.Button btn_PlaceTower5;
         private System.Windows.Forms.Button btn_PlaceTower6;
         private System.Windows.Forms.Button btn_PlaceTower7;
         private System.Windows.Forms.Button btn_PlaceTower8;
         private System.Windows.Forms.Button btn_PlaceTower10;
         private System.Windows.Forms.Button btn_PlaceTower9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_mageTowerPrice;
+        private System.Windows.Forms.Label lbl_archerTowerPrice;
+        private System.Windows.Forms.Label lbl_bombTowerPrice;
+        private System.Windows.Forms.Label lbl_ninjaTowerPrice;
+        private System.Windows.Forms.Label lbl_maschineGunPrice;
+        private System.Windows.Forms.Panel pnl_start;
+        private System.Windows.Forms.Panel pnl_pause;
+        private System.Windows.Forms.Button btn_PlaceTower5;
+        private System.Windows.Forms.PictureBox pb_spawn;
+        private System.Windows.Forms.PictureBox pb_backgroundCoins;
+        private System.Windows.Forms.Label lbl_health;
+        private System.Windows.Forms.Label lbl_coins;
     }
 }

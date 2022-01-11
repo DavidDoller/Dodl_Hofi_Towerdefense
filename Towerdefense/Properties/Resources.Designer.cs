@@ -123,6 +123,16 @@ namespace Towerdefense.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coinsBackGround {
+            get {
+                object obj = ResourceManager.GetObject("coinsBackGround", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login {
             get {
                 object obj = ResourceManager.GetObject("login", resourceCulture);
@@ -136,16 +146,6 @@ namespace Towerdefense.Properties {
         internal static System.Drawing.Bitmap mageTower {
             get {
                 object obj = ResourceManager.GetObject("mageTower", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap mageTower1 {
-            get {
-                object obj = ResourceManager.GetObject("mageTower1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

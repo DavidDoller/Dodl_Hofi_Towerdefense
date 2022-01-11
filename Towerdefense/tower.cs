@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace Towerdefense
 {
@@ -22,13 +23,6 @@ namespace Towerdefense
 
         public static bool activemageTower = false;
         public static bool activeArcherTower = false;
-
-
-
-
-
-
-
 
 
         public static void magetower(int locationX,int locationY, int bulletspeed) 
@@ -65,7 +59,7 @@ namespace Towerdefense
                 panelarchertowershot.Add(temparcher);
                 game1.ActiveForm.Controls.Add(temparcher);
             }
-            if (temparcher.Left < 350)
+            if (temparcher.Left < 300)
             {
                 panelarchertowershot.Remove(temparcher);
                 temparcher.Location = new Point(locationX, locationY);
@@ -88,7 +82,7 @@ namespace Towerdefense
 
                 if(game1.TowerType == "mage")
                 {
-                    pbTower.BackgroundImage = Properties.Resources.mageTower1;
+                    pbTower.BackgroundImage = Properties.Resources.mageTower;
                     pbTower.Tag = "mageTower";
                 }
                 else if(game1.TowerType == "archer")

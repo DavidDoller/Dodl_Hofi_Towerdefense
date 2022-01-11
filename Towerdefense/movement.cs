@@ -30,7 +30,7 @@ namespace Towerdefense
 
         public static void checkdirection(Timer playtimer, Timer enemyspawning)
         {
-
+            if (game1.ActiveForm == null) return;
             foreach (Control x in game1.ActiveForm.Controls)
             {
                 foreach (Control y in game1.ActiveForm.Controls)
@@ -117,6 +117,7 @@ namespace Towerdefense
 
         public static void moveenemys() 
         {
+            if (game1.ActiveForm == null) return;
             foreach (Control x in game1.ActiveForm.Controls)
             {
                 if (x is PictureBox && (string)x.Tag == "enemy")
