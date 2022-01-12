@@ -14,6 +14,15 @@ namespace Towerdefense
         public static List<PictureBox> movedown = new List<PictureBox>();
         public static int health = 10;
 
+        public static int mageTowerDamage = 1;
+        public static int archerTowerDamage = 2;
+        public static int bombTowerDamage = 3;
+        public static int ninjaTowerDamage = 4;
+        public static int minigunTowerDamage = 5;
+
+
+
+
         public static void movmentright(PictureBox temp)
         {
             temp.Left += 5;
@@ -74,22 +83,23 @@ namespace Towerdefense
                     }
                     else if (x is Panel && (string)x.Tag == "bulletmage" && y is PictureBox &&(string)y.Tag == "enemy") 
                     {
-                        if (y.Bounds.IntersectsWith(x.Bounds)) 
+                        if (y.Bounds.IntersectsWith(x.Bounds))
                         {
-                            //enemy.redloonhealth--;
-                            tower.panelmagetowershot.Remove((Panel)x);
-                            enemy.enemyList.Remove((PictureBox)y);
-                            x.Location = new System.Drawing.Point(90,325); 
-                            y.Dispose();
-                            //if (enemy.redloonhealth == 0) 
-                            //{
-                            //    tower.panelmagetowershot.Remove((Panel)x);
-                            //    x.Dispose();
-                            //    y.Dispose();
-                            //}
-                            
+                            x.Location = new System.Drawing.Point(90, 325);
+
+                            if (x is Panel && y.Tag == "enemy")
+                            {
+                                enemy.redloonhealth = enemy.redloonhealth - mageTowerDamage;
+                                if (enemy.redloonhealth == 0)
+                                {
+                                    //tower.panelmagetowershot.Remove((Panel)x);
+                                    enemy.enemyList.Remove((PictureBox)y);
+                                    game1.Coins = game1.Coins + 10;
+                                    x.Dispose();
+                                    y.Dispose();
+                                }
+                            }
                         }
-                        
                     }
                     else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag == "enemy")
                     {

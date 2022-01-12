@@ -11,7 +11,7 @@ namespace Towerdefense
     
     class enemy
     {
-        public static int redloonhealth = 2;
+        public static int redloonhealth = 3;
         public static int redloonspeed = 5;
         public static int looncounter = 1;
         public static int smallestEnemy = 0;

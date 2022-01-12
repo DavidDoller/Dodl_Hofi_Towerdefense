@@ -56,14 +56,13 @@ namespace Towerdefense
         {
             lbl_coins.BringToFront();
             lbl_coins.Text = "Coins: " + Coins;
-            Coins++;
 
 
             lbl_test.Text = enemy.looncounter.ToString();
             lbl_health.Text = "Health:" + movement.health;
-            
 
 
+            tower.checkTowerPlacement();
             movement.moveenemys();
             movement.checkdirection(playtimer, enemyspawning);
         }
@@ -76,15 +75,15 @@ namespace Towerdefense
 
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
-            tower.magetower(83, 335, 5);
-            tower.archertower(359, 334, 5);
+            //tower.magetowerShoot(83, 335, 5);
+            tower.archertowerShoot(359, 334, 5);
 
 
         }
 
         private void game1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Escape) 
+            if(e.KeyCode == Keys.E) 
             {
                 Application.Exit();
             }
@@ -123,52 +122,52 @@ namespace Towerdefense
 
         private void btn_PlaceTower1_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower1);
+            tower.ButtonDeactivateTowers(pb_tower1,btn_PlaceTower1);
         }
 
         private void btn_PlaceTower2_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower2);
+            tower.ButtonDeactivateTowers(pb_tower2, btn_PlaceTower2);
         }
 
         private void btn_PlaceTower3_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower3);
+            tower.ButtonDeactivateTowers(pb_tower3,btn_PlaceTower3);
         }
 
         private void btn_PlaceTower4_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower4);
+            tower.ButtonDeactivateTowers(pb_tower4,btn_PlaceTower4);
         }
 
         private void btn_PlaceTower5_Click_1(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower5);
+            tower.ButtonDeactivateTowers(pb_tower5,btn_PlaceTower5);
         }
 
         private void btn_PlaceTower6_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower6);
+            tower.ButtonDeactivateTowers(pb_tower6, btn_PlaceTower6);
         }
 
         private void btn_PlaceTower7_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower7);
+            tower.ButtonDeactivateTowers(pb_tower7,btn_PlaceTower7);
         }
 
         private void btn_PlaceTower8_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower8);
+            tower.ButtonDeactivateTowers(pb_tower8,btn_PlaceTower8);
         }
 
         private void btn_PlaceTower9_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower9);
+            tower.ButtonDeactivateTowers(pb_tower9,btn_PlaceTower9);
         }
 
         private void btn_PlaceTower10_Click(object sender, EventArgs e)
         {
-            tower.ButtonDeactivateTowers(pb_tower10);
+            tower.ButtonDeactivateTowers(pb_tower10,btn_PlaceTower10);
         }
 
         private void pnl_start_Click(object sender, EventArgs e)

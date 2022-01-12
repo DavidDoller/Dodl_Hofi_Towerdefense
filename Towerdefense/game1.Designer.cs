@@ -94,6 +94,7 @@ namespace Towerdefense
             this.pb_tower5 = new System.Windows.Forms.PictureBox();
             this.pb_tower4 = new System.Windows.Forms.PictureBox();
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).BeginInit();
@@ -283,7 +284,7 @@ namespace Towerdefense
             // lbl_smallestenemy
             // 
             this.lbl_smallestenemy.AutoSize = true;
-            this.lbl_smallestenemy.Location = new System.Drawing.Point(22, 107);
+            this.lbl_smallestenemy.Location = new System.Drawing.Point(88, 123);
             this.lbl_smallestenemy.Name = "lbl_smallestenemy";
             this.lbl_smallestenemy.Size = new System.Drawing.Size(35, 13);
             this.lbl_smallestenemy.TabIndex = 40;
@@ -400,7 +401,7 @@ namespace Towerdefense
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 86);
+            this.label1.Location = new System.Drawing.Point(47, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 57;
@@ -743,12 +744,22 @@ namespace Towerdefense
             this.pb_tower1.TabIndex = 15;
             this.pb_tower1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "E - Exit Game";
+            // 
             // game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(805, 618);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_health);
             this.Controls.Add(this.lbl_coins);
             this.Controls.Add(this.pb_backgroundCoins);
@@ -912,5 +923,6 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_backgroundCoins;
         private System.Windows.Forms.Label lbl_health;
         private System.Windows.Forms.Label lbl_coins;
+        private System.Windows.Forms.Label label2;
     }
 }

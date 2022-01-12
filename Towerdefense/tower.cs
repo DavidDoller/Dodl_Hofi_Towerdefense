@@ -25,10 +25,11 @@ namespace Towerdefense
         public static bool activeArcherTower = false;
 
 
-        public static void magetower(int locationX,int locationY, int bulletspeed) 
+        public static void magetowerShoot(int locationX,int locationY, int bulletspeed) 
         {
             if (!panelmagetowershot.Contains(tempmage)) 
             {
+                tempmage = new Panel();
                 tempmage.Location = new Point(locationX, locationY);
                 tempmage.BackColor = Color.Red;
                 tempmage.Height = 3;
@@ -46,16 +47,16 @@ namespace Towerdefense
             tempmage.Left -= bulletspeed;
         }
 
-        public static void archertower(int locationX, int locationY,int bulletspeed) 
+        public static void archertowerShoot(int locationX, int locationY,int bulletspeed) 
         {
-
             if (!panelarchertowershot.Contains(temparcher))
             {
+                temparcher = new Panel();   
                 temparcher.Location = new Point(locationX, locationY);
                 temparcher.BackColor = Color.Blue;
                 temparcher.Height = 3;
                 temparcher.Width = 30;
-                temparcher.Tag = "bulletarcher";
+                temparcher.Tag = "bulletmage";
                 panelarchertowershot.Add(temparcher);
                 game1.ActiveForm.Controls.Add(temparcher);
             }
@@ -70,7 +71,7 @@ namespace Towerdefense
 
         }
 
-        public static void ButtonDeactivateTowers(PictureBox pbTower ) 
+        public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton ) 
         {
             foreach (Control x in game1.ActiveForm.Controls)
             {
@@ -103,9 +104,14 @@ namespace Towerdefense
                 else if (game1.TowerType == "machinegun")
                 {
                     pbTower.BackgroundImage = Properties.Resources.maschiengun;
-                    pbTower.Tag = "maschiengun";
+                    pbTower.Tag = "machinegun";
                 }
 
+            if(pbTower.Tag != "")
+            {
+                towerButton.BackColor = Color.Red;
+                towerButton.Enabled = false;
+            }
         }
 
         public static void ButtonActivateTowers()
@@ -118,6 +124,19 @@ namespace Towerdefense
                 }
             }
         }
+
+
+        public static void checkTowerPlacement() 
+        {
+            foreach(Control x in game1.ActiveForm.Controls)
+            {
+                if(x is PictureBox && x.Tag == "mageTower")
+                {
+                    magetowerShoot(x.Location.X, x.Location.Y, 5);
+                }
+            }
+        }
+
 
     }
 

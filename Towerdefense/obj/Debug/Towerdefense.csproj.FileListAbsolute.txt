@@ -9,7 +9,6 @@ C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerd
 C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.exe
 C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.pdb
 C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.menu.resources
-C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.towerselect.resources
 C:\Users\david.mader\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.exe.config
 C:\Users\david.mader\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.exe
 C:\Users\david.mader\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.pdb
