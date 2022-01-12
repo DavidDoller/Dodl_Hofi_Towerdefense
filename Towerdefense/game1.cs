@@ -13,17 +13,13 @@ namespace Towerdefense
 {
     public partial class game1 : Form
     {
-        
+        public static int Coins = 200;
 
         public static string TowerType;
-
 
         public static int currentnumber;
 
         public static string check;
-
-
-
 
 
         public game1()
@@ -58,24 +54,18 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
-            lbl_test.Text = enemy.looncounter.ToString();
-            lbl_temp.Text = "Health:" + movement.health;
+            lbl_coins.BringToFront();
+            lbl_coins.Text = "Coins: " + Coins;
+            Coins++;
 
+
+            lbl_test.Text = enemy.looncounter.ToString();
+            lbl_health.Text = "Health:" + movement.health;
+            
 
 
             movement.moveenemys();
             movement.checkdirection(playtimer, enemyspawning);
-        }
-
-
-        private void btn_start_Click(object sender, EventArgs e)
-        {
-            playtimer.Start();
-        }
-
-        private void btn_pause_Click(object sender, EventArgs e)
-        {
-            playtimer.Stop();
         }
 
         private void enemyspawning_Tick(object sender, EventArgs e)
@@ -86,8 +76,10 @@ namespace Towerdefense
 
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
-            tower.magetower(90, 325, 5);
-            tower.archertower(424, 128,5);
+            tower.magetower(83, 335, 5);
+            tower.archertower(359, 334, 5);
+
+
         }
 
         private void game1_KeyDown(object sender, KeyEventArgs e)
@@ -149,7 +141,7 @@ namespace Towerdefense
             tower.ButtonDeactivateTowers(pb_tower4);
         }
 
-        private void btn_PlaceTower5_Click(object sender, EventArgs e)
+        private void btn_PlaceTower5_Click_1(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower5);
         }
@@ -179,6 +171,33 @@ namespace Towerdefense
             tower.ButtonDeactivateTowers(pb_tower10);
         }
 
-        
+        private void pnl_start_Click(object sender, EventArgs e)
+        {
+            playtimer.Start();
+            enemyspawning.Start();
+            bullet_speed.Start();
+        }
+
+        private void pnl_pause_Click(object sender, EventArgs e)
+        {
+            playtimer.Stop();
+            enemyspawning.Stop();
+            bullet_speed.Stop();
+        }
+
+        private void lbl_coins_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pb_tower5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_coins_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
