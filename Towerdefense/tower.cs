@@ -15,6 +15,7 @@ namespace Towerdefense
     { 
         public static List<Panel> panelmagetowershot = new List<Panel>();
         public static List<Panel> panelarchertowershot = new List<Panel>();
+
         public static Panel tempmage = new Panel();
         public static Panel temparcher = new Panel();
 
@@ -25,9 +26,9 @@ namespace Towerdefense
         public static bool activeArcherTower = false;
 
 
-        public static void magetowerShoot(int locationX,int locationY, int bulletspeed) 
+        public static void magetowerShoot(int locationX, int locationY, int bulletspeed)
         {
-            if (!panelmagetowershot.Contains(tempmage)) 
+            if (!panelmagetowershot.Contains(tempmage))
             {
                 tempmage = new Panel();
                 tempmage.Location = new Point(locationX, locationY);
@@ -38,7 +39,7 @@ namespace Towerdefense
                 panelmagetowershot.Add(tempmage);
                 game1.ActiveForm.Controls.Add(tempmage);
             }
-            if (tempmage.Left < 0) 
+            if (tempmage.Left < locationX - 100)
             {
                 panelmagetowershot.Remove(tempmage);
                 tempmage.Location = new Point(locationX, locationY);
@@ -60,7 +61,7 @@ namespace Towerdefense
                 panelarchertowershot.Add(temparcher);
                 game1.ActiveForm.Controls.Add(temparcher);
             }
-            if (temparcher.Left < 300)
+            if (temparcher.Left < locationX - 100)
             {
                 panelarchertowershot.Remove(temparcher);
                 temparcher.Location = new Point(locationX, locationY);
@@ -133,6 +134,10 @@ namespace Towerdefense
                 if(x is PictureBox && x.Tag == "mageTower")
                 {
                     magetowerShoot(x.Location.X, x.Location.Y, 5);
+                }
+                else if(x is PictureBox && x.Tag == "archerTower")
+                {
+                    archertowerShoot(x.Location.X, x.Location.Y, 5);
                 }
             }
         }

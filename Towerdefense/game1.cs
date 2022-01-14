@@ -62,7 +62,7 @@ namespace Towerdefense
             lbl_health.Text = "Health:" + movement.health;
 
 
-            tower.checkTowerPlacement();
+            
             movement.moveenemys();
             movement.checkdirection(playtimer, enemyspawning);
         }
@@ -75,8 +75,10 @@ namespace Towerdefense
 
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
+            tower.checkTowerPlacement();
+
             //tower.magetowerShoot(83, 335, 5);
-            tower.archertowerShoot(359, 334, 5);
+            //tower.archertowerShoot(359, 334, 5);
 
 
         }
