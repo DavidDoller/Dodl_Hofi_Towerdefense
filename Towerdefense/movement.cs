@@ -9,9 +9,19 @@ namespace Towerdefense
 {
     class movement
     {
-        public static bool boolmovementright = false;
-        public static bool boolmovmentstraight = false;
-        public static bool boolmovementdown = false;
+        public static List<PictureBox> moveright = new List<PictureBox>();
+        public static List<PictureBox> movestraight = new List<PictureBox>();
+        public static List<PictureBox> movedown = new List<PictureBox>();
+        public static int health = 10;
+
+        public static int mageTowerDamage = 1;
+        public static int archerTowerDamage = 2;
+        public static int bombTowerDamage = 3;
+        public static int ninjaTowerDamage = 4;
+        public static int minigunTowerDamage = 5;
+
+
+
 
         public static void movmentright(PictureBox temp)
         {
@@ -27,9 +37,115 @@ namespace Towerdefense
             temp.Top += 5;
         }
 
-        public static void checkdirection() 
+        public static void checkdirection(Timer playtimer, Timer enemyspawning)
         {
+            if (game1.ActiveForm == null) return;
+            foreach (Control x in game1.ActiveForm.Controls)
+            {
+                foreach (Control y in game1.ActiveForm.Controls)
+                {
+                    if (x is PictureBox && (string)x.Tag == "right" && y is PictureBox && (string)y.Tag == "enemy")
+                    {
+                        if (y.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            movestraight.Remove((PictureBox)y);
+                            movedown.Remove((PictureBox)y);
+                            if (!moveright.Contains((PictureBox)y))
+                            {
+                                moveright.Add((PictureBox)y);
+                            }
+                        }
+                    }
+                    else if (x is PictureBox && (string)x.Tag == "straight" && y is PictureBox && (string)y.Tag == "enemy")
+                    {
+                        if (y.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            moveright.Remove((PictureBox)y);
+                            movedown.Remove((PictureBox)y);
+                            if (!movestraight.Contains((PictureBox)y))
+                            {
+                                movestraight.Add((PictureBox)y);
+                            }
+                        }
+                    }
+                    else if (x is PictureBox && (string)x.Tag == "down" && y is PictureBox && (string)y.Tag == "enemy")
+                    {
+                        if (y.Bounds.IntersectsWith(x.Bounds))
+                        {
+
+                            moveright.Remove((PictureBox)y);
+                            movestraight.Remove((PictureBox)y);
+                            if (!movedown.Contains((PictureBox)y))
+                            {
+                                movedown.Add((PictureBox)y);
+                            }
+                        }
+                    }
+                    else if (x is Panel && (string)x.Tag == "bulletmage" && y is PictureBox &&(string)y.Tag == "enemy") 
+                    {
+                        if (y.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            x.Location = new System.Drawing.Point(90, 325);
+
+                            if (x is Panel && y.Tag == "enemy")
+                            {
+                                enemy.redloonhealth = enemy.redloonhealth - mageTowerDamage;
+                                if (enemy.redloonhealth == 0)
+                                {
+                                    //tower.panelmagetowershot.Remove((Panel)x);
+                                    enemy.enemyList.Remove((PictureBox)y);
+                                    game1.Coins = game1.Coins + 10;
+                                    x.Dispose();
+                                    y.Dispose();
+                                }
+                            }
+                        }
+                    }
+                    else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag == "enemy")
+                    {
+                        if (y.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            health--;
+                            y.Dispose();
+                            if (health == 0) 
+                            {
+                                playtimer.Stop();
+                                enemyspawning.Stop();
+                                menu form = new menu();
+                                form.Show();
+                                game1.ActiveForm.Hide();
+                                MessageBox.Show("Dead!");
+                            }
+                            
+                        }
+                    }
+                }
+
+            }
+
         }
 
+        public static void moveenemys() 
+        {
+            if (game1.ActiveForm == null) return;
+            foreach (Control x in game1.ActiveForm.Controls)
+            {
+                if (x is PictureBox && (string)x.Tag == "enemy")
+                {
+                    if (movestraight.Contains(x))
+                    {
+                        movmentstraight((PictureBox)x);
+                    }
+                    if (moveright.Contains(x))
+                    {
+                        movmentright((PictureBox)x);
+                    }
+                    if (movedown.Contains(x))
+                    {
+                        movementdown((PictureBox)x);
+                    }
+                }
+            }
+        }
     }
 }

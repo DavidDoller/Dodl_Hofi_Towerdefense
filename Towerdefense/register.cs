@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace Towerdefense
 {
-    public partial class Form2 : Form
+    public partial class register : Form
     {
-        public Form2()
+        public register()
         {
             InitializeComponent();
         }

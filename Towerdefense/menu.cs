@@ -19,7 +19,7 @@ namespace Towerdefense
 
         private void btn_start_Click(object sender, EventArgs e)
         {
-            game form = new game();
+            game1 form = new game1();
             form.Show();
             this.Hide();
         }

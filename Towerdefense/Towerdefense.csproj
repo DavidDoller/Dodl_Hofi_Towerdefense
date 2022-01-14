@@ -47,17 +47,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="enemy.cs" />
-    <Compile Include="Form2.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="register.Designer.cs">
+      <DependentUpon>register.cs</DependentUpon>
     </Compile>
-    <Compile Include="game.cs">
+    <Compile Include="game1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="game.Designer.cs">
-      <DependentUpon>game.cs</DependentUpon>
+    <Compile Include="game1.Designer.cs">
+      <DependentUpon>game1.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -78,17 +83,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="tower.cs" />
-    <Compile Include="towerselect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="towerselect.Designer.cs">
-      <DependentUpon>towerselect.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="register.resx">
+      <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="game.resx">
-      <DependentUpon>game.cs</DependentUpon>
+    <EmbeddedResource Include="game1.resx">
+      <DependentUpon>game1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -98,16 +97,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="towerselect.resx">
-      <DependentUpon>towerselect.cs</DependentUpon>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
@@ -129,9 +120,16 @@
     <None Include="Resources\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tower.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\bloonRed.png" />
+    <None Include="Resources\mageTower.png" />
+    <None Include="Resources\archerTower.png" />
+    <None Include="Resources\bloonBlue.png" />
+    <None Include="Resources\bloonPink.png" />
+    <None Include="Resources\bloonRed1.png" />
+    <None Include="Resources\BombTower.png" />
+    <None Include="Resources\maschiengun.png" />
+    <None Include="Resources\NinjaTower.png" />
+    <None Include="Resources\coinsBackGround.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\pause1.png" />
     <Content Include="Resources\play.png" />

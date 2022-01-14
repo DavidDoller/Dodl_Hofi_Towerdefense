@@ -77,25 +77,6 @@ class sqlcon : login
         return username;
     }
 
-    public static void selecttowerplace(int number) 
-    {
-        towerselect.temp = number;
-        
-    }
-
-    public static int towerselectint() 
-    {
-        int number = 0;
-        towerselect.temp = number;
-        return number;
-    }
-    
-    public static void changetower(int number) 
-    {
-        towerselect.changeTowerNumber = number;
-        
-    }
-
 }
 }
 

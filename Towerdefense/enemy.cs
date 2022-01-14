@@ -11,40 +11,36 @@ namespace Towerdefense
     
     class enemy
     {
-        public static int health = 10;
-        public static int speed = 5;
-        
+        public static int redloonhealth = 3;
+        public static int redloonspeed = 5;
+        public static int looncounter = 1;
+        public static int smallestEnemy = 0;
+        public static PictureBox pb = new PictureBox();
+        public static List<PictureBox> enemyList = new List<PictureBox>();
 
-        public static int healpoints(int hp, Form form,PictureBox pb)
+
+
+
+
+        public static PictureBox Createredloon(int location1, int location2)
         {
-            hp = health;
-
-            if(hp < 1) 
-            {
-                form.Controls.Remove(pb);
-                pb.Dispose();
-            }
-
-            return hp;
-        }
-
-        public static int movespeed(int speed1) 
-        {
-            speed1 = speed;
-
-            return speed1;
-        }
-
-        public static PictureBox Createenemy()
-        {
-            PictureBox pb = new PictureBox();         
+            pb = new PictureBox();
+                    
             pb.Size = new Size(32, 32);
-            pb.Location = new Point(30, 419);
-            pb.BackColor = Color.Red;
+            pb.Location = new Point(location1, location2);
+            pb.BackgroundImage = Properties.Resources.bloonRed;
+            pb.BackgroundImageLayout = ImageLayout.Stretch;
             pb.Tag = "enemy";
-            game.ActiveForm.Controls.Add(pb);
+            pb.Name = "Redloon"+ looncounter;
+            looncounter++;
+            redloonhealth = 2;
+            pb.BringToFront();
+            enemyList.Add(pb);
+            game1.ActiveForm.Controls.Add(pb);
             return pb;
-        }
+
+
+        }       
     }
 
 
