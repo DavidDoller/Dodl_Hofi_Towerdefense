@@ -18,7 +18,7 @@ namespace Towerdefense
         public static int archerTowerDamage = 2;
         public static int bombTowerDamage = 3;
         public static int ninjaTowerDamage = 4;
-        public static int minigunTowerDamage = 5;
+        public static int machinegunTowerDamage = 5;
 
 
 
@@ -81,18 +81,69 @@ namespace Towerdefense
                             }
                         }
                     }
-                    else if (x is Panel && (string)x.Tag == "bulletmage" && y is PictureBox &&(string)y.Tag == "enemy") 
+                    else if (x is Panel && (string)x.Tag == "bullet" && y is PictureBox &&(string)y.Tag == "enemy") 
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
-                            x.Location = new System.Drawing.Point(90, 325);
-
-                            if (x is Panel && y.Tag == "enemy")
+                            if(x.Name == "mage")
                             {
                                 enemy.redloonhealth = enemy.redloonhealth - mageTowerDamage;
-                                if (enemy.redloonhealth == 0)
+
+                                if (enemy.redloonhealth <= 0)
                                 {
-                                    //tower.panelmagetowershot.Remove((Panel)x);
+                                    tower.panelmagetowershot.Remove((Panel)x);
+                                    enemy.enemyList.Remove((PictureBox)y);
+                                    game1.Coins = game1.Coins + 10;
+                                    x.Dispose();
+                                    y.Dispose();
+                                }
+                            }
+                            else if (x.Name == "archer")
+                            {
+                                enemy.redloonhealth = enemy.redloonhealth - archerTowerDamage;
+
+                                if (enemy.redloonhealth <= 0)
+                                {
+                                    tower.panelarchertowershot.Remove((Panel)x);
+                                    enemy.enemyList.Remove((PictureBox)y);
+                                    game1.Coins = game1.Coins + 10;
+                                    x.Dispose();
+                                    y.Dispose();
+                                }
+                            }
+                            else if (x.Name == "bomb")
+                            {
+                                enemy.redloonhealth = enemy.redloonhealth - bombTowerDamage;
+
+                                if (enemy.redloonhealth <= 0)
+                                {
+                                    tower.panelBombTowerShot.Remove((Panel)x);
+                                    enemy.enemyList.Remove((PictureBox)y);
+                                    game1.Coins = game1.Coins + 10;
+                                    x.Dispose();
+                                    y.Dispose();
+                                }
+                            }
+                            else if (x.Name == "ninja")
+                            {
+                                enemy.redloonhealth = enemy.redloonhealth - ninjaTowerDamage;
+
+                                if (enemy.redloonhealth <= 0)
+                                {
+                                    tower.panelNinjaTowerShot.Remove((Panel)x);
+                                    enemy.enemyList.Remove((PictureBox)y);
+                                    game1.Coins = game1.Coins + 10;
+                                    x.Dispose();
+                                    y.Dispose();
+                                }
+                            }
+                            else if (x.Name == "machinegun")
+                            {
+                                enemy.redloonhealth = enemy.redloonhealth - machinegunTowerDamage;
+
+                                if (enemy.redloonhealth <= 0)
+                                {
+                                    tower.panelMachineGunTowerShot.Remove((Panel)x);
                                     enemy.enemyList.Remove((PictureBox)y);
                                     game1.Coins = game1.Coins + 10;
                                     x.Dispose();
