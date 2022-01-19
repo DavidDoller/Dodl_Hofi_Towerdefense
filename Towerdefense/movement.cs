@@ -9,6 +9,11 @@ namespace Towerdefense
 {
     class movement
     {
+        public static bool moveRightBool;
+        public static bool moveStraightBool;
+        public static bool moveDownBool;
+
+
         public static List<PictureBox> moveright = new List<PictureBox>();
         public static List<PictureBox> movestraight = new List<PictureBox>();
         public static List<PictureBox> movedown = new List<PictureBox>();
@@ -20,6 +25,7 @@ namespace Towerdefense
         public static int ninjaTowerDamage = 4;
         public static int machinegunTowerDamage = 5;
 
+        
 
 
 
@@ -54,6 +60,11 @@ namespace Towerdefense
                             {
                                 moveright.Add((PictureBox)y);
                             }
+
+                            moveRightBool = true;
+                            moveDownBool = false;
+                            moveStraightBool = false;
+
                         }
                     }
                     else if (x is PictureBox && (string)x.Tag == "straight" && y is PictureBox && (string)y.Tag == "enemy")
@@ -66,6 +77,10 @@ namespace Towerdefense
                             {
                                 movestraight.Add((PictureBox)y);
                             }
+
+                            moveRightBool = false;
+                            moveDownBool = false;
+                            moveStraightBool = true;
                         }
                     }
                     else if (x is PictureBox && (string)x.Tag == "down" && y is PictureBox && (string)y.Tag == "enemy")
@@ -79,6 +94,10 @@ namespace Towerdefense
                             {
                                 movedown.Add((PictureBox)y);
                             }
+
+                            moveRightBool = false;
+                            moveDownBool = true;
+                            moveStraightBool = false;
                         }
                     }
                     else if (x is Panel && (string)x.Tag == "bullet" && y is PictureBox &&(string)y.Tag == "enemy") 
@@ -198,5 +217,12 @@ namespace Towerdefense
                 }
             }
         }
+
+        //public static void autoAimmage(int bulletspeed)
+        //{
+            
+        //}
+
+
     }
 }

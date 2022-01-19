@@ -46,7 +46,7 @@ namespace Towerdefense
             pb_corner4.Visible = false;
             pb_corner5.Visible = false;
             DoubleBuffered = true;
-            
+
         }
 
 
@@ -76,7 +76,7 @@ namespace Towerdefense
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
             tower.checkTowerPlacement();
-
+            //tower.autoAim();
             //tower.magetowerShoot(83, 335, 5);
             //tower.archertowerShoot(359, 334, 5);
 
@@ -125,51 +125,62 @@ namespace Towerdefense
         private void btn_PlaceTower1_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower1,btn_PlaceTower1);
+
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower2_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower2, btn_PlaceTower2);
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower3_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower3,btn_PlaceTower3);
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower4_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower4,btn_PlaceTower4);
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower5_Click_1(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower5,btn_PlaceTower5);
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower6_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower6, btn_PlaceTower6);
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower7_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower7,btn_PlaceTower7);
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower8_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower8,btn_PlaceTower8);
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower9_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower9,btn_PlaceTower9);
+            //tower.reduceCoins();
         }
 
         private void btn_PlaceTower10_Click(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower10,btn_PlaceTower10);
+            //tower.reduceCoins();
         }
 
         private void pnl_start_Click(object sender, EventArgs e)

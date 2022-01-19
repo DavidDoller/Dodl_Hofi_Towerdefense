@@ -19,9 +19,6 @@ namespace Towerdefense
         public static List<PictureBox> enemyList = new List<PictureBox>();
 
 
-
-
-
         public static PictureBox Createredloon(int location1, int location2)
         {
             pb = new PictureBox();
@@ -38,9 +35,7 @@ namespace Towerdefense
             enemyList.Add(pb);
             game1.ActiveForm.Controls.Add(pb);
             return pb;
-
-
-        }       
+        }
     }
 
 

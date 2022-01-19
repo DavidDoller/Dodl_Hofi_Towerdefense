@@ -37,7 +37,6 @@ namespace Towerdefense
         public static int machinegunTowerPrice = 400;
 
 
-
         #region Towermethodes
         public static void magetowerShoot(int locationX, int locationY, int bulletspeed)
         {
@@ -83,7 +82,6 @@ namespace Towerdefense
 
             }
             temparcher.Left -= bulletspeed;
-            temparcher.Top -= bulletspeed;
 
         }
 
@@ -222,71 +220,53 @@ namespace Towerdefense
             {
                 if(x is PictureBox && x.Tag == "mageTower")
                 {
-                    //if(game1.Coins >= mageTowerPrice)
-                    //{
-                        magetowerShoot(x.Location.X, x.Location.Y, 5);
-                        //foreach(Button b in game1.ActiveForm.Controls)
-                        //{
-                        // if ()
-                        //    {
-                                game1.Coins = game1.Coins - mageTowerPrice;
-                        //    }
-                        //}     
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Sie haben zu wenig Coins um diesen Tower zu plazieren", "Zu Wenig Coins", MessageBoxButtons.OK);
-                    //}
+                        magetowerShoot(x.Location.X, x.Location.Y,5);
+                        
                 }
                 else if(x is PictureBox && x.Tag == "archerTower")
                 {
-                    //if(game1.Coins >= archerTowerPrice)
-                    //{
                         archertowerShoot(x.Location.X, x.Location.Y, 5);
-                        game1.Coins = game1.Coins - archerTowerPrice;
-                    //}
-                   // else
-                    //{
-                      //MessageBox.Show("Sie haben zu wenig Coins um diesen Tower zu plazieren", "Zu Wenig Coins", MessageBoxButtons.OK);
-                    //}
+                        
                 }
                 else if (x is PictureBox && x.Tag == "bombTower")
                 {
-                    //if(game1.Coins >= bombTowerPrice)
-                    //{
                         bombTowerShoot(x.Location.X, x.Location.Y, 5);
-                        game1.Coins = game1.Coins - bombTowerPrice;
-                    //}
-                    //else
-                    //{
-                        MessageBox.Show("Sie haben zu wenig Coins um diesen Tower zu plazieren", "Zu Wenig Coins", MessageBoxButtons.OK);
-                    //}
+                        
                 }
                 else if (x is PictureBox && x.Tag == "ninjaTower")
                 {
-                    //if(game1.Coins >= ninjaTowerPrice)
-                    //{
                         ninjaTowerShoot(x.Location.X, x.Location.Y, 5);
-                        game1.Coins = game1.Coins - ninjaTowerPrice;
-                    //}
-                    //else
-                    //{
-                        MessageBox.Show("Sie haben zu wenig Coins um diesen Tower zu plazieren", "Zu Wenig Coins", MessageBoxButtons.OK);
-                    //}
-
+                        
                 }
                 else if (x is PictureBox && x.Tag == "machinegun")
                 {
-                    //if(game1.Coins >= machinegunTowerPrice)
-                    //{
                         machinegunTowerShoot(x.Location.X, x.Location.Y, 20);
-                        game1.Coins = game1.Coins - machinegunTowerPrice;
-                   // }
-                    //else
-                    //{
-                        MessageBox.Show("Sie haben zu wenig Coins um diesen Tower zu plazieren", "Zu Wenig Coins", MessageBoxButtons.OK);
-                    //}
+                        
                 }
+            }
+        }
+
+        public static void reduceCoins()
+        {
+            if (game1.TowerType == "mage")
+            {
+                game1.Coins = game1.Coins - 200;
+            }
+            if(game1.TowerType == "archer")
+            {
+                game1.Coins = game1.Coins - 250;
+            }
+            if (game1.TowerType == "bomb")
+            {
+                game1.Coins = game1.Coins - 250;
+            }
+            if (game1.TowerType == "ninja")
+            {
+                game1.Coins = game1.Coins - 250;
+            }
+            if (game1.TowerType == "machinegun")
+            {
+                game1.Coins = game1.Coins - 250;
             }
         }
 
