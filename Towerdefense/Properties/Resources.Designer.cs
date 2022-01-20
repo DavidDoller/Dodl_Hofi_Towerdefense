@@ -143,9 +143,9 @@ namespace Towerdefense.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap mageTower {
+        internal static System.Drawing.Bitmap machineGunTower {
             get {
-                object obj = ResourceManager.GetObject("mageTower", resourceCulture);
+                object obj = ResourceManager.GetObject("machineGunTower", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Towerdefense.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap maschiengun {
+        internal static System.Drawing.Bitmap mageTower {
             get {
-                object obj = ResourceManager.GetObject("maschiengun", resourceCulture);
+                object obj = ResourceManager.GetObject("mageTower", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

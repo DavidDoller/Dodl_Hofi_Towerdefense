@@ -14,22 +14,22 @@ namespace Towerdefense
     class tower
     {
         #region Lists and Panels for Towers
+        //a list gets created for every shot from each tower
         public static List<Panel> panelmagetowershot = new List<Panel>();
         public static List<Panel> panelarchertowershot = new List<Panel>();
         public static List<Panel> panelBombTowerShot = new List<Panel>();
         public static List<Panel> panelNinjaTowerShot = new List<Panel>();
         public static List<Panel> panelMachineGunTowerShot = new List<Panel>();
 
+        //the bullet of eacht tower gets created
         public static Panel tempmage = new Panel();
         public static Panel temparcher = new Panel();
         public static Panel tempBomb = new Panel();
         public static Panel tempNinja = new Panel();
         public static Panel tempMachinegun = new Panel();
-        #endregion
+        #endregion        
 
-        public static int bulletSpeedX = enemy.pb.Location.X;
-        public static int bulletSpeedY = enemy.pb.Location.Y;
-
+        //the price of each tower
         public static int mageTowerPrice = 200;
         public static int archerTowerPrice = 250;
         public static int bombTowerPrice = 300;
@@ -40,6 +40,7 @@ namespace Towerdefense
         #region Towermethodes
         public static void magetowerShoot(int locationX, int locationY, int bulletspeed)
         {
+            //if the bullet is not in the list, bullet gets created
             if (!panelmagetowershot.Contains(tempmage))
             {
                 tempmage = new Panel();
@@ -52,6 +53,7 @@ namespace Towerdefense
                 panelmagetowershot.Add(tempmage);
                 game1.ActiveForm.Controls.Add(tempmage);
             }
+            //when the bullet moves to far away from the tower, bullet starts at the tower again
             if (tempmage.Left < locationX - 100)
             {
                 panelmagetowershot.Remove(tempmage);
@@ -63,6 +65,7 @@ namespace Towerdefense
 
         public static void archertowerShoot(int locationX, int locationY, int bulletspeed)
         {
+            //if the bullet is not in the list, bullet gets created
             if (!panelarchertowershot.Contains(temparcher))
             {
                 temparcher = new Panel();
@@ -75,6 +78,7 @@ namespace Towerdefense
                 panelarchertowershot.Add(temparcher);
                 game1.ActiveForm.Controls.Add(temparcher);
             }
+            //when the bullet moves to far away from the tower, bullet starts at the tower again
             if (temparcher.Left < locationX - 100)
             {
                 panelarchertowershot.Remove(temparcher);
@@ -87,6 +91,7 @@ namespace Towerdefense
 
         public static void bombTowerShoot(int locationX, int locationY, int bulletspeed)
         {
+            //if the bullet is not in the list, bullet gets created
             if (!panelBombTowerShot.Contains(tempBomb))
             {
                 tempBomb = new Panel();
@@ -99,6 +104,7 @@ namespace Towerdefense
                 panelBombTowerShot.Add(tempBomb);
                 game1.ActiveForm.Controls.Add(tempBomb);
             }
+            //when the bullet moves to far away from the tower, bullet starts at the tower again
             if (tempBomb.Left < locationX - 100)
             {
                 panelBombTowerShot.Remove(tempBomb);
@@ -110,6 +116,7 @@ namespace Towerdefense
 
         public static void ninjaTowerShoot(int locationX, int locationY, int bulletspeed)
         {
+            //if the bullet is not in the list, bullet gets created
             if (!panelNinjaTowerShot.Contains(tempNinja))
             {
                 tempNinja = new Panel();
@@ -122,6 +129,7 @@ namespace Towerdefense
                 panelNinjaTowerShot.Add(tempNinja);
                 game1.ActiveForm.Controls.Add(tempNinja);
             }
+            //when the bullet moves to far away from the tower, bullet starts at the tower again
             if (tempNinja.Left < locationX - 100)
             {
                 panelBombTowerShot.Remove(tempmage);
@@ -133,6 +141,7 @@ namespace Towerdefense
 
         public static void machinegunTowerShoot(int locationX, int locationY, int bulletspeed)
         {
+            //if the bullet is not in the list, bullet gets created
             if (!panelMachineGunTowerShot.Contains(tempMachinegun))
             {
                 tempMachinegun = new Panel();
@@ -145,6 +154,7 @@ namespace Towerdefense
                 panelMachineGunTowerShot.Add(tempMachinegun);
                 game1.ActiveForm.Controls.Add(tempMachinegun);
             }
+            //when the bullet moves to far away from the tower, bullet starts at the tower again
             if (tempMachinegun.Left < locationX - 100)
             {
                 panelMachineGunTowerShot.Remove(tempMachinegun);
@@ -157,6 +167,7 @@ namespace Towerdefense
 
         public static void UnvisibleButton()
         {
+            //all buttons on the form game1 get invisible
             foreach (Control x in game1.ActiveForm.Controls)
             {
                 if (x is Button)
@@ -167,8 +178,9 @@ namespace Towerdefense
         }
         public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton ) 
         {
+            //buttons get invisible
             UnvisibleButton();
-
+                //the chosen tower gets placed at the chosen place
                 if (game1.TowerType == "mage")
                 {
                     pbTower.BackgroundImage = Properties.Resources.mageTower;
@@ -191,10 +203,11 @@ namespace Towerdefense
                 }
                 else if (game1.TowerType == "machinegun")
                 {
-                    pbTower.BackgroundImage = Properties.Resources.maschiengun;
+                    pbTower.BackgroundImage = Properties.Resources.machineGunTower;
                     pbTower.Tag = "machinegun";
                 }
 
+            //when the tag of the tower is not empty you can't use the button anymore
             if(pbTower.Tag != "")
             {
                 towerButton.BackColor = Color.Red;
@@ -204,6 +217,7 @@ namespace Towerdefense
 
         public static void ButtonActivateTowers()
         {
+            //tower buttons get visible
             foreach (Control x in game1.ActiveForm.Controls)
             {
                 if (x is Button)
@@ -216,6 +230,7 @@ namespace Towerdefense
 
         public static void checkTowerPlacement() 
         {
+            //checks what and where the tower is placed, so the right bullet gets shot
             foreach (Control x in game1.ActiveForm.Controls)
             {
                 if(x is PictureBox && x.Tag == "mageTower")
@@ -246,29 +261,29 @@ namespace Towerdefense
             }
         }
 
-        public static void reduceCoins()
-        {
-            if (game1.TowerType == "mage")
-            {
-                game1.Coins = game1.Coins - 200;
-            }
-            if(game1.TowerType == "archer")
-            {
-                game1.Coins = game1.Coins - 250;
-            }
-            if (game1.TowerType == "bomb")
-            {
-                game1.Coins = game1.Coins - 250;
-            }
-            if (game1.TowerType == "ninja")
-            {
-                game1.Coins = game1.Coins - 250;
-            }
-            if (game1.TowerType == "machinegun")
-            {
-                game1.Coins = game1.Coins - 250;
-            }
-        }
+        //public static void reduceCoins()
+        //{
+        //    if (game1.TowerType == "mage")
+        //    {
+        //        game1.Coins = game1.Coins - 200;
+        //    }
+        //    if(game1.TowerType == "archer")
+        //    {
+        //        game1.Coins = game1.Coins - 250;
+        //    }
+        //    if (game1.TowerType == "bomb")
+        //    {
+        //        game1.Coins = game1.Coins - 250;
+        //    }
+        //    if (game1.TowerType == "ninja")
+        //    {
+        //        game1.Coins = game1.Coins - 250;
+        //    }
+        //    if (game1.TowerType == "machinegun")
+        //    {
+        //        game1.Coins = game1.Coins - 250;
+        //    }
+        //}
 
 
     }

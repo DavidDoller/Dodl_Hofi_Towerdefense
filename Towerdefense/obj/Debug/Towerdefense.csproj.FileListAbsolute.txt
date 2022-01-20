@@ -38,3 +38,16 @@ C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerd
 C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.register.resources
 C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.register.resources
 C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.AssemblyReference.cache
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.exe.config
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.exe
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Towerdefense.pdb
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csprojAssemblyReference.cache
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.register.resources
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.game1.resources
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.login.resources
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.menu.resources
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.Properties.Resources.resources
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.GenerateResource.cache
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.CoreCompileInputs.cache
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.exe
+C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.pdb

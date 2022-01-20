@@ -491,7 +491,6 @@ namespace Towerdefense
             this.lbl_coins.Size = new System.Drawing.Size(106, 31);
             this.lbl_coins.TabIndex = 71;
             this.lbl_coins.Text = "Coins: ";
-            this.lbl_coins.Click += new System.EventHandler(this.lbl_coins_Click_1);
             // 
             // pb_backgroundCoins
             // 
@@ -543,7 +542,7 @@ namespace Towerdefense
             // pb_maschingunTower
             // 
             this.pb_maschingunTower.BackColor = System.Drawing.Color.Transparent;
-            this.pb_maschingunTower.BackgroundImage = global::Towerdefense.Properties.Resources.maschiengun;
+            this.pb_maschingunTower.BackgroundImage = global::Towerdefense.Properties.Resources.machineGunTower;
             this.pb_maschingunTower.Location = new System.Drawing.Point(723, 543);
             this.pb_maschingunTower.Name = "pb_maschingunTower";
             this.pb_maschingunTower.Size = new System.Drawing.Size(59, 53);
@@ -724,7 +723,6 @@ namespace Towerdefense
             this.pb_tower5.Size = new System.Drawing.Size(57, 53);
             this.pb_tower5.TabIndex = 17;
             this.pb_tower5.TabStop = false;
-            this.pb_tower5.Click += new System.EventHandler(this.pb_tower5_Click);
             // 
             // pb_tower4
             // 

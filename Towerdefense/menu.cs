@@ -19,6 +19,7 @@ namespace Towerdefense
 
         private void btn_start_Click(object sender, EventArgs e)
         {
+            //change form to game1
             game1 form = new game1();
             form.Show();
             this.Hide();
@@ -26,6 +27,7 @@ namespace Towerdefense
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
+            //button click closes the application
             Application.Exit();
         }
     }

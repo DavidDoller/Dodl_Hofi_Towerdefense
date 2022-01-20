@@ -29,13 +29,13 @@ namespace Towerdefense
             string Pw = txt_password.Text;
             string username = txt_username.Text;
             username1 = txt_username.Text;
-            string connectionstring = @"Server='(localdb)\MSSQLLocalDB';Integrated Security = true;"; //server of where database shut get create
+            string connectionstring = @"Server='(localdb)\MSSQLLocalDB';Integrated Security = true;"; //server where database gets created
 
             SqlConnection temp = new SqlConnection(connectionstring);//sqlcon for the database
-            SqlCommand cmdtemp = new SqlCommand("select Count(*) from master.dbo.sysdatabases where name = 'Towerdefense'", temp);//count if there is a database with the name Flappybrid  
+            SqlCommand cmdtemp = new SqlCommand("select Count(*) from master.dbo.sysdatabases where name = 'Towerdefense'", temp);//count if there is a database with the name Towerdefense  
             temp.Open();
 
-            if (!((int)cmdtemp.ExecuteScalar() == 1)) //if there is no database, database get created
+            if (!((int)cmdtemp.ExecuteScalar() == 1)) //if there is no database, database gets created
             {
                 SqlCommand cmd = new SqlCommand("Create Database Towerdefense", temp);//create database
                 cmd.ExecuteNonQuery();
@@ -47,16 +47,16 @@ namespace Towerdefense
             }
 
             temp.Close();
-            //control of the username and the password
+            //control the username and the password
             #region control account 
             sqlcon.OpenConnection();
 
-            if (username != string.Empty && Pw != string.Empty)//check if there is no textbox empty
+            if (username != string.Empty && Pw != string.Empty)//check if there is no empty textbox 
             {
 
                 SqlCommand cmd = new SqlCommand("select * from register where username='" + username + "' and password='" + Pw + "'", sqlcon.con); //select the username and the Password from the database register
                 SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)//if datareader has rows and account exists open the flabbybird form
+                if (dr.HasRows)//if datareader has rows and account exists open the menu form
                 {
                     menu form = new menu();
                     form.Show();

@@ -21,6 +21,8 @@ namespace Towerdefense
 
         public static PictureBox Createredloon(int location1, int location2)
         {
+            //creats the picturebox "redLoon"
+
             pb = new PictureBox();
                     
             pb.Size = new Size(32, 32);
