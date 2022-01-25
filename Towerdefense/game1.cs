@@ -88,7 +88,9 @@ namespace Towerdefense
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
             //checks where and what tower is placed
-            tower.checkTowerPlacement();
+            
+
+            tower.TowerShootsMovement(5);
             //tower.autoAim();
             //tower.magetowerShoot(83, 335, 5);
             //tower.archertowerShoot(359, 334, 5);
@@ -227,6 +229,9 @@ namespace Towerdefense
             bullet_speed.Stop();
         }
 
-       
+        private void bullet_spawning_Tick(object sender, EventArgs e)
+        {
+            tower.checkTowerPlacement();
+        }
     }
 }

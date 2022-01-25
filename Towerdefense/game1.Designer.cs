@@ -99,6 +99,7 @@ namespace Towerdefense
             this.lbl_redlooncounter = new System.Windows.Forms.Label();
             this.lbl_bluelooncounter = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.bullet_spawning = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).BeginInit();
@@ -806,6 +807,12 @@ namespace Towerdefense
             this.label3.TabIndex = 77;
             this.label3.Text = "Timer:";
             // 
+            // bullet_spawning
+            // 
+            this.bullet_spawning.Enabled = true;
+            this.bullet_spawning.Interval = 3000;
+            this.bullet_spawning.Tick += new System.EventHandler(this.bullet_spawning_Tick);
+            // 
             // game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -985,5 +992,6 @@ namespace Towerdefense
         private System.Windows.Forms.Label lbl_redlooncounter;
         private System.Windows.Forms.Label lbl_bluelooncounter;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer bullet_spawning;
     }
 }

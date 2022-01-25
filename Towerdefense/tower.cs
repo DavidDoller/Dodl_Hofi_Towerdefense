@@ -22,13 +22,15 @@ namespace Towerdefense
         public static List<Panel> panelMachineGunTowerShot = new List<Panel>();
 
         //the bullet of eacht tower gets created
-        public static Panel tempmage = new Panel();
+        //public static Panel tempmage = new Panel();
         public static Panel temparcher = new Panel();
         public static Panel tempBomb = new Panel();
         public static Panel tempNinja = new Panel();
         public static Panel tempMachinegun = new Panel();
 
         public static int mageShootCounter;
+
+              
         #endregion        
 
         //the price of each tower
@@ -39,14 +41,33 @@ namespace Towerdefense
         public static int machinegunTowerPrice = 400;
 
 
-        #region Towermethodes
-        public static void magetowerShoot(int locationX, int locationY, int bulletspeed)
+        public static void TowerShootsMovement(int bulletspeed) 
         {
-            
-            //if the bullet is not in the list, bullet gets created
-            if (!panelmagetowershot.Contains(tempmage))
+            foreach (Control x in game1.ActiveForm.Controls)
             {
-                Panel tempmage = new Panel();
+                foreach(Control y in game1.ActiveForm.Controls)
+                {
+                    if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
+                    {
+                        x.Left -= bulletspeed;
+
+                        if (x.Left < y.Location.X - 100)
+                        {
+                            panelmagetowershot.Remove((Panel)x);
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                    }
+                }
+                
+            }
+        }
+
+
+        #region Towermethodes
+        public static void magetowerShoot(int locationX, int locationY)
+        {
+                Panel tempmage = new Panel();     
                 tempmage.Name = "mage" + mageShootCounter;
                 tempmage.Location = new Point(locationX, locationY);
                 tempmage.BackColor = Color.Red;
@@ -54,26 +75,8 @@ namespace Towerdefense
                 tempmage.Width = 30;
                 tempmage.Tag = "bullet";
                 panelmagetowershot.Add(tempmage);
-                mageShootCounter++;
                 game1.ActiveForm.Controls.Add(tempmage);
-            }
-
-            foreach (Control x in game1.ActiveForm.Controls)
-                { 
-                    if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage")
-                    {
-                        x.Left -= bulletspeed;
-
-                        if (x.Left < locationX - 100)
-                        {
-                            panelmagetowershot.Remove((Panel)x);
-                            x.Dispose();
-                            x.Location = new Point(locationX, locationY);
-                        }
-                    }
-                }
-
-            
+                mageShootCounter++;
         }
 
         public static void archertowerShoot(int locationX, int locationY, int bulletspeed)
@@ -248,7 +251,7 @@ namespace Towerdefense
             {
                 if(x is PictureBox && x.Tag == "mageTower")
                 {
-                        magetowerShoot(x.Location.X, x.Location.Y,5);
+                        magetowerShoot(x.Location.X, x.Location.Y);
                         
                 }
                 else if(x is PictureBox && x.Tag == "archerTower")
