@@ -83,6 +83,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="tower.cs" />
+    <Compile Include="waveController.cs" />
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>

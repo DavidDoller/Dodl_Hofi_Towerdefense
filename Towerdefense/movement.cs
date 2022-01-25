@@ -9,10 +9,6 @@ namespace Towerdefense
 {
     class movement
     {
-        public static bool moveRightBool;
-        public static bool moveStraightBool;
-        public static bool moveDownBool;
-
         //lists get created
         public static List<PictureBox> moveright = new List<PictureBox>();
         public static List<PictureBox> movestraight = new List<PictureBox>();
@@ -54,7 +50,8 @@ namespace Towerdefense
                 foreach (Control y in game1.ActiveForm.Controls)
                 {
                     //checks if the enemy collides with a corner picturebox, than checks what way it should turn
-                    if (x is PictureBox && (string)x.Tag == "right" && y is PictureBox && (string)y.Tag == "enemy")
+                    if (y.Tag == null || x.Tag == null) continue;
+                    if (x is PictureBox && (string)x.Tag == "right" && y is PictureBox && (string)y.Tag.ToString().Substring(0,5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
@@ -67,7 +64,7 @@ namespace Towerdefense
                             }
                         }
                     }
-                    else if (x is PictureBox && (string)x.Tag == "straight" && y is PictureBox && (string)y.Tag == "enemy")
+                    else if (x is PictureBox && (string)x.Tag == "straight" && y is PictureBox && (string)y.Tag.ToString().Substring(0, 5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
@@ -77,10 +74,10 @@ namespace Towerdefense
                             if (!movestraight.Contains((PictureBox)y))
                             {
                                 movestraight.Add((PictureBox)y);
-                            }                         
+                            }
                         }
                     }
-                    else if (x is PictureBox && (string)x.Tag == "down" && y is PictureBox && (string)y.Tag == "enemy")
+                    else if (x is PictureBox && (string)x.Tag == "downdir" && y is PictureBox && (string)y.Tag.ToString().Substring(0, 5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
@@ -95,98 +92,217 @@ namespace Towerdefense
                         }
                     }
                     //checks if enemy gets hit by a bullet 
-                    else if (x is Panel && (string)x.Tag == "bullet" && y is PictureBox &&(string)y.Tag == "enemy") 
+                    else if (x is Panel && (string)x.Tag == "bullet" && y is PictureBox && (string)y.Tag.ToString().Substring(0, 5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
                             //checks name of bullet panel
-                            if(x.Name == "mage")
+                            if (x.Name.ToString().Substring(0, 4) == "mage")
                             {
-                                //enemy health gets reduced by a certain amount dependent on the tower
-                                enemy.redloonhealth = enemy.redloonhealth - mageTowerDamage;
-
-                                //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
-                                if (enemy.redloonhealth <= 0)
+                                if (y.Name == "Redloon")
                                 {
-                                    tower.panelmagetowershot.Remove((Panel)x);
-                                    enemy.enemyList.Remove((PictureBox)y);
-                                    game1.Coins = game1.Coins + 10;
-                                    x.Dispose();
-                                    y.Dispose();
+                                    //enemy health gets reduced by a certain amount dependent on the tower
+                                    enemy.redloonhealth = enemy.redloonhealth - mageTowerDamage;
+
+                                    //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
+                                    if (enemy.redloonhealth <= 0)
+                                    {
+                                        tower.panelmagetowershot.Remove((Panel)x);
+                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        game1.Coins = game1.Coins + 10;
+                                        x.Dispose();
+                                        y.Dispose();
+                                    }
                                 }
+                                if (y.Name == "Blueloon")
+                                {
+                                    y.Name = "Redloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
+                                    x.Dispose();
+                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    //enemy.enemyRedList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonRed;
+                                }
+                                if (y.Name == "Pinkloon")
+                                {
+                                    y.Name = "Blueloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
+                                    x.Dispose();
+                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    //enemy.enemyBlueList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonBlue;
+                                }
+
                             }
                             else if (x.Name == "archer")
                             {
-                                //enemy health gets reduced by a certain amount dependent on the tower
-                                enemy.redloonhealth = enemy.redloonhealth - archerTowerDamage;
-
-                                //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
-                                if (enemy.redloonhealth <= 0)
+                                if (y.Name == "Redloon")
                                 {
-                                    tower.panelarchertowershot.Remove((Panel)x);
-                                    enemy.enemyList.Remove((PictureBox)y);
-                                    game1.Coins = game1.Coins + 10;
+                                    //enemy health gets reduced by a certain amount dependent on the tower
+                                    enemy.redloonhealth = enemy.redloonhealth - archerTowerDamage;
+
+                                    //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
+                                    if (enemy.redloonhealth <= 0)
+                                    {
+                                        tower.panelmagetowershot.Remove((Panel)x);
+                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        game1.Coins = game1.Coins + 10;
+                                        x.Dispose();
+                                        y.Dispose();
+                                    }
+                                }
+                                if (y.Name == "Blueloon")
+                                {
+                                    y.Name = "Redloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
-                                    y.Dispose();
+                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    //enemy.enemyRedList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonRed;
+                                }
+                                if (y.Name == "Pinkloon")
+                                {
+                                    y.Name = "Blueloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
+                                    x.Dispose();
+                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    //enemy.enemyBlueList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonBlue;
                                 }
                             }
                             else if (x.Name == "bomb")
                             {
-                                //enemy health gets reduced by a certain amount dependent on the tower
-                                enemy.redloonhealth = enemy.redloonhealth - bombTowerDamage;
-
-                                //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
-                                if (enemy.redloonhealth <= 0)
+                                if (y.Name == "Redloon")
                                 {
-                                    tower.panelBombTowerShot.Remove((Panel)x);
-                                    enemy.enemyList.Remove((PictureBox)y);
-                                    game1.Coins = game1.Coins + 10;
+                                    //enemy health gets reduced by a certain amount dependent on the tower
+                                    enemy.redloonhealth = enemy.redloonhealth - bombTowerDamage;
+
+                                    //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
+                                    if (enemy.redloonhealth <= 0)
+                                    {
+                                        tower.panelmagetowershot.Remove((Panel)x);
+                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        game1.Coins = game1.Coins + 10;
+                                        x.Dispose();
+                                        y.Dispose();
+                                    }
+                                }
+                                if (y.Name == "Blueloon")
+                                {
+                                    y.Name = "Redloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
-                                    y.Dispose();
+                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    //enemy.enemyRedList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonRed;
+                                }
+                                if (y.Name == "Pinkloon")
+                                {
+                                    y.Name = "Blueloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
+                                    x.Dispose();
+                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    //enemy.enemyBlueList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonBlue;
                                 }
                             }
                             else if (x.Name == "ninja")
                             {
-                                //enemy health gets reduced by a certain amount dependent on the tower
-                                enemy.redloonhealth = enemy.redloonhealth - ninjaTowerDamage;
-
-                                //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
-                                if (enemy.redloonhealth <= 0)
+                                if (y.Name == "Redloon")
                                 {
-                                    tower.panelNinjaTowerShot.Remove((Panel)x);
-                                    enemy.enemyList.Remove((PictureBox)y);
-                                    game1.Coins = game1.Coins + 10;
+                                    //enemy health gets reduced by a certain amount dependent on the tower
+                                    enemy.redloonhealth = enemy.redloonhealth - ninjaTowerDamage;
+
+                                    //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
+                                    if (enemy.redloonhealth <= 0)
+                                    {
+                                        tower.panelmagetowershot.Remove((Panel)x);
+                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        game1.Coins = game1.Coins + 10;
+                                        x.Dispose();
+                                        y.Dispose();
+                                    }
+                                }
+                                if (y.Name == "Blueloon")
+                                {
+                                    y.Name = "Redloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
-                                    y.Dispose();
+                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    //enemy.enemyRedList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonRed;
+                                }
+                                if (y.Name == "Pinkloon")
+                                {
+                                    y.Name = "Blueloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
+                                    x.Dispose();
+                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    //enemy.enemyBlueList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonBlue;
                                 }
                             }
                             else if (x.Name == "machinegun")
                             {
-                                //enemy health gets reduced by a certain amount dependent on the tower
-                                enemy.redloonhealth = enemy.redloonhealth - machinegunTowerDamage;
-
-                                //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
-                                if (enemy.redloonhealth <= 0)
+                                if (y.Name == "Redloon")
                                 {
-                                    tower.panelMachineGunTowerShot.Remove((Panel)x);
-                                    enemy.enemyList.Remove((PictureBox)y);
-                                    game1.Coins = game1.Coins + 10;
+                                    //enemy health gets reduced by a certain amount dependent on the tower
+                                    enemy.redloonhealth = enemy.redloonhealth - machinegunTowerDamage;
+
+                                    //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
+                                    if (enemy.redloonhealth <= 0)
+                                    {
+                                        tower.panelmagetowershot.Remove((Panel)x);
+                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        game1.Coins = game1.Coins + 10;
+                                        x.Dispose();
+                                        y.Dispose();
+                                    }
+                                }
+                                if (y.Name == "Blueloon")
+                                {
+                                    y.Name = "Redloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
-                                    y.Dispose();
+                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    //enemy.enemyRedList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonRed;
+                                }
+                                if (y.Name == "Pinkloon")
+                                {
+                                    y.Name = "Blueloon";
+                                    tower.panelmagetowershot.Remove((Panel)x);
+                                    x.Dispose();
+                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    //enemy.enemyBlueList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonBlue;
                                 }
                             }
                         }
                     }
                     //check if enemy collides with the core
-                    else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag == "enemy")
+                    else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag.ToString().Substring(0,5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
                             //health of the core gets reduced by one, when an enemy collides with it
-                            health--;
-                            y.Dispose();
+                            if (y.Name == "Redloon")
+                            {
+                                health--;
+                                y.Dispose();
+                            }
+                            if (y.Name == "Blueloon")
+                            {
+                                health = health - 2;
+                                y.Dispose();
+                            }
+                            if(y.Name == "Pinkloon")
+                            {
+                                health = health - 3;
+                                y.Dispose();
+                            }
                             //when the health is zero, timer stops and the menu form opens
-                            if (health == 0) 
+                            if (health == 0)
                             {
                                 playtimer.Stop();
                                 enemyspawning.Stop();
@@ -195,7 +311,7 @@ namespace Towerdefense
                                 game1.ActiveForm.Hide();
                                 MessageBox.Show("Dead!");
                             }
-                            
+
                         }
                     }
                 }
@@ -210,7 +326,8 @@ namespace Towerdefense
             foreach (Control x in game1.ActiveForm.Controls)
             {
                 //check if picturebox has the tag "enemy"
-                if (x is PictureBox && (string)x.Tag == "enemy")
+                if (x.Tag == null) continue;
+                if (x is PictureBox && (string)x.Tag.ToString().Substring(0,5) == "enemy")
                 {
                     //when picturebox is in list movestraight the enemy moves straight
                     if (movestraight.Contains(x))

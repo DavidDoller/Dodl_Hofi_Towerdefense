@@ -19,6 +19,8 @@ namespace Towerdefense
 
         public static string check;
 
+        public static string wavecounter;
+
 
         public game1()
         {
@@ -53,6 +55,9 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
+            lbl_redlooncounter.Text = "Redloons in List: " + waveController.enemyRedBallonList.Count;
+            lbl_bluelooncounter.Text = "Blueloons in List: " + waveController.enemyBlueBallonList.Count;
+
             //timer tick refreshes the coins label
             lbl_coins.BringToFront();
             lbl_coins.Text = "Coins: " + Coins;
@@ -65,12 +70,18 @@ namespace Towerdefense
             
             movement.moveenemys();//enemy movement
             movement.checkdirection(playtimer, enemyspawning);//check direction
+
+            lbl_wave.Text = wavecounter;
+
         }
 
         private void enemyspawning_Tick(object sender, EventArgs e)
         {
             //spawnrate of the loons
-            enemy.Createredloon(30,419);
+            //enemy.Createredloon(30,419);
+            //enemy.CreateBlueLoon(30, 419);
+
+            waveController.wavechecker(30, 419);
             
         }
 

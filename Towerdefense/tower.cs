@@ -27,6 +27,8 @@ namespace Towerdefense
         public static Panel tempBomb = new Panel();
         public static Panel tempNinja = new Panel();
         public static Panel tempMachinegun = new Panel();
+
+        public static int mageShootCounter;
         #endregion        
 
         //the price of each tower
@@ -40,27 +42,38 @@ namespace Towerdefense
         #region Towermethodes
         public static void magetowerShoot(int locationX, int locationY, int bulletspeed)
         {
+            
             //if the bullet is not in the list, bullet gets created
             if (!panelmagetowershot.Contains(tempmage))
             {
-                tempmage = new Panel();
-                tempmage.Name = "mage";
+                Panel tempmage = new Panel();
+                tempmage.Name = "mage" + mageShootCounter;
                 tempmage.Location = new Point(locationX, locationY);
                 tempmage.BackColor = Color.Red;
                 tempmage.Height = 3;
                 tempmage.Width = 30;
                 tempmage.Tag = "bullet";
                 panelmagetowershot.Add(tempmage);
+                mageShootCounter++;
                 game1.ActiveForm.Controls.Add(tempmage);
             }
-            //when the bullet moves to far away from the tower, bullet starts at the tower again
-            if (tempmage.Left < locationX - 100)
-            {
-                panelmagetowershot.Remove(tempmage);
-                tempmage.Location = new Point(locationX, locationY);
 
-            }
-            tempmage.Left -= bulletspeed;
+            foreach (Control x in game1.ActiveForm.Controls)
+                { 
+                    if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage")
+                    {
+                        x.Left -= bulletspeed;
+
+                        if (x.Left < locationX - 100)
+                        {
+                            panelmagetowershot.Remove((Panel)x);
+                            x.Dispose();
+                            x.Location = new Point(locationX, locationY);
+                        }
+                    }
+                }
+
+            
         }
 
         public static void archertowerShoot(int locationX, int locationY, int bulletspeed)
@@ -73,7 +86,7 @@ namespace Towerdefense
                 temparcher.Location = new Point(locationX, locationY);
                 temparcher.BackColor = Color.Blue;
                 temparcher.Height = 3;
-                temparcher.Width = 30;
+                temparcher.Width = 1;
                 temparcher.Tag = "bullet";
                 panelarchertowershot.Add(temparcher);
                 game1.ActiveForm.Controls.Add(temparcher);
@@ -132,7 +145,7 @@ namespace Towerdefense
             //when the bullet moves to far away from the tower, bullet starts at the tower again
             if (tempNinja.Left < locationX - 100)
             {
-                panelBombTowerShot.Remove(tempmage);
+                panelBombTowerShot.Remove(tempNinja);
                 tempNinja.Location = new Point(locationX, locationY);
 
             }

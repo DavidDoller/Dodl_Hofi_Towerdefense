@@ -95,6 +95,10 @@ namespace Towerdefense
             this.pb_tower4 = new System.Windows.Forms.PictureBox();
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lbl_wave = new System.Windows.Forms.Label();
+            this.lbl_redlooncounter = new System.Windows.Forms.Label();
+            this.lbl_bluelooncounter = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).BeginInit();
@@ -537,6 +541,7 @@ namespace Towerdefense
             this.pb_ninjaTower.Size = new System.Drawing.Size(57, 53);
             this.pb_ninjaTower.TabIndex = 46;
             this.pb_ninjaTower.TabStop = false;
+            this.pb_ninjaTower.Tag = "ninjaTower";
             this.pb_ninjaTower.Click += new System.EventHandler(this.pb_ninjaTower_Click);
             // 
             // pb_maschingunTower
@@ -548,6 +553,7 @@ namespace Towerdefense
             this.pb_maschingunTower.Size = new System.Drawing.Size(59, 53);
             this.pb_maschingunTower.TabIndex = 45;
             this.pb_maschingunTower.TabStop = false;
+            this.pb_maschingunTower.Tag = "maschingunTower";
             this.pb_maschingunTower.Click += new System.EventHandler(this.pb_maschingunTower_Click);
             // 
             // pb_BombTower
@@ -559,6 +565,7 @@ namespace Towerdefense
             this.pb_BombTower.Size = new System.Drawing.Size(57, 53);
             this.pb_BombTower.TabIndex = 44;
             this.pb_BombTower.TabStop = false;
+            this.pb_BombTower.Tag = "BombTower";
             this.pb_BombTower.Click += new System.EventHandler(this.pb_BombTower_Click);
             // 
             // pb_archerTower
@@ -570,6 +577,7 @@ namespace Towerdefense
             this.pb_archerTower.Size = new System.Drawing.Size(57, 53);
             this.pb_archerTower.TabIndex = 43;
             this.pb_archerTower.TabStop = false;
+            this.pb_archerTower.Tag = "archerTower";
             this.pb_archerTower.Click += new System.EventHandler(this.pb_archerTower_Click);
             // 
             // pb_mageTower
@@ -581,6 +589,7 @@ namespace Towerdefense
             this.pb_mageTower.Size = new System.Drawing.Size(56, 53);
             this.pb_mageTower.TabIndex = 42;
             this.pb_mageTower.TabStop = false;
+            this.pb_mageTower.Tag = "mageTower";
             this.pb_mageTower.Click += new System.EventHandler(this.pb_mageTower_Click);
             // 
             // pictureBox1
@@ -600,7 +609,7 @@ namespace Towerdefense
             this.pb_core.Size = new System.Drawing.Size(26, 44);
             this.pb_core.TabIndex = 38;
             this.pb_core.TabStop = false;
-            this.pb_core.Tag = "core";
+            this.pb_core.Tag = "coreexit";
             // 
             // pb_corner5
             // 
@@ -620,7 +629,7 @@ namespace Towerdefense
             this.pb_corner4.Size = new System.Drawing.Size(5, 27);
             this.pb_corner4.TabIndex = 32;
             this.pb_corner4.TabStop = false;
-            this.pb_corner4.Tag = "down";
+            this.pb_corner4.Tag = "downdir";
             // 
             // pb_corner3
             // 
@@ -660,6 +669,7 @@ namespace Towerdefense
             this.pb_tower9.Size = new System.Drawing.Size(57, 53);
             this.pb_tower9.TabIndex = 24;
             this.pb_tower9.TabStop = false;
+            this.pb_tower9.Tag = "tower9";
             // 
             // pb_tower10
             // 
@@ -669,6 +679,7 @@ namespace Towerdefense
             this.pb_tower10.Size = new System.Drawing.Size(57, 53);
             this.pb_tower10.TabIndex = 23;
             this.pb_tower10.TabStop = false;
+            this.pb_tower10.Tag = "tower10";
             // 
             // pb_tower8
             // 
@@ -678,6 +689,7 @@ namespace Towerdefense
             this.pb_tower8.Size = new System.Drawing.Size(57, 53);
             this.pb_tower8.TabIndex = 22;
             this.pb_tower8.TabStop = false;
+            this.pb_tower8.Tag = "tower8";
             // 
             // pb_tower7
             // 
@@ -687,6 +699,7 @@ namespace Towerdefense
             this.pb_tower7.Size = new System.Drawing.Size(57, 53);
             this.pb_tower7.TabIndex = 21;
             this.pb_tower7.TabStop = false;
+            this.pb_tower7.Tag = "tower7";
             // 
             // pb_tower2
             // 
@@ -696,6 +709,7 @@ namespace Towerdefense
             this.pb_tower2.Size = new System.Drawing.Size(57, 53);
             this.pb_tower2.TabIndex = 20;
             this.pb_tower2.TabStop = false;
+            this.pb_tower2.Tag = "tower2";
             // 
             // pb_tower3
             // 
@@ -705,6 +719,7 @@ namespace Towerdefense
             this.pb_tower3.Size = new System.Drawing.Size(57, 53);
             this.pb_tower3.TabIndex = 19;
             this.pb_tower3.TabStop = false;
+            this.pb_tower3.Tag = "tower3";
             // 
             // pb_tower6
             // 
@@ -714,6 +729,7 @@ namespace Towerdefense
             this.pb_tower6.Size = new System.Drawing.Size(57, 53);
             this.pb_tower6.TabIndex = 18;
             this.pb_tower6.TabStop = false;
+            this.pb_tower6.Tag = "tower6";
             // 
             // pb_tower5
             // 
@@ -723,6 +739,7 @@ namespace Towerdefense
             this.pb_tower5.Size = new System.Drawing.Size(57, 53);
             this.pb_tower5.TabIndex = 17;
             this.pb_tower5.TabStop = false;
+            this.pb_tower5.Tag = "tower5";
             // 
             // pb_tower4
             // 
@@ -732,6 +749,7 @@ namespace Towerdefense
             this.pb_tower4.Size = new System.Drawing.Size(57, 53);
             this.pb_tower4.TabIndex = 16;
             this.pb_tower4.TabStop = false;
+            this.pb_tower4.Tag = "tower4";
             // 
             // pb_tower1
             // 
@@ -741,6 +759,7 @@ namespace Towerdefense
             this.pb_tower1.Size = new System.Drawing.Size(57, 53);
             this.pb_tower1.TabIndex = 15;
             this.pb_tower1.TabStop = false;
+            this.pb_tower1.Tag = "tower1";
             // 
             // label2
             // 
@@ -751,12 +770,52 @@ namespace Towerdefense
             this.label2.TabIndex = 73;
             this.label2.Text = "E - Exit Game";
             // 
+            // lbl_wave
+            // 
+            this.lbl_wave.AutoSize = true;
+            this.lbl_wave.Location = new System.Drawing.Point(530, 516);
+            this.lbl_wave.Name = "lbl_wave";
+            this.lbl_wave.Size = new System.Drawing.Size(42, 13);
+            this.lbl_wave.TabIndex = 74;
+            this.lbl_wave.Text = "Wave: ";
+            // 
+            // lbl_redlooncounter
+            // 
+            this.lbl_redlooncounter.AutoSize = true;
+            this.lbl_redlooncounter.Location = new System.Drawing.Point(303, 469);
+            this.lbl_redlooncounter.Name = "lbl_redlooncounter";
+            this.lbl_redlooncounter.Size = new System.Drawing.Size(30, 13);
+            this.lbl_redlooncounter.TabIndex = 75;
+            this.lbl_redlooncounter.Text = "temp";
+            // 
+            // lbl_bluelooncounter
+            // 
+            this.lbl_bluelooncounter.AutoSize = true;
+            this.lbl_bluelooncounter.Location = new System.Drawing.Point(303, 499);
+            this.lbl_bluelooncounter.Name = "lbl_bluelooncounter";
+            this.lbl_bluelooncounter.Size = new System.Drawing.Size(30, 13);
+            this.lbl_bluelooncounter.TabIndex = 76;
+            this.lbl_bluelooncounter.Text = "temp";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(168, 499);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 77;
+            this.label3.Text = "Timer:";
+            // 
             // game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(805, 618);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_bluelooncounter);
+            this.Controls.Add(this.lbl_redlooncounter);
+            this.Controls.Add(this.lbl_wave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_health);
             this.Controls.Add(this.lbl_coins);
@@ -922,5 +981,9 @@ namespace Towerdefense
         private System.Windows.Forms.Label lbl_health;
         private System.Windows.Forms.Label lbl_coins;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_wave;
+        private System.Windows.Forms.Label lbl_redlooncounter;
+        private System.Windows.Forms.Label lbl_bluelooncounter;
+        private System.Windows.Forms.Label label3;
     }
 }
