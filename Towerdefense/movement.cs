@@ -134,7 +134,7 @@ namespace Towerdefense
                                 }
 
                             }
-                            else if (x.Name == "archer")
+                            else if (x.Name.ToString().Substring(0,4) == "arch")
                             {
                                 if (y.Name == "Redloon")
                                 {
@@ -170,7 +170,7 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                 }
                             }
-                            else if (x.Name == "bomb")
+                            else if (x.Name.ToString().Substring(0,4) == "bomb")
                             {
                                 if (y.Name == "Redloon")
                                 {
@@ -206,7 +206,7 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                 }
                             }
-                            else if (x.Name == "ninja")
+                            else if (x.Name.ToString().Substring(0,4) == "ninj")
                             {
                                 if (y.Name == "Redloon")
                                 {
@@ -242,7 +242,7 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                 }
                             }
-                            else if (x.Name == "machinegun")
+                            else if (x.Name.ToString().Substring(0,3) == "gun")
                             {
                                 if (y.Name == "Redloon")
                                 {
@@ -281,14 +281,14 @@ namespace Towerdefense
                         }
                     }
                     //check if enemy collides with the core
-                    else if (x is PictureBox && (string)x.Tag == "core" && y is PictureBox && (string)y.Tag.ToString().Substring(0,5) == "enemy")
+                    else if (x is PictureBox && (string)x.Tag.ToString().Substring(0,4) == "core" && y is PictureBox && (string)y.Tag.ToString().Substring(0,5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
                             //health of the core gets reduced by one, when an enemy collides with it
                             if (y.Name == "Redloon")
                             {
-                                health--;
+                                health--; 
                                 y.Dispose();
                             }
                             if (y.Name == "Blueloon")
@@ -306,6 +306,7 @@ namespace Towerdefense
                             {
                                 playtimer.Stop();
                                 enemyspawning.Stop();
+                                
                                 menu form = new menu();
                                 form.Show();
                                 game1.ActiveForm.Hide();

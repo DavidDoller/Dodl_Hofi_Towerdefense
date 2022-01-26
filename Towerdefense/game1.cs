@@ -55,8 +55,9 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
-            lbl_redlooncounter.Text = "Redloons in List: " + waveController.enemyRedBallonList.Count;
-            lbl_bluelooncounter.Text = "Blueloons in List: " + waveController.enemyBlueBallonList.Count;
+            lbl_redlooncounter.Text = "Redloons in List: " + waveController.RedcountEnemys;
+            lbl_bluelooncounter.Text = "Blueloons in List: " + waveController.BlueCountEnemys;
+            lbl_waveCooldown.Text = "Time Elapsed: " + waveController.Wavesleep;
 
             //timer tick refreshes the coins label
             lbl_coins.BringToFront();
@@ -81,7 +82,7 @@ namespace Towerdefense
             //enemy.Createredloon(30,419);
             //enemy.CreateBlueLoon(30, 419);
 
-            waveController.wavechecker(30, 419);
+            waveController.wavechecker(30, 419,WaveSleepTimer);
             
         }
 
@@ -232,6 +233,11 @@ namespace Towerdefense
         private void bullet_spawning_Tick(object sender, EventArgs e)
         {
             tower.checkTowerPlacement();
+        }
+
+        private void WaveSleepTimer_Tick(object sender, EventArgs e)
+        {
+            waveController.Wavesleep++;
         }
     }
 }

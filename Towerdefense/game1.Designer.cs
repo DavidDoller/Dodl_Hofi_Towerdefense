@@ -98,8 +98,9 @@ namespace Towerdefense
             this.lbl_wave = new System.Windows.Forms.Label();
             this.lbl_redlooncounter = new System.Windows.Forms.Label();
             this.lbl_bluelooncounter = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_waveCooldown = new System.Windows.Forms.Label();
             this.bullet_spawning = new System.Windows.Forms.Timer(this.components);
+            this.WaveSleepTimer = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).BeginInit();
@@ -798,20 +799,25 @@ namespace Towerdefense
             this.lbl_bluelooncounter.TabIndex = 76;
             this.lbl_bluelooncounter.Text = "temp";
             // 
-            // label3
+            // lbl_waveCooldown
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 499);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 77;
-            this.label3.Text = "Timer:";
+            this.lbl_waveCooldown.AutoSize = true;
+            this.lbl_waveCooldown.Location = new System.Drawing.Point(168, 499);
+            this.lbl_waveCooldown.Name = "lbl_waveCooldown";
+            this.lbl_waveCooldown.Size = new System.Drawing.Size(36, 13);
+            this.lbl_waveCooldown.TabIndex = 77;
+            this.lbl_waveCooldown.Text = "Timer:";
             // 
             // bullet_spawning
             // 
             this.bullet_spawning.Enabled = true;
-            this.bullet_spawning.Interval = 3000;
+            this.bullet_spawning.Interval = 2000;
             this.bullet_spawning.Tick += new System.EventHandler(this.bullet_spawning_Tick);
+            // 
+            // WaveSleepTimer
+            // 
+            this.WaveSleepTimer.Interval = 1000;
+            this.WaveSleepTimer.Tick += new System.EventHandler(this.WaveSleepTimer_Tick);
             // 
             // game1
             // 
@@ -819,7 +825,7 @@ namespace Towerdefense
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(805, 618);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_waveCooldown);
             this.Controls.Add(this.lbl_bluelooncounter);
             this.Controls.Add(this.lbl_redlooncounter);
             this.Controls.Add(this.lbl_wave);
@@ -991,7 +997,8 @@ namespace Towerdefense
         private System.Windows.Forms.Label lbl_wave;
         private System.Windows.Forms.Label lbl_redlooncounter;
         private System.Windows.Forms.Label lbl_bluelooncounter;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_waveCooldown;
         private System.Windows.Forms.Timer bullet_spawning;
+        private System.Windows.Forms.Timer WaveSleepTimer;
     }
 }

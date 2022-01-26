@@ -18,10 +18,6 @@ namespace Towerdefense
         public static int blueLoonCounter;
         public static int pinkLoonCounter;
 
-        public static PictureBox pbred = new PictureBox();
-        public static PictureBox pbBlue = new PictureBox();
-        public static PictureBox pbPink = new PictureBox();
-
         public static List<PictureBox> enemyRedList = new List<PictureBox>();
         public static List<PictureBox> enemyBlueList = new List<PictureBox>();
         public static List<PictureBox> enemyPinkList = new List<PictureBox>();
@@ -30,7 +26,7 @@ namespace Towerdefense
         {
             //creats the picturebox "redLoon"
 
-            pbred = new PictureBox();
+            PictureBox pbred = new PictureBox();
 
             pbred.Size = new Size(32, 32);
             pbred.Location = new Point(location1, location2);
@@ -50,7 +46,7 @@ namespace Towerdefense
         public static PictureBox CreateBlueLoon(int location1 , int location2)
         {
             //creats the picturebox "blueLoon"
-            pbBlue = new PictureBox();
+            PictureBox pbBlue = new PictureBox();
 
             pbBlue.Size = new Size(32, 32);
             pbBlue.Location = new Point(location1, location2);
@@ -69,7 +65,7 @@ namespace Towerdefense
         public static PictureBox CreatePinkLoon(int location1, int location2)
         {
             //creats the picturebox "pinkLoon"
-            pbPink = new PictureBox();
+            PictureBox pbPink = new PictureBox();
 
             pbPink.Size = new Size(32, 32);
             pbPink.Location = new Point(location1, location2);
