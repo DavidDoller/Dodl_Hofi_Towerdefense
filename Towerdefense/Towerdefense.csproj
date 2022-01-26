@@ -83,6 +83,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="tower.cs" />
+    <Compile Include="waveController.cs" />
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,15 +122,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bloonRed.png" />
-    <None Include="Resources\mageTower.png" />
-    <None Include="Resources\archerTower.png" />
     <None Include="Resources\bloonBlue.png" />
     <None Include="Resources\bloonPink.png" />
     <None Include="Resources\bloonRed1.png" />
-    <None Include="Resources\BombTower.png" />
-    <None Include="Resources\maschiengun.png" />
-    <None Include="Resources\NinjaTower.png" />
     <None Include="Resources\coinsBackGround.png" />
+    <Content Include="Resources\archerTower.png" />
+    <Content Include="Resources\BombTower.png" />
+    <Content Include="Resources\machineGunTower.png" />
+    <None Include="Resources\machineGunTower1.png" />
+    <Content Include="Resources\mageTower.png" />
+    <Content Include="Resources\NinjaTower.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\pause1.png" />
     <Content Include="Resources\play.png" />

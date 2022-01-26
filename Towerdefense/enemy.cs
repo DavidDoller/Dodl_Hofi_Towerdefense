@@ -11,36 +11,74 @@ namespace Towerdefense
     
     class enemy
     {
-        public static int redloonhealth = 2;
+        public static int redloonhealth = 3;
         public static int redloonspeed = 5;
-        public static int looncounter = 1;
-        public static int smallestEnemy = 0;
-        public static PictureBox pb = new PictureBox();
-        public static List<PictureBox> enemyList = new List<PictureBox>();
 
+        public static int redLoonCounter;
+        public static int blueLoonCounter;
+        public static int pinkLoonCounter;
 
-
-
+        public static List<PictureBox> enemyRedList = new List<PictureBox>();
+        public static List<PictureBox> enemyBlueList = new List<PictureBox>();
+        public static List<PictureBox> enemyPinkList = new List<PictureBox>();
 
         public static PictureBox Createredloon(int location1, int location2)
         {
-            pb = new PictureBox();
-                    
-            pb.Size = new Size(32, 32);
-            pb.Location = new Point(location1, location2);
-            pb.BackgroundImage = Properties.Resources.bloonRed;
-            pb.BackgroundImageLayout = ImageLayout.Stretch;
-            pb.Tag = "enemy";
-            pb.Name = "Redloon"+ looncounter;
-            looncounter++;
+            //creats the picturebox "redLoon"
+
+            PictureBox pbred = new PictureBox();
+
+            pbred.Size = new Size(32, 32);
+            pbred.Location = new Point(location1, location2);
+            pbred.BackgroundImage = Properties.Resources.bloonRed;
+            pbred.BackgroundImageLayout = ImageLayout.Stretch;
+            pbred.Tag = "enemy" + redLoonCounter;
+            pbred.Name = "Redloon";
             redloonhealth = 2;
-            pb.BringToFront();
-            enemyList.Add(pb);
-            game1.ActiveForm.Controls.Add(pb);
-            return pb;
+            pbred.BringToFront();
+            enemyRedList.Add(pbred);
+            waveController.enemyRedBallonList.Add(pbred);
+            game1.ActiveForm.Controls.Add(pbred);
+            redLoonCounter++;
+            return pbred;
+        }
 
+        public static PictureBox CreateBlueLoon(int location1 , int location2)
+        {
+            //creats the picturebox "blueLoon"
+            PictureBox pbBlue = new PictureBox();
 
-        }       
+            pbBlue.Size = new Size(32, 32);
+            pbBlue.Location = new Point(location1, location2);
+            pbBlue.BackgroundImage = Properties.Resources.bloonBlue;
+            pbBlue.BackgroundImageLayout = ImageLayout.Stretch;
+            pbBlue.Tag = "enemy" + blueLoonCounter;
+            pbBlue.Name = "Blueloon";
+            pbBlue.BringToFront();
+            enemyBlueList.Add(pbBlue);
+            waveController.enemyBlueBallonList.Add(pbBlue);
+            game1.ActiveForm.Controls.Add(pbBlue);
+            blueLoonCounter++;
+            return pbBlue;
+        }
+
+        public static PictureBox CreatePinkLoon(int location1, int location2)
+        {
+            //creats the picturebox "pinkLoon"
+            PictureBox pbPink = new PictureBox();
+
+            pbPink.Size = new Size(32, 32);
+            pbPink.Location = new Point(location1, location2);
+            pbPink.BackgroundImage = Properties.Resources.bloonBlue;
+            pbPink.BackgroundImageLayout = ImageLayout.Stretch;
+            pbPink.Tag = "enemy"+ pinkLoonCounter;
+            pbPink.Name = "Pinkloon";
+            pbPink.BringToFront();
+            enemyPinkList.Add(pbPink);
+            game1.ActiveForm.Controls.Add(pbPink);
+            pinkLoonCounter++;
+            return pbPink;
+        }
     }
 
 

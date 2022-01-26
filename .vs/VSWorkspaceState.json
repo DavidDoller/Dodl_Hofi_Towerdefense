@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Towerdefense",
-    "\\Towerdefense\\Properties",
-    "\\Towerdefense\\Resources"
+    "\\Towerdefense"
   ],
-  "SelectedNode": "\\Towerdefense\\game1.cs",
+  "SelectedNode": "\\Towerdefense\\tower.cs",
   "PreviewInSolutionExplorer": false
 }

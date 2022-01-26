@@ -20,6 +20,7 @@ namespace Towerdefense
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
+            //button exit closes the application
             Application.Exit();
         }
 
@@ -35,7 +36,7 @@ namespace Towerdefense
 
             #region create database
             SqlConnection temp = new SqlConnection(connectionstring);//sqlcon for the database
-            SqlCommand cmdtemp = new SqlCommand("select Count(*) from master.dbo.sysdatabases where name = 'Towerdefense'", temp);//count if there is a database with the name Flappybrid  
+            SqlCommand cmdtemp = new SqlCommand("select Count(*) from master.dbo.sysdatabases where name = 'Towerdefense'", temp);//count if there is a database with the name Towerdefense  
             temp.Open();
 
             if (!((int)cmdtemp.ExecuteScalar() == 1)) //if there is no database, database get created
@@ -50,13 +51,13 @@ namespace Towerdefense
             }
             temp.Close();
             #endregion
-            //create the account to login with it
+            //create the account to login with
             #region create account
             //SqlCommand cd = new SqlCommand("Create database if not exist Login;");
             sqlcon.OpenConnection();
 
 
-            if (Pw == confirmpw) //check if pw is correct
+            if (Pw == confirmpw) //check if password is correct
             {
 
                 if (username != string.Empty && Pw != string.Empty)
@@ -70,7 +71,7 @@ namespace Towerdefense
                     MessageBox.Show("Account erstellt!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     sqlcon.CloseConnection();
 
-                    //open Login forms
+                    //open Login form
                     login form = new login();
                     form.Show();
                     this.Hide();

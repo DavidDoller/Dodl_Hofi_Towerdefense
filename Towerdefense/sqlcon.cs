@@ -29,7 +29,7 @@ class sqlcon : login
         con.Close();
     }
 
-    public static void ExecuteQueries(string Query, SqlConnection con) // do an cmdcommand
+    public static void ExecuteQueries(string Query, SqlConnection con) //do an cmdcommand
     {
         SqlCommand cmd = new SqlCommand(Query, con);
         cmd.ExecuteNonQuery();
@@ -43,7 +43,7 @@ class sqlcon : login
 
     }
 
-    public static int Updatehighscore(string Username, int highscore)//update highscore for the username witch is logged in
+    public static int Updatehighscore(string Username, int highscore)//update highscore for the username which is logged in
     {
         con.Open();
         cmd.Connection = con;
@@ -53,7 +53,7 @@ class sqlcon : login
         return highscore;
     }
 
-    public static string gethighscore()//get the highscore of the user witch is logged in 
+    public static string gethighscore()//get the highscore of the user which is logged in 
     {
         string highscore = String.Empty;
 
@@ -65,7 +65,7 @@ class sqlcon : login
         return highscore;
     }
 
-    public static string getusername()//get the username of the user witch is logged in
+    public static string getusername()//get the username of the user which is logged in
     {
         string username;
 
