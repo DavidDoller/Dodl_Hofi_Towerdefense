@@ -43,7 +43,7 @@ namespace Towerdefense
             return pbred;
         }
 
-        public static PictureBox CreateBlueLoon(int location1 , int location2)
+        public PictureBox CreateBlueLoon(int location1 , int location2)
         {
             //creats the picturebox "blueLoon"
             PictureBox pbBlue = new PictureBox();

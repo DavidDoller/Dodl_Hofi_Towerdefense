@@ -91,7 +91,8 @@ namespace Towerdefense
             //checks where and what tower is placed
             
 
-            tower.TowerShootsMovement(5);
+            tower.TowerShootsController();
+            movement.AutoAim();
             //tower.autoAim();
             //tower.magetowerShoot(83, 335, 5);
             //tower.archertowerShoot(359, 334, 5);

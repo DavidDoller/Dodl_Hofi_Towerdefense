@@ -107,7 +107,6 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        tower.panelmagetowershot.Remove((Panel)x);
                                         enemy.enemyRedList.Remove((PictureBox)y);
                                         game1.Coins = game1.Coins + 10;
                                         x.Dispose();
@@ -117,7 +116,6 @@ namespace Towerdefense
                                 if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
@@ -126,7 +124,6 @@ namespace Towerdefense
                                 if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
@@ -144,7 +141,6 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        tower.panelmagetowershot.Remove((Panel)x);
                                         enemy.enemyRedList.Remove((PictureBox)y);
                                         game1.Coins = game1.Coins + 10;
                                         x.Dispose();
@@ -154,7 +150,6 @@ namespace Towerdefense
                                 if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
@@ -163,7 +158,6 @@ namespace Towerdefense
                                 if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
@@ -180,7 +174,6 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        tower.panelmagetowershot.Remove((Panel)x);
                                         enemy.enemyRedList.Remove((PictureBox)y);
                                         game1.Coins = game1.Coins + 10;
                                         x.Dispose();
@@ -190,7 +183,6 @@ namespace Towerdefense
                                 if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
@@ -199,7 +191,6 @@ namespace Towerdefense
                                 if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
@@ -216,7 +207,6 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        tower.panelmagetowershot.Remove((Panel)x);
                                         enemy.enemyRedList.Remove((PictureBox)y);
                                         game1.Coins = game1.Coins + 10;
                                         x.Dispose();
@@ -226,7 +216,6 @@ namespace Towerdefense
                                 if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
@@ -235,7 +224,6 @@ namespace Towerdefense
                                 if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
@@ -252,7 +240,6 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        tower.panelmagetowershot.Remove((Panel)x);
                                         enemy.enemyRedList.Remove((PictureBox)y);
                                         game1.Coins = game1.Coins + 10;
                                         x.Dispose();
@@ -262,7 +249,6 @@ namespace Towerdefense
                                 if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
@@ -271,7 +257,6 @@ namespace Towerdefense
                                 if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
-                                    tower.panelmagetowershot.Remove((Panel)x);
                                     x.Dispose();
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
@@ -345,6 +330,42 @@ namespace Towerdefense
                     {
                         movementdown((PictureBox)x);
                     }
+                }
+            }
+        }
+
+        public static void AutoAim()
+        {
+            if (game1.ActiveForm == null) return;
+            foreach (Control x in game1.ActiveForm.Controls)
+            {
+                if (game1.ActiveForm == null) return;
+                foreach (Control y in game1.ActiveForm.Controls) 
+                {
+                    if (x.Tag == null || y.Tag == null) continue;
+                    if(y is PictureBox && y.Tag.ToString().Substring(0, 5) == "enemy")
+                    {
+                        if(x is Panel && x.Tag == "bullet")
+                        {
+                            if(y.Left > x.Left)
+                            {
+                                x.Left += tower.bulletspeed;
+                            }
+                            if(y.Top > x.Top)
+                            {
+                                x.Top += tower.bulletspeed;
+                            }
+                            if(y.Left < x.Left)
+                            {
+                                x.Left -= tower.bulletspeed;
+                            }
+                            if(y.Top < x.Top)
+                            {
+                                x.Top -= tower.bulletspeed;
+                            }
+                        }
+                    }
+
                 }
             }
         }
