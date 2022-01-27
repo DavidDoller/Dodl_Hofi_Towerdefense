@@ -14,13 +14,9 @@ namespace Towerdefense
     class tower
     {
         #region Lists and Panels for Towers
-        //a list gets created for every shot from each tower
-        public static List<Panel> panelmagetowershot = new List<Panel>();
-        public static List<Panel> panelarchertowershot = new List<Panel>();
-        public static List<Panel> panelBombTowerShot = new List<Panel>();
-        public static List<Panel> panelNinjaTowerShot = new List<Panel>();
-        public static List<Panel> panelMachineGunTowerShot = new List<Panel>();
 
+        public static int bulletspeed = 1;
+        public static int MachineGunSpeed = 15;
 
         public static int mageShootCounter;
         public static int archerShootCounter;
@@ -38,8 +34,8 @@ namespace Towerdefense
         public static int ninjaTowerPrice = 350;
         public static int machinegunTowerPrice = 400;
 
-
-        public static void TowerShootsMovement(int bulletspeed) 
+        #region ShootController
+        public static void TowerShootsController() 
         {
             if (game1.ActiveForm == null) return;
             foreach (Control x in game1.ActiveForm.Controls)
@@ -49,55 +45,115 @@ namespace Towerdefense
                 {
                     if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
                     {
-                        x.Left -= bulletspeed;
-
                         if (x.Left < y.Location.X - 100)
                         {
-                            //panelmagetowershot.Remove((Panel)x);
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Top < y.Location.Y - 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Left > y.Location.X + 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Top > y.Location.Y + 100)
+                        {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
                     }
                     if(x is Panel && x.Name.ToString().Substring(0, 4) == "arch" && y is PictureBox && y.Tag == "archerTower")
                     {
-                        x.Left -= bulletspeed;
-
                         if (x.Left < y.Location.X - 100)
                         {
-                           // panelarchertowershot.Remove((Panel)x);
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if(x.Top < y.Location.Y - 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if(x.Left > y.Location.X + 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if(x.Top > y.Location.Y + 100)
+                        {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
                     }
                     if (x is Panel && x.Name.ToString().Substring(0, 4) == "bomb" && y is PictureBox && y.Tag == "bombTower")
                     {
-                        x.Left -= bulletspeed;
-
                         if (x.Left < y.Location.X - 100)
                         {
-                            //panelarchertowershot.Remove((Panel)x);
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Top < y.Location.Y - 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Left > y.Location.X + 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Top > y.Location.Y + 100)
+                        {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
                     }
                     if (x is Panel && x.Name.ToString().Substring(0, 4) == "ninj" && y is PictureBox && y.Tag == "ninjaTower")
                     {
-                        x.Left -= bulletspeed;
-
                         if (x.Left < y.Location.X - 100)
                         {
-                            //panelarchertowershot.Remove((Panel)x);
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Top < y.Location.Y - 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Left > y.Location.X + 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Top > y.Location.Y + 100)
+                        {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
                     }
                     if (x is Panel && x.Name.ToString().Substring(0, 3) == "gun" && y is PictureBox && y.Tag == "machinegun")
                     {
-                        x.Left -= bulletspeed;
-
                         if (x.Left < y.Location.X - 100)
                         {
-                            //panelarchertowershot.Remove((Panel)x);
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Top < y.Location.Y - 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Left > y.Location.X + 100)
+                        {
+                            x.Dispose();
+                            x.Location = new Point(y.Location.X, y.Location.Y);
+                        }
+                        if (x.Top > y.Location.Y + 100)
+                        {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
@@ -106,7 +162,7 @@ namespace Towerdefense
                 
             }
         }
-
+        #endregion
 
         #region Towermethodes
         public static void magetowerShoot(int locationX, int locationY)
@@ -119,6 +175,7 @@ namespace Towerdefense
                 tempmage.Height = 3;
                 tempmage.Width = 30;
                 tempmage.Tag = "bullet";
+                tempmage.BringToFront();
             //panelmagetowershot.Add(tempmage);
             if (game1.ActiveForm == null) return;
             game1.ActiveForm.Controls.Add(tempmage);

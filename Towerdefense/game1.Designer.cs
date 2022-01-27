@@ -285,6 +285,7 @@ namespace Towerdefense
             // bullet_speed
             // 
             this.bullet_speed.Enabled = true;
+            this.bullet_speed.Interval = 50;
             this.bullet_speed.Tick += new System.EventHandler(this.bullet_speed_Tick);
             // 
             // lbl_smallestenemy
@@ -543,7 +544,7 @@ namespace Towerdefense
             this.pb_ninjaTower.Size = new System.Drawing.Size(57, 53);
             this.pb_ninjaTower.TabIndex = 46;
             this.pb_ninjaTower.TabStop = false;
-            this.pb_ninjaTower.Tag = "ninjaTower";
+            this.pb_ninjaTower.Tag = "ninjaTowerselecter";
             this.pb_ninjaTower.Click += new System.EventHandler(this.pb_ninjaTower_Click);
             // 
             // pb_maschingunTower
@@ -555,7 +556,7 @@ namespace Towerdefense
             this.pb_maschingunTower.Size = new System.Drawing.Size(59, 53);
             this.pb_maschingunTower.TabIndex = 45;
             this.pb_maschingunTower.TabStop = false;
-            this.pb_maschingunTower.Tag = "maschingunTower";
+            this.pb_maschingunTower.Tag = "maschingunTowerselecter";
             this.pb_maschingunTower.Click += new System.EventHandler(this.pb_maschingunTower_Click);
             // 
             // pb_BombTower
@@ -567,7 +568,7 @@ namespace Towerdefense
             this.pb_BombTower.Size = new System.Drawing.Size(57, 53);
             this.pb_BombTower.TabIndex = 44;
             this.pb_BombTower.TabStop = false;
-            this.pb_BombTower.Tag = "BombTower";
+            this.pb_BombTower.Tag = "BombTowerselecter";
             this.pb_BombTower.Click += new System.EventHandler(this.pb_BombTower_Click);
             // 
             // pb_archerTower
@@ -579,7 +580,7 @@ namespace Towerdefense
             this.pb_archerTower.Size = new System.Drawing.Size(57, 53);
             this.pb_archerTower.TabIndex = 43;
             this.pb_archerTower.TabStop = false;
-            this.pb_archerTower.Tag = "archerTower";
+            this.pb_archerTower.Tag = "archerTowerselecter";
             this.pb_archerTower.Click += new System.EventHandler(this.pb_archerTower_Click);
             // 
             // pb_mageTower
@@ -591,7 +592,7 @@ namespace Towerdefense
             this.pb_mageTower.Size = new System.Drawing.Size(56, 53);
             this.pb_mageTower.TabIndex = 42;
             this.pb_mageTower.TabStop = false;
-            this.pb_mageTower.Tag = "mageTower";
+            this.pb_mageTower.Tag = "mageTowerselecter";
             this.pb_mageTower.Click += new System.EventHandler(this.pb_mageTower_Click);
             // 
             // pictureBox1
