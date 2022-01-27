@@ -87,7 +87,7 @@ namespace Towerdefense
             //enemy.Createredloon(30,419);
             //enemy.CreateBlueLoon(30, 419);
 
-            waveController.wavechecker(30, 419,WaveSleepTimer);
+            waveController.wavechecker(pb_spawn.Location.X + 10, pb_spawn.Location.Y, WaveSleepTimer);
             
         }
 
@@ -245,6 +245,21 @@ namespace Towerdefense
         private void WaveSleepTimer_Tick(object sender, EventArgs e)
         {
             waveController.Wavesleep++;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_start_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnl_pause_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

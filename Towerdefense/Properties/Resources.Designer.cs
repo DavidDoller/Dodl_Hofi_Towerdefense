@@ -143,6 +143,16 @@ namespace Towerdefense.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lvl1Map {
+            get {
+                object obj = ResourceManager.GetObject("lvl1Map", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap machineGunTower {
             get {
                 object obj = ResourceManager.GetObject("machineGunTower", resourceCulture);

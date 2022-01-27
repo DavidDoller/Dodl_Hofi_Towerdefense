@@ -13,7 +13,7 @@ namespace Towerdefense
         public static List<PictureBox> moveright = new List<PictureBox>();
         public static List<PictureBox> movestraight = new List<PictureBox>();
         public static List<PictureBox> movedown = new List<PictureBox>();
-        public static int health = 100;
+        public static int health = 100000;
 
         public static int mageTowerDamage = 1;
         public static int archerTowerDamage = 2;

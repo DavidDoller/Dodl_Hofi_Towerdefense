@@ -31,6 +31,7 @@ namespace Towerdefense
             pbred.Size = new Size(32, 32);
             pbred.Location = new Point(location1, location2);
             pbred.BackgroundImage = Properties.Resources.bloonRed;
+            pbred.BackColor = Color.Transparent;
             pbred.BackgroundImageLayout = ImageLayout.Stretch;
             pbred.Tag = "enemy" + redLoonCounter;
             pbred.Name = "Redloon";
@@ -51,6 +52,7 @@ namespace Towerdefense
             pbBlue.Size = new Size(32, 32);
             pbBlue.Location = new Point(location1, location2);
             pbBlue.BackgroundImage = Properties.Resources.bloonBlue;
+            pbBlue.BackColor = Color.Transparent;
             pbBlue.BackgroundImageLayout = ImageLayout.Stretch;
             pbBlue.Tag = "enemy" + blueLoonCounter;
             pbBlue.Name = "Blueloon";
@@ -70,6 +72,7 @@ namespace Towerdefense
             pbPink.Size = new Size(32, 32);
             pbPink.Location = new Point(location1, location2);
             pbPink.BackgroundImage = Properties.Resources.bloonBlue;
+            pbPink.BackColor = Color.Transparent;
             pbPink.BackgroundImageLayout = ImageLayout.Stretch;
             pbPink.Tag = "enemy"+ pinkLoonCounter;
             pbPink.Name = "Pinkloon";
