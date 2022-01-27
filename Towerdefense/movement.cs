@@ -13,7 +13,7 @@ namespace Towerdefense
         public static List<PictureBox> moveright = new List<PictureBox>();
         public static List<PictureBox> movestraight = new List<PictureBox>();
         public static List<PictureBox> movedown = new List<PictureBox>();
-        public static int health = 10;
+        public static int health = 100;
 
         public static int mageTowerDamage = 1;
         public static int archerTowerDamage = 2;
@@ -120,6 +120,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
+                                    game1.Coins = game1.Coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -128,6 +129,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
+                                    game1.Coins = game1.Coins + 30;
                                 }
 
                             }
@@ -154,6 +156,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
+                                    game1.Coins = game1.Coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -162,6 +165,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
+                                    game1.Coins = game1.Coins + 30;
                                 }
                             }
                             else if (x.Name.ToString().Substring(0,4) == "bomb")
@@ -187,6 +191,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
+                                    game1.Coins = game1.Coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -195,6 +200,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
+                                    game1.Coins = game1.Coins + 30;
                                 }
                             }
                             else if (x.Name.ToString().Substring(0,4) == "ninj")
@@ -220,6 +226,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
+                                    game1.Coins = game1.Coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -228,6 +235,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
+                                    game1.Coins = game1.Coins + 30;
                                 }
                             }
                             else if (x.Name.ToString().Substring(0,3) == "gun")
@@ -253,6 +261,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
+                                    game1.Coins = game1.Coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -261,6 +270,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
+                                    game1.Coins = game1.Coins + 30;
                                 }
                             }
                         }

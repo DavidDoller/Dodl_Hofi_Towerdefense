@@ -68,10 +68,18 @@ namespace Towerdefense
             this.btn_PlaceTower5 = new System.Windows.Forms.Button();
             this.lbl_health = new System.Windows.Forms.Label();
             this.lbl_coins = new System.Windows.Forms.Label();
-            this.pb_backgroundCoins = new System.Windows.Forms.PictureBox();
-            this.pb_spawn = new System.Windows.Forms.PictureBox();
             this.pnl_pause = new System.Windows.Forms.Panel();
             this.pnl_start = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_wave = new System.Windows.Forms.Label();
+            this.lbl_redlooncounter = new System.Windows.Forms.Label();
+            this.lbl_bluelooncounter = new System.Windows.Forms.Label();
+            this.lbl_waveCooldown = new System.Windows.Forms.Label();
+            this.bullet_spawning = new System.Windows.Forms.Timer(this.components);
+            this.WaveSleepTimer = new System.Windows.Forms.Timer(this.components);
+            this.pb_mageNoCoins = new System.Windows.Forms.PictureBox();
+            this.pb_backgroundCoins = new System.Windows.Forms.PictureBox();
+            this.pb_spawn = new System.Windows.Forms.PictureBox();
             this.pb_ninjaTower = new System.Windows.Forms.PictureBox();
             this.pb_maschingunTower = new System.Windows.Forms.PictureBox();
             this.pb_BombTower = new System.Windows.Forms.PictureBox();
@@ -94,15 +102,13 @@ namespace Towerdefense
             this.pb_tower5 = new System.Windows.Forms.PictureBox();
             this.pb_tower4 = new System.Windows.Forms.PictureBox();
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_wave = new System.Windows.Forms.Label();
-            this.lbl_redlooncounter = new System.Windows.Forms.Label();
-            this.lbl_bluelooncounter = new System.Windows.Forms.Label();
-            this.lbl_waveCooldown = new System.Windows.Forms.Label();
-            this.bullet_spawning = new System.Windows.Forms.Timer(this.components);
-            this.WaveSleepTimer = new System.Windows.Forms.Timer(this.components);
+            this.pb_archNoCoins = new System.Windows.Forms.PictureBox();
+            this.pb_bombNoCoins = new System.Windows.Forms.PictureBox();
+            this.pb_ninjaNoCoins = new System.Windows.Forms.PictureBox();
+            this.pb_gunNoCoins = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mageNoCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ninjaTower)).BeginInit();
@@ -127,6 +133,10 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_archNoCoins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_bombNoCoins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ninjaNoCoins)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_gunNoCoins)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -499,6 +509,89 @@ namespace Towerdefense
             this.lbl_coins.TabIndex = 71;
             this.lbl_coins.Text = "Coins: ";
             // 
+            // pnl_pause
+            // 
+            this.pnl_pause.Location = new System.Drawing.Point(688, 479);
+            this.pnl_pause.Name = "pnl_pause";
+            this.pnl_pause.Size = new System.Drawing.Size(50, 50);
+            this.pnl_pause.TabIndex = 64;
+            this.pnl_pause.Click += new System.EventHandler(this.pnl_pause_Click);
+            // 
+            // pnl_start
+            // 
+            this.pnl_start.Location = new System.Drawing.Point(743, 479);
+            this.pnl_start.Name = "pnl_start";
+            this.pnl_start.Size = new System.Drawing.Size(50, 50);
+            this.pnl_start.TabIndex = 63;
+            this.pnl_start.Click += new System.EventHandler(this.pnl_start_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "E - Exit Game";
+            // 
+            // lbl_wave
+            // 
+            this.lbl_wave.AutoSize = true;
+            this.lbl_wave.Location = new System.Drawing.Point(530, 516);
+            this.lbl_wave.Name = "lbl_wave";
+            this.lbl_wave.Size = new System.Drawing.Size(42, 13);
+            this.lbl_wave.TabIndex = 74;
+            this.lbl_wave.Text = "Wave: ";
+            // 
+            // lbl_redlooncounter
+            // 
+            this.lbl_redlooncounter.AutoSize = true;
+            this.lbl_redlooncounter.Location = new System.Drawing.Point(303, 469);
+            this.lbl_redlooncounter.Name = "lbl_redlooncounter";
+            this.lbl_redlooncounter.Size = new System.Drawing.Size(30, 13);
+            this.lbl_redlooncounter.TabIndex = 75;
+            this.lbl_redlooncounter.Text = "temp";
+            // 
+            // lbl_bluelooncounter
+            // 
+            this.lbl_bluelooncounter.AutoSize = true;
+            this.lbl_bluelooncounter.Location = new System.Drawing.Point(303, 499);
+            this.lbl_bluelooncounter.Name = "lbl_bluelooncounter";
+            this.lbl_bluelooncounter.Size = new System.Drawing.Size(30, 13);
+            this.lbl_bluelooncounter.TabIndex = 76;
+            this.lbl_bluelooncounter.Text = "temp";
+            // 
+            // lbl_waveCooldown
+            // 
+            this.lbl_waveCooldown.AutoSize = true;
+            this.lbl_waveCooldown.Location = new System.Drawing.Point(168, 499);
+            this.lbl_waveCooldown.Name = "lbl_waveCooldown";
+            this.lbl_waveCooldown.Size = new System.Drawing.Size(36, 13);
+            this.lbl_waveCooldown.TabIndex = 77;
+            this.lbl_waveCooldown.Text = "Timer:";
+            // 
+            // bullet_spawning
+            // 
+            this.bullet_spawning.Enabled = true;
+            this.bullet_spawning.Interval = 2000;
+            this.bullet_spawning.Tick += new System.EventHandler(this.bullet_spawning_Tick);
+            // 
+            // WaveSleepTimer
+            // 
+            this.WaveSleepTimer.Interval = 1000;
+            this.WaveSleepTimer.Tick += new System.EventHandler(this.WaveSleepTimer_Tick);
+            // 
+            // pb_mageNoCoins
+            // 
+            this.pb_mageNoCoins.BackColor = System.Drawing.Color.Transparent;
+            this.pb_mageNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
+            this.pb_mageNoCoins.Location = new System.Drawing.Point(0, 543);
+            this.pb_mageNoCoins.Name = "pb_mageNoCoins";
+            this.pb_mageNoCoins.Size = new System.Drawing.Size(53, 53);
+            this.pb_mageNoCoins.TabIndex = 78;
+            this.pb_mageNoCoins.TabStop = false;
+            this.pb_mageNoCoins.Tag = "mageNoCoins";
+            // 
             // pb_backgroundCoins
             // 
             this.pb_backgroundCoins.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -518,22 +611,6 @@ namespace Towerdefense
             this.pb_spawn.TabIndex = 38;
             this.pb_spawn.TabStop = false;
             this.pb_spawn.Tag = "straight";
-            // 
-            // pnl_pause
-            // 
-            this.pnl_pause.Location = new System.Drawing.Point(688, 479);
-            this.pnl_pause.Name = "pnl_pause";
-            this.pnl_pause.Size = new System.Drawing.Size(50, 50);
-            this.pnl_pause.TabIndex = 64;
-            this.pnl_pause.Click += new System.EventHandler(this.pnl_pause_Click);
-            // 
-            // pnl_start
-            // 
-            this.pnl_start.Location = new System.Drawing.Point(743, 479);
-            this.pnl_start.Name = "pnl_start";
-            this.pnl_start.Size = new System.Drawing.Size(50, 50);
-            this.pnl_start.TabIndex = 63;
-            this.pnl_start.Click += new System.EventHandler(this.pnl_start_Click);
             // 
             // pb_ninjaTower
             // 
@@ -764,61 +841,49 @@ namespace Towerdefense
             this.pb_tower1.TabStop = false;
             this.pb_tower1.Tag = "tower1";
             // 
-            // label2
+            // pb_archNoCoins
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 73;
-            this.label2.Text = "E - Exit Game";
+            this.pb_archNoCoins.BackColor = System.Drawing.Color.Transparent;
+            this.pb_archNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
+            this.pb_archNoCoins.Location = new System.Drawing.Point(172, 543);
+            this.pb_archNoCoins.Name = "pb_archNoCoins";
+            this.pb_archNoCoins.Size = new System.Drawing.Size(53, 53);
+            this.pb_archNoCoins.TabIndex = 79;
+            this.pb_archNoCoins.TabStop = false;
+            this.pb_archNoCoins.Tag = "archNoCoins";
             // 
-            // lbl_wave
+            // pb_bombNoCoins
             // 
-            this.lbl_wave.AutoSize = true;
-            this.lbl_wave.Location = new System.Drawing.Point(530, 516);
-            this.lbl_wave.Name = "lbl_wave";
-            this.lbl_wave.Size = new System.Drawing.Size(42, 13);
-            this.lbl_wave.TabIndex = 74;
-            this.lbl_wave.Text = "Wave: ";
+            this.pb_bombNoCoins.BackColor = System.Drawing.Color.Transparent;
+            this.pb_bombNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
+            this.pb_bombNoCoins.Location = new System.Drawing.Point(365, 543);
+            this.pb_bombNoCoins.Name = "pb_bombNoCoins";
+            this.pb_bombNoCoins.Size = new System.Drawing.Size(53, 53);
+            this.pb_bombNoCoins.TabIndex = 80;
+            this.pb_bombNoCoins.TabStop = false;
+            this.pb_bombNoCoins.Tag = "bombNoCoins";
             // 
-            // lbl_redlooncounter
+            // pb_ninjaNoCoins
             // 
-            this.lbl_redlooncounter.AutoSize = true;
-            this.lbl_redlooncounter.Location = new System.Drawing.Point(303, 469);
-            this.lbl_redlooncounter.Name = "lbl_redlooncounter";
-            this.lbl_redlooncounter.Size = new System.Drawing.Size(30, 13);
-            this.lbl_redlooncounter.TabIndex = 75;
-            this.lbl_redlooncounter.Text = "temp";
+            this.pb_ninjaNoCoins.BackColor = System.Drawing.Color.Transparent;
+            this.pb_ninjaNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
+            this.pb_ninjaNoCoins.Location = new System.Drawing.Point(551, 543);
+            this.pb_ninjaNoCoins.Name = "pb_ninjaNoCoins";
+            this.pb_ninjaNoCoins.Size = new System.Drawing.Size(53, 53);
+            this.pb_ninjaNoCoins.TabIndex = 81;
+            this.pb_ninjaNoCoins.TabStop = false;
+            this.pb_ninjaNoCoins.Tag = "ninjaNoCoins";
             // 
-            // lbl_bluelooncounter
+            // pb_gunNoCoins
             // 
-            this.lbl_bluelooncounter.AutoSize = true;
-            this.lbl_bluelooncounter.Location = new System.Drawing.Point(303, 499);
-            this.lbl_bluelooncounter.Name = "lbl_bluelooncounter";
-            this.lbl_bluelooncounter.Size = new System.Drawing.Size(30, 13);
-            this.lbl_bluelooncounter.TabIndex = 76;
-            this.lbl_bluelooncounter.Text = "temp";
-            // 
-            // lbl_waveCooldown
-            // 
-            this.lbl_waveCooldown.AutoSize = true;
-            this.lbl_waveCooldown.Location = new System.Drawing.Point(168, 499);
-            this.lbl_waveCooldown.Name = "lbl_waveCooldown";
-            this.lbl_waveCooldown.Size = new System.Drawing.Size(36, 13);
-            this.lbl_waveCooldown.TabIndex = 77;
-            this.lbl_waveCooldown.Text = "Timer:";
-            // 
-            // bullet_spawning
-            // 
-            this.bullet_spawning.Enabled = true;
-            this.bullet_spawning.Interval = 2000;
-            this.bullet_spawning.Tick += new System.EventHandler(this.bullet_spawning_Tick);
-            // 
-            // WaveSleepTimer
-            // 
-            this.WaveSleepTimer.Interval = 1000;
-            this.WaveSleepTimer.Tick += new System.EventHandler(this.WaveSleepTimer_Tick);
+            this.pb_gunNoCoins.BackColor = System.Drawing.Color.Transparent;
+            this.pb_gunNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
+            this.pb_gunNoCoins.Location = new System.Drawing.Point(723, 543);
+            this.pb_gunNoCoins.Name = "pb_gunNoCoins";
+            this.pb_gunNoCoins.Size = new System.Drawing.Size(53, 53);
+            this.pb_gunNoCoins.TabIndex = 82;
+            this.pb_gunNoCoins.TabStop = false;
+            this.pb_gunNoCoins.Tag = "gunNoCoins";
             // 
             // game1
             // 
@@ -826,6 +891,11 @@ namespace Towerdefense
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(805, 618);
+            this.Controls.Add(this.pb_gunNoCoins);
+            this.Controls.Add(this.pb_ninjaNoCoins);
+            this.Controls.Add(this.pb_bombNoCoins);
+            this.Controls.Add(this.pb_archNoCoins);
+            this.Controls.Add(this.pb_mageNoCoins);
             this.Controls.Add(this.lbl_waveCooldown);
             this.Controls.Add(this.lbl_bluelooncounter);
             this.Controls.Add(this.lbl_redlooncounter);
@@ -899,6 +969,7 @@ namespace Towerdefense
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.game1_KeyDown);
             this.panel2.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_mageNoCoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ninjaTower)).EndInit();
@@ -923,6 +994,10 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_archNoCoins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_bombNoCoins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_ninjaNoCoins)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_gunNoCoins)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1001,5 +1076,10 @@ namespace Towerdefense
         private System.Windows.Forms.Label lbl_waveCooldown;
         private System.Windows.Forms.Timer bullet_spawning;
         private System.Windows.Forms.Timer WaveSleepTimer;
+        private System.Windows.Forms.PictureBox pb_mageNoCoins;
+        private System.Windows.Forms.PictureBox pb_archNoCoins;
+        private System.Windows.Forms.PictureBox pb_bombNoCoins;
+        private System.Windows.Forms.PictureBox pb_ninjaNoCoins;
+        private System.Windows.Forms.PictureBox pb_gunNoCoins;
     }
 }

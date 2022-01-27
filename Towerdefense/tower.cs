@@ -259,35 +259,47 @@ namespace Towerdefense
                 }
             }
         }
-        public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton ) 
+        public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton,int coins) 
         {
             //buttons get invisible
             UnvisibleButton();
                 //the chosen tower gets placed at the chosen place
                 if (game1.TowerType == "mage")
                 {
-                    pbTower.BackgroundImage = Properties.Resources.mageTower;
-                    pbTower.Tag = "mageTower";
+                    if(game1.Coins >= 200)
+                    {
+                        pbTower.BackgroundImage = Properties.Resources.mageTower;
+                        pbTower.Tag = "mageTower";
+                        game1.Coins = coins - 200;
+                    }
+                    else if (game1.Coins < 200)
+                    {
+                           
+                    }
                 }
                 else if(game1.TowerType == "archer")
                 {
                     pbTower.BackgroundImage = Properties.Resources.archerTower;
                     pbTower.Tag = "archerTower";
+                    game1.Coins = coins - 250;
                 }
                 else if (game1.TowerType == "bomb")
                 {
                     pbTower.BackgroundImage = Properties.Resources.BombTower;
                     pbTower.Tag = "bombTower";
+                    game1.Coins = coins - 300;
                 }
                 else if (game1.TowerType == "ninja")
                 {
                     pbTower.BackgroundImage = Properties.Resources.NinjaTower;
                     pbTower.Tag = "ninjaTower";
+                    game1.Coins = coins - 350;
                 }
                 else if (game1.TowerType == "machinegun")
                 {
                     pbTower.BackgroundImage = Properties.Resources.machineGunTower;
                     pbTower.Tag = "machinegun";
+                    game1.Coins = coins - 400;
                 }
 
             //when the tag of the tower is not empty you can't use the button anymore
@@ -345,29 +357,69 @@ namespace Towerdefense
             }
         }
 
-        //public static void reduceCoins()
-        //{
-        //    if (game1.TowerType == "mage")
-        //    {
-        //        game1.Coins = game1.Coins - 200;
-        //    }
-        //    if(game1.TowerType == "archer")
-        //    {
-        //        game1.Coins = game1.Coins - 250;
-        //    }
-        //    if (game1.TowerType == "bomb")
-        //    {
-        //        game1.Coins = game1.Coins - 250;
-        //    }
-        //    if (game1.TowerType == "ninja")
-        //    {
-        //        game1.Coins = game1.Coins - 250;
-        //    }
-        //    if (game1.TowerType == "machinegun")
-        //    {
-        //        game1.Coins = game1.Coins - 250;
-        //    }
-        //}
+        public static void checkCoinsAmount()
+        {
+            if (game1.ActiveForm == null) return;
+            foreach (Control x in game1.ActiveForm.Controls)
+            {
+                if(x is PictureBox && x.Tag == "mageNoCoins")
+                {
+                    if (game1.Coins >= 200)
+                    {
+                        x.Visible = false;
+                    }
+                    else if(game1.Coins < 200)
+                    {
+                        x.Visible = true;
+                    }
+                }
+                if (x is PictureBox && x.Tag == "archNoCoins")
+                {
+                    if (game1.Coins >= 250)
+                    {
+                        x.Visible = false;
+                    }
+                    else if (game1.Coins < 250)
+                    {
+                        x.Visible = true;
+                    }
+                }
+                if (x is PictureBox && x.Tag == "bombNoCoins")
+                {
+                    if (game1.Coins >= 300)
+                    {
+                        x.Visible = false;
+                    }
+                    else if (game1.Coins < 300)
+                    {
+                        x.Visible = true;
+                    }
+                }
+                if (x is PictureBox && x.Tag == "ninjaNoCoins")
+                {
+                    if (game1.Coins >= 350)
+                    {
+                        x.Visible = false;
+                    }
+                    else if (game1.Coins < 350)
+                    {
+                        x.Visible = true;
+                    }
+                }
+                if (x is PictureBox && x.Tag == "gunNoCoins")
+                {
+                    if (game1.Coins >= 400)
+                    {
+                        x.Visible = false;
+                    }
+                    else if (game1.Coins < 400)
+                    {
+                        x.Visible = true;
+                    }
+                }
+            }
+            
+        }
 
 
     }

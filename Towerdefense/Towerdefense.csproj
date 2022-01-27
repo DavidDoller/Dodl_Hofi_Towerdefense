@@ -132,6 +132,7 @@
     <None Include="Resources\machineGunTower1.png" />
     <Content Include="Resources\mageTower.png" />
     <Content Include="Resources\NinjaTower.png" />
+    <None Include="Resources\notEnoughCoins.png" />
     <Content Include="Resources\pause.png" />
     <None Include="Resources\pause1.png" />
     <Content Include="Resources\play.png" />
