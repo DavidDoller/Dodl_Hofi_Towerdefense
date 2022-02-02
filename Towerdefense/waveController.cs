@@ -40,6 +40,8 @@ namespace Towerdefense
                 if (RedcountEnemys != 10)
                 {
                     enemy.Createredloon(location1, location2);
+                    
+
                 }
                 if (RedcountEnemys >= 10)
                 {
@@ -58,16 +60,15 @@ namespace Towerdefense
                 Wavesleep = 0;
                 game1.wavecounter = "Wave: 2";
 
-                if (RedcountEnemys != 20)
+                if (BlueCountEnemys != 5)
+                {
+                    enemy.CreateBlueLoon(location1, location2);
+                }
+                if (RedcountEnemys != 20 && BlueCountEnemys >= 5)
                 {
                     enemy.Createredloon(location1, location2);
                 }
-                if (BlueCountEnemys != 5 && RedcountEnemys >= 20)
-                {
-                    enemy.CreateBlueLoon(location1, location2);
-
-                }
-                if (BlueCountEnemys >= 5 && RedcountEnemys >= 20)
+                if (RedcountEnemys >= 20 && BlueCountEnemys >= 5)
                 {
                     EnemySpawingCooldown.Start();
                     if (Wavesleep >= 5)

@@ -279,13 +279,13 @@ namespace Towerdefense
                 }
                 else if(game1.TowerType == "archer")
                 {
-                    pbTower.BackgroundImage = Properties.Resources.archerTower;
+                pbTower.BackgroundImage = Properties.Resources.archerTowerrework;
                     pbTower.Tag = "archerTower";
                     game1.Coins = coins - 250;
                 }
                 else if (game1.TowerType == "bomb")
                 {
-                    pbTower.BackgroundImage = Properties.Resources.BombTower;
+                pbTower.BackgroundImage = Properties.Resources.BombTowerrework;
                     pbTower.Tag = "bombTower";
                     game1.Coins = coins - 300;
                 }

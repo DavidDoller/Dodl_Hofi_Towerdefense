@@ -20,7 +20,6 @@ namespace Towerdefense
         public static int bombTowerDamage = 3;
         public static int ninjaTowerDamage = 4;
         public static int machinegunTowerDamage = 5;
-
         
 
 

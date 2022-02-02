@@ -127,8 +127,10 @@
     <None Include="Resources\bloonRed1.png" />
     <None Include="Resources\coinsBackGround.png" />
     <Content Include="Resources\archerTower.png" />
+    <None Include="Resources\archerTowerrework.png" />
     <Content Include="Resources\BombTower.png" />
     <None Include="Resources\lvl1Map.png" />
+    <None Include="Resources\BombTowerrework.png" />
     <Content Include="Resources\machineGunTower.png" />
     <None Include="Resources\machineGunTower1.png" />
     <Content Include="Resources\mageTower.png" />

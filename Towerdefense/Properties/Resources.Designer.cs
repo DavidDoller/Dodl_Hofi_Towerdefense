@@ -73,6 +73,16 @@ namespace Towerdefense.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap archerTowerrework {
+            get {
+                object obj = ResourceManager.GetObject("archerTowerrework", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bloonBlue {
             get {
                 object obj = ResourceManager.GetObject("bloonBlue", resourceCulture);
@@ -116,6 +126,16 @@ namespace Towerdefense.Properties {
         internal static System.Drawing.Bitmap BombTower {
             get {
                 object obj = ResourceManager.GetObject("BombTower", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BombTowerrework {
+            get {
+                object obj = ResourceManager.GetObject("BombTowerrework", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

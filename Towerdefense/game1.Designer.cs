@@ -490,7 +490,7 @@ namespace Towerdefense
             // pb_BombTower
             // 
             this.pb_BombTower.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.pb_BombTower.BackgroundImage = global::Towerdefense.Properties.Resources.BombTower;
+            this.pb_BombTower.BackgroundImage = global::Towerdefense.Properties.Resources.BombTowerrework;
             this.pb_BombTower.Location = new System.Drawing.Point(465, 568);
             this.pb_BombTower.Name = "pb_BombTower";
             this.pb_BombTower.Size = new System.Drawing.Size(57, 53);
@@ -502,7 +502,7 @@ namespace Towerdefense
             // pb_archerTower
             // 
             this.pb_archerTower.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.pb_archerTower.BackgroundImage = global::Towerdefense.Properties.Resources.archerTower;
+            this.pb_archerTower.BackgroundImage = global::Towerdefense.Properties.Resources.archerTowerrework;
             this.pb_archerTower.Location = new System.Drawing.Point(249, 568);
             this.pb_archerTower.Name = "pb_archerTower";
             this.pb_archerTower.Size = new System.Drawing.Size(57, 53);
@@ -697,7 +697,7 @@ namespace Towerdefense
             // 
             this.pb_archNoCoins.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pb_archNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
-            this.pb_archNoCoins.Location = new System.Drawing.Point(253, 568);
+            this.pb_archNoCoins.Location = new System.Drawing.Point(249, 566);
             this.pb_archNoCoins.Name = "pb_archNoCoins";
             this.pb_archNoCoins.Size = new System.Drawing.Size(53, 53);
             this.pb_archNoCoins.TabIndex = 79;
@@ -708,7 +708,7 @@ namespace Towerdefense
             // 
             this.pb_bombNoCoins.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pb_bombNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
-            this.pb_bombNoCoins.Location = new System.Drawing.Point(469, 568);
+            this.pb_bombNoCoins.Location = new System.Drawing.Point(466, 566);
             this.pb_bombNoCoins.Name = "pb_bombNoCoins";
             this.pb_bombNoCoins.Size = new System.Drawing.Size(53, 53);
             this.pb_bombNoCoins.TabIndex = 80;
