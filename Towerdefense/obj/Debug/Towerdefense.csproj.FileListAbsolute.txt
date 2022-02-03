@@ -51,3 +51,5 @@ C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\D
 C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.exe
 C:\Users\Dave\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.pdb
 C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.AssemblyReference.cache
+C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.LevelSelect.resources
+C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.game2.resources

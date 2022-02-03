@@ -436,7 +436,7 @@ namespace Towerdefense
             // 
             this.pb_mageNoCoins.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pb_mageNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
-            this.pb_mageNoCoins.Location = new System.Drawing.Point(24, 568);
+            this.pb_mageNoCoins.Location = new System.Drawing.Point(29, 568);
             this.pb_mageNoCoins.Name = "pb_mageNoCoins";
             this.pb_mageNoCoins.Size = new System.Drawing.Size(53, 53);
             this.pb_mageNoCoins.TabIndex = 78;
@@ -697,7 +697,7 @@ namespace Towerdefense
             // 
             this.pb_archNoCoins.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pb_archNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
-            this.pb_archNoCoins.Location = new System.Drawing.Point(249, 566);
+            this.pb_archNoCoins.Location = new System.Drawing.Point(253, 568);
             this.pb_archNoCoins.Name = "pb_archNoCoins";
             this.pb_archNoCoins.Size = new System.Drawing.Size(53, 53);
             this.pb_archNoCoins.TabIndex = 79;
@@ -708,7 +708,7 @@ namespace Towerdefense
             // 
             this.pb_bombNoCoins.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pb_bombNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
-            this.pb_bombNoCoins.Location = new System.Drawing.Point(466, 566);
+            this.pb_bombNoCoins.Location = new System.Drawing.Point(470, 568);
             this.pb_bombNoCoins.Name = "pb_bombNoCoins";
             this.pb_bombNoCoins.Size = new System.Drawing.Size(53, 53);
             this.pb_bombNoCoins.TabIndex = 80;
@@ -719,7 +719,7 @@ namespace Towerdefense
             // 
             this.pb_ninjaNoCoins.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pb_ninjaNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
-            this.pb_ninjaNoCoins.Location = new System.Drawing.Point(670, 568);
+            this.pb_ninjaNoCoins.Location = new System.Drawing.Point(671, 568);
             this.pb_ninjaNoCoins.Name = "pb_ninjaNoCoins";
             this.pb_ninjaNoCoins.Size = new System.Drawing.Size(53, 53);
             this.pb_ninjaNoCoins.TabIndex = 81;
@@ -730,7 +730,7 @@ namespace Towerdefense
             // 
             this.pb_gunNoCoins.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pb_gunNoCoins.BackgroundImage = global::Towerdefense.Properties.Resources.notEnoughCoins;
-            this.pb_gunNoCoins.Location = new System.Drawing.Point(880, 568);
+            this.pb_gunNoCoins.Location = new System.Drawing.Point(883, 568);
             this.pb_gunNoCoins.Name = "pb_gunNoCoins";
             this.pb_gunNoCoins.Size = new System.Drawing.Size(53, 53);
             this.pb_gunNoCoins.TabIndex = 82;

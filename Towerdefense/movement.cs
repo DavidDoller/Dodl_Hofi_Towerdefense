@@ -20,6 +20,8 @@ namespace Towerdefense
         public static int bombTowerDamage = 3;
         public static int ninjaTowerDamage = 4;
         public static int machinegunTowerDamage = 5;
+
+        public static int coins = 200;
         
 
 
@@ -41,12 +43,11 @@ namespace Towerdefense
             temp.Top += 5;
         }
 
-        public static void checkdirection(Timer playtimer, Timer enemyspawning)
-        {           
-            if (game1.ActiveForm == null) return;
-            foreach (Control x in game1.ActiveForm.Controls)
+        public static void checkdirection(Timer playtimer, Timer enemyspawning, Form form)
+        {
+            foreach (Control x in form.Controls)
             {
-                foreach (Control y in game1.ActiveForm.Controls)
+                foreach (Control y in form.Controls)
                 {
                     //checks if the enemy collides with a corner picturebox, than checks what way it should turn
                     if (y.Tag == null || x.Tag == null) continue;
@@ -107,7 +108,7 @@ namespace Towerdefense
                                     if (enemy.redloonhealth <= 0)
                                     {
                                         enemy.enemyRedList.Remove((PictureBox)y);
-                                        game1.Coins = game1.Coins + 10;
+                                        coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
                                     }
@@ -119,7 +120,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
-                                    game1.Coins = game1.Coins + 20;
+                                    coins = coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -128,7 +129,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
-                                    game1.Coins = game1.Coins + 30;
+                                    coins = coins + 30;
                                 }
 
                             }
@@ -143,7 +144,7 @@ namespace Towerdefense
                                     if (enemy.redloonhealth <= 0)
                                     {
                                         enemy.enemyRedList.Remove((PictureBox)y);
-                                        game1.Coins = game1.Coins + 10;
+                                        coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
                                     }
@@ -155,7 +156,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
-                                    game1.Coins = game1.Coins + 20;
+                                    coins = coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -164,7 +165,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
-                                    game1.Coins = game1.Coins + 30;
+                                    coins = coins + 30;
                                 }
                             }
                             else if (x.Name.ToString().Substring(0,4) == "bomb")
@@ -178,7 +179,7 @@ namespace Towerdefense
                                     if (enemy.redloonhealth <= 0)
                                     {
                                         enemy.enemyRedList.Remove((PictureBox)y);
-                                        game1.Coins = game1.Coins + 10;
+                                        coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
                                     }
@@ -190,7 +191,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
-                                    game1.Coins = game1.Coins + 20;
+                                    coins = coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -199,7 +200,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
-                                    game1.Coins = game1.Coins + 30;
+                                    coins = coins + 30;
                                 }
                             }
                             else if (x.Name.ToString().Substring(0,4) == "ninj")
@@ -213,7 +214,7 @@ namespace Towerdefense
                                     if (enemy.redloonhealth <= 0)
                                     {
                                         enemy.enemyRedList.Remove((PictureBox)y);
-                                        game1.Coins = game1.Coins + 10;
+                                        coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
                                     }
@@ -225,7 +226,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
-                                    game1.Coins = game1.Coins + 20;
+                                    coins = coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -234,7 +235,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
-                                    game1.Coins = game1.Coins + 30;
+                                    coins = coins + 30;
                                 }
                             }
                             else if (x.Name.ToString().Substring(0,3) == "gun")
@@ -248,7 +249,7 @@ namespace Towerdefense
                                     if (enemy.redloonhealth <= 0)
                                     {
                                         enemy.enemyRedList.Remove((PictureBox)y);
-                                        game1.Coins = game1.Coins + 10;
+                                        coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
                                     }
@@ -260,7 +261,7 @@ namespace Towerdefense
                                     enemy.enemyBlueList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
-                                    game1.Coins = game1.Coins + 20;
+                                    coins = coins + 20;
                                 }
                                 if (y.Name == "Pinkloon")
                                 {
@@ -269,7 +270,7 @@ namespace Towerdefense
                                     enemy.enemyPinkList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
-                                    game1.Coins = game1.Coins + 30;
+                                    coins = coins + 30;
                                 }
                             }
                         }
@@ -301,9 +302,9 @@ namespace Towerdefense
                                 playtimer.Stop();
                                 enemyspawning.Stop();
                                 
-                                menu form = new menu();
-                                form.Show();
-                                game1.ActiveForm.Hide();
+                                menu menu = new menu();
+                                menu.Show();
+                                form.Hide();
                                 MessageBox.Show("Dead!");
                             }
 
@@ -315,10 +316,9 @@ namespace Towerdefense
 
         }
 
-        public static void moveenemys() 
+        public static void moveenemys(Form form) 
         {
-            if (game1.ActiveForm == null) return;
-            foreach (Control x in game1.ActiveForm.Controls)
+            foreach (Control x in form.Controls)
             {
                 //check if picturebox has the tag "enemy"
                 if (x.Tag == null) continue;
@@ -343,13 +343,11 @@ namespace Towerdefense
             }
         }
 
-        public static void AutoAim()
+        public static void AutoAim(Form form)
         {
-            if (game1.ActiveForm == null) return;
-            foreach (Control x in game1.ActiveForm.Controls)
+            foreach (Control x in form.Controls)
             {
-                if (game1.ActiveForm == null) return;
-                foreach (Control y in game1.ActiveForm.Controls) 
+                foreach (Control y in form.Controls) 
                 {
                     if (x.Tag == null || y.Tag == null) continue;
                     if(y is PictureBox && y.Tag.ToString().Substring(0, 5) == "enemy")

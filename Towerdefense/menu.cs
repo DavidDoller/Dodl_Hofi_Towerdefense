@@ -20,7 +20,7 @@ namespace Towerdefense
         private void btn_start_Click(object sender, EventArgs e)
         {
             //change form to game1
-            game1 form = new game1();
+            LevelSelect form = new LevelSelect();
             form.Show();
             this.Hide();
         }

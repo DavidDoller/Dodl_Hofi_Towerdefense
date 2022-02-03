@@ -26,7 +26,9 @@ namespace Towerdefense
         public static List<PictureBox> enemyRedBallonList = new List<PictureBox>();
         public static List<PictureBox> enemyBlueBallonList = new List<PictureBox>();
 
-        public static void wavechecker(int location1, int location2,Timer EnemySpawingCooldown)
+        public static string Cuurentwave;
+
+        public static void wavechecker(int location1, int location2,Timer EnemySpawingCooldown, Form form)
         {
 
             RedcountEnemys = enemy.redLoonCounter;
@@ -36,7 +38,7 @@ namespace Towerdefense
 
             if (wave1 == true)
             {
-                game1.wavecounter = "Wave: 1";
+                Cuurentwave = "Wave: 1";
                 if (RedcountEnemys != 10)
                 {
                     enemy.Createredloon(location1, location2);
@@ -58,7 +60,7 @@ namespace Towerdefense
             {              
                 EnemySpawingCooldown.Stop();
                 Wavesleep = 0;
-                game1.wavecounter = "Wave: 2";
+                Cuurentwave = "Wave: 2";
 
                 if (BlueCountEnemys != 5)
                 {
@@ -83,7 +85,7 @@ namespace Towerdefense
             {
                 EnemySpawingCooldown.Stop();
                 Wavesleep = 0;
-                game1.wavecounter = "Wave: 3";
+                Cuurentwave = "Wave: 3";
 
                 if(BlueCountEnemys != 25)
                 {
@@ -103,7 +105,7 @@ namespace Towerdefense
             {
                 EnemySpawingCooldown.Stop();
                 Wavesleep = 0;
-                game1.wavecounter = "Wave: 4";
+                Cuurentwave = "Wave: 4";
 
                 if(BlueCountEnemys != 35)
                 {
@@ -133,10 +135,9 @@ namespace Towerdefense
 
                 if (DialogResult.OK.Equals(true))
                 {
-                    menu form = new menu();
-                    form.Show();
-                    if (game1.ActiveForm == null) return;
-                    game1.ActiveForm.Hide();
+                    menu menu = new menu();
+                    menu.Show();
+                    form.Hide();
                 }
             }
         }

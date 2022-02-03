@@ -13,14 +13,6 @@ namespace Towerdefense
 {
     public partial class game1 : Form
     {
-        public static int Coins = 200;
-
-        public static string TowerType;
-
-        public static string check;
-
-        public static string wavecounter;
-
 
         public game1()
         {
@@ -66,7 +58,7 @@ namespace Towerdefense
 
             //timer tick refreshes the coins label
             lbl_coins.BringToFront();
-            lbl_coins.Text = "Coins: " + Coins;
+            lbl_coins.Text = "Coins: " + movement.coins;
 
             //timer tick refreshes the health label
             //lbl_test.Text = enemy.looncounter.ToString();
@@ -74,10 +66,10 @@ namespace Towerdefense
 
 
             
-            movement.moveenemys();//enemy movement
-            movement.checkdirection(playtimer, enemyspawning);//check direction
-            tower.checkCoinsAmount();
-            lbl_wave.Text = wavecounter;
+            movement.moveenemys(game1.ActiveForm);//enemy movement
+            movement.checkdirection(playtimer, enemyspawning,game1.ActiveForm);//check direction
+            tower.checkCoinsAmount(game1.ActiveForm);
+            lbl_wave.Text = waveController.Cuurentwave;
 
         }
 
@@ -87,7 +79,7 @@ namespace Towerdefense
             //enemy.Createredloon(30,419);
             //enemy.CreateBlueLoon(30, 419);
 
-            waveController.wavechecker(pb_spawn.Location.X + 10, pb_spawn.Location.Y, WaveSleepTimer);
+            waveController.wavechecker(pb_spawn.Location.X + 10, pb_spawn.Location.Y, WaveSleepTimer,game1.ActiveForm);
             
         }
 
@@ -97,7 +89,7 @@ namespace Towerdefense
             
 
             tower.TowerShootsController();
-            movement.AutoAim();
+            movement.AutoAim(game1.ActiveForm);
             //tower.autoAim();
             //tower.magetowerShoot(83, 335, 5);
             //tower.archertowerShoot(359, 334, 5);
@@ -117,35 +109,35 @@ namespace Towerdefense
         private void pb_mageTower_Click(object sender, EventArgs e)
         {
             //buttons get visible again and checks what tower gets placed
-            tower.ButtonActivateTowers();
-            TowerType = "mage";
+            tower.ButtonActivateTowers(game1.ActiveForm);
+            tower.TowerType = "mage";
         }
 
         private void pb_archerTower_Click(object sender, EventArgs e)
         {
             //buttons get visible again and checks what tower gets placed
-            tower.ButtonActivateTowers();
-            TowerType = "archer";
+            tower.ButtonActivateTowers(game1.ActiveForm);
+            tower.TowerType = "archer";
         }
         private void pb_BombTower_Click(object sender, EventArgs e)
         {
             //buttons get visible again and checks what tower gets placed
-            tower.ButtonActivateTowers();
-            TowerType = "bomb";
+            tower.ButtonActivateTowers(game1.ActiveForm);
+            tower.TowerType = "bomb";
         }
 
         private void pb_ninjaTower_Click(object sender, EventArgs e)
         {
             //buttons get visible again and checks what tower gets placed
-            tower.ButtonActivateTowers();
-            TowerType = "ninja";
+            tower.ButtonActivateTowers(game1.ActiveForm);
+            tower.TowerType = "ninja";
         }
 
         private void pb_maschingunTower_Click(object sender, EventArgs e)
         {
             //buttons get visible again and checks what tower gets placed
-            tower.ButtonActivateTowers();
-            TowerType = "machinegun";
+            tower.ButtonActivateTowers(game1.ActiveForm);
+            tower.TowerType = "machinegun";
         }
 
 
@@ -153,70 +145,70 @@ namespace Towerdefense
         private void btn_PlaceTower1_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower1,btn_PlaceTower1,Coins);
+            tower.ButtonDeactivateTowers(pb_tower1,btn_PlaceTower1,game1.ActiveForm);
             //tower.reduceCoins(Coins);
         }
 
         private void btn_PlaceTower2_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower2, btn_PlaceTower2, Coins);
+            tower.ButtonDeactivateTowers(pb_tower2, btn_PlaceTower2, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
         private void btn_PlaceTower3_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower3,btn_PlaceTower3, Coins);
+            tower.ButtonDeactivateTowers(pb_tower3,btn_PlaceTower3, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
         private void btn_PlaceTower4_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower4,btn_PlaceTower4, Coins);
+            tower.ButtonDeactivateTowers(pb_tower4,btn_PlaceTower4, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
         private void btn_PlaceTower5_Click_1(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower5,btn_PlaceTower5, Coins);
+            tower.ButtonDeactivateTowers(pb_tower5,btn_PlaceTower5, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
         private void btn_PlaceTower6_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower6, btn_PlaceTower6, Coins);
+            tower.ButtonDeactivateTowers(pb_tower6, btn_PlaceTower6, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
         private void btn_PlaceTower7_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower7,btn_PlaceTower7, Coins);
+            tower.ButtonDeactivateTowers(pb_tower7,btn_PlaceTower7, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
         private void btn_PlaceTower8_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower8,btn_PlaceTower8, Coins);
+            tower.ButtonDeactivateTowers(pb_tower8,btn_PlaceTower8, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
         private void btn_PlaceTower9_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower9,btn_PlaceTower9, Coins);
+            tower.ButtonDeactivateTowers(pb_tower9,btn_PlaceTower9, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
         private void btn_PlaceTower10_Click(object sender, EventArgs e)
         {
             //buttons get invisible and the tower chosen gets played
-            tower.ButtonDeactivateTowers(pb_tower10,btn_PlaceTower10, Coins);
+            tower.ButtonDeactivateTowers(pb_tower10,btn_PlaceTower10, game1.ActiveForm);
             //tower.reduceCoins();
         }
 
@@ -238,8 +230,8 @@ namespace Towerdefense
 
         private void bullet_spawning_Tick(object sender, EventArgs e)
         {
-            tower.checkTowerPlacement();
-            Coins = Coins + 5;
+            tower.checkTowerPlacement(game1.ActiveForm);
+            movement.coins = movement.coins + 5;
         }
 
         private void WaveSleepTimer_Tick(object sender, EventArgs e)

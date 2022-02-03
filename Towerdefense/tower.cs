@@ -34,6 +34,8 @@ namespace Towerdefense
         public static int ninjaTowerPrice = 350;
         public static int machinegunTowerPrice = 400;
 
+        public static string TowerType;
+
         #region ShootController
         public static void TowerShootsController() 
         {
@@ -248,10 +250,10 @@ namespace Towerdefense
         }
         #endregion 
 
-        public static void UnvisibleButton()
+        public static void UnvisibleButton(Form form)
         {
             //all buttons on the form game1 get invisible
-            foreach (Control x in game1.ActiveForm.Controls)
+            foreach (Control x in form.Controls)
             {
                 if (x is Button)
                 {
@@ -259,47 +261,40 @@ namespace Towerdefense
                 }
             }
         }
-        public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton,int coins) 
+        public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton,Form form) 
         {
             //buttons get invisible
-            UnvisibleButton();
+            UnvisibleButton(form);
                 //the chosen tower gets placed at the chosen place
-                if (game1.TowerType == "mage")
+                if (TowerType == "mage")
                 {
-                    if(game1.Coins >= 200)
-                    {
                         pbTower.BackgroundImage = Properties.Resources.mageTower;
                         pbTower.Tag = "mageTower";
-                        game1.Coins = coins - 200;
-                    }
-                    else if (game1.Coins < 200)
-                    {
-                           
-                    }
+                        movement.coins = movement.coins - 200;
                 }
-                else if(game1.TowerType == "archer")
+                else if(TowerType == "archer")
                 {
-                pbTower.BackgroundImage = Properties.Resources.archerTowerrework;
+                    pbTower.BackgroundImage = Properties.Resources.archerTowerrework;
                     pbTower.Tag = "archerTower";
-                    game1.Coins = coins - 250;
+                    movement.coins = movement.coins - 250;
                 }
-                else if (game1.TowerType == "bomb")
+                else if (TowerType == "bomb")
                 {
-                pbTower.BackgroundImage = Properties.Resources.BombTowerrework;
+                    pbTower.BackgroundImage = Properties.Resources.BombTowerrework;
                     pbTower.Tag = "bombTower";
-                    game1.Coins = coins - 300;
+                    movement.coins = movement.coins - 300;
                 }
-                else if (game1.TowerType == "ninja")
+                else if (TowerType == "ninja")
                 {
                     pbTower.BackgroundImage = Properties.Resources.NinjaTower;
                     pbTower.Tag = "ninjaTower";
-                    game1.Coins = coins - 350;
+                    movement.coins = movement.coins - 350;
                 }
-                else if (game1.TowerType == "machinegun")
+                else if (TowerType == "machinegun")
                 {
                     pbTower.BackgroundImage = Properties.Resources.machineGunTower;
                     pbTower.Tag = "machinegun";
-                    game1.Coins = coins - 400;
+                    movement.coins = movement.coins - 400;
                 }
 
             //when the tag of the tower is not empty you can't use the button anymore
@@ -310,10 +305,10 @@ namespace Towerdefense
             }
         }
 
-        public static void ButtonActivateTowers()
+        public static void ButtonActivateTowers(Form form)
         {
             //tower buttons get visible
-            foreach (Control x in game1.ActiveForm.Controls)
+            foreach (Control x in form.Controls)
             {
                 if (x is Button)
                 {
@@ -323,11 +318,10 @@ namespace Towerdefense
         }
 
 
-        public static void checkTowerPlacement() 
+        public static void checkTowerPlacement(Form form) 
         {
             //checks what and where the tower is placed, so the right bullet gets shot
-            if (game1.ActiveForm == null) return;
-            foreach (Control x in game1.ActiveForm.Controls)
+            foreach (Control x in form.Controls)
             {
                 if(x is PictureBox && x.Tag == "mageTower")
                 {
@@ -357,62 +351,61 @@ namespace Towerdefense
             }
         }
 
-        public static void checkCoinsAmount()
+        public static void checkCoinsAmount(Form form)
         {
-            if (game1.ActiveForm == null) return;
-            foreach (Control x in game1.ActiveForm.Controls)
+            foreach (Control x in form.Controls)
             {
                 if(x is PictureBox && x.Tag == "mageNoCoins")
                 {
-                    if (game1.Coins >= 200)
+                    if (movement.coins >= 200)
                     {
                         x.Visible = false;
                     }
-                    else if(game1.Coins < 200)
+                    else if(movement.coins < 200)
                     {
                         x.Visible = true;
                     }
                 }
                 if (x is PictureBox && x.Tag == "archNoCoins")
                 {
-                    if (game1.Coins >= 250)
+                    if (movement.coins >= 250)
                     {
                         x.Visible = false;
                     }
-                    else if (game1.Coins < 250)
+                    else if (movement.coins < 250)
                     {
                         x.Visible = true;
                     }
                 }
                 if (x is PictureBox && x.Tag == "bombNoCoins")
                 {
-                    if (game1.Coins >= 300)
+                    if (movement.coins >= 300)
                     {
                         x.Visible = false;
                     }
-                    else if (game1.Coins < 300)
+                    else if (movement.coins < 300)
                     {
                         x.Visible = true;
                     }
                 }
                 if (x is PictureBox && x.Tag == "ninjaNoCoins")
                 {
-                    if (game1.Coins >= 350)
+                    if (movement.coins >= 350)
                     {
                         x.Visible = false;
                     }
-                    else if (game1.Coins < 350)
+                    else if (movement.coins < 350)
                     {
                         x.Visible = true;
                     }
                 }
                 if (x is PictureBox && x.Tag == "gunNoCoins")
                 {
-                    if (game1.Coins >= 400)
+                    if (movement.coins >= 400)
                     {
                         x.Visible = false;
                     }
-                    else if (game1.Coins < 400)
+                    else if (movement.coins < 400)
                     {
                         x.Visible = true;
                     }
