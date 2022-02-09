@@ -93,9 +93,29 @@ namespace Towerdefense.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bloonGreen {
+            get {
+                object obj = ResourceManager.GetObject("bloonGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bloonPink {
             get {
                 object obj = ResourceManager.GetObject("bloonPink", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloonRainbow {
+            get {
+                object obj = ResourceManager.GetObject("bloonRainbow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +136,16 @@ namespace Towerdefense.Properties {
         internal static System.Drawing.Bitmap bloonRed1 {
             get {
                 object obj = ResourceManager.GetObject("bloonRed1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloonZebra {
+            get {
+                object obj = ResourceManager.GetObject("bloonZebra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -17,12 +17,9 @@ namespace Towerdefense
         public static int redLoonCounter;
         public static int blueLoonCounter;
         public static int pinkLoonCounter;
+        public static int greenLoonCounter;
 
-        public static List<PictureBox> enemyRedList = new List<PictureBox>();
-        public static List<PictureBox> enemyBlueList = new List<PictureBox>();
-        public static List<PictureBox> enemyPinkList = new List<PictureBox>();
-
-        public static PictureBox Createredloon(int location1, int location2)
+        public static PictureBox Createredloon(int location1, int location2, Form form)
         {
             //creats the picturebox "redLoon"
 
@@ -39,12 +36,12 @@ namespace Towerdefense
             pbred.BringToFront();
             enemyRedList.Add(pbred);
             waveController.enemyRedBallonList.Add(pbred);
-            game1.ActiveForm.Controls.Add(pbred);
+            form.Controls.Add(pbred);
             redLoonCounter++;
             return pbred;
         }
 
-        public static PictureBox CreateBlueLoon(int location1 , int location2)
+        public static PictureBox CreateBlueLoon(int location1 , int location2, Form form)
         {
             //creats the picturebox "blueLoon"
             PictureBox pbBlue = new PictureBox();
@@ -57,14 +54,31 @@ namespace Towerdefense
             pbBlue.Tag = "enemy" + blueLoonCounter;
             pbBlue.Name = "Blueloon";
             pbBlue.BringToFront();
-            enemyBlueList.Add(pbBlue);
             waveController.enemyBlueBallonList.Add(pbBlue);
-            game1.ActiveForm.Controls.Add(pbBlue);
+            form.Controls.Add(pbBlue);
             blueLoonCounter++;
             return pbBlue;
         }
 
-        public static PictureBox CreatePinkLoon(int location1, int location2)
+        public static PictureBox CreateGreenLoon(int location1, int location2,Form form) 
+        {
+            PictureBox pbGreen = new PictureBox();
+
+            pbGreen.Size = new Size(32, 32);
+            pbGreen.Location = new Point(location1, location2);
+            pbGreen.BackgroundImage = Properties.Resources.bloonGreen;
+            pbGreen.BackColor = Color.Transparent;
+            pbGreen.BackgroundImageLayout = ImageLayout.Stretch;
+            pbGreen.Tag = "enemy" + greenLoonCounter;
+            pbGreen.Name = "Greenloon";
+            pbGreen.BringToFront();
+            waveController.enemyGreenBallonList.Add(pbGreen);
+            form.Controls.Add(pbGreen);
+            greenLoonCounter++;
+            return pbGreen;
+        }
+
+        public static PictureBox CreatePinkLoon(int location1, int location2,Form form)
         {
             //creats the picturebox "pinkLoon"
             PictureBox pbPink = new PictureBox();
@@ -77,8 +91,8 @@ namespace Towerdefense
             pbPink.Tag = "enemy"+ pinkLoonCounter;
             pbPink.Name = "Pinkloon";
             pbPink.BringToFront();
-            enemyPinkList.Add(pbPink);
-            game1.ActiveForm.Controls.Add(pbPink);
+            waveController.enemyPinkBallonList.Add(pbPink);
+            form.Controls.Add(pbPink);
             pinkLoonCounter++;
             return pbPink;
         }

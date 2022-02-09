@@ -26,19 +26,7 @@ namespace Towerdefense
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(pb_levelselect.Tag == "lvl1")
-            {
-                pb_levelselect.BackgroundImage = Properties.Resources.StoneMap;
-                pb_levelselect.BackgroundImageLayout = ImageLayout.Stretch;
-                pb_levelselect.Tag = "lvl2";
-            }
-            else if(pb_levelselect.Tag == "lvl2")
-            {
-                pb_levelselect.BackgroundImage = Properties.Resources.lvl1Map;
-                pb_levelselect.BackgroundImageLayout = ImageLayout.Stretch;
-                pb_levelselect.Tag = "lvl1";
-            }
-            
+            changeLevel();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,6 +42,27 @@ namespace Towerdefense
                 game2 game = new game2();
                 game.Show();
                 this.Hide();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            changeLevel();
+        }
+
+        public void changeLevel()
+        {
+            if (pb_levelselect.Tag == "lvl1")
+            {
+                pb_levelselect.BackgroundImage = Properties.Resources.StoneMap;
+                pb_levelselect.BackgroundImageLayout = ImageLayout.Stretch;
+                pb_levelselect.Tag = "lvl2";
+            }
+            else if (pb_levelselect.Tag == "lvl2")
+            {
+                pb_levelselect.BackgroundImage = Properties.Resources.lvl1Map;
+                pb_levelselect.BackgroundImageLayout = ImageLayout.Stretch;
+                pb_levelselect.Tag = "lvl1";
             }
         }
     }

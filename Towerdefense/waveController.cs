@@ -25,6 +25,8 @@ namespace Towerdefense
 
         public static List<PictureBox> enemyRedBallonList = new List<PictureBox>();
         public static List<PictureBox> enemyBlueBallonList = new List<PictureBox>();
+        public static List<PictureBox> enemyGreenBallonList = new List<PictureBox>();
+        public static List<PictureBox> enemyPinkBallonList = new List<PictureBox>();
 
         public static string Cuurentwave;
 
@@ -41,7 +43,7 @@ namespace Towerdefense
                 Cuurentwave = "Wave: 1";
                 if (RedcountEnemys != 10)
                 {
-                    enemy.Createredloon(location1, location2);
+                    enemy.Createredloon(location1, location2, form);
                     
 
                 }
@@ -64,11 +66,11 @@ namespace Towerdefense
 
                 if (BlueCountEnemys != 5)
                 {
-                    enemy.CreateBlueLoon(location1, location2);
+                    enemy.CreateBlueLoon(location1, location2, form);
                 }
                 if (RedcountEnemys != 20 && BlueCountEnemys >= 5)
                 {
-                    enemy.Createredloon(location1, location2);
+                    enemy.Createredloon(location1, location2, form);
                 }
                 if (RedcountEnemys >= 20 && BlueCountEnemys >= 5)
                 {
@@ -89,7 +91,7 @@ namespace Towerdefense
 
                 if(BlueCountEnemys != 25)
                 {
-                    enemy.Createredloon(location1, location2);
+                    enemy.Createredloon(location1, location2,form);
                 }
                 if(BlueCountEnemys >= 25)
                 {
@@ -109,11 +111,11 @@ namespace Towerdefense
 
                 if(BlueCountEnemys != 35)
                 {
-                    enemy.CreateBlueLoon(location1, location2);
+                    enemy.CreateBlueLoon(location1, location2,form);
                 }
                 if(BlueCountEnemys >= 35 && PinkCountEnemys != 5)
                 {
-                    enemy.CreatePinkLoon(location1, location2);
+                    enemy.CreatePinkLoon(location1, location2,form);
                 }
                 if (PinkCountEnemys >= 5 && BlueCountEnemys >= 35)
                 {

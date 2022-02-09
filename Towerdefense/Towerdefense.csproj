@@ -147,6 +147,9 @@
     <None Include="Resources\coinsBackGround.png" />
     <Content Include="Resources\archerTower.png" />
     <None Include="Resources\archerTowerrework.png" />
+    <None Include="Resources\bloonRainbow1.png" />
+    <None Include="Resources\bloonGreen.png" />
+    <None Include="Resources\bloonZebra.png" />
     <Content Include="Resources\BombTower.png" />
     <None Include="Resources\lvl1Map.png" />
     <None Include="Resources\BombTowerrework.png" />

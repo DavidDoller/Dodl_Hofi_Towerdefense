@@ -13,6 +13,7 @@ namespace Towerdefense
         public static List<PictureBox> moveright = new List<PictureBox>();
         public static List<PictureBox> movestraight = new List<PictureBox>();
         public static List<PictureBox> movedown = new List<PictureBox>();
+        public static List<PictureBox> moveLeftdir = new List<PictureBox>();
         public static int health = 100000;
 
         public static int mageTowerDamage = 1;
@@ -43,6 +44,11 @@ namespace Towerdefense
             temp.Top += 5;
         }
 
+        public static void moveLeft(PictureBox temp)
+        {
+            temp.Left -= 5;
+        }
+
         public static void checkdirection(Timer playtimer, Timer enemyspawning, Form form)
         {
             foreach (Control x in form.Controls)
@@ -57,6 +63,7 @@ namespace Towerdefense
                         {
                             movestraight.Remove((PictureBox)y);
                             movedown.Remove((PictureBox)y);
+                            moveLeftdir.Remove((PictureBox)y);
                             //enemy picturebox get added once to the list moveright
                             if (!moveright.Contains((PictureBox)y))
                             {
@@ -70,6 +77,7 @@ namespace Towerdefense
                         {
                             moveright.Remove((PictureBox)y);
                             movedown.Remove((PictureBox)y);
+                            moveLeftdir.Remove((PictureBox)y);
                             //enemy picturebox get added once to the list movestraight
                             if (!movestraight.Contains((PictureBox)y))
                             {
@@ -84,11 +92,27 @@ namespace Towerdefense
 
                             moveright.Remove((PictureBox)y);
                             movestraight.Remove((PictureBox)y);
+                            moveLeftdir.Remove((PictureBox)y);
                             //enemy picturebox get added once to the list movedown
                             if (!movedown.Contains((PictureBox)y))
                             {
                                 movedown.Add((PictureBox)y);
                             }
+                        }
+                    }
+                    else if (x is PictureBox && (string)x.Tag == "dirleft" && y is PictureBox && (string)y.Tag.ToString().Substring(0,5) == "enemy")
+                    {
+                        if (y.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            moveright.Remove((PictureBox)y);
+                            movestraight.Remove((PictureBox)y);
+                            movedown.Remove((PictureBox)y);
+
+                             if (!moveLeftdir.Contains((PictureBox)y))
+                            {
+                                moveLeftdir.Add((PictureBox)y);
+                            }
+
                         }
                     }
                     //checks if enemy gets hit by a bullet 
@@ -338,6 +362,10 @@ namespace Towerdefense
                     if (movedown.Contains(x))
                     {
                         movementdown((PictureBox)x);
+                    }
+                    if (moveLeftdir.Contains(x))
+                    {
+                        moveLeft((PictureBox)x);
                     }
                 }
             }
