@@ -34,7 +34,6 @@ namespace Towerdefense
             pbred.Name = "Redloon";
             redloonhealth = 2;
             pbred.BringToFront();
-            enemyRedList.Add(pbred);
             waveController.enemyRedBallonList.Add(pbred);
             form.Controls.Add(pbred);
             redLoonCounter++;

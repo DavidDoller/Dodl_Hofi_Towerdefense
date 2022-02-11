@@ -131,7 +131,7 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        waveController.enemyRedBallonList.Remove((PictureBox)y);
                                         coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
@@ -141,7 +141,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
-                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    waveController.enemyBlueBallonList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
@@ -150,7 +150,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
-                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    waveController.enemyPinkBallonList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                     coins = coins + 30;
@@ -167,7 +167,7 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        waveController.enemyRedBallonList.Remove((PictureBox)y);
                                         coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
@@ -177,7 +177,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
-                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    waveController.enemyBlueBallonList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
@@ -186,7 +186,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
-                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    waveController.enemyPinkBallonList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                     coins = coins + 30;
@@ -202,7 +202,8 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        waveController.enemyRedBallonList.Remove((PictureBox)y);
+
                                         coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
@@ -212,7 +213,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
-                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    waveController.enemyBlueBallonList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
@@ -221,7 +222,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
-                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    waveController.enemyPinkBallonList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                     coins = coins + 30;
@@ -237,7 +238,8 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        waveController.enemyRedBallonList.Remove((PictureBox)y);
+
                                         coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
@@ -247,7 +249,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
-                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    waveController.enemyBlueBallonList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
@@ -256,7 +258,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
-                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    waveController.enemyPinkBallonList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                     coins = coins + 30;
@@ -272,7 +274,8 @@ namespace Towerdefense
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
                                     if (enemy.redloonhealth <= 0)
                                     {
-                                        enemy.enemyRedList.Remove((PictureBox)y);
+                                        waveController.enemyRedBallonList.Remove((PictureBox)y);
+
                                         coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
@@ -282,7 +285,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
-                                    enemy.enemyBlueList.Remove((PictureBox)y);
+                                    waveController.enemyBlueBallonList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
@@ -291,7 +294,7 @@ namespace Towerdefense
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
-                                    enemy.enemyPinkList.Remove((PictureBox)y);
+                                    waveController.enemyPinkBallonList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                     coins = coins + 30;
@@ -373,6 +376,7 @@ namespace Towerdefense
 
         public static void AutoAim(Form form)
         {
+            if (form.Controls == null) return;
             foreach (Control x in form.Controls)
             {
                 foreach (Control y in form.Controls) 
