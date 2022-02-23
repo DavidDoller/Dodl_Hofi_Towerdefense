@@ -13,9 +13,7 @@ namespace Towerdefense
 {
     class tower
     {
-        #region Lists and Panels for Towers
-
-        public static int bulletspeed = 1;
+        #region var
         public static int MachineGunSpeed = 15;
 
         public static int mageShootCounter;
@@ -37,12 +35,10 @@ namespace Towerdefense
         public static string TowerType;
 
         #region ShootController
-        public static void TowerShootsController() 
+        public static void TowerShootsController()
         {
-            if (game1.ActiveForm == null) return;
             foreach (Control x in game1.ActiveForm.Controls)
             {
-                if (game1.ActiveForm == null) return;
                 foreach (Control y in game1.ActiveForm.Controls)
                 {
                     if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
@@ -68,24 +64,24 @@ namespace Towerdefense
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
                     }
-                    if(x is Panel && x.Name.ToString().Substring(0, 4) == "arch" && y is PictureBox && y.Tag == "archerTower")
+                    if (x is Panel && x.Name.ToString().Substring(0, 4) == "arch" && y is PictureBox && y.Tag == "archerTower")
                     {
                         if (x.Left < y.Location.X - 100)
                         {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
-                        if(x.Top < y.Location.Y - 100)
+                        if (x.Top < y.Location.Y - 100)
                         {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
-                        if(x.Left > y.Location.X + 100)
+                        if (x.Left > y.Location.X + 100)
                         {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
                         }
-                        if(x.Top > y.Location.Y + 100)
+                        if (x.Top > y.Location.Y + 100)
                         {
                             x.Dispose();
                             x.Location = new Point(y.Location.X, y.Location.Y);
@@ -161,7 +157,7 @@ namespace Towerdefense
                         }
                     }
                 }
-                
+
             }
         }
         #endregion
@@ -170,35 +166,35 @@ namespace Towerdefense
         public static void magetowerShoot(int locationX, int locationY)
         {
             //bullet gets created
-                Panel tempmage = new Panel();     
-                tempmage.Name = "mage" + mageShootCounter;
-                tempmage.Location = new Point(locationX, locationY);
-                tempmage.BackColor = Color.Red;
-                tempmage.Height = 3;
-                tempmage.Width = 30;
-                tempmage.Tag = "bullet";
-                tempmage.BringToFront();
+            Panel tempmage = new Panel();
+            tempmage.Name = "mage" + mageShootCounter;
+            tempmage.Location = new Point(locationX, locationY);
+            tempmage.BackColor = Color.Red;
+            tempmage.Height = 3;
+            tempmage.Width = 30;
+            tempmage.Tag = "bullet";
+            tempmage.BringToFront();
             //panelmagetowershot.Add(tempmage);
             if (game1.ActiveForm == null) return;
             game1.ActiveForm.Controls.Add(tempmage);
-                mageShootCounter++;
+            mageShootCounter++;
         }
 
         public static void archertowerShoot(int locationX, int locationY)
         {
             //bullet gets created
 
-                Panel temparcher = new Panel();
-                temparcher.Name = "arch" + archerShootCounter;
-                temparcher.Location = new Point(locationX, locationY);
-                temparcher.BackColor = Color.Blue;
-                temparcher.Height = 3;
-                temparcher.Width = 30;
-                temparcher.Tag = "bullet";
-                //panelarchertowershot.Add(temparcher);
-                game1.ActiveForm.Controls.Add(temparcher);
-                archerShootCounter++;
-          
+            Panel temparcher = new Panel();
+            temparcher.Name = "arch" + archerShootCounter;
+            temparcher.Location = new Point(locationX, locationY);
+            temparcher.BackColor = Color.Blue;
+            temparcher.Height = 3;
+            temparcher.Width = 30;
+            temparcher.Tag = "bullet";
+            //panelarchertowershot.Add(temparcher);
+            game1.ActiveForm.Controls.Add(temparcher);
+            archerShootCounter++;
+
 
         }
 
@@ -206,47 +202,47 @@ namespace Towerdefense
         {
             //bullet gets created
 
-                Panel tempBomb = new Panel();
-                tempBomb.Name = "bomb" + bombShootCounter;
-                tempBomb.Location = new Point(locationX, locationY);
-                tempBomb.BackColor = Color.Orange;
-                tempBomb.Height = 3;
-                tempBomb.Width = 30;
-                tempBomb.Tag = "bullet";
-                //panelBombTowerShot.Add(tempBomb);
-                game1.ActiveForm.Controls.Add(tempBomb);
-                bombShootCounter++;
+            Panel tempBomb = new Panel();
+            tempBomb.Name = "bomb" + bombShootCounter;
+            tempBomb.Location = new Point(locationX, locationY);
+            tempBomb.BackColor = Color.Orange;
+            tempBomb.Height = 3;
+            tempBomb.Width = 30;
+            tempBomb.Tag = "bullet";
+            //panelBombTowerShot.Add(tempBomb);
+            game1.ActiveForm.Controls.Add(tempBomb);
+            bombShootCounter++;
         }
 
         public static void ninjaTowerShoot(int locationX, int locationY)
         {
             //bullet gets created
-                Panel tempNinja = new Panel();
-                tempNinja.Name = "ninj" + ninjaShootCounter;
-                tempNinja.Location = new Point(locationX, locationY);
-                tempNinja.BackColor = Color.Green;
-                tempNinja.Height = 3;
-                tempNinja.Width = 30;
-                tempNinja.Tag = "bullet";
-                //panelNinjaTowerShot.Add(tempNinja);
-                game1.ActiveForm.Controls.Add(tempNinja);
-                ninjaShootCounter++;
+            Panel tempNinja = new Panel();
+            tempNinja.Name = "ninj" + ninjaShootCounter;
+            tempNinja.Location = new Point(locationX, locationY);
+            tempNinja.BackColor = Color.Green;
+            tempNinja.Height = 3;
+            tempNinja.Width = 30;
+            tempNinja.Tag = "bullet";
+            //panelNinjaTowerShot.Add(tempNinja);
+            game1.ActiveForm.Controls.Add(tempNinja);
+            ninjaShootCounter++;
         }
 
         public static void machinegunTowerShoot(int locationX, int locationY)
         {
             //bullet gets created
 
-                Panel tempMachinegun = new Panel();
-                tempMachinegun.Name = "gun" + machinegunShootCounter;
-                tempMachinegun.Location = new Point(locationX, locationY);
-                tempMachinegun.BackColor = Color.Yellow;
-                tempMachinegun.Height = 3;
-                tempMachinegun.Width = 30;
-                tempMachinegun.Tag = "bullet";
-                //panelMachineGunTowerShot.Add(tempMachinegun);
-                game1.ActiveForm.Controls.Add(tempMachinegun);
-                machinegunShootCounter++;
+            Panel tempMachinegun = new Panel();
+            tempMachinegun.Name = "gun" + machinegunShootCounter;
+            tempMachinegun.Location = new Point(locationX, locationY);
+            tempMachinegun.BackColor = Color.Yellow;
+            tempMachinegun.Height = 3;
+            tempMachinegun.Width = 30;
+            tempMachinegun.Tag = "bullet";
+            //panelMachineGunTowerShot.Add(tempMachinegun);
+            game1.ActiveForm.Controls.Add(tempMachinegun);
+            machinegunShootCounter++;
         }
         #endregion 
 
@@ -261,44 +257,44 @@ namespace Towerdefense
                 }
             }
         }
-        public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton,Form form) 
+        public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton, Form form)
         {
             //buttons get invisible
             UnvisibleButton(form);
-                //the chosen tower gets placed at the chosen place
-                if (TowerType == "mage")
-                {
-                        pbTower.BackgroundImage = Properties.Resources.mageTower;
-                        pbTower.Tag = "mageTower";
-                        movement.coins = movement.coins - 200;
-                }
-                else if(TowerType == "archer")
-                {
-                    pbTower.BackgroundImage = Properties.Resources.archerTowerrework;
-                    pbTower.Tag = "archerTower";
-                    movement.coins = movement.coins - 250;
-                }
-                else if (TowerType == "bomb")
-                {
-                    pbTower.BackgroundImage = Properties.Resources.BombTowerrework;
-                    pbTower.Tag = "bombTower";
-                    movement.coins = movement.coins - 300;
-                }
-                else if (TowerType == "ninja")
-                {
-                    pbTower.BackgroundImage = Properties.Resources.NinjaTower;
-                    pbTower.Tag = "ninjaTower";
-                    movement.coins = movement.coins - 350;
-                }
-                else if (TowerType == "machinegun")
-                {
-                    pbTower.BackgroundImage = Properties.Resources.machineGunTower;
-                    pbTower.Tag = "machinegun";
-                    movement.coins = movement.coins - 400;
-                }
+            //the chosen tower gets placed at the chosen place
+            if (TowerType == "mage")
+            {
+                pbTower.BackgroundImage = Properties.Resources.mageTower;
+                pbTower.Tag = "mageTower";
+                movement.coins = movement.coins - 200;
+            }
+            else if (TowerType == "archer")
+            {
+                pbTower.BackgroundImage = Properties.Resources.archerTowerrework;
+                pbTower.Tag = "archerTower";
+                movement.coins = movement.coins - 250;
+            }
+            else if (TowerType == "bomb")
+            {
+                pbTower.BackgroundImage = Properties.Resources.BombTowerrework;
+                pbTower.Tag = "bombTower";
+                movement.coins = movement.coins - 300;
+            }
+            else if (TowerType == "ninja")
+            {
+                pbTower.BackgroundImage = Properties.Resources.NinjaTower;
+                pbTower.Tag = "ninjaTower";
+                movement.coins = movement.coins - 350;
+            }
+            else if (TowerType == "machinegun")
+            {
+                pbTower.BackgroundImage = Properties.Resources.machineGunTower;
+                pbTower.Tag = "machinegun";
+                movement.coins = movement.coins - 400;
+            }
 
             //when the tag of the tower is not empty you can't use the button anymore
-            if(pbTower.Tag != "")
+            if (pbTower.Tag != "")
             {
                 towerButton.BackColor = Color.Red;
                 towerButton.Enabled = false;
@@ -318,35 +314,35 @@ namespace Towerdefense
         }
 
 
-        public static void checkTowerPlacement(Form form) 
+        public static void checkTowerPlacement(Form form)
         {
             //checks what and where the tower is placed, so the right bullet gets shot
             foreach (Control x in form.Controls)
             {
-                if(x is PictureBox && x.Tag == "mageTower")
+                if (x is PictureBox && x.Tag == "mageTower")
                 {
-                        magetowerShoot(x.Location.X, x.Location.Y);
-                        
+                    magetowerShoot(x.Location.X, x.Location.Y);
+
                 }
-                else if(x is PictureBox && x.Tag == "archerTower")
+                else if (x is PictureBox && x.Tag == "archerTower")
                 {
-                        archertowerShoot(x.Location.X, x.Location.Y);
-                        
+                    archertowerShoot(x.Location.X, x.Location.Y);
+
                 }
                 else if (x is PictureBox && x.Tag == "bombTower")
                 {
-                        bombTowerShoot(x.Location.X, x.Location.Y);
-                        
+                    bombTowerShoot(x.Location.X, x.Location.Y);
+
                 }
                 else if (x is PictureBox && x.Tag == "ninjaTower")
                 {
-                        ninjaTowerShoot(x.Location.X, x.Location.Y);
-                        
+                    ninjaTowerShoot(x.Location.X, x.Location.Y);
+
                 }
                 else if (x is PictureBox && x.Tag == "machinegun")
                 {
-                        machinegunTowerShoot(x.Location.X, x.Location.Y);
-                        
+                    machinegunTowerShoot(x.Location.X, x.Location.Y);
+
                 }
             }
         }
@@ -355,13 +351,13 @@ namespace Towerdefense
         {
             foreach (Control x in form.Controls)
             {
-                if(x is PictureBox && x.Tag == "mageNoCoins")
+                if (x is PictureBox && x.Tag == "mageNoCoins")
                 {
                     if (movement.coins >= 200)
                     {
                         x.Visible = false;
                     }
-                    else if(movement.coins < 200)
+                    else if (movement.coins < 200)
                     {
                         x.Visible = true;
                     }
@@ -411,7 +407,7 @@ namespace Towerdefense
                     }
                 }
             }
-            
+
         }
 
 

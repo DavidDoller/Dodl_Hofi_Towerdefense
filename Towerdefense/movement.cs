@@ -14,7 +14,9 @@ namespace Towerdefense
         public static List<PictureBox> movestraight = new List<PictureBox>();
         public static List<PictureBox> movedown = new List<PictureBox>();
         public static List<PictureBox> moveLeftdir = new List<PictureBox>();
-        public static int health = 100000;
+        public static int health = 1000;
+
+        public static int bulletspeed = 1;
 
         public static int mageTowerDamage = 1;
         public static int archerTowerDamage = 2;
@@ -23,7 +25,7 @@ namespace Towerdefense
         public static int machinegunTowerDamage = 5;
 
         public static int coins = 200;
-        
+
 
 
 
@@ -57,7 +59,7 @@ namespace Towerdefense
                 {
                     //checks if the enemy collides with a corner picturebox, than checks what way it should turn
                     if (y.Tag == null || x.Tag == null) continue;
-                    if (x is PictureBox && (string)x.Tag == "right" && y is PictureBox && (string)y.Tag.ToString().Substring(0,5) == "enemy")
+                    if (x is PictureBox && (string)x.Tag == "right" && y is PictureBox && (string)y.Tag.ToString().Substring(0, 5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
@@ -100,7 +102,7 @@ namespace Towerdefense
                             }
                         }
                     }
-                    else if (x is PictureBox && (string)x.Tag == "dirleft" && y is PictureBox && (string)y.Tag.ToString().Substring(0,5) == "enemy")
+                    else if (x is PictureBox && (string)x.Tag == "dirleft" && y is PictureBox && (string)y.Tag.ToString().Substring(0, 5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
@@ -108,7 +110,7 @@ namespace Towerdefense
                             movestraight.Remove((PictureBox)y);
                             movedown.Remove((PictureBox)y);
 
-                             if (!moveLeftdir.Contains((PictureBox)y))
+                            if (!moveLeftdir.Contains((PictureBox)y))
                             {
                                 moveLeftdir.Add((PictureBox)y);
                             }
@@ -137,7 +139,7 @@ namespace Towerdefense
                                         y.Dispose();
                                     }
                                 }
-                                if (y.Name == "Blueloon")
+                                else if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
@@ -146,7 +148,7 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
                                 }
-                                if (y.Name == "Pinkloon")
+                                else if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
@@ -155,9 +157,18 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                     coins = coins + 30;
                                 }
+                                else if (y.Name == "Zebraloon")
+                                {
+                                    enemy.CreatePinkLoon(y.Location.X, y.Location.Y, form);
+                                    y.Name = "Pinkloon";
+                                    x.Dispose();
+                                    waveController.enemyZebraBallonList.Remove((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonPink;
+                                    coins = coins + 40;
+                                }
 
                             }
-                            else if (x.Name.ToString().Substring(0,4) == "arch")
+                            else if (x.Name.ToString().Substring(0, 4) == "arch")
                             {
                                 if (y.Name == "Redloon")
                                 {
@@ -173,7 +184,7 @@ namespace Towerdefense
                                         y.Dispose();
                                     }
                                 }
-                                if (y.Name == "Blueloon")
+                                else if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
@@ -182,7 +193,7 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
                                 }
-                                if (y.Name == "Pinkloon")
+                                else if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
@@ -192,7 +203,7 @@ namespace Towerdefense
                                     coins = coins + 30;
                                 }
                             }
-                            else if (x.Name.ToString().Substring(0,4) == "bomb")
+                            else if (x.Name.ToString().Substring(0, 4) == "bomb")
                             {
                                 if (y.Name == "Redloon")
                                 {
@@ -203,13 +214,12 @@ namespace Towerdefense
                                     if (enemy.redloonhealth <= 0)
                                     {
                                         waveController.enemyRedBallonList.Remove((PictureBox)y);
-
                                         coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
                                     }
                                 }
-                                if (y.Name == "Blueloon")
+                                else if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
@@ -218,7 +228,7 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
                                 }
-                                if (y.Name == "Pinkloon")
+                                else if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
@@ -228,7 +238,7 @@ namespace Towerdefense
                                     coins = coins + 30;
                                 }
                             }
-                            else if (x.Name.ToString().Substring(0,4) == "ninj")
+                            else if (x.Name.ToString().Substring(0, 4) == "ninj")
                             {
                                 if (y.Name == "Redloon")
                                 {
@@ -239,13 +249,12 @@ namespace Towerdefense
                                     if (enemy.redloonhealth <= 0)
                                     {
                                         waveController.enemyRedBallonList.Remove((PictureBox)y);
-
                                         coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
                                     }
                                 }
-                                if (y.Name == "Blueloon")
+                                else if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
@@ -254,7 +263,7 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
                                 }
-                                if (y.Name == "Pinkloon")
+                                else if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
@@ -264,7 +273,7 @@ namespace Towerdefense
                                     coins = coins + 30;
                                 }
                             }
-                            else if (x.Name.ToString().Substring(0,3) == "gun")
+                            else if (x.Name.ToString().Substring(0, 3) == "gun")
                             {
                                 if (y.Name == "Redloon")
                                 {
@@ -275,13 +284,12 @@ namespace Towerdefense
                                     if (enemy.redloonhealth <= 0)
                                     {
                                         waveController.enemyRedBallonList.Remove((PictureBox)y);
-
                                         coins = coins + 10;
                                         x.Dispose();
                                         y.Dispose();
                                     }
                                 }
-                                if (y.Name == "Blueloon")
+                                else if (y.Name == "Blueloon")
                                 {
                                     y.Name = "Redloon";
                                     x.Dispose();
@@ -290,7 +298,7 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonRed;
                                     coins = coins + 20;
                                 }
-                                if (y.Name == "Pinkloon")
+                                else if (y.Name == "Pinkloon")
                                 {
                                     y.Name = "Blueloon";
                                     x.Dispose();
@@ -299,36 +307,41 @@ namespace Towerdefense
                                     y.BackgroundImage = Properties.Resources.bloonBlue;
                                     coins = coins + 30;
                                 }
+
                             }
                         }
                     }
                     //check if enemy collides with the core
-                    else if (x is PictureBox && (string)x.Tag.ToString().Substring(0,4) == "core" && y is PictureBox && (string)y.Tag.ToString().Substring(0,5) == "enemy")
+                    else if (x is PictureBox && (string)x.Tag.ToString().Substring(0, 4) == "core" && y is PictureBox && (string)y.Tag.ToString().Substring(0, 5) == "enemy")
                     {
                         if (y.Bounds.IntersectsWith(x.Bounds))
                         {
                             //health of the core gets reduced by one, when an enemy collides with it
                             if (y.Name == "Redloon")
                             {
-                                health--; 
+                                health--;
                                 y.Dispose();
                             }
-                            if (y.Name == "Blueloon")
+                            else if (y.Name == "Blueloon")
                             {
                                 health = health - 2;
                                 y.Dispose();
                             }
-                            if(y.Name == "Pinkloon")
+                            else if (y.Name == "Pinkloon")
                             {
                                 health = health - 3;
                                 y.Dispose();
                             }
+                            else if (y.Name == "Zebraloon")
+                            {
+                                health = health - 4;
+                            }
                             //when the health is zero, timer stops and the menu form opens
-                            if (health == 0)
+                            else if (health == 0)
                             {
                                 playtimer.Stop();
                                 enemyspawning.Stop();
-                                
+
                                 menu menu = new menu();
                                 menu.Show();
                                 form.Hide();
@@ -343,13 +356,13 @@ namespace Towerdefense
 
         }
 
-        public static void moveenemys(Form form) 
+        public static void moveenemys(Form form)
         {
             foreach (Control x in form.Controls)
             {
                 //check if picturebox has the tag "enemy"
                 if (x.Tag == null) continue;
-                if (x is PictureBox && (string)x.Tag.ToString().Substring(0,5) == "enemy")
+                if (x is PictureBox && (string)x.Tag.ToString().Substring(0, 5) == "enemy")
                 {
                     //when picturebox is in list movestraight the enemy moves straight
                     if (movestraight.Contains(x))
@@ -379,28 +392,28 @@ namespace Towerdefense
             if (form.Controls == null) return;
             foreach (Control x in form.Controls)
             {
-                foreach (Control y in form.Controls) 
+                foreach (Control y in form.Controls)
                 {
                     if (x.Tag == null || y.Tag == null) continue;
-                    if(y is PictureBox && y.Tag.ToString().Substring(0, 5) == "enemy")
+                    if (y is PictureBox && y.Tag.ToString().Substring(0, 5) == "enemy")
                     {
-                        if(x is Panel && x.Tag == "bullet")
+                        if (x is Panel && x.Tag == "bullet")
                         {
-                            if(y.Left > x.Left)
+                            if (y.Left > x.Left)
                             {
-                                x.Left += tower.bulletspeed;
+                                x.Left += bulletspeed;
                             }
-                            if(y.Top > x.Top)
+                            if (y.Top > x.Top)
                             {
-                                x.Top += tower.bulletspeed;
+                                x.Top += bulletspeed;
                             }
-                            if(y.Left < x.Left)
+                            if (y.Left < x.Left)
                             {
-                                x.Left -= tower.bulletspeed;
+                                x.Left -= bulletspeed;
                             }
-                            if(y.Top < x.Top)
+                            if (y.Top < x.Top)
                             {
-                                x.Top -= tower.bulletspeed;
+                                x.Top -= bulletspeed;
                             }
                         }
                     }

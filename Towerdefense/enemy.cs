@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Towerdefense
 {
-    
+
     class enemy
     {
         public static int redloonhealth = 3;
@@ -18,6 +18,7 @@ namespace Towerdefense
         public static int blueLoonCounter;
         public static int pinkLoonCounter;
         public static int greenLoonCounter;
+        public static int zebraloonCounter;
 
         public static PictureBox Createredloon(int location1, int location2, Form form)
         {
@@ -40,7 +41,7 @@ namespace Towerdefense
             return pbred;
         }
 
-        public static PictureBox CreateBlueLoon(int location1 , int location2, Form form)
+        public static PictureBox CreateBlueLoon(int location1, int location2, Form form)
         {
             //creats the picturebox "blueLoon"
             PictureBox pbBlue = new PictureBox();
@@ -59,7 +60,7 @@ namespace Towerdefense
             return pbBlue;
         }
 
-        public static PictureBox CreateGreenLoon(int location1, int location2,Form form) 
+        public static PictureBox CreateGreenLoon(int location1, int location2, Form form)
         {
             PictureBox pbGreen = new PictureBox();
 
@@ -77,23 +78,41 @@ namespace Towerdefense
             return pbGreen;
         }
 
-        public static PictureBox CreatePinkLoon(int location1, int location2,Form form)
+        public static PictureBox CreatePinkLoon(int location1, int location2, Form form)
         {
             //creats the picturebox "pinkLoon"
             PictureBox pbPink = new PictureBox();
 
             pbPink.Size = new Size(32, 32);
             pbPink.Location = new Point(location1, location2);
-            pbPink.BackgroundImage = Properties.Resources.bloonBlue;
+            pbPink.BackgroundImage = Properties.Resources.bloonPink;
             pbPink.BackColor = Color.Transparent;
             pbPink.BackgroundImageLayout = ImageLayout.Stretch;
-            pbPink.Tag = "enemy"+ pinkLoonCounter;
+            pbPink.Tag = "enemy" + pinkLoonCounter;
             pbPink.Name = "Pinkloon";
             pbPink.BringToFront();
             waveController.enemyPinkBallonList.Add(pbPink);
             form.Controls.Add(pbPink);
             pinkLoonCounter++;
             return pbPink;
+        }
+
+        public static PictureBox CreateZebraLoon(int location1, int location2, Form form)
+        {
+            PictureBox pbZebra = new PictureBox();
+
+            pbZebra.Size = new Size(32, 32);
+            pbZebra.Location = new Point(location1, location2);
+            pbZebra.BackgroundImage = Properties.Resources.bloonZebra;
+            pbZebra.BackColor = Color.Transparent;
+            pbZebra.BackgroundImageLayout = ImageLayout.Stretch;
+            pbZebra.Tag = "enemy" + zebraloonCounter;
+            pbZebra.Name = "Zebraloon";
+            pbZebra.BringToFront();
+            waveController.enemyZebraBallonList.Add(pbZebra);
+            form.Controls.Add(pbZebra);
+            zebraloonCounter++;
+            return pbZebra;
         }
     }
 
