@@ -29,6 +29,7 @@ namespace Towerdefense
         public static int KeramicCounterEnemys;
         public static int RainbowCounterEnemys;
         public static int ZebraCountEnemys;
+        public static int keramikCountEnemys;
 
         public static int Wavesleep;
 
@@ -60,15 +61,15 @@ namespace Towerdefense
             LightBlueCounterEnemys = enemy.LightBlueCounter;
             ZebraCountEnemys = enemy.zebraloonCounter;
             RainbowCounterEnemys = enemy.rainbowloonCounter;
-            enemyKeramikBallonList = enemy.keramikLoonCounter;
+            keramikCountEnemys = enemy.keramikLoonCounter;
 
             string jsondata = File.ReadAllText("waves.json");
             List<WaveStructure> waves = JsonConvert.DeserializeObject<List<WaveStructure>>(jsondata);
             int waveCount = 0;
 
-            if(RedcountEnemys != waves[waveCount].bloons.red)
+            if (RedcountEnemys != waves[waveCount].bloons.red)
             {
-                enemy.Createredloon(location1, location2, form);           
+                enemy.Createredloon(location1, location2, form);
             }
             if (RedcountEnemys >= waves[waveCount].bloons.red)
             {
@@ -80,138 +81,151 @@ namespace Towerdefense
                     waveCount++;
                 }
             }
-            if (BlueCountEnemys != waves[waveCount].bloons.red)
+            if (BlueCountEnemys != waves[waveCount].bloons.blue)
             {
                 enemy.CreateBlueLoon(location1, location2, form);
             }
-
-
-
-
-
-            if (wave1 == true)
+            if (RedcountEnemys >= waves[waveCount].bloons.blue)
             {
-                Cuurentwave = "Wave: 1";
-                if (RedcountEnemys != 10)
+                EnemySpawingCooldown.Start();
+                if (Wavesleep >= 5)
                 {
-                    enemy.Createredloon(location1, location2, form);
-                }
-                if (RedcountEnemys >= 10)
-                {
-                    EnemySpawingCooldown.Start();
-                    if (Wavesleep >= 5)
-                    {
-                        EnemySpawingCooldown.Stop();
-                        wave1 = false;
-                        wave2 = true;
-                        Wavesleep = 0;
-                    }
-
+                    EnemySpawingCooldown.Stop();
+                    Wavesleep = 0;
+                    waveCount++;
                 }
             }
-            else if (wave2 == true)
-            {
-                Cuurentwave = "Wave: 2";
 
-                if (BlueCountEnemys != 5)
-                {
-                    enemy.CreateBlueLoon(location1, location2, form);
-                }
-                if (RedcountEnemys != 20 && BlueCountEnemys >= 5)
-                {
-                    enemy.Createredloon(location1, location2, form);
-                }
-                if (RedcountEnemys == 20 && BlueCountEnemys == 5)
-                {
-                    EnemySpawingCooldown.Start();
-                    if (Wavesleep >= 5)
-                    {
-                        EnemySpawingCooldown.Stop();
-                        wave2 = false;
-                        wave3 = true;
-                        Wavesleep = 0;
-                    }
 
-                }
-            }
-            else if (wave3 == true)
-            {
-                Cuurentwave = "Wave: 3";
 
-                if (BlueCountEnemys != 25)
-                {
-                    enemy.CreateBlueLoon(location1, location2, form);
-                }
-                if (BlueCountEnemys >= 25)
-                {
-                    EnemySpawingCooldown.Start();
-                    if (Wavesleep >= 5)
-                    {
-                        wave3 = false;
-                        wave4 = true;
-                        EnemySpawingCooldown.Stop();
-                        Wavesleep = 0;
-                    }
-                }
-            }
-            else if (wave4 == true)
-            {
 
-                Cuurentwave = "Wave: 4";
+            #region trashcode
+            //        if (wave1 == true)
+            //        {
+            //            Cuurentwave = "Wave: 1";
+            //            if (RedcountEnemys != 10)
+            //            {
+            //                enemy.Createredloon(location1, location2, form);
+            //            }
+            //            if (RedcountEnemys >= 10)
+            //            {
+            //                EnemySpawingCooldown.Start();
+            //                if (Wavesleep >= 5)
+            //                {
+            //                    EnemySpawingCooldown.Stop();
+            //                    wave1 = false;
+            //                    wave2 = true;
+            //                    Wavesleep = 0;
+            //                }
 
-                if (BlueCountEnemys != 35)
-                {
-                    enemy.CreateBlueLoon(location1, location2, form);
-                }
-                if (BlueCountEnemys >= 35 && PinkCountEnemys != 5)
-                {
-                    enemy.CreatePinkLoon(location1, location2, form);
-                }
-                if (PinkCountEnemys >= 5 && BlueCountEnemys >= 35)
-                {
-                    EnemySpawingCooldown.Start();
-                    if (Wavesleep >= 5)
-                    {
-                        wave4 = false;
-                        wave5 = true;
-                        EnemySpawingCooldown.Stop();
-                        Wavesleep = 0;
-                    }
-                }
-            }
-            else if (wave5 == true)
-            {
-                if (PinkCountEnemys != 10)
-                {
-                    enemy.CreatePinkLoon(location1, location2, form);
-                }
-                if (ZebraCountEnemys != 5)
-                {
-                    enemy.CreateZebraLoon(location1, location2, form);
-                }
-                if (PinkCountEnemys >= 10 && ZebraCountEnemys >= 5)
-                {
-                    EnemySpawingCooldown.Start();
-                    if (Wavesleep >= 5)
-                    {
-                        wave5 = false;
-                        win = true;
-                        EnemySpawingCooldown.Stop();
-                        Wavesleep = 0;
-                    }
-                }
-            }
-            else if (win == true)
-            {
-                MessageBox.Show("Geschafft", "Done", MessageBoxButtons.OK);
+            //            }
+            //        }
+            //        else if (wave2 == true)
+            //        {
+            //            Cuurentwave = "Wave: 2";
 
-                if (DialogResult.OK.Equals(true))
-                {
-                    menu menu = new menu();
-                    menu.Show();
-                    form.Hide();
-                }
-            }
+            //            if (BlueCountEnemys != 5)
+            //            {
+            //                enemy.CreateBlueLoon(location1, location2, form);
+            //            }
+            //            if (RedcountEnemys != 20 && BlueCountEnemys >= 5)
+            //            {
+            //                enemy.Createredloon(location1, location2, form);
+            //            }
+            //            if (RedcountEnemys == 20 && BlueCountEnemys == 5)
+            //            {
+            //                EnemySpawingCooldown.Start();
+            //                if (Wavesleep >= 5)
+            //                {
+            //                    EnemySpawingCooldown.Stop();
+            //                    wave2 = false;
+            //                    wave3 = true;
+            //                    Wavesleep = 0;
+            //                }
+
+            //            }
+            //        }
+            //        else if (wave3 == true)
+            //        {
+            //            Cuurentwave = "Wave: 3";
+
+            //            if (BlueCountEnemys != 25)
+            //            {
+            //                enemy.CreateBlueLoon(location1, location2, form);
+            //            }
+            //            if (BlueCountEnemys >= 25)
+            //            {
+            //                EnemySpawingCooldown.Start();
+            //                if (Wavesleep >= 5)
+            //                {
+            //                    wave3 = false;
+            //                    wave4 = true;
+            //                    EnemySpawingCooldown.Stop();
+            //                    Wavesleep = 0;
+            //                }
+            //            }
+            //        }
+            //        else if (wave4 == true)
+            //        {
+
+            //            Cuurentwave = "Wave: 4";
+
+            //            if (BlueCountEnemys != 35)
+            //            {
+            //                enemy.CreateBlueLoon(location1, location2, form);
+            //            }
+            //            if (BlueCountEnemys >= 35 && PinkCountEnemys != 5)
+            //            {
+            //                enemy.CreatePinkLoon(location1, location2, form);
+            //            }
+            //            if (PinkCountEnemys >= 5 && BlueCountEnemys >= 35)
+            //            {
+            //                EnemySpawingCooldown.Start();
+            //                if (Wavesleep >= 5)
+            //                {
+            //                    wave4 = false;
+            //                    wave5 = true;
+            //                    EnemySpawingCooldown.Stop();
+            //                    Wavesleep = 0;
+            //                }
+            //            }
+            //        }
+            //        else if (wave5 == true)
+            //        {
+            //            if (PinkCountEnemys != 10)
+            //            {
+            //                enemy.CreatePinkLoon(location1, location2, form);
+            //            }
+            //            if (ZebraCountEnemys != 5)
+            //            {
+            //                enemy.CreateZebraLoon(location1, location2, form);
+            //            }
+            //            if (PinkCountEnemys >= 10 && ZebraCountEnemys >= 5)
+            //            {
+            //                EnemySpawingCooldown.Start();
+            //                if (Wavesleep >= 5)
+            //                {
+            //                    wave5 = false;
+            //                    win = true;
+            //                    EnemySpawingCooldown.Stop();
+            //                    Wavesleep = 0;
+            //                }
+            //            }
+            //        }
+            //        else if (win == true)
+            //        {
+            //            MessageBox.Show("Geschafft", "Done", MessageBoxButtons.OK);
+
+            //            if (DialogResult.OK.Equals(true))
+            //            {
+            //                menu menu = new menu();
+            //                menu.Show();
+            //                form.Hide();
+            //            }
+            //        }
+            //    }
+            //}
+            #endregion
         }
     }
 }
