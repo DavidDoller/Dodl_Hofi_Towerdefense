@@ -125,16 +125,17 @@ namespace Towerdefense
                             //checks name of bullet panel
                             if (x.Name.ToString().Substring(0, 4) == "mage")
                             {
+                                #region LoonDetection
                                 if (y.Name == "Redloon")
                                 {
                                     //enemy health gets reduced by a certain amount dependent on the tower
-                                    enemy.redloonhealth = enemy.redloonhealth - mageTowerDamage;
+                                    enemy.health = enemy.health - mageTowerDamage;
 
                                     //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
-                                    if (enemy.redloonhealth <= 0)
+                                    if (enemy.health <= 0)
                                     {
                                         waveController.enemyRedBallonList.Remove((PictureBox)y);
-                                        coins = coins + 10;
+                                        coins = coins + 5;
                                         x.Dispose();
                                         y.Dispose();
                                     }
@@ -145,65 +146,152 @@ namespace Towerdefense
                                     x.Dispose();
                                     waveController.enemyBlueBallonList.Remove((PictureBox)y);
                                     //enemy.enemyRedList.Add((PictureBox)y);
-                                    y.BackgroundImage = Properties.Resources.bloonRed;
+                                    y.BackgroundImage = Properties.Resources.bloonBlue;
+                                    coins = coins + 10;
+                                }
+                                else if(y.Name == "Greenloon")
+                                {
+                                    y.Name = "Blueloon";
+                                    x.Dispose();
+                                    waveController.enemyYellowBallonList.Remove((PictureBox)y);
+                                    //enemy.enemyRedList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonGreen;
+                                    coins = coins + 15;
+
+                                }
+                                else if (y.Name == "Yellowloon")
+                                {
+                                    y.Name = "Greenloon";
+                                    x.Dispose();
+                                    waveController.enemyYellowBallonList.Remove((PictureBox)y);
+                                    //enemy.enemyRedList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonYellow;
                                     coins = coins + 20;
                                 }
                                 else if (y.Name == "Pinkloon")
                                 {
-                                    y.Name = "Blueloon";
+                                    y.Name = "Yellowloon";
                                     x.Dispose();
                                     waveController.enemyPinkBallonList.Remove((PictureBox)y);
                                     //enemy.enemyBlueList.Add((PictureBox)y);
-                                    y.BackgroundImage = Properties.Resources.bloonBlue;
-                                    coins = coins + 30;
+                                    y.BackgroundImage = Properties.Resources.bloonPink;
+                                    coins = coins + 25;
+                                }
+                                else if (y.Name == "Blackloon")
+                                {
+                                    y.Name = "Pinkloon";
+                                    x.Dispose();
+                                    waveController.enemyBlackBallonList.Remove((PictureBox)y);
+                                    //enemy.enemyBlueList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonPink;
+                                    coins = coins + 25;
+                                }
+                                else if(y.Name == "LightBlue")
+                                {
+                                    y.Name = "Pinkloon";
+                                    x.Dispose();
+                                    waveController.enemyLightBlueBallonList.Remove((PictureBox)y);
+                                    //enemy.enemyBlueList.Add((PictureBox)y);
+                                    y.BackgroundImage = Properties.Resources.bloonPink;
+                                    coins = coins + 25;
                                 }
                                 else if (y.Name == "Zebraloon")
                                 {
-                                    enemy.CreatePinkLoon(y.Location.X, y.Location.Y, form);
-                                    y.Name = "Pinkloon";
+                                    enemy.CreateLightBlueLoon(y.Location.X, y.Location.Y, form);
+                                    y.Name = "Blackloon";
                                     x.Dispose();
                                     waveController.enemyZebraBallonList.Remove((PictureBox)y);
-                                    y.BackgroundImage = Properties.Resources.bloonPink;
+                                    y.BackgroundImage = Properties.Resources.bloonZebra;
                                     coins = coins + 40;
                                 }
-
+                                #endregion
                             }
                             else if (x.Name.ToString().Substring(0, 4) == "arch")
                             {
                                 if (y.Name == "Redloon")
                                 {
-                                    //enemy health gets reduced by a certain amount dependent on the tower
-                                    enemy.redloonhealth = enemy.redloonhealth - archerTowerDamage;
-
-                                    //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
-                                    if (enemy.redloonhealth <= 0)
+                                    #region LoonDetection
+                                    if (y.Name == "Redloon")
                                     {
-                                        waveController.enemyRedBallonList.Remove((PictureBox)y);
-                                        coins = coins + 10;
-                                        x.Dispose();
-                                        y.Dispose();
+                                        //enemy health gets reduced by a certain amount dependent on the tower
+                                        enemy.health = enemy.health - mageTowerDamage;
+
+                                        //if the health of the enemy is zero, the enemy and bullet get removed from the form and the lists
+                                        if (enemy.health <= 0)
+                                        {
+                                            waveController.enemyRedBallonList.Remove((PictureBox)y);
+                                            coins = coins + 5;
+                                            x.Dispose();
+                                            y.Dispose();
+                                        }
                                     }
+                                    else if (y.Name == "Blueloon")
+                                    {
+                                        y.Name = "Redloon";
+                                        x.Dispose();
+                                        waveController.enemyBlueBallonList.Remove((PictureBox)y);
+                                        //enemy.enemyRedList.Add((PictureBox)y);
+                                        y.BackgroundImage = Properties.Resources.bloonBlue;
+                                        coins = coins + 10;
+                                    }
+                                    else if (y.Name == "Greenloon")
+                                    {
+                                        y.Name = "Blueloon";
+                                        x.Dispose();
+                                        waveController.enemyYellowBallonList.Remove((PictureBox)y);
+                                        //enemy.enemyRedList.Add((PictureBox)y);
+                                        y.BackgroundImage = Properties.Resources.bloonGreen;
+                                        coins = coins + 15;
+
+                                    }
+                                    else if (y.Name == "Yellowloon")
+                                    {
+                                        y.Name = "Greenloon";
+                                        x.Dispose();
+                                        waveController.enemyYellowBallonList.Remove((PictureBox)y);
+                                        //enemy.enemyRedList.Add((PictureBox)y);
+                                        y.BackgroundImage = Properties.Resources.bloonYellow;
+                                        coins = coins + 20;
+                                    }
+                                    else if (y.Name == "Pinkloon")
+                                    {
+                                        y.Name = "Yellowloon";
+                                        x.Dispose();
+                                        waveController.enemyPinkBallonList.Remove((PictureBox)y);
+                                        //enemy.enemyBlueList.Add((PictureBox)y);
+                                        y.BackgroundImage = Properties.Resources.bloonPink;
+                                        coins = coins + 25;
+                                    }
+                                    else if (y.Name == "Blackloon")
+                                    {
+                                        y.Name = "Pinkloon";
+                                        x.Dispose();
+                                        waveController.enemyBlackBallonList.Remove((PictureBox)y);
+                                        //enemy.enemyBlueList.Add((PictureBox)y);
+                                        y.BackgroundImage = Properties.Resources.bloonPink;
+                                        coins = coins + 25;
+                                    }
+                                    else if (y.Name == "LightBlue")
+                                    {
+                                        y.Name = "Pinkloon";
+                                        x.Dispose();
+                                        waveController.enemyLightBlueBallonList.Remove((PictureBox)y);
+                                        //enemy.enemyBlueList.Add((PictureBox)y);
+                                        y.BackgroundImage = Properties.Resources.bloonPink;
+                                        coins = coins + 25;
+                                    }
+                                    else if (y.Name == "Zebraloon")
+                                    {
+                                        enemy.CreateLightBlueLoon(y.Location.X, y.Location.Y, form);
+                                        y.Name = "Blackloon";
+                                        x.Dispose();
+                                        waveController.enemyZebraBallonList.Remove((PictureBox)y);
+                                        y.BackgroundImage = Properties.Resources.bloonZebra;
+                                        coins = coins + 40;
+                                    }
+                                    #endregion
                                 }
-                                else if (y.Name == "Blueloon")
-                                {
-                                    y.Name = "Redloon";
-                                    x.Dispose();
-                                    waveController.enemyBlueBallonList.Remove((PictureBox)y);
-                                    //enemy.enemyRedList.Add((PictureBox)y);
-                                    y.BackgroundImage = Properties.Resources.bloonRed;
-                                    coins = coins + 20;
-                                }
-                                else if (y.Name == "Pinkloon")
-                                {
-                                    y.Name = "Blueloon";
-                                    x.Dispose();
-                                    waveController.enemyPinkBallonList.Remove((PictureBox)y);
-                                    //enemy.enemyBlueList.Add((PictureBox)y);
-                                    y.BackgroundImage = Properties.Resources.bloonBlue;
-                                    coins = coins + 30;
-                                }
-                            }
-                            else if (x.Name.ToString().Substring(0, 4) == "bomb")
+                                else if (x.Name.ToString().Substring(0, 4) == "bomb")
                             {
                                 if (y.Name == "Redloon")
                                 {

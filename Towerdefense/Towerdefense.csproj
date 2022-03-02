@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -96,6 +99,7 @@
     </Compile>
     <Compile Include="tower.cs" />
     <Compile Include="waveController.cs" />
+    <Compile Include="WaveStructure.cs" />
     <EmbeddedResource Include="game2.resx">
       <DependentUpon>game2.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +126,7 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,6 +136,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="waves.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -150,6 +156,14 @@
     <None Include="Resources\bloonRainbow1.png" />
     <None Include="Resources\bloonGreen.png" />
     <None Include="Resources\bloonZebra.png" />
+    <None Include="Resources\bloonBlack.png" />
+    <None Include="Resources\bloonCeramicCracked.png" />
+    <None Include="Resources\bloonCeramicCrackedMax.png" />
+    <None Include="Resources\bloonCeramicCrackedRainbow.png" />
+    <None Include="Resources\bloonCeramicCrackedRainbowHalf.png" />
+    <None Include="Resources\bloonCeramicFull.png" />
+    <None Include="Resources\bloonLightBlue.png" />
+    <None Include="Resources\bloonYellow.png" />
     <Content Include="Resources\BombTower.png" />
     <None Include="Resources\lvl1Map.png" />
     <None Include="Resources\BombTowerrework.png" />

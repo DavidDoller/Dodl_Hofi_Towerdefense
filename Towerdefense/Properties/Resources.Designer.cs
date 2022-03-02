@@ -83,6 +83,16 @@ namespace Towerdefense.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bloonBlack {
+            get {
+                object obj = ResourceManager.GetObject("bloonBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bloonBlue {
             get {
                 object obj = ResourceManager.GetObject("bloonBlue", resourceCulture);
@@ -93,9 +103,69 @@ namespace Towerdefense.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bloonCeramicCracked {
+            get {
+                object obj = ResourceManager.GetObject("bloonCeramicCracked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloonCeramicCrackedMax {
+            get {
+                object obj = ResourceManager.GetObject("bloonCeramicCrackedMax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloonCeramicCrackedRainbow {
+            get {
+                object obj = ResourceManager.GetObject("bloonCeramicCrackedRainbow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloonCeramicCrackedRainbowHalf {
+            get {
+                object obj = ResourceManager.GetObject("bloonCeramicCrackedRainbowHalf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloonCeramicFull {
+            get {
+                object obj = ResourceManager.GetObject("bloonCeramicFull", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bloonGreen {
             get {
                 object obj = ResourceManager.GetObject("bloonGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloonLightBlue {
+            get {
+                object obj = ResourceManager.GetObject("bloonLightBlue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +206,16 @@ namespace Towerdefense.Properties {
         internal static System.Drawing.Bitmap bloonRed1 {
             get {
                 object obj = ResourceManager.GetObject("bloonRed1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloonYellow {
+            get {
+                object obj = ResourceManager.GetObject("bloonYellow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

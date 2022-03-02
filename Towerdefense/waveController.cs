@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +21,13 @@ namespace Towerdefense
 
         public static int RedcountEnemys;
         public static int BlueCountEnemys;
+        public static int GreenCountEnemys;
+        public static int yellowCountEnemys;
         public static int PinkCountEnemys;
+        public static int BlackCounterEnemys;
+        public static int LightBlueCounterEnemys;
+        public static int KeramicCounterEnemys;
+        public static int RainbowCounterEnemys;
         public static int ZebraCountEnemys;
 
         public static int Wavesleep;
@@ -27,8 +35,14 @@ namespace Towerdefense
         public static List<PictureBox> enemyRedBallonList = new List<PictureBox>();
         public static List<PictureBox> enemyBlueBallonList = new List<PictureBox>();
         public static List<PictureBox> enemyGreenBallonList = new List<PictureBox>();
+        public static List<PictureBox> enemyYellowBallonList = new List<PictureBox>();
         public static List<PictureBox> enemyPinkBallonList = new List<PictureBox>();
+        public static List<PictureBox> enemyBlackBallonList = new List<PictureBox>();
+        public static List<PictureBox> enemyLightBlueBallonList = new List<PictureBox>();
         public static List<PictureBox> enemyZebraBallonList = new List<PictureBox>();
+        public static List<PictureBox> rainbowBallonList = new List<PictureBox>();
+        public static List<PictureBox> enemyKeramikBallonList = new List<PictureBox>();
+
 
         public static string Cuurentwave;
 
@@ -39,8 +53,40 @@ namespace Towerdefense
 
             RedcountEnemys = enemy.redLoonCounter;
             BlueCountEnemys = enemy.blueLoonCounter;
+            GreenCountEnemys = enemy.greenLoonCounter;
+            yellowCountEnemys = enemy.yellowLoonCounter;
             PinkCountEnemys = enemy.pinkLoonCounter;
+            BlackCounterEnemys = enemy.blackLoonCounter;
+            LightBlueCounterEnemys = enemy.LightBlueCounter;
             ZebraCountEnemys = enemy.zebraloonCounter;
+            RainbowCounterEnemys = enemy.rainbowloonCounter;
+            enemyKeramikBallonList = enemy.keramikLoonCounter;
+
+            string jsondata = File.ReadAllText("waves.json");
+            List<WaveStructure> waves = JsonConvert.DeserializeObject<List<WaveStructure>>(jsondata);
+            int waveCount = 0;
+
+            if(RedcountEnemys != waves[waveCount].bloons.red)
+            {
+                enemy.Createredloon(location1, location2, form);           
+            }
+            if (RedcountEnemys >= waves[waveCount].bloons.red)
+            {
+                EnemySpawingCooldown.Start();
+                if (Wavesleep >= 5)
+                {
+                    EnemySpawingCooldown.Stop();
+                    Wavesleep = 0;
+                    waveCount++;
+                }
+            }
+            if (BlueCountEnemys != waves[waveCount].bloons.red)
+            {
+                enemy.CreateBlueLoon(location1, location2, form);
+            }
+
+
+
 
 
             if (wave1 == true)
