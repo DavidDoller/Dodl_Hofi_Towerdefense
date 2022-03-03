@@ -6,13 +6,6 @@ using System.Threading.Tasks;
 
 namespace Towerdefense
 {
-
-    public class WaveStructure
-    {
-        public int waveId { get; set; }
-        public Bloons bloons { get; set; }
-    }
-
     public class Bloons
     {
         public int red { get; set; }
@@ -25,6 +18,17 @@ namespace Towerdefense
         public int zebra { get; set; }
         public int rainbow { get; set; }
         public int keramik { get; set; }
-
     }
+
+    public class WaveStructure
+    {
+        public int waveId { get; set; }
+        public Bloons bloons { get; set; }
+    }
+
+    public class Root
+    {
+        public List<WaveStructure> waves { get; set; }
+    }
+
 }

@@ -47,7 +47,10 @@ namespace Towerdefense
 
         public static string Cuurentwave;
 
-
+        public static Root Deserialize(string path)
+        {
+            return JsonConvert.DeserializeObject<Root>(path);
+        }
 
         public static void wavechecker(int location1, int location2, Timer EnemySpawingCooldown, Form form)
         {
@@ -63,19 +66,20 @@ namespace Towerdefense
             RainbowCounterEnemys = enemy.rainbowloonCounter;
             keramikCountEnemys = enemy.keramikLoonCounter;
 
-            string jsondata = File.ReadAllText("waves.json");
-            List<WaveStructure> waves = JsonConvert.DeserializeObject<List<WaveStructure>>(jsondata);
-            int waveCount = 0;
+            string jsondata = File.ReadAllText("../../waves.json");
+            List<WaveStructure> waves = Deserialize(jsondata).waves;
+            int waveCount = 1;
 
             if (RedcountEnemys != waves[waveCount].bloons.red)
             {
                 enemy.Createredloon(location1, location2, form);
             }
-            if (RedcountEnemys >= waves[waveCount].bloons.red)
+            else if (RedcountEnemys >= waves[waveCount].bloons.red)
             {
                 EnemySpawingCooldown.Start();
                 if (Wavesleep >= 5)
                 {
+                    //enemy.redLoonCounter = 0;
                     EnemySpawingCooldown.Stop();
                     Wavesleep = 0;
                     waveCount++;

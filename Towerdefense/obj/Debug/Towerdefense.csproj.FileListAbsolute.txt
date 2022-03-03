@@ -58,3 +58,6 @@ C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\
 C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Newtonsoft.Json.dll
 C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Newtonsoft.Json.xml
 C:\Users\dolle\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.CopyComplete
+C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Newtonsoft.Json.dll
+C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\bin\Debug\Newtonsoft.Json.xml
+C:\Users\david.dollereder\Source\Repos\DavidDoller\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.CopyComplete
