@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Resources;
+using System.Diagnostics;
 
 namespace Towerdefense
 {
@@ -41,8 +42,11 @@ namespace Towerdefense
             {
                 foreach (Control y in game1.ActiveForm.Controls)
                 {
+                    //if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
                     if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
                     {
+                        if (x.Name.Substring(4, 4) != y.Location.X.ToString("D4") && x.Name.Substring(8, 4) != y.Location.Y.ToString("D4")) continue;
+
                         if (x.Left < y.Location.X - 100)
                         {
                             x.Dispose();
@@ -164,10 +168,12 @@ namespace Towerdefense
 
         #region Towermethodes
         public static void magetowerShoot(int locationX, int locationY)
-        {
+        {          
+
             //bullet gets created
             Panel tempmage = new Panel();
-            tempmage.Name = "mage" + mageShootCounter;
+            //tempmage.Name = "mage" + mageShootCounter;
+            tempmage.Name = "mage" + locationX.ToString("D4") + locationY.ToString("D4") + mageShootCounter;
             tempmage.Location = new Point(locationX, locationY);
             tempmage.BackColor = Color.Red;
             tempmage.Height = 3;
