@@ -69,7 +69,7 @@ namespace Towerdefense
             movement.moveenemys(game1.ActiveForm);//enemy movement
             movement.checkdirection(playtimer, enemyspawning,game1.ActiveForm);//check direction
             tower.checkCoinsAmount(game1.ActiveForm);
-            lbl_wave.Text = waveController.Cuurentwave;
+            lbl_wave.Text = waveController.Curentwave;
 
         }
 
@@ -89,7 +89,7 @@ namespace Towerdefense
             
 
             tower.TowerShootsController();
-            movement.AutoAim(game1.ActiveForm);
+            movement.AutoAim(game1.ActiveForm,bullet_spawning);
             //tower.autoAim();
             //tower.magetowerShoot(83, 335, 5);
             //tower.archertowerShoot(359, 334, 5);

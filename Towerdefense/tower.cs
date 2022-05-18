@@ -32,6 +32,7 @@ namespace Towerdefense
         public static int bombTowerPrice = 300;
         public static int ninjaTowerPrice = 350;
         public static int machinegunTowerPrice = 400;
+        public static bool enemyInRange = false;
 
         public static string TowerType;
 
@@ -42,11 +43,12 @@ namespace Towerdefense
             {
                 foreach (Control y in game1.ActiveForm.Controls)
                 {
-                    //if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
                     if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
                     {
+                        //checks the location of the tower that each tower has range
                         if (x.Name.Substring(4, 4) != y.Location.X.ToString("D4") && x.Name.Substring(8, 4) != y.Location.Y.ToString("D4")) continue;
 
+                        //range
                         if (x.Left < y.Location.X - 100)
                         {
                             x.Dispose();
@@ -189,7 +191,6 @@ namespace Towerdefense
         public static void archertowerShoot(int locationX, int locationY)
         {
             //bullet gets created
-
             Panel temparcher = new Panel();
             temparcher.Name = "arch" + archerShootCounter;
             temparcher.Location = new Point(locationX, locationY);
@@ -200,14 +201,11 @@ namespace Towerdefense
             //panelarchertowershot.Add(temparcher);
             game1.ActiveForm.Controls.Add(temparcher);
             archerShootCounter++;
-
-
         }
 
         public static void bombTowerShoot(int locationX, int locationY)
         {
             //bullet gets created
-
             Panel tempBomb = new Panel();
             tempBomb.Name = "bomb" + bombShootCounter;
             tempBomb.Location = new Point(locationX, locationY);
@@ -238,7 +236,6 @@ namespace Towerdefense
         public static void machinegunTowerShoot(int locationX, int locationY)
         {
             //bullet gets created
-
             Panel tempMachinegun = new Panel();
             tempMachinegun.Name = "gun" + machinegunShootCounter;
             tempMachinegun.Location = new Point(locationX, locationY);
@@ -359,6 +356,7 @@ namespace Towerdefense
             {
                 if (x is PictureBox && x.Tag == "mageNoCoins")
                 {
+                    //check if user has enough coins
                     if (movement.coins >= 200)
                     {
                         x.Visible = false;
@@ -415,8 +413,5 @@ namespace Towerdefense
             }
 
         }
-
-
     }
-
 }

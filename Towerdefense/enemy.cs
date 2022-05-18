@@ -27,7 +27,6 @@ namespace Towerdefense
         public static int rainbowloonCounter;
 
         public static int keramikLoonCounter;
-        internal static int redloonhealth;
 
         public static PictureBox Createredloon(int location1, int location2, Form form)
         {
@@ -42,7 +41,7 @@ namespace Towerdefense
             pbred.BackgroundImageLayout = ImageLayout.Stretch;
             pbred.Tag = "enemy" + redLoonCounter;
             pbred.Name = "Redloon";
-            health = 1;
+            //health = 1;
             pbred.BringToFront();
             waveController.enemyRedBallonList.Add(pbred);
             form.Controls.Add(pbred);
@@ -62,7 +61,7 @@ namespace Towerdefense
             pbBlue.BackgroundImageLayout = ImageLayout.Stretch;
             pbBlue.Tag = "enemy" + blueLoonCounter;
             pbBlue.Name = "Blueloon";
-            health = 2;
+            //health = 2;
             pbBlue.BringToFront();
             waveController.enemyBlueBallonList.Add(pbBlue);
             form.Controls.Add(pbBlue);
@@ -81,7 +80,7 @@ namespace Towerdefense
             pbGreen.BackgroundImageLayout = ImageLayout.Stretch;
             pbGreen.Tag = "enemy" + greenLoonCounter;
             pbGreen.Name = "Greenloon";
-            health = 3;
+            //health = 3;
             pbGreen.BringToFront();
             waveController.enemyGreenBallonList.Add(pbGreen);
             form.Controls.Add(pbGreen);
@@ -100,7 +99,7 @@ namespace Towerdefense
             pbYellow.BackgroundImageLayout = ImageLayout.Stretch;
             pbYellow.Tag = "enemy" + yellowLoonCounter;
             pbYellow.Name = "Yellowloon";
-            health = 4;
+            //health = 4;
             pbYellow.BringToFront();
             waveController.enemyYellowBallonList.Add(pbYellow);
             form.Controls.Add(pbYellow);
@@ -121,7 +120,7 @@ namespace Towerdefense
             pbPink.BackgroundImageLayout = ImageLayout.Stretch;
             pbPink.Tag = "enemy" + pinkLoonCounter;
             pbPink.Name = "Pinkloon";
-            health = 5;
+            //health = 5;
             pbPink.BringToFront();
             waveController.enemyPinkBallonList.Add(pbPink);
             form.Controls.Add(pbPink);
@@ -141,7 +140,7 @@ namespace Towerdefense
             pbBlack.BackgroundImageLayout = ImageLayout.Stretch;
             pbBlack.Tag = "enemy" + blackLoonCounter;
             pbBlack.Name = "Blackloon";
-            health = 6;
+            //health = 6;
             pbBlack.BringToFront();
             waveController.enemyBlackBallonList.Add(pbBlack);
             form.Controls.Add(pbBlack);
@@ -161,7 +160,7 @@ namespace Towerdefense
             pbLightBlue.BackgroundImageLayout = ImageLayout.Stretch;
             pbLightBlue.Tag = "enemy" + LightBlueCounter;
             pbLightBlue.Name = "LightBlue";
-            health = 6;
+            //health = 6;
             pbLightBlue.BringToFront();
             waveController.enemyLightBlueBallonList.Add(pbLightBlue);
             form.Controls.Add(pbLightBlue);
@@ -180,7 +179,7 @@ namespace Towerdefense
             pbZebra.BackgroundImageLayout = ImageLayout.Stretch;
             pbZebra.Tag = "enemy" + zebraloonCounter;
             pbZebra.Name = "Zebraloon";
-            health = 7;
+            //health = 7;
             pbZebra.BringToFront();
             waveController.enemyZebraBallonList.Add(pbZebra);
             form.Controls.Add(pbZebra);
@@ -199,7 +198,7 @@ namespace Towerdefense
             pbRainbow.BackgroundImageLayout = ImageLayout.Stretch;
             pbRainbow.Tag = "enemy" + rainbowloonCounter;
             pbRainbow.Name = "Rainbowloon";
-            health = 8;
+            //health = 8;
             pbRainbow.BringToFront();
             waveController.rainbowBallonList.Add(pbRainbow);
             form.Controls.Add(pbRainbow);
@@ -219,7 +218,7 @@ namespace Towerdefense
             pbKeramik.BackgroundImageLayout = ImageLayout.Stretch;
             pbKeramik.Tag = "enemy" + keramikLoonCounter;
             pbKeramik.Name = "Keramik";
-            health = 13;
+            //health = 13;
             pbKeramik.BringToFront();
             waveController.enemyKeramikBallonList.Add(pbKeramik);
             form.Controls.Add(pbKeramik);

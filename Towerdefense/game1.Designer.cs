@@ -130,7 +130,7 @@ namespace Towerdefense
             // enemyspawning
             // 
             this.enemyspawning.Enabled = true;
-            this.enemyspawning.Interval = 1000;
+            this.enemyspawning.Interval = 2000;
             this.enemyspawning.Tick += new System.EventHandler(this.enemyspawning_Tick);
             // 
             // lbl_test
@@ -144,7 +144,7 @@ namespace Towerdefense
             // bullet_speed
             // 
             this.bullet_speed.Enabled = true;
-            this.bullet_speed.Interval = 50;
+            this.bullet_speed.Interval = 2;
             this.bullet_speed.Tick += new System.EventHandler(this.bullet_speed_Tick);
             // 
             // lbl_smallestenemy

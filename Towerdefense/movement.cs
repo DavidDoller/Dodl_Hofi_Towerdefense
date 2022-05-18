@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -638,7 +639,7 @@ namespace Towerdefense
                 }
             }
 
-            public static void AutoAim(Form form)
+        public static void AutoAim(Form form, Timer bulletspawning)
             {
                 if (form.Controls == null) return;
                 foreach (Control x in form.Controls)

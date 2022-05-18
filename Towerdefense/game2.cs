@@ -122,8 +122,8 @@ namespace Towerdefense
 
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
-            tower.TowerShootsController();
-            movement.AutoAim(game2.ActiveForm);
+            //tower.TowerShootsController();
+            movement.AutoAim(game2.ActiveForm,bullet_spawning);
         }
 
         private void bullet_spawning_Tick(object sender, EventArgs e)
@@ -152,7 +152,7 @@ namespace Towerdefense
             movement.moveenemys(game2.ActiveForm);//enemy movement
             movement.checkdirection(playtimer, enemyspawning, game2.ActiveForm);//check direction
             tower.checkCoinsAmount(game2.ActiveForm);
-            lbl_wave.Text = waveController.Cuurentwave;
+            lbl_wave.Text = waveController.Curentwave;
             lbl_waveCooldown.Text = "Time Elapsed: " + waveController.Wavesleep;
         }
     }
