@@ -56,7 +56,7 @@ namespace Towerdefense
             this.pnl_pause = new System.Windows.Forms.Panel();
             this.pnl_start = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbl_wave = new System.Windows.Forms.Label();
+            this.lbl_red = new System.Windows.Forms.Label();
             this.lbl_redlooncounter = new System.Windows.Forms.Label();
             this.lbl_bluelooncounter = new System.Windows.Forms.Label();
             this.lbl_waveCooldown = new System.Windows.Forms.Label();
@@ -91,6 +91,9 @@ namespace Towerdefense
             this.pb_bombNoCoins = new System.Windows.Forms.PictureBox();
             this.pb_ninjaNoCoins = new System.Windows.Forms.PictureBox();
             this.pb_gunNoCoins = new System.Windows.Forms.PictureBox();
+            this.lbl_curentwave = new System.Windows.Forms.Label();
+            this.lbl_blue = new System.Windows.Forms.Label();
+            this.lbl_green = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mageNoCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).BeginInit();
@@ -385,14 +388,14 @@ namespace Towerdefense
             this.label2.TabIndex = 73;
             this.label2.Text = "E - Exit Game";
             // 
-            // lbl_wave
+            // lbl_red
             // 
-            this.lbl_wave.AutoSize = true;
-            this.lbl_wave.Location = new System.Drawing.Point(609, 516);
-            this.lbl_wave.Name = "lbl_wave";
-            this.lbl_wave.Size = new System.Drawing.Size(42, 13);
-            this.lbl_wave.TabIndex = 74;
-            this.lbl_wave.Text = "Wave: ";
+            this.lbl_red.AutoSize = true;
+            this.lbl_red.Location = new System.Drawing.Point(610, 452);
+            this.lbl_red.Name = "lbl_red";
+            this.lbl_red.Size = new System.Drawing.Size(42, 13);
+            this.lbl_red.TabIndex = 74;
+            this.lbl_red.Text = "Wave: ";
             // 
             // lbl_redlooncounter
             // 
@@ -737,6 +740,33 @@ namespace Towerdefense
             this.pb_gunNoCoins.TabStop = false;
             this.pb_gunNoCoins.Tag = "gunNoCoins";
             // 
+            // lbl_curentwave
+            // 
+            this.lbl_curentwave.AutoSize = true;
+            this.lbl_curentwave.Location = new System.Drawing.Point(522, 438);
+            this.lbl_curentwave.Name = "lbl_curentwave";
+            this.lbl_curentwave.Size = new System.Drawing.Size(42, 13);
+            this.lbl_curentwave.TabIndex = 83;
+            this.lbl_curentwave.Text = "Wave: ";
+            // 
+            // lbl_blue
+            // 
+            this.lbl_blue.AutoSize = true;
+            this.lbl_blue.Location = new System.Drawing.Point(610, 482);
+            this.lbl_blue.Name = "lbl_blue";
+            this.lbl_blue.Size = new System.Drawing.Size(42, 13);
+            this.lbl_blue.TabIndex = 84;
+            this.lbl_blue.Text = "Wave: ";
+            // 
+            // lbl_green
+            // 
+            this.lbl_green.AutoSize = true;
+            this.lbl_green.Location = new System.Drawing.Point(610, 516);
+            this.lbl_green.Name = "lbl_green";
+            this.lbl_green.Size = new System.Drawing.Size(42, 13);
+            this.lbl_green.TabIndex = 85;
+            this.lbl_green.Text = "Wave: ";
+            // 
             // game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -744,6 +774,9 @@ namespace Towerdefense
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = global::Towerdefense.Properties.Resources.lvl1Map;
             this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.lbl_green);
+            this.Controls.Add(this.lbl_blue);
+            this.Controls.Add(this.lbl_curentwave);
             this.Controls.Add(this.pb_gunNoCoins);
             this.Controls.Add(this.pb_ninjaNoCoins);
             this.Controls.Add(this.pb_bombNoCoins);
@@ -752,7 +785,7 @@ namespace Towerdefense
             this.Controls.Add(this.lbl_waveCooldown);
             this.Controls.Add(this.lbl_bluelooncounter);
             this.Controls.Add(this.lbl_redlooncounter);
-            this.Controls.Add(this.lbl_wave);
+            this.Controls.Add(this.lbl_red);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_health);
             this.Controls.Add(this.lbl_coins);
@@ -892,7 +925,7 @@ namespace Towerdefense
         private System.Windows.Forms.Label lbl_health;
         private System.Windows.Forms.Label lbl_coins;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbl_wave;
+        private System.Windows.Forms.Label lbl_red;
         private System.Windows.Forms.Label lbl_redlooncounter;
         private System.Windows.Forms.Label lbl_bluelooncounter;
         private System.Windows.Forms.Label lbl_waveCooldown;
@@ -903,5 +936,8 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_bombNoCoins;
         private System.Windows.Forms.PictureBox pb_ninjaNoCoins;
         private System.Windows.Forms.PictureBox pb_gunNoCoins;
+        private System.Windows.Forms.Label lbl_curentwave;
+        private System.Windows.Forms.Label lbl_blue;
+        private System.Windows.Forms.Label lbl_green;
     }
 }

@@ -147,12 +147,11 @@ namespace Towerdefense
             //lbl_test.Text = enemy.looncounter.ToString();
             lblhealth.Text = "Health:" + movement.health;
 
-            lbl_redlooncounter.Text = "Redloons in List: " + waveController.RedcountEnemys;
+            lbl_redlooncounter.Text = "Redloons in List: " + enemy.redLoonCounter;
 
             movement.moveenemys(game2.ActiveForm);//enemy movement
             movement.checkdirection(playtimer, enemyspawning, game2.ActiveForm);//check direction
             tower.checkCoinsAmount(game2.ActiveForm);
-            lbl_wave.Text = waveController.Curentwave;
             lbl_waveCooldown.Text = "Time Elapsed: " + waveController.Wavesleep;
         }
     }

@@ -18,8 +18,7 @@ namespace Towerdefense
         {
             InitializeComponent();
         }
-
-        
+      
         private void game_Load(object sender, EventArgs e)
         {
             //all buttons get invisible
@@ -30,7 +29,6 @@ namespace Towerdefense
                     x.Visible = false;
                 }
             }
-
 
             //direction check pictureboxes get invisible
             pb_corner1.Visible = false;
@@ -47,13 +45,10 @@ namespace Towerdefense
             pb_gunNoCoins.Visible = false;
         }
 
-
-
-
         private void playtimer_Tick(object sender, EventArgs e)
         {
-            lbl_redlooncounter.Text = "Redloons in List: " + waveController.RedcountEnemys;
-            lbl_bluelooncounter.Text = "Blueloons in List: " + waveController.BlueCountEnemys;
+            lbl_redlooncounter.Text = "Redloons in List: " + enemy.redLoonCounter;
+            lbl_bluelooncounter.Text = "Blueloons in List: " + enemy.blackLoonCounter;
             lbl_waveCooldown.Text = "Time Elapsed: " + waveController.Wavesleep;
 
             //timer tick refreshes the coins label
@@ -64,13 +59,15 @@ namespace Towerdefense
             //lbl_test.Text = enemy.looncounter.ToString();
             lbl_health.Text = "Health:" + movement.health;
 
-
+            lbl_curentwave.Text = "Wave: " + waveController.waveCount;
             
             movement.moveenemys(game1.ActiveForm);//enemy movement
             movement.checkdirection(playtimer, enemyspawning,game1.ActiveForm);//check direction
             tower.checkCoinsAmount(game1.ActiveForm);
-            lbl_wave.Text = waveController.Curentwave;
 
+            lbl_red.Text = "Red: "+waveController.red;
+            lbl_blue.Text = "Blue: "+waveController.blue;
+            lbl_green.Text = "Green: "+waveController.green;
         }
 
         private void enemyspawning_Tick(object sender, EventArgs e)
@@ -85,16 +82,9 @@ namespace Towerdefense
 
         private void bullet_speed_Tick(object sender, EventArgs e)
         {
-            //checks where and what tower is placed
-            
-
+            //checks where and what tower is placed            
             tower.TowerShootsController();
             movement.AutoAim(game1.ActiveForm,bullet_spawning);
-            //tower.autoAim();
-            //tower.magetowerShoot(83, 335, 5);
-            //tower.archertowerShoot(359, 334, 5);
-
-
         }
 
         private void game1_KeyDown(object sender, KeyEventArgs e)
