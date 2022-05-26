@@ -39,9 +39,6 @@ namespace Towerdefense
             }
             if(pb_levelselect.Tag == "lvl2")
             {
-                game2 game = new game2();
-                game.Show();
-                this.Hide();
             }
         }
 

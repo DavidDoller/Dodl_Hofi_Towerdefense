@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
-using System.Resources;
-using System.Diagnostics;
 
 namespace Towerdefense
 {
-    class tower
+    internal class tower
     {
         #region var
         public static int MachineGunSpeed = 15;
@@ -35,153 +26,28 @@ namespace Towerdefense
 
         public static string TowerType;
 
-        #region ShootController
-        public static void TowerShootsController()
-        {
-            foreach (Control x in game1.ActiveForm.Controls)
-            {
-                foreach (Control y in game1.ActiveForm.Controls)
-                {
-                    //if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
-                    if (x is Panel && x.Name.ToString().Substring(0, 4) == "mage" && y is PictureBox && y.Tag == "mageTower")
-                    {
-                        if (x.Name.Substring(4, 4) != y.Location.X.ToString("D4") && x.Name.Substring(8, 4) != y.Location.Y.ToString("D4")) continue;
-
-                        if (x.Left < y.Location.X - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top < y.Location.Y - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Left > y.Location.X + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top > y.Location.Y + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                    }
-                    if (x is Panel && x.Name.ToString().Substring(0, 4) == "arch" && y is PictureBox && y.Tag == "archerTower")
-                    {
-                        if (x.Left < y.Location.X - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top < y.Location.Y - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Left > y.Location.X + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top > y.Location.Y + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                    }
-                    if (x is Panel && x.Name.ToString().Substring(0, 4) == "bomb" && y is PictureBox && y.Tag == "bombTower")
-                    {
-                        if (x.Left < y.Location.X - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top < y.Location.Y - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Left > y.Location.X + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top > y.Location.Y + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                    }
-                    if (x is Panel && x.Name.ToString().Substring(0, 4) == "ninj" && y is PictureBox && y.Tag == "ninjaTower")
-                    {
-                        if (x.Left < y.Location.X - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top < y.Location.Y - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Left > y.Location.X + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top > y.Location.Y + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                    }
-                    if (x is Panel && x.Name.ToString().Substring(0, 3) == "gun" && y is PictureBox && y.Tag == "machinegun")
-                    {
-                        if (x.Left < y.Location.X - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top < y.Location.Y - 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Left > y.Location.X + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                        if (x.Top > y.Location.Y + 100)
-                        {
-                            x.Dispose();
-                            x.Location = new Point(y.Location.X, y.Location.Y);
-                        }
-                    }
-                }
-
-            }
-        }
-        #endregion
-
         #region Towermethodes
         public static void magetowerShoot(int locationX, int locationY)
-        {          
+        {
 
             //bullet gets created
-            Panel tempmage = new Panel();
-            //tempmage.Name = "mage" + mageShootCounter;
-            tempmage.Name = "mage" + locationX.ToString("D4") + locationY.ToString("D4") + mageShootCounter;
-            tempmage.Location = new Point(locationX, locationY);
-            tempmage.BackColor = Color.Red;
-            tempmage.Height = 3;
-            tempmage.Width = 30;
-            tempmage.Tag = "bullet";
+            Panel tempmage = new Panel
+            {
+                //tempmage.Name = "mage" + mageShootCounter;
+                Name = "mage" + locationX.ToString("D4") + locationY.ToString("D4") + mageShootCounter,
+                Location = new Point(locationX, locationY),
+                BackColor = Color.Red,
+                Height = 3,
+                Width = 30,
+                Tag = "bullet"
+            };
             tempmage.BringToFront();
             //panelmagetowershot.Add(tempmage);
-            if (game1.ActiveForm == null) return;
+            if (game1.ActiveForm == null)
+            {
+                return;
+            }
+
             game1.ActiveForm.Controls.Add(tempmage);
             mageShootCounter++;
         }
@@ -190,13 +56,15 @@ namespace Towerdefense
         {
             //bullet gets created
 
-            Panel temparcher = new Panel();
-            temparcher.Name = "arch" + archerShootCounter;
-            temparcher.Location = new Point(locationX, locationY);
-            temparcher.BackColor = Color.Blue;
-            temparcher.Height = 3;
-            temparcher.Width = 30;
-            temparcher.Tag = "bullet";
+            Panel temparcher = new Panel
+            {
+                Name = "arch" + archerShootCounter,
+                Location = new Point(locationX, locationY),
+                BackColor = Color.Blue,
+                Height = 3,
+                Width = 30,
+                Tag = "bullet"
+            };
             //panelarchertowershot.Add(temparcher);
             game1.ActiveForm.Controls.Add(temparcher);
             archerShootCounter++;
@@ -208,13 +76,15 @@ namespace Towerdefense
         {
             //bullet gets created
 
-            Panel tempBomb = new Panel();
-            tempBomb.Name = "bomb" + bombShootCounter;
-            tempBomb.Location = new Point(locationX, locationY);
-            tempBomb.BackColor = Color.Orange;
-            tempBomb.Height = 3;
-            tempBomb.Width = 30;
-            tempBomb.Tag = "bullet";
+            Panel tempBomb = new Panel
+            {
+                Name = "bomb" + bombShootCounter,
+                Location = new Point(locationX, locationY),
+                BackColor = Color.Orange,
+                Height = 3,
+                Width = 30,
+                Tag = "bullet"
+            };
             //panelBombTowerShot.Add(tempBomb);
             game1.ActiveForm.Controls.Add(tempBomb);
             bombShootCounter++;
@@ -223,13 +93,15 @@ namespace Towerdefense
         public static void ninjaTowerShoot(int locationX, int locationY)
         {
             //bullet gets created
-            Panel tempNinja = new Panel();
-            tempNinja.Name = "ninj" + ninjaShootCounter;
-            tempNinja.Location = new Point(locationX, locationY);
-            tempNinja.BackColor = Color.Green;
-            tempNinja.Height = 3;
-            tempNinja.Width = 30;
-            tempNinja.Tag = "bullet";
+            Panel tempNinja = new Panel
+            {
+                Name = "ninj" + ninjaShootCounter,
+                Location = new Point(locationX, locationY),
+                BackColor = Color.Green,
+                Height = 3,
+                Width = 30,
+                Tag = "bullet"
+            };
             //panelNinjaTowerShot.Add(tempNinja);
             game1.ActiveForm.Controls.Add(tempNinja);
             ninjaShootCounter++;
@@ -239,13 +111,15 @@ namespace Towerdefense
         {
             //bullet gets created
 
-            Panel tempMachinegun = new Panel();
-            tempMachinegun.Name = "gun" + machinegunShootCounter;
-            tempMachinegun.Location = new Point(locationX, locationY);
-            tempMachinegun.BackColor = Color.Yellow;
-            tempMachinegun.Height = 3;
-            tempMachinegun.Width = 30;
-            tempMachinegun.Tag = "bullet";
+            Panel tempMachinegun = new Panel
+            {
+                Name = "gun" + machinegunShootCounter,
+                Location = new Point(locationX, locationY),
+                BackColor = Color.Yellow,
+                Height = 3,
+                Width = 30,
+                Tag = "bullet"
+            };
             //panelMachineGunTowerShot.Add(tempMachinegun);
             game1.ActiveForm.Controls.Add(tempMachinegun);
             machinegunShootCounter++;
@@ -325,30 +199,51 @@ namespace Towerdefense
             //checks what and where the tower is placed, so the right bullet gets shot
             foreach (Control x in form.Controls)
             {
-                if (x is PictureBox && x.Tag == "mageTower")
+                if (x.Tag == null)
                 {
-                    magetowerShoot(x.Location.X, x.Location.Y);
-
+                    continue;
                 }
-                else if (x is PictureBox && x.Tag == "archerTower")
-                {
-                    archertowerShoot(x.Location.X, x.Location.Y);
 
-                }
-                else if (x is PictureBox && x.Tag == "bombTower")
+                foreach (Control y in form.Controls)
                 {
-                    bombTowerShoot(x.Location.X, x.Location.Y);
+                    if (y.Tag == null)
+                    {
+                        continue;
+                    }
 
-                }
-                else if (x is PictureBox && x.Tag == "ninjaTower")
-                {
-                    ninjaTowerShoot(x.Location.X, x.Location.Y);
-
-                }
-                else if (x is PictureBox && x.Tag == "machinegun")
-                {
-                    machinegunTowerShoot(x.Location.X, x.Location.Y);
-
+                    if (y is PictureBox && y.Tag.ToString().Substring(0, 5) == "enemy")
+                    {
+                        //calc range
+                        if ((y.Location.Y <= x.Location.Y + 150 && y.Location.Y >= x.Location.Y - 150) &&
+                            (y.Location.X <= x.Location.X + 150 && y.Location.X >= x.Location.X - 150))
+                        {
+                            if (x is PictureBox && x.Tag == "mageTower")
+                            {
+                                magetowerShoot(x.Location.X, x.Location.Y);
+                                break;
+                            }
+                            else if (x is PictureBox && x.Tag == "archerTower")
+                            {
+                                archertowerShoot(x.Location.X, x.Location.Y);
+                                break;
+                            }
+                            else if (x is PictureBox && x.Tag == "bombTower")
+                            {
+                                bombTowerShoot(x.Location.X, x.Location.Y);
+                                break;
+                            }
+                            else if (x is PictureBox && x.Tag == "ninjaTower")
+                            {
+                                ninjaTowerShoot(x.Location.X, x.Location.Y);
+                                break;
+                            }
+                            else if (x is PictureBox && x.Tag == "machinegun")
+                            {
+                                machinegunTowerShoot(x.Location.X, x.Location.Y);
+                                break;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -415,8 +310,6 @@ namespace Towerdefense
             }
 
         }
-
-
     }
 
 }

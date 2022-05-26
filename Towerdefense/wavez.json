@@ -1,0 +1,124 @@
+{
+  "waves": [
+    {
+      "waveId": 1,
+      "bloons": {
+        "red": 1,
+        "blue": 0,
+        "green": 0,
+        "yellow": 0,
+        "pink": 0,
+        "black": 0,
+        "lightBlue": 0,
+        "zebra": 0,
+        "rainbow": 0,
+        "keramik": 0
+      }
+    },
+    {
+      "waveId": 2,
+      "bloons": {
+        "red": 35,
+        "blue": 0,
+        "green": 0,
+        "yellow": 0,
+        "pink": 0,
+        "black": 0,
+        "lightBlue": 0,
+        "zebra": 0,
+        "rainbow": 0,
+        "keramik": 0
+      }
+    },
+    {
+      "waveId": 3,
+      "bloons": {
+        "red": 25,
+        "blue": 5,
+        "green": 0,
+        "yellow": 0,
+        "pink": 0,
+        "black": 0,
+        "lightBlue": 0,
+        "zebra": 0,
+        "rainbow": 0,
+        "keramik": 0
+      }
+      },
+    {
+      "waveId": 4,
+      "bloons": {
+        "red": 35,
+        "blue": 18,
+        "green": 0,
+        "yellow": 0,
+        "pink": 0,
+        "black": 0,
+        "lightBlue": 0,
+        "zebra": 0,
+        "rainbow": 0,
+        "keramik": 0
+      }
+    },
+    {
+      "waveId": 5,
+      "bloons": {
+        "red": 5,
+        "blue": 27,
+        "green": 0,
+        "yellow": 0,
+        "pink": 0,
+        "black": 0,
+        "lightBlue": 0,
+        "zebra": 0,
+        "rainbow": 0,
+        "keramik": 0
+      }
+      },
+      {
+        "waveId": 6,
+        "bloons": {
+          "red": 15,
+          "blue": 15,
+          "green": 4,
+          "yellow": 0,
+          "pink": 0,
+          "black": 0,
+          "lightBlue": 0,
+          "zebra": 0,
+          "rainbow": 0,
+          "keramik": 0
+        }
+        },
+        {
+          "waveId": 7,
+          "bloons": {
+            "red": 20,
+            "blue": 20,
+            "green": 5,
+            "yellow": 0,
+            "pink": 0,
+            "black": 0,
+            "lightBlue": 0,
+            "zebra": 0,
+            "rainbow": 0,
+            "keramik": 0
+          }
+          },
+    {
+      "waveId": 8,
+      "bloons": {
+        "red": 10,
+        "blue": 20,
+        "green": 14,
+        "yellow": 0,
+        "pink": 0,
+        "black": 0,
+        "lightBlue": 0,
+        "zebra": 0,
+        "rainbow": 0,
+        "keramik": 0
+      }
+    }
+  ]
+}

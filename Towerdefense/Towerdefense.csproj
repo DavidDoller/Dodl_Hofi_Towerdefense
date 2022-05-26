@@ -50,12 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="enemy.cs" />
-    <Compile Include="game2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="game2.Designer.cs">
-      <DependentUpon>game2.cs</DependentUpon>
-    </Compile>
     <Compile Include="LevelSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +91,15 @@
     <Compile Include="sqlcon.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
+    </Compile>
     <Compile Include="tower.cs" />
     <Compile Include="waveController.cs" />
     <Compile Include="WaveStructure.cs" />
-    <EmbeddedResource Include="game2.resx">
-      <DependentUpon>game2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LevelSelect.resx">
       <DependentUpon>LevelSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +120,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -136,7 +136,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="waves.json" />
+    <None Include="wavez.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
