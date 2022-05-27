@@ -56,7 +56,7 @@ namespace Towerdefense
         {
             lbl_redlooncounter.Text = "Redloons in List: " + waveController.enemies;
             lbl_bluelooncounter.Text = "Blueloons in List: " + waveController.enemies;
-            lbl_waveCooldown.Text = "Time Elapsed: " + waveController.Wavesleep;
+            //lbl_waveCooldown.Text = "Time Elapsed: " + waveController.Wavesleep;
 
             //timer tick refreshes the coins label
             lbl_coins.BringToFront();
@@ -71,7 +71,7 @@ namespace Towerdefense
             movement.moveenemys(this);//enemy movement
             movement.checkdirection(playtimer, enemyspawning, this);//check direction
             tower.checkCoinsAmount(this);
-            lbl_wave.Text = waveController.Cuurentwave;
+            //lbl_wave.Text = waveController.Cuurentwave;
 
         }
 

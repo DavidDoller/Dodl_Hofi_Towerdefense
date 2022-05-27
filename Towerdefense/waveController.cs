@@ -11,18 +11,14 @@ namespace Towerdefense
     static class waveController
     {
         public static game1 game;
-        public static Timer cooldown;
 
-        public static int Wavesleep;
         public static int waveCount = 0;
 
         public static List<PictureBox> enemies = new List<PictureBox>();
         public static List<WaveStructure> waves;
         public static Bloons spawned;
 
-
-        public static string Cuurentwave;
-public static int killed;
+        public static int killed;
 
         public static Root Deserialize(string path)
         {
@@ -44,19 +40,19 @@ public static int killed;
 
         public static void wavechecker()
         {
-            if (spawned.red < waves[waveCount].bloons.red)
+            if (spawned.red <= waves[waveCount].bloons.red)
             {
                 Debug.WriteLine(waves[waveCount].bloons.red.ToString() + ";" +spawned.red.ToString());
                 PictureBox temp = new PictureBox();
                 enemy.CreateLoon(Balloontypes.bloonRed, game);
                 spawned.red++;
             }
-            if (spawned.blue < waves[waveCount].bloons.blue && spawned.red == waves[waveCount].bloons.red)
+            if (spawned.blue <= waves[waveCount].bloons.blue && spawned.red == waves[waveCount].bloons.red)
             {
                 PictureBox temp = new PictureBox();
                 enemy.CreateLoon(Balloontypes.bloonBlue, game);           
             }
-            if (spawned.green < waves[waveCount].bloons.green && spawned.red == waves[waveCount].bloons.red && spawned.blue == waves[waveCount].bloons.blue)
+            if (spawned.green <= waves[waveCount].bloons.green && spawned.red == waves[waveCount].bloons.red && spawned.blue == waves[waveCount].bloons.blue)
             {
                 PictureBox temp = new PictureBox();
                 enemy.CreateLoon(Balloontypes.bloonGreen, game);
@@ -66,6 +62,7 @@ public static int killed;
                 game.nextRound();
                 Debug.WriteLine("WON");
                 killed = 0;
+                spawned.red = 0;
                 waveCount++;
             }
         }

@@ -88,7 +88,6 @@ namespace Towerdefense
             this.pb_bombNoCoins = new System.Windows.Forms.PictureBox();
             this.pb_ninjaNoCoins = new System.Windows.Forms.PictureBox();
             this.pb_gunNoCoins = new System.Windows.Forms.PictureBox();
-            this.pb_rangeTower1 = new System.Windows.Forms.PictureBox();
             this.btn_PlaceTower1 = new System.Windows.Forms.Button();
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mageNoCoins)).BeginInit();
@@ -119,7 +118,6 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_bombNoCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ninjaNoCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_gunNoCoins)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_rangeTower1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,7 +143,7 @@ namespace Towerdefense
             // bullet_speed
             // 
             this.bullet_speed.Enabled = true;
-            this.bullet_speed.Interval = 50;
+            this.bullet_speed.Interval = 40;
             this.bullet_speed.Tick += new System.EventHandler(this.bullet_speed_Tick);
             // 
             // lbl_smallestenemy
@@ -413,7 +411,7 @@ namespace Towerdefense
             // bullet_spawning
             // 
             this.bullet_spawning.Enabled = true;
-            this.bullet_spawning.Interval = 3000;
+            this.bullet_spawning.Interval = 2000;
             this.bullet_spawning.Tick += new System.EventHandler(this.bullet_spawning_Tick);
             // 
             // pb_mageNoCoins
@@ -711,18 +709,6 @@ namespace Towerdefense
             this.pb_gunNoCoins.TabStop = false;
             this.pb_gunNoCoins.Tag = "gunNoCoins";
             // 
-            // pb_rangeTower1
-            // 
-            this.pb_rangeTower1.BackColor = System.Drawing.Color.Transparent;
-            this.pb_rangeTower1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pb_rangeTower1.Location = new System.Drawing.Point(43, 161);
-            this.pb_rangeTower1.Name = "pb_rangeTower1";
-            this.pb_rangeTower1.Size = new System.Drawing.Size(199, 193);
-            this.pb_rangeTower1.TabIndex = 83;
-            this.pb_rangeTower1.TabStop = false;
-            this.pb_rangeTower1.Tag = "range";
-            this.pb_rangeTower1.Visible = false;
-            // 
             // btn_PlaceTower1
             // 
             this.btn_PlaceTower1.BackColor = System.Drawing.Color.Transparent;
@@ -754,7 +740,6 @@ namespace Towerdefense
             this.ClientSize = new System.Drawing.Size(1000, 650);
             this.Controls.Add(this.btn_PlaceTower1);
             this.Controls.Add(this.pb_tower1);
-            this.Controls.Add(this.pb_rangeTower1);
             this.Controls.Add(this.pb_gunNoCoins);
             this.Controls.Add(this.pb_ninjaNoCoins);
             this.Controls.Add(this.pb_bombNoCoins);
@@ -844,7 +829,6 @@ namespace Towerdefense
             ((System.ComponentModel.ISupportInitialize)(this.pb_bombNoCoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_ninjaNoCoins)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_gunNoCoins)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_rangeTower1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_tower1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -910,7 +894,6 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_bombNoCoins;
         private System.Windows.Forms.PictureBox pb_ninjaNoCoins;
         private System.Windows.Forms.PictureBox pb_gunNoCoins;
-        private System.Windows.Forms.PictureBox pb_rangeTower1;
         private System.Windows.Forms.Button btn_PlaceTower1;
         private System.Windows.Forms.PictureBox pb_tower1;
     }
