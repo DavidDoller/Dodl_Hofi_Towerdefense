@@ -26,8 +26,16 @@ namespace Towerdefense
 
         public static string TowerType;
 
+        public static Form game;
+
         #region Towermethodes
-        public static void magetowerShoot(int locationX, int locationY)
+
+        public static void startTower(Form game_)
+        {
+            game = game_;
+        }
+
+        public static void magetowerShoot(int locationX, int locationY, Form form)
         {
 
             //bullet gets created
@@ -37,8 +45,8 @@ namespace Towerdefense
                 Name = "mage" + locationX.ToString("D4") + locationY.ToString("D4") + mageShootCounter,
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Red,
-                Height = 3,
-                Width = 30,
+                Height = 7,
+                Width = 7,
                 Tag = "bullet"
             };
             tempmage.BringToFront();
@@ -52,7 +60,7 @@ namespace Towerdefense
             mageShootCounter++;
         }
 
-        public static void archertowerShoot(int locationX, int locationY)
+        public static void archertowerShoot(int locationX, int locationY,Form form)
         {
             //bullet gets created
 
@@ -61,18 +69,18 @@ namespace Towerdefense
                 Name = "arch" + archerShootCounter,
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Blue,
-                Height = 3,
-                Width = 30,
+                Height = 7,
+                Width = 7,
                 Tag = "bullet"
             };
             //panelarchertowershot.Add(temparcher);
-            game1.ActiveForm.Controls.Add(temparcher);
+            form.Controls.Add(temparcher);
             archerShootCounter++;
 
 
         }
 
-        public static void bombTowerShoot(int locationX, int locationY)
+        public static void bombTowerShoot(int locationX, int locationY, Form form)
         {
             //bullet gets created
 
@@ -81,16 +89,16 @@ namespace Towerdefense
                 Name = "bomb" + bombShootCounter,
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Orange,
-                Height = 3,
-                Width = 30,
+                Height = 7,
+                Width = 7,
                 Tag = "bullet"
             };
             //panelBombTowerShot.Add(tempBomb);
-            game1.ActiveForm.Controls.Add(tempBomb);
+            form.Controls.Add(tempBomb);
             bombShootCounter++;
         }
 
-        public static void ninjaTowerShoot(int locationX, int locationY)
+        public static void ninjaTowerShoot(int locationX, int locationY, Form form)
         {
             //bullet gets created
             Panel tempNinja = new Panel
@@ -98,16 +106,16 @@ namespace Towerdefense
                 Name = "ninj" + ninjaShootCounter,
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Green,
-                Height = 3,
-                Width = 30,
+                Height = 7,
+                Width = 7,
                 Tag = "bullet"
             };
             //panelNinjaTowerShot.Add(tempNinja);
-            game1.ActiveForm.Controls.Add(tempNinja);
+            form.Controls.Add(tempNinja);
             ninjaShootCounter++;
         }
 
-        public static void machinegunTowerShoot(int locationX, int locationY)
+        public static void machinegunTowerShoot(int locationX, int locationY, Form form)
         {
             //bullet gets created
 
@@ -116,12 +124,12 @@ namespace Towerdefense
                 Name = "gun" + machinegunShootCounter,
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Yellow,
-                Height = 3,
-                Width = 30,
+                Height = 7,
+                Width = 7,
                 Tag = "bullet"
             };
             //panelMachineGunTowerShot.Add(tempMachinegun);
-            game1.ActiveForm.Controls.Add(tempMachinegun);
+            form.Controls.Add(tempMachinegun);
             machinegunShootCounter++;
         }
         #endregion 
@@ -219,27 +227,27 @@ namespace Towerdefense
                         {
                             if (x is PictureBox && x.Tag == "mageTower")
                             {
-                                magetowerShoot(x.Location.X, x.Location.Y);
+                                magetowerShoot(x.Location.X, x.Location.Y, game);
                                 break;
                             }
                             else if (x is PictureBox && x.Tag == "archerTower")
                             {
-                                archertowerShoot(x.Location.X, x.Location.Y);
+                                archertowerShoot(x.Location.X, x.Location.Y,game);
                                 break;
                             }
                             else if (x is PictureBox && x.Tag == "bombTower")
                             {
-                                bombTowerShoot(x.Location.X, x.Location.Y);
+                                bombTowerShoot(x.Location.X, x.Location.Y, game);
                                 break;
                             }
                             else if (x is PictureBox && x.Tag == "ninjaTower")
                             {
-                                ninjaTowerShoot(x.Location.X, x.Location.Y);
+                                ninjaTowerShoot(x.Location.X, x.Location.Y, game);
                                 break;
                             }
                             else if (x is PictureBox && x.Tag == "machinegun")
                             {
-                                machinegunTowerShoot(x.Location.X, x.Location.Y);
+                                machinegunTowerShoot(x.Location.X, x.Location.Y, game);
                                 break;
                             }
                         }

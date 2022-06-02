@@ -19,6 +19,7 @@ namespace Towerdefense
         public static Bloons spawned;
 
         public static int killed;
+        public static int result;
 
         public static Root Deserialize(string path)
         {
@@ -35,48 +36,96 @@ namespace Towerdefense
             spawned = new Bloons();
             game = _game;
             killed = 0;
-            waveCount = 0;
+            waveCount = 16;
         }
 
-        public static void wavechecker()
+        public static void wavechecker(Form form)
         {
+            //Debug.WriteLine("in Jason red:" + waves[waveCount].bloons.red.ToString() + "; spawned red:" + spawned.red.ToString() + ";\nin Jason blue: " + waves[waveCount].bloons.blue.ToString() + "; spawned blue: "+ spawned.blue.ToString() + "; \nKills" + killed+"; Result: " +result);
             if (spawned.red <= waves[waveCount].bloons.red)
-            {
-                Debug.WriteLine(waves[waveCount].bloons.red.ToString() + ";" +spawned.red.ToString());
-                PictureBox temp = new PictureBox();
+            {           
                 enemy.CreateLoon(Balloontypes.bloonRed, game);
                 spawned.red++;
             }
-            if (spawned.blue <= waves[waveCount].bloons.blue && spawned.red == waves[waveCount].bloons.red)
+            if (spawned.blue <= waves[waveCount].bloons.blue && spawned.red >= waves[waveCount].bloons.red)
             {
-                PictureBox temp = new PictureBox();
-                enemy.CreateLoon(Balloontypes.bloonBlue, game);           
+                enemy.CreateLoon(Balloontypes.bloonBlue, game);
+                spawned.blue++;
             }
-            if (spawned.green <= waves[waveCount].bloons.green && spawned.red == waves[waveCount].bloons.red && spawned.blue == waves[waveCount].bloons.blue)
+            if (spawned.green <= waves[waveCount].bloons.green &&  spawned.blue >= waves[waveCount].bloons.blue)
             {
-                PictureBox temp = new PictureBox();
                 enemy.CreateLoon(Balloontypes.bloonGreen, game);
+                spawned.green++;
+            }
+            if (spawned.yellow <= waves[waveCount].bloons.yellow && spawned.green >= waves[waveCount].bloons.green)
+            {
+                enemy.CreateLoon(Balloontypes.bloonYellow , game);
+                spawned.yellow++;
+            }
+            if (spawned.pink <= waves[waveCount].bloons.pink && spawned.yellow >= waves[waveCount].bloons.yellow)
+            {
+                enemy.CreateLoon(Balloontypes.bloonPink, game);
+                spawned.pink++;
+            }
+            if (spawned.black <= waves[waveCount].bloons.black && spawned.pink >= waves[waveCount].bloons.pink)
+            {
+                enemy.CreateLoon(Balloontypes.bloonBlack, game);
+                spawned.black++;
+            }
+            if (spawned.lightBlue <= waves[waveCount].bloons.lightBlue && spawned.black  >= waves[waveCount].bloons.black)
+            {
+                enemy.CreateLoon(Balloontypes.bloonLightBlue, game);
+                spawned.lightBlue++;
             }
             if (checkRoundWin())
             {
+                foreach(Control y in form.Controls)
+                {
+                    if (y.Tag == null) continue;
+                    if(y is Panel && y.Tag.Equals("bullet"))
+                    {
+                        y.Dispose();
+                    }
+                }
                 game.nextRound();
                 Debug.WriteLine("WON");
                 killed = 0;
                 spawned.red = 0;
+                spawned.blue = 0;
+                spawned.green = 0;
+                spawned.yellow = 0;
+                spawned.pink = 0;
+                spawned.black = 0;
+                spawned.lightBlue = 0;
                 waveCount++;
+
+                
+
             }
         }
 
         public static bool checkRoundWin()
         {
-            int enemCount = 0;
+            
+            int red;
+            int blue;
+            int green;
+            int yellow;
+            int pink;
+            int black;
+            int lightblue;
 
-            foreach(var property in waves[waveCount].bloons.GetType().GetProperties())
-            {
-                enemCount += (int)property.GetValue(waves[waveCount].bloons, null);
-            }
+            red = waves[waveCount].bloons.red;
+            blue = waves[waveCount].bloons.blue;
+            green = waves[waveCount].bloons.green;
+            yellow = waves[waveCount].bloons.yellow;
+            pink = waves[waveCount].bloons.pink;
+            black = waves[waveCount].bloons.black;
+            lightblue = waves[waveCount].bloons.lightBlue;
 
-            if(killed == enemCount)
+            result = red + blue + green + yellow + pink + black + lightblue;
+
+            if(killed >= result)
             {
                 return true;
             }

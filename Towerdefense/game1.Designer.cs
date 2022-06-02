@@ -52,8 +52,6 @@ namespace Towerdefense
             this.btn_PlaceTower5 = new System.Windows.Forms.Button();
             this.lbl_health = new System.Windows.Forms.Label();
             this.lbl_coins = new System.Windows.Forms.Label();
-            this.pnl_pause = new System.Windows.Forms.Panel();
-            this.pnl_start = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_wave = new System.Windows.Forms.Label();
             this.lbl_redlooncounter = new System.Windows.Forms.Label();
@@ -90,6 +88,9 @@ namespace Towerdefense
             this.pb_gunNoCoins = new System.Windows.Forms.PictureBox();
             this.btn_PlaceTower1 = new System.Windows.Forms.Button();
             this.pb_tower1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_changewave = new System.Windows.Forms.Button();
+            this.txt_wave = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_mageNoCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_backgroundCoins)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_spawn)).BeginInit();
@@ -124,12 +125,13 @@ namespace Towerdefense
             // playtimer
             // 
             this.playtimer.Enabled = true;
+            this.playtimer.Interval = 50;
             this.playtimer.Tick += new System.EventHandler(this.playtimer_Tick);
             // 
             // enemyspawning
             // 
             this.enemyspawning.Enabled = true;
-            this.enemyspawning.Interval = 1000;
+            this.enemyspawning.Interval = 500;
             this.enemyspawning.Tick += new System.EventHandler(this.enemyspawning_Tick);
             // 
             // lbl_test
@@ -143,7 +145,7 @@ namespace Towerdefense
             // bullet_speed
             // 
             this.bullet_speed.Enabled = true;
-            this.bullet_speed.Interval = 40;
+            this.bullet_speed.Interval = 30;
             this.bullet_speed.Tick += new System.EventHandler(this.bullet_speed_Tick);
             // 
             // lbl_smallestenemy
@@ -345,24 +347,6 @@ namespace Towerdefense
             this.lbl_coins.TabIndex = 71;
             this.lbl_coins.Text = "Coins: ";
             // 
-            // pnl_pause
-            // 
-            this.pnl_pause.Location = new System.Drawing.Point(883, 479);
-            this.pnl_pause.Name = "pnl_pause";
-            this.pnl_pause.Size = new System.Drawing.Size(50, 50);
-            this.pnl_pause.TabIndex = 64;
-            this.pnl_pause.Click += new System.EventHandler(this.pnl_pause_Click);
-            this.pnl_pause.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_pause_Paint);
-            // 
-            // pnl_start
-            // 
-            this.pnl_start.Location = new System.Drawing.Point(938, 479);
-            this.pnl_start.Name = "pnl_start";
-            this.pnl_start.Size = new System.Drawing.Size(50, 50);
-            this.pnl_start.TabIndex = 63;
-            this.pnl_start.Click += new System.EventHandler(this.pnl_start_Click);
-            this.pnl_start.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_start_Paint);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -375,9 +359,10 @@ namespace Towerdefense
             // lbl_wave
             // 
             this.lbl_wave.AutoSize = true;
-            this.lbl_wave.Location = new System.Drawing.Point(609, 516);
+            this.lbl_wave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_wave.Location = new System.Drawing.Point(683, 527);
             this.lbl_wave.Name = "lbl_wave";
-            this.lbl_wave.Size = new System.Drawing.Size(42, 13);
+            this.lbl_wave.Size = new System.Drawing.Size(74, 24);
             this.lbl_wave.TabIndex = 74;
             this.lbl_wave.Text = "Wave: ";
             // 
@@ -411,7 +396,7 @@ namespace Towerdefense
             // bullet_spawning
             // 
             this.bullet_spawning.Enabled = true;
-            this.bullet_spawning.Interval = 2000;
+            this.bullet_spawning.Interval = 1000;
             this.bullet_spawning.Tick += new System.EventHandler(this.bullet_spawning_Tick);
             // 
             // pb_mageNoCoins
@@ -510,7 +495,7 @@ namespace Towerdefense
             this.pictureBox1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pictureBox1.Location = new System.Drawing.Point(0, 568);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1011, 84);
+            this.pictureBox1.Size = new System.Drawing.Size(1008, 84);
             this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -731,6 +716,32 @@ namespace Towerdefense
             this.pb_tower1.TabStop = false;
             this.pb_tower1.Tag = "tower1";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(-15, -15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 86;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btn_changewave
+            // 
+            this.btn_changewave.Location = new System.Drawing.Point(891, 530);
+            this.btn_changewave.Name = "btn_changewave";
+            this.btn_changewave.Size = new System.Drawing.Size(100, 23);
+            this.btn_changewave.TabIndex = 87;
+            this.btn_changewave.Text = "Change Wave";
+            this.btn_changewave.UseVisualStyleBackColor = true;
+            this.btn_changewave.Click += new System.EventHandler(this.btn_changewave_Click);
+            // 
+            // txt_wave
+            // 
+            this.txt_wave.Location = new System.Drawing.Point(891, 504);
+            this.txt_wave.Name = "txt_wave";
+            this.txt_wave.Size = new System.Drawing.Size(100, 20);
+            this.txt_wave.TabIndex = 88;
+            // 
             // game1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -738,6 +749,9 @@ namespace Towerdefense
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = global::Towerdefense.Properties.Resources.lvl1Map;
             this.ClientSize = new System.Drawing.Size(1000, 650);
+            this.Controls.Add(this.txt_wave);
+            this.Controls.Add(this.btn_changewave);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_PlaceTower1);
             this.Controls.Add(this.pb_tower1);
             this.Controls.Add(this.pb_gunNoCoins);
@@ -755,8 +769,6 @@ namespace Towerdefense
             this.Controls.Add(this.pb_backgroundCoins);
             this.Controls.Add(this.pb_spawn);
             this.Controls.Add(this.btn_PlaceTower5);
-            this.Controls.Add(this.pnl_pause);
-            this.Controls.Add(this.pnl_start);
             this.Controls.Add(this.lbl_maschineGunPrice);
             this.Controls.Add(this.lbl_ninjaTowerPrice);
             this.Controls.Add(this.lbl_bombTowerPrice);
@@ -876,8 +888,6 @@ namespace Towerdefense
         private System.Windows.Forms.Label lbl_bombTowerPrice;
         private System.Windows.Forms.Label lbl_ninjaTowerPrice;
         private System.Windows.Forms.Label lbl_maschineGunPrice;
-        private System.Windows.Forms.Panel pnl_start;
-        private System.Windows.Forms.Panel pnl_pause;
         private System.Windows.Forms.Button btn_PlaceTower5;
         private System.Windows.Forms.PictureBox pb_spawn;
         private System.Windows.Forms.PictureBox pb_backgroundCoins;
@@ -896,5 +906,8 @@ namespace Towerdefense
         private System.Windows.Forms.PictureBox pb_gunNoCoins;
         private System.Windows.Forms.Button btn_PlaceTower1;
         private System.Windows.Forms.PictureBox pb_tower1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_changewave;
+        private System.Windows.Forms.TextBox txt_wave;
     }
 }

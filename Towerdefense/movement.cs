@@ -139,7 +139,7 @@ namespace Towerdefense
                                 y.Name = "Redloon";
                                 x.Dispose();
                                 //enemy.enemyRedList.Add((PictureBox)y);
-                                y.BackgroundImage = Properties.Resources.bloonBlue;
+                                y.BackgroundImage = Properties.Resources.bloonRed;
                                 coins = coins + 10;
                             }
                             else if (y.Name == "Greenloon")
@@ -147,7 +147,7 @@ namespace Towerdefense
                                 y.Name = "Blueloon";
                                 x.Dispose();
                                 //enemy.enemyRedList.Add((PictureBox)y);
-                                y.BackgroundImage = Properties.Resources.bloonGreen;
+                                y.BackgroundImage = Properties.Resources.bloonBlue;
                                 coins = coins + 15;
 
                             }
@@ -156,7 +156,7 @@ namespace Towerdefense
                                 y.Name = "Greenloon";
                                 x.Dispose();
                                 //enemy.enemyRedList.Add((PictureBox)y);
-                                y.BackgroundImage = Properties.Resources.bloonYellow;
+                                y.BackgroundImage = Properties.Resources.bloonGreen;
                                 coins = coins + 20;
                             }
                             else if (y.Name == "Pinkloon")
@@ -164,7 +164,7 @@ namespace Towerdefense
                                 y.Name = "Yellowloon";
                                 x.Dispose();
                                 //enemy.enemyBlueList.Add((PictureBox)y);
-                                y.BackgroundImage = Properties.Resources.bloonPink;
+                                y.BackgroundImage = Properties.Resources.bloonYellow;
                                 coins = coins + 25;
                             }
                             else if (y.Name == "Blackloon")
@@ -180,14 +180,14 @@ namespace Towerdefense
                                 y.Name = "Pinkloon";
                                 x.Dispose();
                                 //enemy.enemyBlueList.Add((PictureBox)y);
-                                y.BackgroundImage = Properties.Resources.bloonPink;
+                                y.BackgroundImage = Properties.Resources.bloonBlack;
                                 coins = coins + 25;
                             }
                             else if (y.Name == "Zebraloon")
                             {
                                 y.Name = "Blackloon";
                                 x.Dispose();
-                                y.BackgroundImage = Properties.Resources.bloonZebra;
+                                y.BackgroundImage = Properties.Resources.bloonLightBlue;
                                 coins = coins + 40;
                             }
                             #endregion

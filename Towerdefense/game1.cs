@@ -47,6 +47,7 @@ namespace Towerdefense
             pb_gunNoCoins.Visible = false;
 
             waveController.start(this);
+            tower.startTower(this);
         }
 
        
@@ -54,9 +55,6 @@ namespace Towerdefense
 
         private void playtimer_Tick(object sender, EventArgs e)
         {
-            lbl_redlooncounter.Text = "Redloons in List: " + waveController.enemies;
-            lbl_bluelooncounter.Text = "Blueloons in List: " + waveController.enemies;
-            //lbl_waveCooldown.Text = "Time Elapsed: " + waveController.Wavesleep;
 
             //timer tick refreshes the coins label
             lbl_coins.BringToFront();
@@ -66,7 +64,9 @@ namespace Towerdefense
             //lbl_test.Text = enemy.looncounter.ToString();
             lbl_health.Text = "Health:" + movement.health;
 
+            lbl_wave.Text = "Wave: " + waveController.waveCount;
 
+            
             
             movement.moveenemys(this);//enemy movement
             movement.checkdirection(playtimer, enemyspawning, this);//check direction
@@ -80,7 +80,7 @@ namespace Towerdefense
             //spawnrate of the loons
             //enemy.Createredloon(30,419);
             //enemy.CreateBlueLoon(30, 419);
-            waveController.wavechecker();
+            waveController.wavechecker(this);
         }
 
         public async Task nextRound()
@@ -254,6 +254,11 @@ namespace Towerdefense
         private void btn_PlaceTower1_Click_1(object sender, EventArgs e)
         {
             tower.ButtonDeactivateTowers(pb_tower1, btn_PlaceTower1, this);
+        }
+
+        private void btn_changewave_Click(object sender, EventArgs e)
+        {
+            waveController.waveCount = Convert.ToInt32(txt_wave.Text);
         }
     }
 }
