@@ -5,27 +5,7 @@ namespace Towerdefense
 {
     internal class tower
     {
-        #region var
-        public static int MachineGunSpeed = 15;
-
-        public static int mageShootCounter;
-        public static int archerShootCounter;
-        public static int bombShootCounter;
-        public static int ninjaShootCounter;
-        public static int machinegunShootCounter;
-
-
-        #endregion
-
-        //the price of each tower
-        public static int mageTowerPrice = 200;
-        public static int archerTowerPrice = 250;
-        public static int bombTowerPrice = 300;
-        public static int ninjaTowerPrice = 350;
-        public static int machinegunTowerPrice = 400;
-
         public static string TowerType;
-
         public static Form game;
 
         #region Towermethodes
@@ -42,7 +22,7 @@ namespace Towerdefense
             Panel tempmage = new Panel
             {
                 //tempmage.Name = "mage" + mageShootCounter;
-                Name = "mage" + locationX.ToString("D4") + locationY.ToString("D4") + mageShootCounter,
+                Name = "mage",
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Red,
                 Height = 7,
@@ -56,8 +36,7 @@ namespace Towerdefense
                 return;
             }
 
-            game1.ActiveForm.Controls.Add(tempmage);
-            mageShootCounter++;
+            form.Controls.Add(tempmage);
         }
 
         public static void archertowerShoot(int locationX, int locationY,Form form)
@@ -66,7 +45,7 @@ namespace Towerdefense
 
             Panel temparcher = new Panel
             {
-                Name = "arch" + archerShootCounter,
+                Name = "arch",
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Blue,
                 Height = 7,
@@ -75,9 +54,6 @@ namespace Towerdefense
             };
             //panelarchertowershot.Add(temparcher);
             form.Controls.Add(temparcher);
-            archerShootCounter++;
-
-
         }
 
         public static void bombTowerShoot(int locationX, int locationY, Form form)
@@ -86,7 +62,7 @@ namespace Towerdefense
 
             Panel tempBomb = new Panel
             {
-                Name = "bomb" + bombShootCounter,
+                Name = "bomb",
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Orange,
                 Height = 7,
@@ -95,7 +71,6 @@ namespace Towerdefense
             };
             //panelBombTowerShot.Add(tempBomb);
             form.Controls.Add(tempBomb);
-            bombShootCounter++;
         }
 
         public static void ninjaTowerShoot(int locationX, int locationY, Form form)
@@ -103,7 +78,7 @@ namespace Towerdefense
             //bullet gets created
             Panel tempNinja = new Panel
             {
-                Name = "ninj" + ninjaShootCounter,
+                Name = "ninj",
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Green,
                 Height = 7,
@@ -112,7 +87,6 @@ namespace Towerdefense
             };
             //panelNinjaTowerShot.Add(tempNinja);
             form.Controls.Add(tempNinja);
-            ninjaShootCounter++;
         }
 
         public static void machinegunTowerShoot(int locationX, int locationY, Form form)
@@ -121,7 +95,7 @@ namespace Towerdefense
 
             Panel tempMachinegun = new Panel
             {
-                Name = "gun" + machinegunShootCounter,
+                Name = "gun",
                 Location = new Point(locationX, locationY),
                 BackColor = Color.Yellow,
                 Height = 7,
@@ -130,7 +104,6 @@ namespace Towerdefense
             };
             //panelMachineGunTowerShot.Add(tempMachinegun);
             form.Controls.Add(tempMachinegun);
-            machinegunShootCounter++;
         }
         #endregion 
 
@@ -258,6 +231,8 @@ namespace Towerdefense
 
         public static void checkCoinsAmount(Form form)
         {
+            //check if player has enough coins
+            //when not a X will appear on he tower selection
             foreach (Control x in form.Controls)
             {
                 if (x is PictureBox && x.Tag == "mageNoCoins")

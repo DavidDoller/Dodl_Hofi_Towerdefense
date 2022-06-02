@@ -30,18 +30,20 @@ namespace Towerdefense
 
         public static void start(game1 _game)
         {
+            //start function
             string jsondata = File.ReadAllText("../../wavez.json");
             waves = Deserialize(jsondata).waves;
             Debug.WriteLine(waves[waveCount].bloons.red.ToString());
             spawned = new Bloons();
             game = _game;
             killed = 0;
-            waveCount = 16;
+            waveCount = 0;
         }
 
         public static void wavechecker(Form form)
         {
             //Debug.WriteLine("in Jason red:" + waves[waveCount].bloons.red.ToString() + "; spawned red:" + spawned.red.ToString() + ";\nin Jason blue: " + waves[waveCount].bloons.blue.ToString() + "; spawned blue: "+ spawned.blue.ToString() + "; \nKills" + killed+"; Result: " +result);
+            //If to spawn the diffrent waves and diffrent Bloontypes
             if (spawned.red <= waves[waveCount].bloons.red)
             {           
                 enemy.CreateLoon(Balloontypes.bloonRed, game);
@@ -79,6 +81,7 @@ namespace Towerdefense
             }
             if (checkRoundWin())
             {
+                //delete bullets after round end
                 foreach(Control y in form.Controls)
                 {
                     if (y.Tag == null) continue;
@@ -123,6 +126,7 @@ namespace Towerdefense
             black = waves[waveCount].bloons.black;
             lightblue = waves[waveCount].bloons.lightBlue;
 
+            //make a calc to see if the wave is over
             result = red + blue + green + yellow + pink + black + lightblue;
 
             if(killed >= result)

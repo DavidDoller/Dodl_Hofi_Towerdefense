@@ -15,12 +15,6 @@ namespace Towerdefense
 
         public static int bulletspeed = 2;
 
-        public static int mageTowerDamage = 1;
-        public static int archerTowerDamage = 2;
-        public static int bombTowerDamage = 3;
-        public static int ninjaTowerDamage = 4;
-        public static int machinegunTowerDamage = 5;
-
         public static int coins = 20000;
 
         public static void movmentright(PictureBox temp)
@@ -298,7 +292,7 @@ namespace Towerdefense
                 }
             }
         }
-
+        //Autoaim
         public static void AutoAim(Form form)
         {
             if (form.Controls == null)
@@ -324,9 +318,11 @@ namespace Towerdefense
                     {
                         if (x is Panel && x.Tag == "bullet")
                         {
+                            //Range
                             if ((y.Location.Y <= x.Location.Y + 150 && y.Location.Y >= x.Location.Y - 150) &&
                             (y.Location.X <= x.Location.X + 150 && y.Location.X >= x.Location.X - 150))
                             {
+                                // Move to Enemy
                                 if (y.Left > x.Left)
                                 {
                                     x.Left += bulletspeed;

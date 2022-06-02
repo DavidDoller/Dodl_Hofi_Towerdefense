@@ -11,6 +11,7 @@ namespace Towerdefense
 
         public static PictureBox CreateLoon(Balloon ballon, Form form)
         {
+            //Create Basic Balloon
             PictureBox pbenemy = new PictureBox();
 
             pbenemy.Size = ballon.size;
@@ -21,7 +22,6 @@ namespace Towerdefense
             pbenemy.Tag = "enemy" + looncounter.ToString();
             pbenemy.Name = ballon.name;
             pbenemy.BringToFront();
-            //waveController.enemies.Add(pbenemy);
             form.Controls.Add(pbenemy);
             looncounter++;
             return pbenemy;
@@ -35,6 +35,7 @@ namespace Towerdefense
 
 public class Balloon
 {
+    //Basic Properties of any balloon
     public Size size;
     public Point point;
     public Bitmap image;
@@ -53,6 +54,7 @@ public class Balloon
 
 public static class Balloontypes
 {
+    //Create every Balloon Type
     private static Balloon temp = new Balloon();
     public static Balloon bloonRed
     {
