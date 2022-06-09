@@ -96,3 +96,4 @@ C:\Users\david.dollereder\Desktop\swp\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_
 C:\Users\david.dollereder\Desktop\swp\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.csproj.CopyComplete
 C:\Users\david.dollereder\Desktop\swp\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.exe
 C:\Users\david.dollereder\Desktop\swp\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.pdb
+C:\Users\david.dollereder\Desktop\swp\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_Hofi_TowerdefenseRichtigerStand\Dodl_Hofi_Towerdefense\Towerdefense\obj\Debug\Towerdefense.game2.resources

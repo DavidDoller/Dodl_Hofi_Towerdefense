@@ -69,7 +69,8 @@ namespace Towerdefense
             // pb_levelselect
             // 
             this.pb_levelselect.BackColor = System.Drawing.Color.Transparent;
-            this.pb_levelselect.BackgroundImage = global::Towerdefense.Properties.Resources.StoneMap;
+            this.pb_levelselect.BackgroundImage = global::Towerdefense.Properties.Resources.Map2;
+            this.pb_levelselect.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pb_levelselect.Location = new System.Drawing.Point(33, 12);
             this.pb_levelselect.Name = "pb_levelselect";
             this.pb_levelselect.Size = new System.Drawing.Size(731, 362);

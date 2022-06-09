@@ -12,6 +12,8 @@ namespace Towerdefense
 {
     public partial class LevelSelect : Form
     {
+        public static int lvlselected = 0;
+
         public LevelSelect()
         {
             InitializeComponent();
@@ -36,9 +38,14 @@ namespace Towerdefense
                 game1 game = new game1();
                 game.Show();
                 this.Hide();
+                lvlselected = 1;
             }
             if(pb_levelselect.Tag == "lvl2")
             {
+                game2 game = new game2();
+                game.Show();
+                this.Hide();
+                lvlselected = 2;
             }
         }
 
@@ -51,7 +58,7 @@ namespace Towerdefense
         {
             if (pb_levelselect.Tag == "lvl1")
             {
-                pb_levelselect.BackgroundImage = Properties.Resources.StoneMap;
+                pb_levelselect.BackgroundImage = Properties.Resources.Map2;
                 pb_levelselect.BackgroundImageLayout = ImageLayout.Stretch;
                 pb_levelselect.Tag = "lvl2";
             }

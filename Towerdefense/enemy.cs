@@ -4,7 +4,6 @@ using System.Windows.Forms;
 
 namespace Towerdefense
 {
-
     class enemy
     {
         public static int looncounter = 0;
@@ -25,11 +24,8 @@ namespace Towerdefense
             form.Controls.Add(pbenemy);
             looncounter++;
             return pbenemy;
-
         }    
     }
-
-
 }
 
 

@@ -46,7 +46,7 @@ namespace Towerdefense
             pb_ninjaNoCoins.Visible = false;
             pb_gunNoCoins.Visible = false;
 
-            waveController.start(this);
+            waveController.start1(this);
             tower.startTower(this);
         }
 
