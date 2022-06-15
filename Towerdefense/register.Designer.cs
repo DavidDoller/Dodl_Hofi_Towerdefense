@@ -44,20 +44,20 @@ namespace Towerdefense
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 185);
+            this.label2.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 185);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 20);
+            this.label2.Size = new System.Drawing.Size(99, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Password:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 159);
+            this.label1.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.Size = new System.Drawing.Size(99, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Username:";
             // 
@@ -78,10 +78,10 @@ namespace Towerdefense
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 211);
+            this.label3.Font = new System.Drawing.Font("Source Code Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(4, 211);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 20);
+            this.label3.Size = new System.Drawing.Size(119, 20);
             this.label3.TabIndex = 12;
             this.label3.Text = "Confirm Pw:";
             // 
@@ -94,27 +94,39 @@ namespace Towerdefense
             // 
             // btn_register
             // 
+            this.btn_register.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_register.FlatAppearance.BorderSize = 0;
+            this.btn_register.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_register.Font = new System.Drawing.Font("Source Code Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_register.ForeColor = System.Drawing.Color.Black;
             this.btn_register.Location = new System.Drawing.Point(16, 252);
             this.btn_register.Name = "btn_register";
             this.btn_register.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_register.Size = new System.Drawing.Size(260, 23);
+            this.btn_register.Size = new System.Drawing.Size(260, 30);
             this.btn_register.TabIndex = 13;
             this.btn_register.Text = "Register";
-            this.btn_register.UseVisualStyleBackColor = true;
+            this.btn_register.UseVisualStyleBackColor = false;
             this.btn_register.Click += new System.EventHandler(this.btn_register_Click);
             // 
             // btn_exit
             // 
+            this.btn_exit.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_exit.FlatAppearance.BorderSize = 0;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Font = new System.Drawing.Font("Source Code Pro", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.ForeColor = System.Drawing.Color.Black;
             this.btn_exit.Location = new System.Drawing.Point(99, 292);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(88, 23);
+            this.btn_exit.Size = new System.Drawing.Size(88, 30);
             this.btn_exit.TabIndex = 14;
             this.btn_exit.Text = "Exit";
-            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // pB_register
             // 
+            this.pB_register.BackgroundImage = global::Towerdefense.Properties.Resources.login;
+            this.pB_register.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pB_register.Location = new System.Drawing.Point(74, 12);
             this.pB_register.Name = "pB_register";
             this.pB_register.Size = new System.Drawing.Size(143, 138);

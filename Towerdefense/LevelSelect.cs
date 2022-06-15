@@ -40,13 +40,7 @@ namespace Towerdefense
                 this.Hide();
                 lvlselected = 1;
             }
-            if(pb_levelselect.Tag == "lvl2")
-            {
-                game2 game = new game2();
-                game.Show();
-                this.Hide();
-                lvlselected = 2;
-            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)

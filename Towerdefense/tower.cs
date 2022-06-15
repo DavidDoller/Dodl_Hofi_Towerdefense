@@ -116,6 +116,10 @@ namespace Towerdefense
                 {
                     x.Visible = false;
                 }
+                if (x is TextBox)
+                {
+                    x.Visible = false;
+                }
             }
         }
         public static void ButtonDeactivateTowers(PictureBox pbTower, Button towerButton, Form form)
@@ -168,6 +172,10 @@ namespace Towerdefense
             foreach (Control x in form.Controls)
             {
                 if (x is Button)
+                {
+                    x.Visible = true;
+                }
+                if(x is TextBox)
                 {
                     x.Visible = true;
                 }

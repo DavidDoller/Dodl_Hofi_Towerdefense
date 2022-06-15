@@ -30,5 +30,10 @@ namespace Towerdefense
             //button click closes the application
             Application.Exit();
         }
+
+        private void menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

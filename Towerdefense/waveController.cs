@@ -12,7 +12,6 @@ namespace Towerdefense
     static class waveController
     {
         public static game1 game;
-        public static game2 game2;
 
         public static int waveCount = 0;
 
@@ -41,23 +40,9 @@ namespace Towerdefense
             waveCount = 0;
         }
 
-        public static void start2(game2 _game)
-        {
-            string jsondata = File.ReadAllText("../../wavez.json");
-            waves = Deserialize(jsondata).waves;
-            Debug.WriteLine(waves[waveCount].bloons.red.ToString());
-            spawned = new Bloons();
-            game2 = _game;
-            killed = 0;
-            waveCount = 0;
-        }
-
         public static void wavechecker(Form form)
         {
 
-            switch (Convert.ToInt32(LevelSelect.lvlselected))
-            {
-                case 1:
                     if (spawned.red <= waves[waveCount].bloons.red)
                     {
                         enemy.CreateLoon(Balloontypes.bloonRed, game);
@@ -115,69 +100,7 @@ namespace Towerdefense
                         spawned.black = 0;
                         spawned.lightBlue = 0;
                         waveCount++;
-                    }
-                    break;
-                case 2:
-                    if (spawned.red <= waves[waveCount].bloons.red)
-                    {
-                        enemy.CreateLoon(Balloontypes.bloonRed, game2);
-                        spawned.red++;
-                    }
-                    if (spawned.blue <= waves[waveCount].bloons.blue && spawned.red >= waves[waveCount].bloons.red)
-                    {
-                        enemy.CreateLoon(Balloontypes.bloonBlue, game2);
-                        spawned.blue++;
-                    }
-                    if (spawned.green <= waves[waveCount].bloons.green && spawned.blue >= waves[waveCount].bloons.blue)
-                    {
-                        enemy.CreateLoon(Balloontypes.bloonGreen, game2);
-                        spawned.green++;
-                    }
-                    if (spawned.yellow <= waves[waveCount].bloons.yellow && spawned.green >= waves[waveCount].bloons.green)
-                    {
-                        enemy.CreateLoon(Balloontypes.bloonYellow, game2);
-                        spawned.yellow++;
-                    }
-                    if (spawned.pink <= waves[waveCount].bloons.pink && spawned.yellow >= waves[waveCount].bloons.yellow)
-                    {
-                        enemy.CreateLoon(Balloontypes.bloonPink, game2);
-                        spawned.pink++;
-                    }
-                    if (spawned.black <= waves[waveCount].bloons.black && spawned.pink >= waves[waveCount].bloons.pink)
-                    {
-                        enemy.CreateLoon(Balloontypes.bloonBlack, game2);
-                        spawned.black++;
-                    }
-                    if (spawned.lightBlue <= waves[waveCount].bloons.lightBlue && spawned.black >= waves[waveCount].bloons.black)
-                    {
-                        enemy.CreateLoon(Balloontypes.bloonLightBlue, game2);
-                        spawned.lightBlue++;
-                    }
-                    if (checkRoundWin())
-                    {
-                        //delete bullets after round end
-                        foreach (Control y in form.Controls)
-                        {
-                            if (y.Tag == null) continue;
-                            if (y is Panel && y.Tag.Equals("bullet"))
-                            {
-                                y.Dispose();
-                            }
-                        }
-                        game2.nextRound2();
-                        Debug.WriteLine("WON");
-                        killed = 0;
-                        spawned.red = 0;
-                        spawned.blue = 0;
-                        spawned.green = 0;
-                        spawned.yellow = 0;
-                        spawned.pink = 0;
-                        spawned.black = 0;
-                        spawned.lightBlue = 0;
-                        waveCount++;
-                    }
-                    break;
-            }
+                    }                  
             //Debug.WriteLine("in Jason red:" + waves[waveCount].bloons.red.ToString() + "; spawned red:" + spawned.red.ToString() + ";\nin Jason blue: " + waves[waveCount].bloons.blue.ToString() + "; spawned blue: "+ spawned.blue.ToString() + "; \nKills" + killed+"; Result: " +result);
             //If to spawn the diffrent waves and diffrent Bloontypes
             

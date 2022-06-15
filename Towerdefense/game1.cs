@@ -99,14 +99,7 @@ namespace Towerdefense
             //tower.archertowerShoot(359, 334, 5);
         }
 
-        private void game1_KeyDown(object sender, KeyEventArgs e)
-        {
-            //Key E closes the application
-            if(e.KeyCode == Keys.E) 
-            {
-                Application.Exit();
-            }
-        }
+       
 
         private void pb_mageTower_Click(object sender, EventArgs e)
         {
@@ -259,6 +252,25 @@ namespace Towerdefense
         private void btn_changewave_Click(object sender, EventArgs e)
         {
             waveController.waveCount = Convert.ToInt32(txt_wave.Text);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void game1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void game1_KeyDown(object sender, KeyEventArgs e)
+        {
+            //Key E closes the application
+            if (e.KeyCode == Keys.E)
+            {
+                Application.Exit();
+            }
         }
     }
 }

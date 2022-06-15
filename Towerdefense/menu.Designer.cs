@@ -35,22 +35,32 @@ namespace Towerdefense
             // 
             // btn_start
             // 
+            this.btn_start.BackColor = System.Drawing.Color.White;
+            this.btn_start.FlatAppearance.BorderSize = 0;
+            this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_start.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_start.Location = new System.Drawing.Point(89, 72);
             this.btn_start.Name = "btn_start";
             this.btn_start.Size = new System.Drawing.Size(251, 47);
             this.btn_start.TabIndex = 0;
             this.btn_start.Text = "Start";
-            this.btn_start.UseVisualStyleBackColor = true;
+            this.btn_start.UseVisualStyleBackColor = false;
             this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
             // 
             // btn_exit
             // 
+            this.btn_exit.BackColor = System.Drawing.Color.White;
+            this.btn_exit.FlatAppearance.BorderSize = 0;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btn_exit.Location = new System.Drawing.Point(89, 151);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(251, 47);
             this.btn_exit.TabIndex = 3;
             this.btn_exit.Text = "Exit";
-            this.btn_exit.UseVisualStyleBackColor = true;
+            this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // menu
@@ -59,11 +69,12 @@ namespace Towerdefense
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Towerdefense.Properties.Resources.lvl1Map;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(418, 260);
+            this.ClientSize = new System.Drawing.Size(418, 263);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_start);
             this.Name = "menu";
             this.Text = "menu";
+            this.Load += new System.EventHandler(this.menu_Load);
             this.ResumeLayout(false);
 
         }
